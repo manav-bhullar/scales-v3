@@ -1,0 +1,8 @@
+{
+  "question_id": "Q1",
+  "question_text": "Explain the three-way handshake in TCP.",
+  "reference_answer": "TCP uses a three-way handshake to establish a reliable connection. First, the client sends a SYN segment to the server. The server responds with a SYN-ACK segment. Finally, the client sends an ACK segment to confirm the connection. This process ensures both sides are synchronized and ready to transmit data.",
+  "rubric": "1 mark for naming the three-way handshake. 1 mark for SYN step. 1 mark for SYN-ACK step. 1 mark for purpose (reliable connection / synchronization).",
+  "total_marks": 4,
+  "subject": "Computer Networks"
+}

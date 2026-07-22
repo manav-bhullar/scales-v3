@@ -1,0 +1,37 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime / generated
+data/exams/*/grading_results.json
+data/exams/*/teacher_corrections.json
+data/exams/*/final_results.json
+logs/
+*.log
+.cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+

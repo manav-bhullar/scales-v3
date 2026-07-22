@@ -1,0 +1,28 @@
+You are evaluating whether a student's answer demonstrates ONE specific knowledge point.
+
+Knowledge Point: {knowledge_point}
+Expected Evidence Keywords: {expected_keywords}
+Acceptable Variants: {acceptable_variants}
+Partial Credit Rule: {partial_credit_rule}
+Maximum Marks: {marks}
+
+Question: {question_text}
+Student Answer: {student_answer}
+
+Task:
+1. Find the most relevant sentence/phrase in the student answer.
+   You MUST quote it EXACTLY as it appears — do not paraphrase or modify.
+   If no relevant text exists, set evidence_span to "" and verdict to ABSENT.
+2. List arguments FOR awarding marks (how the evidence supports the concept).
+3. List arguments AGAINST awarding marks (gaps, inaccuracies, missing detail).
+4. Based on the balance of arguments, judge:
+   FULL (fully demonstrates), PARTIAL (partially), ABSENT (not addressed), INCORRECT (contradicts)
+5. Award marks using ONLY these discrete values: 0, {half_marks}, or {marks}.
+   - FULL → {marks}
+   - PARTIAL → {half_marks}
+   - ABSENT or INCORRECT → 0
+
+Output as structured JSON with fields:
+concept_id, verdict, marks_awarded, evidence_span, reasoning, counter_arguments
+
+concept_id must be: {concept_id}

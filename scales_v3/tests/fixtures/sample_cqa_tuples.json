@@ -1,0 +1,54 @@
+[
+  {
+    "concept_id": "Q1_C1",
+    "question_id": "Q1",
+    "knowledge_point": "TCP uses three-way handshake for connection establishment",
+    "target_criteria": "Student must mention or describe the 3-step handshake process",
+    "marks": 1,
+    "expected_keywords": ["SYN", "SYN-ACK", "ACK", "three-way", "handshake"],
+    "acceptable_variants": ["3-step connection setup", "SYN, SYN-ACK, ACK sequence"],
+    "partial_credit_rule": null,
+    "source_rubric_span": "1 mark for naming the three-way handshake",
+    "source_reference_span": "TCP uses a three-way handshake (SYN → SYN-ACK → ACK)...",
+    "version": 1
+  },
+  {
+    "concept_id": "Q1_C2",
+    "question_id": "Q1",
+    "knowledge_point": "Client sends SYN to server",
+    "target_criteria": "Student mentions client initiating with SYN",
+    "marks": 1,
+    "expected_keywords": ["SYN", "client", "send"],
+    "acceptable_variants": ["client sends synchronize packet"],
+    "partial_credit_rule": null,
+    "source_rubric_span": "1 mark for SYN step",
+    "source_reference_span": "First, the client sends a SYN segment to the server.",
+    "version": 1
+  },
+  {
+    "concept_id": "Q1_C3",
+    "question_id": "Q1",
+    "knowledge_point": "Server responds with SYN-ACK",
+    "target_criteria": "Student describes server SYN-ACK response",
+    "marks": 1,
+    "expected_keywords": ["SYN-ACK", "server", "acknowledgment"],
+    "acceptable_variants": ["acknowledgment along with its own SYN"],
+    "partial_credit_rule": null,
+    "source_rubric_span": "1 mark for SYN-ACK step",
+    "source_reference_span": "The server responds with a SYN-ACK segment.",
+    "version": 1
+  },
+  {
+    "concept_id": "Q1_C4",
+    "question_id": "Q1",
+    "knowledge_point": "Purpose is reliable connection / synchronization",
+    "target_criteria": "Student explains purpose of handshake",
+    "marks": 1,
+    "expected_keywords": ["reliable", "synchronize", "ready"],
+    "acceptable_variants": ["both sides are ready"],
+    "partial_credit_rule": null,
+    "source_rubric_span": "1 mark for purpose",
+    "source_reference_span": "This process ensures both sides are synchronized...",
+    "version": 1
+  }
+]

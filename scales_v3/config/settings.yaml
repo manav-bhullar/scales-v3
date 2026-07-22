@@ -1,0 +1,55 @@
+# SCALES v3.0 application configuration
+# Sensitive API keys live in .env — never commit them.
+
+# ─── LLM Configuration ───
+# Provider locked to Gemini for this FYP prototype (LiteLLM model ids).
+llm:
+  cera_model: "gemini/gemini-2.0-flash"       # Module 1 — capable model
+  cgr_model: "gemini/gemini-2.0-flash"        # Module 2 — high volume
+  stability_model: "gemini/gemini-2.0-flash"  # Module 3 Tier 3 (future)
+  temperature: 0.1
+  max_retries: 3
+  retry_delay_seconds: 2
+  max_concurrent_calls: 10
+
+# ─── NLI Configuration ───
+nli:
+  model_name: "cross-encoder/nli-deberta-v3-base"
+  device: "cpu"          # use "cuda" if a GPU is available
+  batch_size: 32
+
+# ─── CBTE Configuration (skeleton: Tier 1 + Tier 2; Tier 3 placeholder) ───
+cbte:
+  tier1_keyword_threshold: 0.3
+  tier2_nli_threshold: 0.7
+  tier3_weights:
+    nli: 0.4
+    stability: 0.3
+    keyword: 0.3
+  tau: 0.5
+  tau_source: "manual"   # "manual" for FYP skeleton; "conformal" is future work
+  enable_tier3: false    # Tier 3 synonym stability deferred
+
+# ─── Conformal Risk Control (future work — documented but not required) ───
+conformal:
+  alpha: 0.10
+  calibration_data_path: "data/calibration/"
+  auto_adjust: true
+
+# ─── Partial Credit ───
+grading:
+  allowed_marks_fractions: [0.0, 0.5, 1.0]
+
+# ─── Paths (relative to scales_v3/) ───
+paths:
+  database: "data/scales.db"   # unused in JSON-persistence skeleton; reserved
+  data_dir: "data/"
+  exams_dir: "data/exams/"
+  prompts_dir: "config/prompts/"
+  logs_dir: "logs/"
+
+# ─── Logging ───
+logging:
+  level: "INFO"
+  log_llm_responses: true
+  log_nli_scores: true

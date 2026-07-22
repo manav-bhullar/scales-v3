@@ -1,0 +1,6 @@
+# Placeholder prompt for CBTE Tier 3 verdict-stability re-prompting.
+# Tier 3 / synonym perturbation is FUTURE WORK for this FYP skeleton.
+# Do not use this file until Sprint Tier-3 enhancement is approved.
+
+You will re-evaluate the same student answer against a minimally perturbed
+knowledge-point wording. The semantic meaning must remain identical.

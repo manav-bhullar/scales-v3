@@ -1,0 +1,27 @@
+[
+  {
+    "student_id": "STU001",
+    "answer_text": "TCP establishes a connection using a three-way handshake. The client sends a SYN packet, the server responds with SYN-ACK, and the client confirms with ACK. This ensures both sides are ready.",
+    "label": "good"
+  },
+  {
+    "student_id": "STU002",
+    "answer_text": "TCP connects using some kind of handshake process to make sure both sides are ready.",
+    "label": "partial"
+  },
+  {
+    "student_id": "STU003",
+    "answer_text": "HTTP is a protocol used for web browsing and uses GET and POST requests.",
+    "label": "absent"
+  },
+  {
+    "student_id": "STU004",
+    "answer_text": "In TCP, when a client wants to connect to a server, it first sends a SYN packet. The server then replies with an acknowledgment along with its own SYN. After the client confirms, the connection is established. This ensures both sides are ready.",
+    "label": "paraphrase_good"
+  },
+  {
+    "student_id": "STU005",
+    "answer_text": "",
+    "label": "empty"
+  }
+]

@@ -1,0 +1,16 @@
+[project]
+name = "scales"
+version = "3.0.0"
+description = "SCALES v3.0 — Structured Concept-Anchored LLM Evaluation System (FYP prototype)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
