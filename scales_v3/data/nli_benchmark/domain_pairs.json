@@ -1,0 +1,306 @@
+{
+  "description": "Domain NLI pairs for CBTE Tier 2 (Computer Networks / TCP). Premise = student evidence; hypothesis = bare concept claim. Labels: entailment | contradiction | neutral.",
+  "model_target": "cross-encoder/nli-deberta-v3-base",
+  "pairs": [
+    {
+      "id": 1,
+      "premise": "TCP uses a three-way handshake to establish a connection.",
+      "hypothesis": "TCP uses a three-way handshake for connection establishment",
+      "label": "entailment"
+    },
+    {
+      "id": 2,
+      "premise": "The client sends a SYN packet to the server first.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "entailment"
+    },
+    {
+      "id": 3,
+      "premise": "The server replies with a SYN-ACK segment.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 4,
+      "premise": "Finally the client sends an ACK to confirm the connection.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 5,
+      "premise": "The handshake ensures both sides are synchronized and ready.",
+      "hypothesis": "The purpose is to synchronize both endpoints",
+      "label": "entailment"
+    },
+    {
+      "id": 6,
+      "premise": "The server returns an acknowledgment along with its own SYN.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 7,
+      "premise": "First SYN, then SYN-ACK, then ACK.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "entailment"
+    },
+    {
+      "id": 8,
+      "premise": "Client initiates with a synchronize segment.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "entailment"
+    },
+    {
+      "id": 9,
+      "premise": "SYN-ACK is sent by the server after receiving SYN.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 10,
+      "premise": "The last step is the client acknowledgment.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 11,
+      "premise": "3-step connection setup is used by TCP.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "entailment"
+    },
+    {
+      "id": 12,
+      "premise": "Both endpoints agree on initial sequence numbers during setup.",
+      "hypothesis": "The handshake synchronizes both ends",
+      "label": "entailment"
+    },
+    {
+      "id": 13,
+      "premise": "Acknowledgment of the server SYN completes the handshake.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 14,
+      "premise": "The initiator transmits SYN first.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "entailment"
+    },
+    {
+      "id": 15,
+      "premise": "Server answers with acknowledgment plus its own SYN flag.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "entailment"
+    },
+    {
+      "id": 16,
+      "premise": "TCP is connection-oriented and begins with a handshake.",
+      "hypothesis": "TCP uses a handshake to establish a connection",
+      "label": "entailment"
+    },
+    {
+      "id": 17,
+      "premise": "A three-way exchange of SYN and ACK packets opens the session.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "entailment"
+    },
+    {
+      "id": 18,
+      "premise": "The connection is set up through a 3-step process.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "entailment"
+    },
+    {
+      "id": 19,
+      "premise": "UDP is connectionless and has no handshake.",
+      "hypothesis": "TCP uses a three-way handshake for connection establishment",
+      "label": "contradiction"
+    },
+    {
+      "id": 20,
+      "premise": "The client never sends SYN; it only listens.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "contradiction"
+    },
+    {
+      "id": 21,
+      "premise": "There is no acknowledgment step in this protocol.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "contradiction"
+    },
+    {
+      "id": 22,
+      "premise": "The server rejects all connection attempts and never replies.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "contradiction"
+    },
+    {
+      "id": 23,
+      "premise": "The process has only two steps: request and reply.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "contradiction"
+    },
+    {
+      "id": 24,
+      "premise": "No packets are exchanged before data transfer.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "contradiction"
+    },
+    {
+      "id": 25,
+      "premise": "TCP never uses acknowledgments.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "contradiction"
+    },
+    {
+      "id": 26,
+      "premise": "Only the server sends SYN; the client never does.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "contradiction"
+    },
+    {
+      "id": 27,
+      "premise": "There is no three-way procedure in TCP setup.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "contradiction"
+    },
+    {
+      "id": 28,
+      "premise": "UDP handshake establishes reliable sessions.",
+      "hypothesis": "TCP uses a three-way handshake for connection establishment",
+      "label": "contradiction"
+    },
+    {
+      "id": 29,
+      "premise": "The server never sends SYN-ACK under any circumstance.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "contradiction"
+    },
+    {
+      "id": 30,
+      "premise": "Clients begin by sending ACK only, never SYN.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "contradiction"
+    },
+    {
+      "id": 31,
+      "premise": "Handshake is unnecessary because TCP is connectionless.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "contradiction"
+    },
+    {
+      "id": 32,
+      "premise": "The final ACK is never transmitted by anyone.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "contradiction"
+    },
+    {
+      "id": 33,
+      "premise": "HTTP uses GET and POST requests for browsing.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 34,
+      "premise": "DNS resolves names to IP addresses.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 35,
+      "premise": "IP is responsible for routing packets between networks.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "neutral"
+    },
+    {
+      "id": 36,
+      "premise": "ARP maps IP addresses to MAC addresses.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 37,
+      "premise": "Sliding window controls how much data is in flight.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 38,
+      "premise": "Congestion control uses AIMD after the connection is up.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 39,
+      "premise": "TLS encrypts the application payload.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 40,
+      "premise": "ICMP reports network errors.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 41,
+      "premise": "Ports identify application endpoints on a host.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 42,
+      "premise": "Flow control uses the receive window field.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "neutral"
+    },
+    {
+      "id": 43,
+      "premise": "NAT rewrites private addresses at the boundary.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 44,
+      "premise": "DHCP assigns IP configuration to hosts.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 45,
+      "premise": "SMTP transfers email between mail servers.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 46,
+      "premise": "OSPF is a link-state routing protocol.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "neutral"
+    },
+    {
+      "id": 47,
+      "premise": "Ethernet frames include a source and destination MAC.",
+      "hypothesis": "The server responds with SYN-ACK",
+      "label": "neutral"
+    },
+    {
+      "id": 48,
+      "premise": "IPv6 addresses are 128 bits long.",
+      "hypothesis": "The client sends SYN to the server",
+      "label": "neutral"
+    },
+    {
+      "id": 49,
+      "premise": "BGP exchanges routes between autonomous systems.",
+      "hypothesis": "TCP uses a three-way handshake",
+      "label": "neutral"
+    },
+    {
+      "id": 50,
+      "premise": "CSMA/CD was used on shared Ethernet media.",
+      "hypothesis": "The client sends a final ACK",
+      "label": "neutral"
+    }
+  ]
+}

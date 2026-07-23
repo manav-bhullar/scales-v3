@@ -15,7 +15,7 @@ def main() -> int:
     try:
         from scales.config import get_settings
     except Exception as exc:  # noqa: BLE001
-        print(f"✗ Failed to import scales.config: {exc}")
+        print(f"[FAIL] Failed to import scales.config: {exc}")
         print("  Tip: pip install -r requirements.txt")
         return 1
 
@@ -27,17 +27,17 @@ def main() -> int:
     try:
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
     except ImportError:
-        print("✗ transformers is not installed. Run: pip install -r requirements.txt")
+        print("[FAIL] transformers is not installed. Run: pip install -r requirements.txt")
         return 1
 
     try:
         AutoTokenizer.from_pretrained(model_name)
         AutoModelForSequenceClassification.from_pretrained(model_name)
     except Exception as exc:  # noqa: BLE001
-        print(f"✗ Model download failed: {exc}")
+        print(f"[FAIL] Model download failed: {exc}")
         return 1
 
-    print("✓ Model downloaded and cached.")
+    print("[OK] Model downloaded and cached.")
     return 0
 
 

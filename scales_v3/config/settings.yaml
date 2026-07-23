@@ -4,9 +4,10 @@
 # ─── LLM Configuration ───
 # Provider locked to Gemini for this FYP prototype (LiteLLM model ids).
 llm:
-  cera_model: "gemini/gemini-2.0-flash"       # Module 1 — capable model
-  cgr_model: "gemini/gemini-2.0-flash"        # Module 2 — high volume
-  stability_model: "gemini/gemini-2.0-flash"  # Module 3 Tier 3 (future)
+  # gemini-2.0-flash free-tier quota exhausted (limit:0) on this key — use alias
+  cera_model: "gemini/gemini-flash-latest"       # Module 1 — capable model
+  cgr_model: "gemini/gemini-flash-latest"        # Module 2 — high volume
+  stability_model: "gemini/gemini-flash-latest"  # Module 3 Tier 3 (future)
   temperature: 0.1
   max_retries: 3
   retry_delay_seconds: 2
