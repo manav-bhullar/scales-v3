@@ -13,8 +13,9 @@ CERA → CGR → CBTE (Tier 1 + Tier 2) → SHRR → Aggregator
 | **CERA** | Concept extraction from question + rubric | Done (Sprint 3) |
 | **CGR** | Per-concept grading (FULL / PARTIAL / INCORRECT / ABSENT) | Done (Sprint 3) |
 | **CBTE** | Trust estimation (evidence + keywords → DeBERTa NLI) | Done (Sprint 4) |
-| **SHRR** | Human review / deferral resolution | Next (Sprint 5) |
-| **Aggregator** | Discrete marks → student total | Next (Sprint 5) |
+| **SHRR** | Human review / deferral resolution | Done (Sprint 5) |
+| **Aggregator** | Discrete marks → student total | Done (Sprint 5) |
+| **Pipeline** | Two-phase orchestrator + JSON persistence | Done (Sprint 5) |
 
 **Locked for this build:** JSON persistence, Gemini via LiteLLM, discrete marks `0 / 0.5× / 1.0×`, CBTE τ = 0.5 (manual).
 
@@ -65,6 +66,22 @@ pytest tests/unit/ -v
 | NLI model | `config/settings.yaml` | `cross-encoder/nli-deberta-v3-base` on `cpu` |
 | Concurrency | `llm.max_concurrent_calls` | Lower to `2–4` on Gemini free tier |
 
+## Pipeline CLI (Sprint 5)
+
+```powershell
+# Grade an exam JSON (CERA→CGR→CBTE); writes data/exams/{exam_id}/
+python scripts/run_pipeline.py grade --exam-json path\to\exam.json
+
+# Inspect deferred review queue
+python scripts/run_pipeline.py status --exam-id exam_abc
+
+# Submit one teacher correction
+python scripts/run_pipeline.py review --exam-id exam_abc --student STU001 --concept Q1_C1 --verdict FULL --marks 1.0
+
+# Aggregate finals when review is complete
+python scripts/run_pipeline.py finalize --exam-id exam_abc
+```
+
 ## Tests
 
 ```powershell
@@ -85,10 +102,12 @@ scales_v3/
   scales/           # core package
     models/         # Pydantic schemas
     services/       # LLMClient, NLIService, text utils
-    modules/        # CERA, CGR, CBTE (+ SHRR/Aggregator later)
+    modules/        # CERA, CGR, CBTE, SHRR, Aggregator
+    persistence.py  # per-exam JSON store
+    pipeline.py     # two-phase orchestrator
   config/           # settings.yaml + prompt templates
   data/             # exams, NLI benchmark pairs
-  scripts/          # download_models.py, verify_setup.py
+  scripts/          # download_models.py, verify_setup.py, run_pipeline.py
   tests/            # unit + integration
   api/              # FastAPI (Sprint 6)
   frontend/         # React UI (Sprint 6)
@@ -100,8 +119,8 @@ scales_v3/
 2. Services (LLM + NLI wrappers) — done  
 3. CERA + CGR — done  
 4. CBTE + NLI domain benchmark — done  
-5. SHRR + Aggregator + end-to-end pipeline — **next**  
-6. API + UI  
+5. SHRR + Aggregator + end-to-end pipeline — done  
+6. API + UI — **next**  
 7. Evaluation / FYP metrics  
 
 ## Documentation
