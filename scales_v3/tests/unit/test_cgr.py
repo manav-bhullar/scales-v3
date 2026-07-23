@@ -77,7 +77,7 @@ def test_prompt_rendering(cgr, cqa):
     assert "0.5" in prompt or "0.5" in prompt.replace(" ", "")
 
 
-def test_normalize_full_without_evidence_becomes_partial_then_errors(cgr, cqa):
+def test_normalize_full_without_evidence_becomes_absent(cgr, cqa):
     raw = CGRLLMResponse(
         concept_id="Q1_C1",
         verdict=Verdict.FULL,
@@ -86,10 +86,25 @@ def test_normalize_full_without_evidence_becomes_partial_then_errors(cgr, cqa):
         reasoning="Student mentioned the concept clearly enough.",
         counter_arguments="None",
     )
-    _, errors = cgr._validate_and_normalize(raw, cqa)
-    # After FULL→PARTIAL downgrade, empty evidence is still a hard error (retry).
-    assert errors
+    normalized, errors = cgr._validate_and_normalize(raw, cqa)
+    assert errors == []
+    assert normalized.verdict == Verdict.ABSENT
+    assert normalized.marks_awarded == 0.0
 
+
+def test_normalize_partial_without_evidence_becomes_absent(cgr, cqa):
+    raw = CGRLLMResponse(
+        concept_id="Q1_C1",
+        verdict=Verdict.PARTIAL,
+        marks_awarded=0.5,
+        evidence_span="",
+        reasoning="Vague mention without a quotable span.",
+        counter_arguments="None",
+    )
+    normalized, errors = cgr._validate_and_normalize(raw, cqa)
+    assert errors == []
+    assert normalized.verdict == Verdict.ABSENT
+    assert normalized.marks_awarded == 0.0
 
 def test_normalize_absent_clears_evidence(cgr, cqa):
     raw = CGRLLMResponse(

@@ -1,6 +1,11 @@
 """Unit tests for text_utils."""
 
-from scales.services.text_utils import fuzzy_keyword_match, normalize_text, verify_evidence
+from scales.services.text_utils import (
+    fuzzy_keyword_match,
+    normalize_text,
+    token_containment,
+    verify_evidence,
+)
 
 
 def test_exact_substring_match():
@@ -29,6 +34,55 @@ def test_empty_evidence_vacuous_true():
 
 def test_normalize_text_collapses_whitespace():
     assert normalize_text("  A \n B  ") == "a b"
+
+
+# ─── Unicode punctuation drift (bugfix: false "hallucinated quote" DEFER) ───
+
+def test_curly_apostrophe_folds_to_straight():
+    # LLM re-quotes with a curly apostrophe; student wrote a straight one.
+    assert normalize_text("server\u2019s SYN") == "server's syn"
+
+
+def test_verify_evidence_curly_apostrophe_match():
+    # Real STU_GOOD/C3 case: only difference is ' (U+2019) vs '.
+    evidence = "confirm the server\u2019s SYN."
+    answer = "Finally the client sends an ACK to confirm the server's SYN."
+    assert verify_evidence(evidence, answer) is True
+
+
+def test_verify_evidence_arrow_and_dash_folded():
+    evidence = "client \u2192 server \u2014 SYN"
+    answer = "the flow is client -> server - SYN segment"
+    assert verify_evidence(evidence, answer) is True
+
+
+# ─── Reformatting / paraphrase fallback ───
+
+def test_verify_evidence_reformatted_list_markers():
+    # Real STU_GOOD_ALT/C4 case: evidence concatenates the student's own
+    # numbered lines; every word is present but not as a contiguous substring.
+    evidence = (
+        "Client server: SYN with starting sequence number to request a connection. "
+        "Server client: SYN-ACK carrying the server ISN. "
+        "Client server: ACK confirming the server SYN."
+    )
+    answer = (
+        "Connection setup uses three steps.\n"
+        "1) Client server: SYN with starting sequence number to request a connection.\n"
+        "2) Server client: SYN-ACK carrying the server ISN.\n"
+        "3) Client server: ACK confirming the server SYN."
+    )
+    assert verify_evidence(evidence, answer) is True
+
+
+def test_verify_evidence_true_hallucination_still_rejected():
+    # Disjoint vocabulary must still fail even with the fuzzy fallback.
+    assert verify_evidence("UDP datagram checksum", "TCP uses a three-way handshake") is False
+
+
+def test_token_containment_scores():
+    assert token_containment("SYN ACK", "client sends SYN then ACK") == 1.0
+    assert token_containment("UDP checksum", "TCP handshake only") == 0.0
 
 
 def test_keyword_search_case_insensitive():

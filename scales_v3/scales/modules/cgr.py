@@ -141,14 +141,28 @@ class CGRModule:
 
         if verdict == Verdict.FULL and not evidence.strip():
             logger.warning(
-                "FULL with empty evidence for {}; downgrading to PARTIAL",
+                "FULL with empty evidence for {}; downgrading to ABSENT",
                 cqa.concept_id,
             )
-            verdict = Verdict.PARTIAL
-            warnings.append("FULL without evidence → PARTIAL")
+            verdict = Verdict.ABSENT
+            marks = 0.0
+            warnings.append("FULL without evidence → ABSENT")
+
+        if verdict in (Verdict.PARTIAL, Verdict.INCORRECT) and not evidence.strip():
+            # Small models sometimes claim PARTIAL/INCORRECT without a quote.
+            # Treat as ABSENT rather than hard-failing the whole exam run.
+            logger.warning(
+                "{} with empty evidence for {}; downgrading to ABSENT",
+                verdict.value,
+                cqa.concept_id,
+            )
+            warnings.append(f"{verdict.value} without evidence → ABSENT")
+            verdict = Verdict.ABSENT
+            marks = 0.0
+            evidence = ""
 
         if verdict != Verdict.ABSENT and not evidence.strip():
-            # FULL/PARTIAL/INCORRECT must quote something from the student answer.
+            # Remaining non-ABSENT verdicts must quote something from the student answer.
             return raw, [
                 f"{verdict.value} requires non-empty evidence_span "
                 "(quote exact text from the student answer)"

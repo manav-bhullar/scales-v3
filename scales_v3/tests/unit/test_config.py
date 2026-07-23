@@ -25,8 +25,23 @@ from scales.models import (
 
 def test_settings_yaml_loads():
     settings = get_settings()
-    assert settings.llm.cera_model.startswith("gemini/")
-    assert settings.llm.cgr_model.startswith("gemini/")
+    # Provider-agnostic: LiteLLM ids look like "groq/..." or "gemini/..."
+    assert "/" in settings.llm.cera_model
+    assert "/" in settings.llm.cgr_model
+    assert settings.llm.cera_model.split("/", 1)[0] in {
+        "groq",
+        "gemini",
+        "openai",
+        "anthropic",
+        "openrouter",
+    }
+    assert settings.llm.cgr_model.split("/", 1)[0] in {
+        "groq",
+        "gemini",
+        "openai",
+        "anthropic",
+        "openrouter",
+    }
     assert settings.cbte.tau == 0.5
     assert settings.cbte.enable_tier3 is False
     assert settings.cbte.tau_source == "manual"

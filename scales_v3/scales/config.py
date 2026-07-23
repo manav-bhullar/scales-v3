@@ -94,6 +94,10 @@ class EnvSecrets(BaseSettings):
     google_api_key: str | None = None
     openai_api_key: str | None = None
     anthropic_api_key: str | None = None
+    groq_api_key: str | None = None
+    # LiteLLM expects OPENROUTER_API_KEY; also accept open_router_api_key from .env
+    openrouter_api_key: str | None = None
+    open_router_api_key: str | None = None
 
 
 def load_yaml_settings(path: Path | None = None) -> dict[str, Any]:

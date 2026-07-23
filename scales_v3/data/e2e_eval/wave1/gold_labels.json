@@ -1,0 +1,33 @@
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "question_id": "Q1",
+  "total_marks": 4,
+  "gold_labels": [
+    {
+      "student_id": "STU_GOOD",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "rationale": "Covers SYN, SYN-ACK with ISN/+1, final ACK, and purpose. Should mostly FULL or high PARTIAL.",
+      "author": "assistant_synthetic"
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "expected_band": "mid",
+      "expected_score_range": [1.0, 2.5],
+      "rationale": "Mentions handshake vaguely and purpose; missing ISN/+1 detail and clear SYN-ACK naming.",
+      "author": "assistant_synthetic"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.5],
+      "rationale": "Wrong protocol (HTTP methods). Should be mostly ABSENT/INCORRECT ≈ 0.",
+      "author": "assistant_synthetic"
+    }
+  ],
+  "planned_waves": [
+    {"wave": 1, "questions": 1, "students": 3, "status": "awaiting_user_validation"},
+    {"wave": 2, "questions": 1, "students": 6, "status": "planned"},
+    {"wave": 3, "questions": 2, "students": "4 each", "status": "planned"}
+  ]
+}

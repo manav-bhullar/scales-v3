@@ -1,0 +1,65 @@
+=== DEFER cases (Wave 2) ===
+
+STU_GOOD/Q1_C3 verdict=FULL marks=1.0
+  tier=1 trust=0.000
+  sig1_evidence_verified=False
+  sig2_nli=None  sig4_keyword=0.5
+  reason=LLM quoted evidence not found in student answer (hallucinated quote)
+  evidence_span='Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server’s SYN.'
+  diag=MATCHES after normalize
+
+STU_WRONG/Q1_C4 verdict=ABSENT marks=0.0
+  tier=3 trust=0.450
+  sig1_evidence_verified=True
+  sig2_nli=0.0  sig4_keyword=0.5
+  reason=Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)
+  evidence_span=''
+  diag=evidence empty
+
+STU_GOOD_ALT/Q1_C4 verdict=FULL marks=1.0
+  tier=1 trust=0.000
+  sig1_evidence_verified=False
+  sig2_nli=None  sig4_keyword=0.0
+  reason=LLM quoted evidence not found in student answer (hallucinated quote)
+  evidence_span='Client → server: SYN with starting sequence number (ISN) to request a connection. Server → client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1. Client → server: ACK with ack = server ISN + 1 confirming the server SYN.'
+  diag=NO match after normalize; non_ascii_in_evidence=[('→', '0x2192')]; match_after_punct_fold=False
+
+STU_PURPOSE_FOCUS/Q1_C1 verdict=ABSENT marks=0.0
+  tier=3 trust=0.450
+  sig1_evidence_verified=True
+  sig2_nli=0.0  sig4_keyword=0.5
+  reason=Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)
+  evidence_span=''
+  diag=evidence empty
+
+STU_MID_DETAIL/Q1_C1 verdict=ABSENT marks=0.0
+  tier=3 trust=0.450
+  sig1_evidence_verified=True
+  sig2_nli=0.0  sig4_keyword=0.5
+  reason=Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)
+  evidence_span=''
+  diag=evidence empty
+
+STU_MID_DETAIL/Q1_C2 verdict=ABSENT marks=0.0
+  tier=3 trust=0.400
+  sig1_evidence_verified=True
+  sig2_nli=0.0  sig4_keyword=0.3333333333333333
+  reason=Tier 3: trust=0.40 (nli=0.00, stab=1.0, kw=0.33, tau=0.50)
+  evidence_span=''
+  diag=evidence empty
+
+STU_MID_DETAIL/Q1_C3 verdict=ABSENT marks=0.0
+  tier=3 trust=0.450
+  sig1_evidence_verified=True
+  sig2_nli=0.0  sig4_keyword=0.5
+  reason=Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)
+  evidence_span=''
+  diag=evidence empty
+
+STU_MID_DETAIL/Q1_C4 verdict=FULL marks=1.0
+  tier=3 trust=0.300
+  sig1_evidence_verified=True
+  sig2_nli=0.0005527124158106744  sig4_keyword=0.0
+  reason=Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)
+  evidence_span='This handshake makes both ends ready and synchronizes them so data can be transferred reliably.'
+  diag=MATCHES after normalize

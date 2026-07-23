@@ -1,0 +1,271 @@
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "status": "awaiting_review",
+  "graded_students": [
+    "STU_GOOD",
+    "STU_PARTIAL",
+    "STU_WRONG"
+  ],
+  "cera_concepts": [
+    {
+      "concept_id": "Q1_C1",
+      "marks": 1,
+      "knowledge_point": "First TCP segment control information and purpose",
+      "keywords": [
+        "SYN",
+        "initial sequence number",
+        "ISN",
+        "propose connection"
+      ]
+    },
+    {
+      "concept_id": "Q1_C2",
+      "marks": 1,
+      "knowledge_point": "Second TCP segment control information and purpose",
+      "keywords": [
+        "SYN-ACK",
+        "ACK",
+        "server ISN",
+        "client_ISN+1",
+        "acknowledge"
+      ]
+    },
+    {
+      "concept_id": "Q1_C3",
+      "marks": 1,
+      "knowledge_point": "Third TCP segment control information and purpose",
+      "keywords": [
+        "ACK",
+        "server_ISN+1",
+        "acknowledge server SYN",
+        "synchronized"
+      ]
+    },
+    {
+      "concept_id": "Q1_C4",
+      "marks": 1,
+      "knowledge_point": "Purpose of the TCP three-way handshake",
+      "keywords": [
+        "synchronize sequence numbers",
+        "reliable connection",
+        "full-duplex",
+        "before data transfer"
+      ]
+    }
+  ],
+  "students": {
+    "STU_GOOD": {
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "evidence": "First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.",
+          "reasoning": "The student correctly identifies the control information (SYN flag and initial sequence number) carried in the first segment and accurately explains its purpose (to initiate/request a connection).",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.85,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.75 (3 keywords found)"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "evidence": "The server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.",
+          "reasoning": "The student correctly identifies the control information in the second TCP segment as a SYN-ACK containing the server's own initial sequence number and an acknowledgement of the client's SYN with ack ",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.85,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.40 (2 keywords found)"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "evidence": "Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server's SYN.",
+          "reasoning": "The student correctly states that the third TCP segment carries an ACK with an acknowledgement number of server_ISN + 1 to confirm the server's SYN segment, perfectly matching the required control inf",
+          "cbte_decision": "DEFER",
+          "trust": 0.3753818396246061,
+          "tier": 3,
+          "cbte_reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "evidence": "This synchronizes both sides and sets up a reliable connection before data is sent.",
+          "reasoning": "The student correctly states that the handshake synchronizes both sides and establishes a reliable connection prior to data transfer, satisfying the key requirements of the concept.",
+          "cbte_decision": "DEFER",
+          "trust": 0.37512257490307094,
+          "tier": 3,
+          "cbte_reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)"
+        }
+      ],
+      "auto_accepted_marks": 2.0
+    },
+    "STU_PARTIAL": {
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "evidence": "The client starts with SYN and the server answers, then the client confirms.",
+          "reasoning": "The student correctly identifies that the client uses SYN in the first segment to initiate the connection.",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.7922953963279724,
+          "tier": 2,
+          "cbte_reason": "Tier 2 accept: NLI entailment = 0.79"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "evidence": "",
+          "reasoning": "The student answer mentions that the server answers after the client starts with SYN, but it does not specify the control information (SYN-ACK, server ISN, acknowledgment number) or purpose of the sec",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.9,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "evidence": "",
+          "reasoning": "The student mentions that 'the client confirms', which vaguely relates to the third step of the handshake, but fails to mention the required control information and purpose such as the ACK flag and th",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.9,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "evidence": "",
+          "reasoning": "The student mentions that the handshake 'makes sure both computers are ready', but fails to state the purpose of the TCP three-way handshake in terms of synchronizing sequence numbers, establishing a ",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.9,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)"
+        }
+      ],
+      "auto_accepted_marks": 1.0
+    },
+    "STU_WRONG": {
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "evidence": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses TCP with HTTP and describes GET, POST, and PUT requests instead of the TCP SYN segment and initial sequence number.",
+          "cbte_decision": "DEFER",
+          "trust": 0.30761896073818207,
+          "tier": 3,
+          "cbte_reason": "Tier 3: trust=0.31 (nli=0.02, stab=1.0, kw=0.00, tau=0.50)"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "evidence": "",
+          "reasoning": "The student answer does not mention the second TCP segment, control information such as SYN-ACK, server ISN, or acknowledgment of the client's ISN.",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.9,
+          "tier": 1,
+          "cbte_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "evidence": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses the TCP three-way handshake with HTTP methods (GET, POST, PUT) and TLS, failing to mention the third TCP segment control information and purpose entirely.",
+          "cbte_decision": "DEFER",
+          "trust": 0.3038613464683294,
+          "tier": 3,
+          "cbte_reason": "Tier 3: trust=0.30 (nli=0.01, stab=1.0, kw=0.00, tau=0.50)"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "evidence": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses TCP with HTTP, and the three-way handshake with HTTP methods (GET, POST, PUT), failing to mention the purpose of the TCP three-way handshake.",
+          "cbte_decision": "ACCEPT",
+          "trust": 0.8960310816764832,
+          "tier": 2,
+          "cbte_reason": "Tier 2 accept: NLI entailment = 0.90"
+        }
+      ],
+      "auto_accepted_marks": 0.0
+    }
+  },
+  "gold_labels": [
+    {
+      "student_id": "STU_GOOD",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.0,
+        4.0
+      ],
+      "rationale": "Covers SYN, SYN-ACK with ISN/+1, final ACK, and purpose. Should mostly FULL or high PARTIAL.",
+      "author": "assistant_synthetic"
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "expected_band": "mid",
+      "expected_score_range": [
+        1.0,
+        2.5
+      ],
+      "rationale": "Mentions handshake vaguely and purpose; missing ISN/+1 detail and clear SYN-ACK naming.",
+      "author": "assistant_synthetic"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "expected_band": "low",
+      "expected_score_range": [
+        0.0,
+        0.5
+      ],
+      "rationale": "Wrong protocol (HTTP methods). Should be mostly ABSENT/INCORRECT ≈ 0.",
+      "author": "assistant_synthetic"
+    }
+  ],
+  "deferred_queue": [
+    {
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C3",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "trust": 0.3753818396246061,
+      "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)"
+    },
+    {
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C4",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "trust": 0.37512257490307094,
+      "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C1",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "trust": 0.30761896073818207,
+      "reason": "Tier 3: trust=0.31 (nli=0.02, stab=1.0, kw=0.00, tau=0.50)"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C3",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "trust": 0.3038613464683294,
+      "reason": "Tier 3: trust=0.30 (nli=0.01, stab=1.0, kw=0.00, tau=0.50)"
+    }
+  ]
+}

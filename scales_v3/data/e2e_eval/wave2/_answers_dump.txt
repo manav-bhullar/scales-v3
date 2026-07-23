@@ -1,0 +1,25 @@
+STU_GOOD:
+TCP opens a connection using a three-way handshake.
+First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.
+The server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.
+Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server's SYN.
+This synchronizes both sides and sets up a reliable connection before data is sent.
+
+STU_PARTIAL:
+TCP connects using some kind of handshake. The client starts with SYN and the server answers, then the client confirms. It makes sure both computers are ready.
+
+STU_WRONG:
+HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.
+
+STU_GOOD_ALT:
+Connection setup uses three steps.
+1) Client → server: SYN with starting sequence number (ISN) to request a connection.
+2) Server → client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1.
+3) Client → server: ACK with ack = server ISN + 1 confirming the server SYN.
+Goal: synchronize sequence numbers and establish a reliable full-duplex session before sending data.
+
+STU_PURPOSE_FOCUS:
+The client sends SYN, the server replies, then the client ACKs. I do not remember the sequence-number details. The purpose of the three-way handshake is to synchronize sequence numbers on both ends and establish a reliable connection before data transfer.
+
+STU_MID_DETAIL:
+In TCP the client first sends a SYN. The server responds with SYN-ACK. Then the client sends the final ACK. This handshake makes both ends ready and synchronizes them so data can be transferred reliably.

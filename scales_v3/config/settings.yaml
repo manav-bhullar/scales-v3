@@ -2,16 +2,15 @@
 # Sensitive API keys live in .env — never commit them.
 
 # ─── LLM Configuration ───
-# Provider locked to Gemini for this FYP prototype (LiteLLM model ids).
+# Wave 3+: OpenRouter (LiteLLM ids). Groq/Gemini remain optional fallbacks.
 llm:
-  # gemini-2.0-flash free-tier quota exhausted (limit:0) on this key — use alias
-  cera_model: "gemini/gemini-flash-latest"       # Module 1 — capable model
-  cgr_model: "gemini/gemini-flash-latest"        # Module 2 — high volume
-  stability_model: "gemini/gemini-flash-latest"  # Module 3 Tier 3 (future)
+  cera_model: "openrouter/meta-llama/llama-3.3-70b-instruct"
+  cgr_model: "openrouter/meta-llama/llama-3.1-8b-instruct"
+  stability_model: "openrouter/meta-llama/llama-3.1-8b-instruct"
   temperature: 0.1
-  max_retries: 3
-  retry_delay_seconds: 2
-  max_concurrent_calls: 10
+  max_retries: 5
+  retry_delay_seconds: 5
+  max_concurrent_calls: 1
 
 # ─── NLI Configuration ───
 nli:

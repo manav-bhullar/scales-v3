@@ -1,0 +1,451 @@
+{
+  "exam_id": "e2e_wave2_tcp_handshake_groq",
+  "reeval_at": "20260723T191217Z",
+  "nli_enabled": true,
+  "defer_before": 8,
+  "defer_after": 7,
+  "flips": [
+    {
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C3",
+      "old_decision": "DEFER",
+      "new_decision": "ACCEPT",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "LLM quoted evidence not found in student answer (hallucinated quote)",
+      "new_reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "signal_1": true
+    },
+    {
+      "student_id": "STU_GOOD_ALT",
+      "concept_id": "Q1_C4",
+      "old_decision": "DEFER",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 3,
+      "old_reason": "LLM quoted evidence not found in student answer (hallucinated quote)",
+      "new_reason": "Tier 3: trust=0.33 (nli=0.09, stab=1.0, kw=0.00, tau=0.50)",
+      "signal_1": true
+    }
+  ],
+  "false_defer_good_c3_c4": [
+    "STU_GOOD_ALT/Q1_C4"
+  ],
+  "cbte_results": [
+    {
+      "result_id": "b4ae8e4e-608b-456b-b0f7-14725cfb1c14",
+      "cgr_result_id": "d9a94246-71de-4d74-95c3-c5eb47e4dc27",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 1.0,
+      "keywords_found": [
+        "SYN",
+        "initial sequence number"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=1.00 (2 keywords found)",
+      "created_at": "2026-07-23T19:12:03.726889Z"
+    },
+    {
+      "result_id": "b95e0a47-7379-46f4-82c1-62880e428ba4",
+      "cgr_result_id": "252f056c-32cd-4e44-adf8-9a75af6a2a8a",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.3333333333333333,
+      "keywords_found": [
+        "SYN-ACK"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.33 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.726889Z"
+    },
+    {
+      "result_id": "a17dbbd3-38a8-4030-b318-891347bd7e2f",
+      "cgr_result_id": "965c0b63-d449-4960-b6b3-b29ae88e7827",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "ACK"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.726889Z"
+    },
+    {
+      "result_id": "4e6a5204-5926-4f32-b8fa-0212f908586a",
+      "cgr_result_id": "6374a7b3-ca7b-4b84-83f7-127121c22a4b",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "three-way handshake"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.726889Z"
+    },
+    {
+      "result_id": "d1f476b9-13ef-4d3d-bf5b-7cfeab89af34",
+      "cgr_result_id": "f92f482a-fa03-461b-939d-fd013d2f350f",
+      "student_id": "STU_PARTIAL",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "SYN"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.726889Z"
+    },
+    {
+      "result_id": "f0232f9e-b751-45b4-a7a4-e51c13375c7a",
+      "cgr_result_id": "bf15e683-928f-455f-8655-07db29d49f01",
+      "student_id": "STU_PARTIAL",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "0e71f39d-7b18-4484-af5a-9f9d65b14d29",
+      "cgr_result_id": "90268334-db0d-4636-94d3-3139c65c432f",
+      "student_id": "STU_PARTIAL",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "25cc3aac-644f-4244-b728-04df31bec98e",
+      "cgr_result_id": "5c5daadd-48d1-4838-8620-317b8b27a4c6",
+      "student_id": "STU_PARTIAL",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "a6ca8124-6b03-4057-aae0-4ec26213b8c6",
+      "cgr_result_id": "acdfaa1b-47b6-4779-b587-01115a21cf7d",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "68122b84-0bb7-4c45-96a3-7f633f70d164",
+      "cgr_result_id": "07cf8791-51a4-4f9f-8eaa-242be679324c",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "0dbe0723-9a4f-4ddb-9f4e-b577571d084b",
+      "cgr_result_id": "736cd7be-801f-4224-b2fb-03d77f2ca79e",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "8258ad18-fa0b-4330-aa9c-080cf3fb103e",
+      "cgr_result_id": "b4feefc0-2ce0-4625-a877-250a7ea2b290",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.44999999999999996,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "three-way handshake"
+      ],
+      "reason": "Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.522776Z"
+    },
+    {
+      "result_id": "2d4ac0a8-5c66-4fe2-b1f7-287e506d2dd6",
+      "cgr_result_id": "1559ed4d-57b8-40cf-9dd7-c4a3401afe8f",
+      "student_id": "STU_GOOD_ALT",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "SYN"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "61c30b3d-86ee-412f-bfbd-7be97cc6b817",
+      "cgr_result_id": "0c4cd81e-af9d-4efc-871e-c82e2a825ebd",
+      "student_id": "STU_GOOD_ALT",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.6666666666666666,
+      "keywords_found": [
+        "SYN-ACK",
+        "server ISN"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.67 (2 keywords found)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "8a8e9077-9a96-4688-919c-cbb880a1e58a",
+      "cgr_result_id": "885adf49-a8bd-44dc-af50-afc2e242163d",
+      "student_id": "STU_GOOD_ALT",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "ACK"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.50 (1 keywords found)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "7fac54bd-5959-4ef6-b869-426c881e8e07",
+      "cgr_result_id": "1eb81a77-a97c-4a58-a84e-e3b300b2ff09",
+      "student_id": "STU_GOOD_ALT",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.3340467631816864,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.085116907954216,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 3: trust=0.33 (nli=0.09, stab=1.0, kw=0.00, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    },
+    {
+      "result_id": "21a9d913-d698-46d4-959b-54511060406a",
+      "cgr_result_id": "44d8a728-4009-456c-a12f-10962bc2d6e2",
+      "student_id": "STU_PURPOSE_FOCUS",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.44999999999999996,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "SYN"
+      ],
+      "reason": "Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    },
+    {
+      "result_id": "e47e771e-ec3c-4ae6-95b6-804ff439f275",
+      "cgr_result_id": "b3ded00c-c238-4c9b-8265-4283ec7bd1b3",
+      "student_id": "STU_PURPOSE_FOCUS",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.743207Z"
+    },
+    {
+      "result_id": "2a50c53e-5b11-4cd4-81fa-67cbb23c013c",
+      "cgr_result_id": "3b943066-aaee-40a2-904e-6a0c4d7352af",
+      "student_id": "STU_PURPOSE_FOCUS",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.9,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "created_at": "2026-07-23T19:12:03.758685Z"
+    },
+    {
+      "result_id": "17bdf647-e8b4-4040-93a6-309f9805eeae",
+      "cgr_result_id": "9c47027c-a637-490d-9904-9ee8067eccd2",
+      "student_id": "STU_PURPOSE_FOCUS",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.85,
+      "decision": "ACCEPT",
+      "tier_resolved": 1,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": null,
+      "signal_3_stability": null,
+      "signal_4_keyword_score": 1.0,
+      "keywords_found": [
+        "purpose",
+        "three-way handshake"
+      ],
+      "reason": "Tier 1 auto-accept: evidence verified, keyword_score=1.00 (2 keywords found)",
+      "created_at": "2026-07-23T19:12:03.758685Z"
+    },
+    {
+      "result_id": "042a5c47-8951-48e8-9448-b603580b705d",
+      "cgr_result_id": "fad164ff-4db8-4c6e-b175-507091c57bf5",
+      "student_id": "STU_MID_DETAIL",
+      "concept_id": "Q1_C1",
+      "trust_score": 0.44999999999999996,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "SYN"
+      ],
+      "reason": "Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    },
+    {
+      "result_id": "17dc7129-d073-4161-97f0-042df40a3412",
+      "cgr_result_id": "60427852-5f0c-4290-af8d-0ca8009543b3",
+      "student_id": "STU_MID_DETAIL",
+      "concept_id": "Q1_C2",
+      "trust_score": 0.39999999999999997,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.3333333333333333,
+      "keywords_found": [
+        "SYN-ACK"
+      ],
+      "reason": "Tier 3: trust=0.40 (nli=0.00, stab=1.0, kw=0.33, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    },
+    {
+      "result_id": "45a7f8ad-7908-400b-a169-2602bd669b38",
+      "cgr_result_id": "2a0c83ee-6b1e-49a3-9fec-801712822430",
+      "student_id": "STU_MID_DETAIL",
+      "concept_id": "Q1_C3",
+      "trust_score": 0.44999999999999996,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.5,
+      "keywords_found": [
+        "ACK"
+      ],
+      "reason": "Tier 3: trust=0.45 (nli=0.00, stab=1.0, kw=0.50, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    },
+    {
+      "result_id": "90a3e67a-57e8-4d25-b507-da4632e017bf",
+      "cgr_result_id": "406f7e32-af01-43c5-97ee-0e845c6c91a8",
+      "student_id": "STU_MID_DETAIL",
+      "concept_id": "Q1_C4",
+      "trust_score": 0.30022108496632427,
+      "decision": "DEFER",
+      "tier_resolved": 3,
+      "signal_1_evidence_verified": true,
+      "signal_2_nli_score": 0.0005527124158106744,
+      "signal_3_stability": 1.0,
+      "signal_4_keyword_score": 0.0,
+      "keywords_found": [],
+      "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
+      "created_at": "2026-07-23T19:12:17.523634Z"
+    }
+  ]
+}

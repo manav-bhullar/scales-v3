@@ -1,0 +1,31 @@
+{
+  "exam_id": "e2e_wave3_tcp_handshake_expanded",
+  "question_id": "Q1",
+  "total_marks": 4,
+  "gold_labels": [
+    {"student_id": "W3_GOOD_01", "expected_band": "high", "expected_score_range": [3.0, 4.0], "watch": "Should ACCEPT most FULL concepts after Signal-1 fix"},
+    {"student_id": "W3_GOOD_02", "expected_band": "high", "expected_score_range": [3.0, 4.0], "watch": "Arrow/list formatting — evidence verify must not false-DEFER"},
+    {"student_id": "W3_GOOD_03", "expected_band": "high", "expected_score_range": [3.0, 4.0], "watch": null},
+    {"student_id": "W3_GOOD_04", "expected_band": "high", "expected_score_range": [3.0, 4.0], "watch": null},
+    {"student_id": "W3_GOOD_05", "expected_band": "high", "expected_score_range": [3.0, 4.0], "watch": null},
+    {"student_id": "W3_MID_01", "expected_band": "mid_low", "expected_score_range": [1.0, 2.5], "watch": "Vague purpose should be PARTIAL not ABSENT after prompt calib"},
+    {"student_id": "W3_MID_02", "expected_band": "mid", "expected_score_range": [1.0, 2.5], "watch": "Explicit purpose sentence → C4 mark"},
+    {"student_id": "W3_MID_03", "expected_band": "mid", "expected_score_range": [1.5, 3.0], "watch": "Flags named + purpose paraphrase"},
+    {"student_id": "W3_MID_04", "expected_band": "mid", "expected_score_range": [1.0, 2.5], "watch": null},
+    {"student_id": "W3_MID_05", "expected_band": "mid_low", "expected_score_range": [1.0, 2.5], "watch": null},
+    {"student_id": "W3_MID_06", "expected_band": "mid", "expected_score_range": [1.5, 3.0], "watch": null},
+    {"student_id": "W3_MID_07", "expected_band": "mid", "expected_score_range": [1.5, 3.0], "watch": "Missing +1 arithmetic → PARTIAL ok"},
+    {"student_id": "W3_MID_08", "expected_band": "mid_low", "expected_score_range": [0.5, 2.0], "watch": "Purpose-only emphasis"},
+    {"student_id": "W3_LOW_01", "expected_band": "low", "expected_score_range": [0.0, 0.5], "watch": "HTTP confusion → near zero"},
+    {"student_id": "W3_LOW_02", "expected_band": "low", "expected_score_range": [0.0, 0.5], "watch": null},
+    {"student_id": "W3_LOW_03", "expected_band": "low", "expected_score_range": [0.0, 0.5], "watch": "UDP wrong protocol"},
+    {"student_id": "W3_LOW_04", "expected_band": "low", "expected_score_range": [0.0, 0.5], "watch": null},
+    {"student_id": "W3_LOW_05", "expected_band": "low", "expected_score_range": [0.0, 0.0], "watch": "Empty knowledge"},
+    {"student_id": "W3_PARTIAL_A", "expected_band": "mid_low", "expected_score_range": [0.5, 2.0], "watch": "Only first segment solid"},
+    {"student_id": "W3_PARTIAL_B", "expected_band": "mid_low", "expected_score_range": [0.5, 2.0], "watch": "Only second segment solid"},
+    {"student_id": "W3_PARTIAL_C", "expected_band": "mid_low", "expected_score_range": [0.5, 2.0], "watch": "Only third segment solid"},
+    {"student_id": "W3_PARTIAL_D", "expected_band": "mid_low", "expected_score_range": [1.0, 2.5], "watch": "Flags only + purpose"},
+    {"student_id": "W3_PARTIAL_E", "expected_band": "mid", "expected_score_range": [1.0, 2.5], "watch": null},
+    {"student_id": "W3_PARTIAL_F", "expected_band": "mid", "expected_score_range": [1.5, 3.0], "watch": "Strong flags/acks but no purpose sentence"}
+  ]
+}

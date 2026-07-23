@@ -11,12 +11,24 @@ Student Answer: {student_answer}
 
 Task:
 1. Find the most relevant sentence/phrase in the student answer.
-   You MUST quote it EXACTLY as it appears — do not paraphrase or modify.
+   You MUST quote it EXACTLY as it appears — do not paraphrase or modify punctuation,
+   arrows, apostrophes, or list markers. Copy a contiguous span from the student text.
    If no relevant text exists, set evidence_span to "" and verdict to ABSENT.
 2. List arguments FOR awarding marks (how the evidence supports the concept).
 3. List arguments AGAINST awarding marks (gaps, inaccuracies, missing detail).
 4. Based on the balance of arguments, judge:
    FULL (fully demonstrates), PARTIAL (partially), ABSENT (not addressed), INCORRECT (contradicts)
+
+   Partial-credit policy (important):
+   - Prefer PARTIAL over ABSENT when the student clearly addresses this knowledge point
+     but is incomplete, vague, missing flags/sequence numbers, or uses informal wording.
+   - Synonyms and paraphrase count (e.g. "makes both ends ready", "syncs sequence numbers",
+     "sets up a reliable connection" can support a purpose / handshake concept).
+   - Do NOT require the literal word "purpose" if the purpose idea is stated.
+   - Use ABSENT only when this concept is not present at all (or only unrelated content).
+   - Use INCORRECT when the student asserts something that contradicts the knowledge point
+     (wrong protocol, wrong flags, etc.).
+   - If a Partial Credit Rule is provided above, follow it.
 5. Award marks using ONLY these discrete values: 0, {half_marks}, or {marks}.
    - FULL → {marks}
    - PARTIAL → {half_marks}

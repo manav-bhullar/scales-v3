@@ -1,0 +1,43 @@
+{
+  "exam_id": "e2e_wave2_tcp_handshake_groq",
+  "question_id": "Q1",
+  "total_marks": 4,
+  "gold_labels": [
+    {
+      "student_id": "STU_GOOD",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "C3/C4 should ideally ACCEPT not DEFER"
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "purpose may be ABSENT (harsh) vs PARTIAL 0.5"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.5],
+      "watch": null
+    },
+    {
+      "student_id": "STU_GOOD_ALT",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "paraphrase of good answer — check C3/C4 DEFER rate"
+    },
+    {
+      "student_id": "STU_PURPOSE_FOCUS",
+      "expected_band": "mid",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "purpose sentence is explicit — should get mark on C4 (PARTIAL/FULL), not ABSENT"
+    },
+    {
+      "student_id": "STU_MID_DETAIL",
+      "expected_band": "mid",
+      "expected_score_range": [1.5, 3.0],
+      "watch": "names SYN/SYN-ACK/ACK + sync purpose without ISN+1 arithmetic"
+    }
+  ]
+}

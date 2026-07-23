@@ -1,0 +1,22 @@
+2026-07-23 21:28:15.214 | INFO     | scales.services.nli_service:_load:48 - Loaded NLI model cross-encoder/nli-deberta-v3-base on cpu
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "phase": "awaiting_review",
+  "total_students": 3,
+  "graded_students": [
+    "STU_GOOD",
+    "STU_PARTIAL",
+    "STU_WRONG"
+  ],
+  "deferred_count": 4,
+  "corrections_count": 0,
+  "review_complete": false,
+  "final_results_count": 0,
+  "message": "phase=awaiting_review graded=3/3 deferred=4 corrections=0"
+}
+
+Review queue (4):
+  - STU_GOOD / Q1_C3: FULL (1.0) ù Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)
+  - STU_GOOD / Q1_C4: FULL (1.0) ù Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)
+  - STU_WRONG / Q1_C1: INCORRECT (0.0) ù Tier 3: trust=0.31 (nli=0.02, stab=1.0, kw=0.00, tau=0.50)
+  - STU_WRONG / Q1_C3: INCORRECT (0.0) ù Tier 3: trust=0.30 (nli=0.01, stab=1.0, kw=0.00, tau=0.50)

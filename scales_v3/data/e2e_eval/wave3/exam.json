@@ -1,0 +1,124 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave3_tcp_handshake_expanded",
+    "subject": "Computer Networks",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "TCP uses a three-way handshake for reliable connection management when establishing a logical end-to-end (process-to-process) connection.\n\n(a) What important control information is carried in the first TCP segment of the three-way handshake, and why?\n(b) What important control information is carried in the second TCP segment, and why?\n(c) What important control information is carried in the third TCP segment, and why?\n(d) Briefly state the purpose of this handshake.",
+        "reference_answer": "TCP establishes a connection with a three-way handshake.\n(a) First segment (client → server): SYN flag and the client's initial sequence number (ISN). This tells the server the client wants to open a connection and which sequence number the client will use.\n(b) Second segment (server → client): SYN and ACK flags, the server's own ISN, and an acknowledgement number equal to client_ISN+1. This acknowledges the client's SYN and offers the server's sequence number.\n(c) Third segment (client → server): ACK flag with acknowledgement number equal to server_ISN+1. This confirms the server's SYN so both sides are synchronized.\n(d) Purpose: synchronize sequence numbers on both ends and establish a reliable full-duplex connection before data transfer.",
+        "rubric": "Total 4 marks (1 mark each):\n1) SYN / client initial sequence number on first segment (why: propose connection + starting seq).\n2) SYN-ACK / server ISN + ack=client_ISN+1 on second segment (why: acknowledge client SYN and propose server seq).\n3) Final ACK / ack=server_ISN+1 on third segment (why: acknowledge server SYN; connection established).\n4) Purpose: synchronize both ends / establish reliable connection before data transfer.\nPartial credit (0.5) only if the idea is partially correct but missing flags/seq or why.\nAward 0 if absent, wrong protocol (e.g. HTTP only), or contradictory.",
+        "total_marks": 4,
+        "student_answers": [
+          {
+            "student_id": "W3_GOOD_01",
+            "answer_text": "TCP opens a connection using a three-way handshake.\nFirst the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.\nThe server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.\nFinally the client sends an ACK with ack = server_ISN + 1 to confirm the server's SYN.\nThis synchronizes both sides and sets up a reliable connection before data is sent."
+          },
+          {
+            "student_id": "W3_GOOD_02",
+            "answer_text": "Connection setup uses three steps.\n1) Client → server: SYN with starting sequence number (ISN) to request a connection.\n2) Server → client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1.\n3) Client → server: ACK with ack = server ISN + 1 confirming the server SYN.\nGoal: synchronize sequence numbers and establish a reliable full-duplex session before sending data."
+          },
+          {
+            "student_id": "W3_GOOD_03",
+            "answer_text": "(a) Client sends SYN plus its ISN so the server learns the starting sequence and that a connection is requested.\n(b) Server returns SYN-ACK with its ISN and ack=client_ISN+1 to acknowledge the client SYN.\n(c) Client finishes with ACK and ack=server_ISN+1.\n(d) The handshake synchronizes sequence numbers and establishes a reliable connection before transfer."
+          },
+          {
+            "student_id": "W3_GOOD_04",
+            "answer_text": "Step1: SYN + client initial sequence number (propose connection).\nStep2: SYN-ACK + server ISN + acknowledgement = client_ISN+1.\nStep3: ACK + acknowledgement = server_ISN+1.\nPurpose is to sync both ends and make a reliable full-duplex TCP connection."
+          },
+          {
+            "student_id": "W3_GOOD_05",
+            "answer_text": "The first segment carries the SYN flag and the client's initial sequence number because the client is requesting a connection and advertising where numbering starts.\nThe second carries SYN and ACK, the server's ISN, and ack equal to client ISN plus one.\nThe third carries ACK with ack equal to server ISN plus one.\nOverall purpose: synchronize sequence numbers and establish reliable bidirectional communication."
+          },
+          {
+            "student_id": "W3_MID_01",
+            "answer_text": "TCP connects using some kind of handshake. The client starts with SYN and the server answers, then the client confirms. It makes sure both computers are ready."
+          },
+          {
+            "student_id": "W3_MID_02",
+            "answer_text": "The client sends SYN, the server replies, then the client ACKs. I do not remember the sequence-number details. The purpose of the three-way handshake is to synchronize sequence numbers on both ends and establish a reliable connection before data transfer."
+          },
+          {
+            "student_id": "W3_MID_03",
+            "answer_text": "In TCP the client first sends a SYN. The server responds with SYN-ACK. Then the client sends the final ACK. This handshake makes both ends ready and synchronizes them so data can be transferred reliably."
+          },
+          {
+            "student_id": "W3_MID_04",
+            "answer_text": "First packet has SYN. Second has SYN-ACK. Third has ACK. I think the numbers increase by one each time but I am unsure about ISN details. It is used so both sides agree before sending data."
+          },
+          {
+            "student_id": "W3_MID_05",
+            "answer_text": "(a) Client sends SYN.\n(b) Server sends SYN-ACK with some acknowledgement number.\n(c) Client sends ACK.\n(d) To open a reliable TCP session."
+          },
+          {
+            "student_id": "W3_MID_06",
+            "answer_text": "Three-way handshake: SYN, then SYN-ACK, then ACK. Client chooses an initial sequence number; server chooses its own. Purpose is connection establishment and sequence synchronization."
+          },
+          {
+            "student_id": "W3_MID_07",
+            "answer_text": "Client SYN with ISN. Server answers with its ISN and ACKs the client. Client ACKs the server. I forgot the exact +1 acknowledgement arithmetic. Purpose: sync sequence numbers."
+          },
+          {
+            "student_id": "W3_MID_08",
+            "answer_text": "Only remember part (d): the handshake lets both ends synchronize and become ready for reliable data transfer. For (a)-(c) I know there are SYN and ACK flags but not the detailed fields."
+          },
+          {
+            "student_id": "W3_LOW_01",
+            "answer_text": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS."
+          },
+          {
+            "student_id": "W3_LOW_02",
+            "answer_text": "TCP handshake is the same as DNS resolution: ask the root, then TLD, then authoritative server, then you get the IP."
+          },
+          {
+            "student_id": "W3_LOW_03",
+            "answer_text": "The three-way handshake is used by UDP to send datagrams faster without connections."
+          },
+          {
+            "student_id": "W3_LOW_04",
+            "answer_text": "First segment carries destination port only. Second carries source port. Third carries checksum. Purpose is congestion control using AIMD."
+          },
+          {
+            "student_id": "W3_LOW_05",
+            "answer_text": "I do not know this topic."
+          },
+          {
+            "student_id": "W3_PARTIAL_A",
+            "answer_text": "Client sends SYN with initial sequence number. That is all I remember about the segments. Purpose might be reliability somehow."
+          },
+          {
+            "student_id": "W3_PARTIAL_B",
+            "answer_text": "Server replies with SYN-ACK and acknowledges client_ISN+1 and gives its own ISN. I am blank on the first and third segments. Purpose: synchronize ends."
+          },
+          {
+            "student_id": "W3_PARTIAL_C",
+            "answer_text": "Third segment is ACK with server_ISN+1. First two steps exist but I cannot describe them. Handshake makes connection reliable."
+          },
+          {
+            "student_id": "W3_PARTIAL_D",
+            "answer_text": "SYN then SYN-ACK then ACK. No sequence numbers mentioned. Purpose: establish connection before data."
+          },
+          {
+            "student_id": "W3_PARTIAL_E",
+            "answer_text": "(a) SYN and client ISN — to start numbering and ask to connect.\n(b) I confuse this with FIN handshake.\n(c) Final ACK somehow.\n(d) Synchronize sequence numbers."
+          },
+          {
+            "student_id": "W3_PARTIAL_F",
+            "answer_text": "Everything is about flags: SYN, SYN-ACK, ACK. Acknowledgement numbers equal previous ISN plus one on both sides. Purpose statement missing."
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "wave": 3,
+    "n_students": 24,
+    "provider_intended": "groq",
+    "focus": [
+      "Larger gold for stabler defer/accuracy metrics",
+      "After Signal-1 evidence-verify fix",
+      "After CGR partial-credit prompt calibration (do not grade until VALIDATION approved)"
+    ],
+    "note": "Synthetic answers for research eval — validate gold bands before live API spend"
+  }
+}

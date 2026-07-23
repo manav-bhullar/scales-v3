@@ -1,0 +1,116 @@
+{
+  "provisional_shrr": "AGREE with system verdict/marks on all DEFERs",
+  "finals": [
+    {
+      "student_id": "STU_GOOD",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.37512257490307094,
+      "has_deferred_concepts": true,
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "reviewed_by": "auto",
+          "trust": 0.85
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "reviewed_by": "auto",
+          "trust": 0.85
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "reviewed_by": "teacher",
+          "trust": 0.3753818396246061
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "reviewed_by": "teacher",
+          "trust": 0.37512257490307094
+        }
+      ]
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.7922953963279724,
+      "has_deferred_concepts": false,
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "FULL",
+          "marks": 1.0,
+          "reviewed_by": "auto",
+          "trust": 0.7922953963279724
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "reviewed_by": "auto",
+          "trust": 0.9
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "reviewed_by": "auto",
+          "trust": 0.9
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "reviewed_by": "auto",
+          "trust": 0.9
+        }
+      ]
+    },
+    {
+      "student_id": "STU_WRONG",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.3038613464683294,
+      "has_deferred_concepts": true,
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "reviewed_by": "teacher",
+          "trust": 0.30761896073818207
+        },
+        {
+          "concept_id": "Q1_C2",
+          "verdict": "ABSENT",
+          "marks": 0.0,
+          "reviewed_by": "auto",
+          "trust": 0.9
+        },
+        {
+          "concept_id": "Q1_C3",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "reviewed_by": "teacher",
+          "trust": 0.3038613464683294
+        },
+        {
+          "concept_id": "Q1_C4",
+          "verdict": "INCORRECT",
+          "marks": 0.0,
+          "reviewed_by": "auto",
+          "trust": 0.8960310816764832
+        }
+      ]
+    }
+  ]
+}

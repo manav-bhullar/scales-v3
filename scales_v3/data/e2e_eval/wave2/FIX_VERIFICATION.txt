@@ -1,0 +1,3 @@
+STU_GOOD/Q1_C3 [curly apostrophe]: verify_evidence=True token_containment=1.000
+STU_GOOD_ALT/Q1_C4 [arrow + list-marker reformat]: verify_evidence=True token_containment=1.000
+__control__/__none__ [disjoint vocabulary (should be False)]: verify_evidence=False token_containment=0.000

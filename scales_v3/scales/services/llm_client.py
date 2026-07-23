@@ -41,6 +41,11 @@ class LLMClient:
             os.environ.setdefault("OPENAI_API_KEY", secrets.openai_api_key)
         if secrets.anthropic_api_key:
             os.environ.setdefault("ANTHROPIC_API_KEY", secrets.anthropic_api_key)
+        if secrets.groq_api_key:
+            os.environ.setdefault("GROQ_API_KEY", secrets.groq_api_key)
+        openrouter_key = secrets.openrouter_api_key or secrets.open_router_api_key
+        if openrouter_key:
+            os.environ.setdefault("OPENROUTER_API_KEY", openrouter_key)
 
     async def call(
         self,
@@ -59,7 +64,8 @@ class LLMClient:
         if not self._has_credentials(model):
             raise LLMAPIError(
                 f"No API key configured for model '{model}'. "
-                "Set GOOGLE_API_KEY in .env for Gemini models."
+                "Set OPENROUTER_API_KEY (openrouter/...), GROQ_API_KEY (groq/...), "
+                "GOOGLE_API_KEY (gemini/...), OPENAI_API_KEY, or ANTHROPIC_API_KEY in .env."
             )
 
         messages = self._build_messages(system_prompt, user_prompt)
@@ -168,7 +174,8 @@ class LLMClient:
             "model": model,
             "messages": messages,
             "temperature": temperature,
-            "timeout": 30,
+            "timeout": 60,
+            "max_tokens": 2048,
             "response_format": self._enforce_structured_output(model, schema),
         }
         # Ask for JSON explicitly in case the provider ignores response_format.
@@ -235,6 +242,10 @@ class LLMClient:
 
     def _has_credentials(self, model: str) -> bool:
         lower = model.lower()
+        if lower.startswith("openrouter/") or "openrouter" in lower:
+            return bool(os.environ.get("OPENROUTER_API_KEY"))
+        if lower.startswith("groq/") or "groq" in lower:
+            return bool(os.environ.get("GROQ_API_KEY"))
         if "gemini" in lower or lower.startswith("gemini/"):
             return bool(os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"))
         if "gpt" in lower or "openai" in lower:
@@ -243,7 +254,9 @@ class LLMClient:
             return bool(os.environ.get("ANTHROPIC_API_KEY"))
         # Unknown provider — let LiteLLM decide; require at least one key.
         return bool(
-            os.environ.get("GOOGLE_API_KEY")
+            os.environ.get("OPENROUTER_API_KEY")
+            or os.environ.get("GROQ_API_KEY")
+            or os.environ.get("GOOGLE_API_KEY")
             or os.environ.get("OPENAI_API_KEY")
             or os.environ.get("ANTHROPIC_API_KEY")
         )

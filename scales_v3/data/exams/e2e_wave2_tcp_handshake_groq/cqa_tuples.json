@@ -1,0 +1,86 @@
+{
+  "exam_id": "e2e_wave2_tcp_handshake_groq",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+      "target_criteria": "SYN / client initial sequence number on first segment",
+      "marks": 1,
+      "expected_keywords": [
+        "SYN",
+        "initial sequence number"
+      ],
+      "acceptable_variants": [
+        "SYN flag and client's ISN"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "1) SYN / client initial sequence number on first segment",
+      "source_reference_span": "(a) First segment (client \u2192 server): SYN flag and the client's initial sequence number (ISN)",
+      "version": 1,
+      "created_at": "2026-07-23T17:11:45.318671Z",
+      "updated_at": "2026-07-23T17:11:45.318671Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+      "target_criteria": "SYN-ACK / server ISN + ack=client_ISN+1 on second segment",
+      "marks": 1,
+      "expected_keywords": [
+        "SYN-ACK",
+        "server ISN",
+        "acknowledgement number"
+      ],
+      "acceptable_variants": [
+        "SYN and ACK flags with server's ISN and ack=client_ISN+1"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "2) SYN-ACK / server ISN + ack=client_ISN+1 on second segment",
+      "source_reference_span": "(b) Second segment (server \u2192 client): SYN and ACK flags, the server's own ISN, and an acknowledgement number equal to client_ISN+1",
+      "version": 1,
+      "created_at": "2026-07-23T17:11:45.318671Z",
+      "updated_at": "2026-07-23T17:11:45.318671Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+      "target_criteria": "Final ACK / ack=server_ISN+1 on third segment",
+      "marks": 1,
+      "expected_keywords": [
+        "ACK",
+        "acknowledgement number"
+      ],
+      "acceptable_variants": [
+        "ACK flag with ack=server_ISN+1"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "3) Final ACK / ack=server_ISN+1 on third segment",
+      "source_reference_span": "(c) Third segment (client \u2192 server): ACK flag with acknowledgement number equal to server_ISN+1",
+      "version": 1,
+      "created_at": "2026-07-23T17:11:45.318671Z",
+      "updated_at": "2026-07-23T17:11:45.318671Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Purpose of three-way handshake in TCP",
+      "target_criteria": "Purpose: synchronize both ends / establish reliable connection before data transfer",
+      "marks": 1,
+      "expected_keywords": [
+        "purpose",
+        "three-way handshake"
+      ],
+      "acceptable_variants": [
+        "goal of 3-step connection setup"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "4) Purpose: synchronize both ends / establish reliable connection before data transfer",
+      "source_reference_span": "(d) Purpose: synchronize sequence numbers on both ends and establish a reliable full-duplex connection before data transfer",
+      "version": 1,
+      "created_at": "2026-07-23T17:11:45.318671Z",
+      "updated_at": "2026-07-23T17:11:45.318671Z"
+    }
+  ]
+}

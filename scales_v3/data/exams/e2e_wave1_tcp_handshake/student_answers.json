@@ -1,0 +1,18 @@
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "question_id": "Q1",
+  "student_answers": [
+    {
+      "student_id": "STU_GOOD",
+      "answer_text": "TCP opens a connection using a three-way handshake.\nFirst the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.\nThe server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.\nFinally the client sends an ACK with ack = server_ISN + 1 to confirm the server's SYN.\nThis synchronizes both sides and sets up a reliable connection before data is sent."
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "answer_text": "TCP connects using some kind of handshake. The client starts with SYN and the server answers, then the client confirms. It makes sure both computers are ready."
+    },
+    {
+      "student_id": "STU_WRONG",
+      "answer_text": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS."
+    }
+  ]
+}
