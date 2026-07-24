@@ -130,6 +130,71 @@ def compute_metrics(
     }
 
 
+def compute_post_review_metrics(
+    grading: dict[str, Any],
+    finals: dict[str, Any],
+    corrections: dict[str, Any],
+    gold: dict[str, Any],
+) -> dict[str, Any]:
+    """Metrics on FINAL scores after SHRR review (teacher-resolved DEFERs).
+
+    Unlike compute_metrics (provisional, ACCEPT-only), this uses final_score
+    from final_results.json, which folds in the resolved/agreed deferred marks.
+    """
+    cbte = grading["cbte_results"]
+    n = len(cbte)
+    n_defer = sum(1 for r in cbte if r["decision"] == "DEFER")
+
+    corr_rows = corrections.get("corrections", corrections) if corrections else []
+    if isinstance(corr_rows, dict):
+        corr_rows = corr_rows.get("corrections", [])
+    corr_types: dict[str, int] = {}
+    for c in corr_rows:
+        t = c.get("correction_type", "?")
+        corr_types[t] = corr_types.get(t, 0) + 1
+
+    final_rows = finals.get("final_results", finals if isinstance(finals, list) else [])
+    gold_by_stu = {g["student_id"]: g for g in gold["gold_labels"]}
+
+    band_hits = 0
+    mae_sum = 0.0
+    scored = 0
+    per_student: list[dict] = []
+    for r in sorted(final_rows, key=lambda x: x["student_id"]):
+        sid = r["student_id"]
+        g = gold_by_stu.get(sid)
+        if not g:
+            continue
+        score = float(r["final_score"])
+        lo, hi = g["expected_score_range"]
+        mid = (lo + hi) / 2.0
+        in_band = lo <= score <= hi
+        band_hits += int(in_band)
+        mae_sum += abs(score - mid)
+        scored += 1
+        per_student.append(
+            {
+                "student_id": sid,
+                "final_score": score,
+                "expected_range": [lo, hi],
+                "in_band": in_band,
+                "band": g.get("expected_band"),
+            }
+        )
+
+    return {
+        "n_items": n,
+        "n_students": scored,
+        "defer_count": n_defer,
+        "defer_rate": round(n_defer / n, 4) if n else 0.0,
+        "review_resolved": len(corr_rows),
+        "correction_types": corr_types,
+        "band_hit_rate": round(band_hits / scored, 4) if scored else 0.0,
+        "mark_mae_vs_band_mid": round(mae_sum / scored, 4) if scored else 0.0,
+        "per_student": per_student,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Append E2E metrics to research ledger")
     parser.add_argument("--exam-dir", required=True, help="Path to data/exams/{exam_id}")
@@ -138,6 +203,11 @@ def main() -> None:
     parser.add_argument("--cbte-override", default="", help="Optional cbte_reeval.json")
     parser.add_argument("--notes", default="")
     parser.add_argument("--ledger", default=str(DEFAULT_LEDGER))
+    parser.add_argument(
+        "--post-review",
+        action="store_true",
+        help="Compute metrics on FINAL scores (after SHRR review) from final_results.json",
+    )
     args = parser.parse_args()
 
     exam_dir = Path(args.exam_dir)
@@ -158,16 +228,38 @@ def main() -> None:
         payload = json.loads(ov.read_text(encoding="utf-8"))
         cbte_override = payload["cbte_results"]
 
-    metrics = compute_metrics(grading, gold, cbte_results=cbte_override)
-    row = {
-        "run_id": args.run_id,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "exam_id": grading.get("exam_id") or gold.get("exam_id"),
-        "notes": args.notes,
-        "cbte_override": bool(args.cbte_override),
-        **{k: v for k, v in metrics.items() if k != "per_student"},
-        "per_student": metrics["per_student"],
-    }
+    if args.post_review:
+        finals = json.loads(
+            (exam_dir / "final_results.json").read_text(encoding="utf-8")
+        )
+        corr_path = exam_dir / "teacher_corrections.json"
+        corrections = (
+            json.loads(corr_path.read_text(encoding="utf-8"))
+            if corr_path.exists()
+            else {}
+        )
+        metrics = compute_post_review_metrics(grading, finals, corrections, gold)
+        row = {
+            "run_id": args.run_id,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "exam_id": grading.get("exam_id") or gold.get("exam_id"),
+            "phase": "post_review",
+            "notes": args.notes,
+            **{k: v for k, v in metrics.items() if k != "per_student"},
+            "per_student": metrics["per_student"],
+        }
+    else:
+        metrics = compute_metrics(grading, gold, cbte_results=cbte_override)
+        row = {
+            "run_id": args.run_id,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "exam_id": grading.get("exam_id") or gold.get("exam_id"),
+            "phase": "pre_review",
+            "notes": args.notes,
+            "cbte_override": bool(args.cbte_override),
+            **{k: v for k, v in metrics.items() if k != "per_student"},
+            "per_student": metrics["per_student"],
+        }
 
     ledger_path = Path(args.ledger)
     ledger_path.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,41 @@
+You are an expert examiner. Given a question, reference answer, rubric, and total marks,
+decompose the grading criteria into Concept-Question-Answer (CQA) tuples.
+
+Rules:
+- Each CQA tests exactly ONE knowledge point
+- CQAs must be mutually exclusive (no double-penalization)
+- Mark allocations must sum exactly to total_marks
+- Include expected keywords and 2-3 acceptable paraphrase variants
+- Include partial credit rules for CQAs worth >1 mark (or null if marks == 1)
+- Every CQA must trace to a specific rubric clause AND reference answer section
+- concept_id must follow the pattern: "{question_id}_C{N}" starting at C1
+
+Question ID: {question_id}
+Question: {question_text}
+Reference Answer: {reference_answer}
+Rubric: {rubric}
+Total Marks: {total_marks}
+
+Output as structured JSON with this schema:
+{
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "knowledge_point": "...",
+      "target_criteria": "...",
+      "marks": 1,
+      "expected_keywords": ["..."],
+      "acceptable_variants": ["..."],
+      "partial_credit_rule": null,
+      "source_rubric_span": "...",
+      "source_reference_span": "..."
+    }
+  ]
+}
+
+Few-shot example (illustrative):
+Question: Explain the three-way handshake in TCP. [4 marks]
+Reference: TCP uses a three-way handshake (SYN → SYN-ACK → ACK) to establish a reliable connection.
+Rubric: 1 mark naming handshake; 1 mark SYN; 1 mark SYN-ACK; 1 mark purpose.
+Example CQA: concept_id=Q1_C1, knowledge_point="TCP uses three-way handshake", marks=1,
+expected_keywords=["three-way","handshake"], acceptable_variants=["3-step connection setup"].

@@ -24,4 +24,20 @@ python scripts/verify_setup.py
 pytest tests/unit/ -v
 ```
 
+## Prompt fine-tuning log
+
+Record each prompt edit and why (failure mode / wave / student):
+
+```powershell
+cd scales_v3
+python scripts/log_prompt_change.py list
+python scripts/log_prompt_change.py add `
+  --prompt cgr_grading.txt `
+  --what "What wording changed" `
+  --why "What failure motivated it" `
+  --evidence "wave / student ids"
+```
+
+See `scales_v3/config/prompts/PROMPT_CHANGELOG.md`.
+
 See `scales_v3/README.md` and `documentation/README.md` for details.

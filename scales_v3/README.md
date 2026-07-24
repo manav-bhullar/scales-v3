@@ -169,6 +169,21 @@ scales_v3/
 6. API + UI (Material 3 Expressive) — done  
 7. Evaluation / FYP metrics (ledger + gold growth in progress)
 
+## Prompt fine-tuning log
+
+Every intentional prompt edit should record **what** changed and **why** (failure mode / wave / student):
+
+```powershell
+python scripts/log_prompt_change.py add `
+  --prompt cgr_grading.txt `
+  --what "..." `
+  --why "..." `
+  --evidence "..."
+python scripts/log_prompt_change.py list -v
+```
+
+See `config/prompts/PROMPT_CHANGELOG.md`.
+
 ## Documentation
 
 Design docs and papers live in `../documentation/` at the workspace root (not pushed to this repo).
