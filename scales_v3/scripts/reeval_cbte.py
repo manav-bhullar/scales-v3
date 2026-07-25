@@ -15,7 +15,7 @@ from pathlib import Path
 from scales.config import get_settings
 from scales.models.cqa import CQATuple
 from scales.models.grading import CGRResult
-from scales.modules.cbte import CBTEModule
+from scales.modules.cbte import CBTEModule, apply_cohort_absent_audit
 from scales.services.nli_service import NLIService
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -73,6 +73,14 @@ def main() -> None:
         items.append((cgr, answers[cgr.student_id], cqa))
 
     results = cbte.evaluate_batch(items)
+
+    cgr_only = [cgr for cgr, _answer, _cqa in items]
+    flipped_by_audit = apply_cohort_absent_audit(cgr_only, results, settings.cbte)
+    if flipped_by_audit:
+        print(
+            f"Cohort audit escalated {len(flipped_by_audit)} ABSENT auto-accepts "
+            "to DEFER (see per-concept warnings above)."
+        )
 
     # Compare old vs new decisions
     old_by_key = {

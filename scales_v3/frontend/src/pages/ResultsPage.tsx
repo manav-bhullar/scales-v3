@@ -60,12 +60,20 @@ export function ResultsPage() {
           <p className="m3-body-large mt-2 mb-0">
             Resolve the DEFER queue and finalize first.
           </p>
-          <Link
-            to={`/exams/${encodeURIComponent(examId)}/review`}
-            className="m3-fab no-underline mt-5 inline-flex"
-          >
-            Open review
-          </Link>
+          <div className="flex gap-3 mt-5 flex-wrap">
+            <Link
+              to={`/exams/${encodeURIComponent(examId)}/review`}
+              className="m3-fab no-underline inline-flex"
+            >
+              Open review
+            </Link>
+            <Link
+              to={`/exams/${encodeURIComponent(examId)}/explain`}
+              className="m3-btn-tonal no-underline inline-flex"
+            >
+              See why these marks
+            </Link>
+          </div>
         </div>
       )}
 

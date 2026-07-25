@@ -59,6 +59,52 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-011 — 2026-07-25 — `api/main.py` — `ui.accept_audit_surface` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `ui.accept_audit_surface`
+
+**What:** New GET /api/exams/{id}/breakdown plus ExplainPage UI: per-student, per-concept 'why these marks' view (verdict, marks, reasoning, quoted evidence, keyword found/missing split, CBTE signals, teacher override). Adds a cohort 'rubric health' strip and a 'Zeros never checked' filter that lists ACCEPTed zero-mark judgments.
+
+**Why:** Wave5 Mohler underscored 20/28 students and SHRR could not fix any of it: 72 of 79 zero-mark judgments were auto-ACCEPTed at Tier 1, so they never entered the DEFER queue. The review UI only ever showed DEFERs, making accepted zeros structurally invisible. There was also no way to tell an unearnable rubric concept (C4: 1/28 earned) from a genuinely missed one.
+
+**If reverted:** Teachers can only see DEFERs again. Accepted zeros stay invisible, dead rubric concepts stay undetectable without a hand-written script, and every underscoring diagnosis needs a developer reading grading_results.json.
+
+**Tradeoff:** Read-only surface: audit findings still cannot be corrected because SHRR only accepts corrections for items in the DEFER queue. Reviewing accepted zeros also costs teacher time the trust layer was meant to save, so it competes with the point of CBTE.
+
+**Evidence:** data/e2e_eval/wave5_real/mohler_bst_delete/WAVE5_REAL1_REPORT.md; scripts/diagnose_wave5_underscore.py; tests/unit/test_api_breakdown.py
+
+**Result:** Live on e2e_wave5_mohler_bst_delete: 28 students x 4 concepts served, 72 unchecked zeros surfaced, C1 (6/28 earned) and C4 (1/28) flagged as suspect concepts. Diagnostic: dropping C1+C4 moves MAE 2.14 -> 1.77 and in-band 8/28 -> 12/28, so rubric design is the largest cause and grader leniency the residual. 124 backend tests + frontend build pass.
+
+**Snapshot:** `snapshots/TC-011_main.py`
+
+**File hash (16):** `9aa2f82b8cf477fc`
+
+
+### TC-010 — 2026-07-25 — `data/e2e_eval/wave5_real/mohler_bst_delete/exam.json` — `dataset.real_data_wave5` (measure)
+
+**Kind:** dataset  
+**Direction:** measure
+
+**Screw:** `dataset.real_data_wave5`
+
+**What:** Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST node deletion), 28 UNT student answers, gold bands derived from two human graders (0-10 normalized to 0-5); 5-mark rubric authored by us
+
+**Why:** All prior packs are synthetic LLM-authored; real data breaks circularity and tests DEFER behaviour on messy authentic text
+
+**If reverted:** Evaluation evidence stays purely synthetic; FYP claim 'works on real answers' unsupported
+
+**Tradeoff:** Rubric is ours, not UNT's (holistic 0-10) - calibration tension expected; band mix top-heavy (15 high/1 low) so false-ACCEPT signal weaker on this pack
+
+**Evidence:** huggingface.co/datasets/nkazi/MohlerASAG; ACL P11-1076; data/e2e_eval/wave5_real/mohler_bst_delete/
+
+**Result:** Pack built + contract tests pass (9); awaiting human approval before live grade
+
+**File hash (16):** `12d766bb2114e8f9`
+
+
 ### TC-009 — 2026-07-25 — `config/settings.yaml` — `grading.mark_granularity` (restructure)
 
 **Kind:** metric  

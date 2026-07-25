@@ -1,10 +1,120 @@
 {
   "exam_id": "e2e_wave5_mohler_bst_delete",
-  "reeval_at": "20260725T164531Z",
+  "reeval_at": "20260725T165457Z",
   "nli_enabled": false,
   "defer_before": 23,
-  "defer_after": 33,
+  "defer_after": 79,
   "flips": [
+    {
+      "student_id": "MOH_A00",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A00",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A01",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A02",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A02",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A03",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A03",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A04",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A04",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A05",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
     {
       "student_id": "MOH_A05",
       "concept_id": "Q1_C3",
@@ -14,6 +124,105 @@
       "new_tier": 3,
       "old_reason": "Tier 2 accept: NLI entailment = 0.98",
       "new_reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A05",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A06",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A07",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A07",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A08",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A09",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A09",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A10",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A10",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
       "signal_1": true
     },
     {
@@ -39,6 +248,28 @@
       "signal_1": true
     },
     {
+      "student_id": "MOH_A11",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A12",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
       "student_id": "MOH_A12",
       "concept_id": "Q1_C2",
       "old_decision": "ACCEPT",
@@ -47,6 +278,61 @@
       "new_tier": 3,
       "old_reason": "Tier 2 accept: NLI entailment = 1.00",
       "new_reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A12",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A13",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A14",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A14",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A15",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
       "signal_1": true
     },
     {
@@ -61,6 +347,39 @@
       "signal_1": true
     },
     {
+      "student_id": "MOH_A15",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A16",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A16",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
       "student_id": "MOH_A17",
       "concept_id": "Q1_C3",
       "old_decision": "ACCEPT",
@@ -69,6 +388,61 @@
       "new_tier": 3,
       "old_reason": "Tier 2 accept: NLI entailment = 0.99",
       "new_reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A17",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A18",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A18",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A19",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A20",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
       "signal_1": true
     },
     {
@@ -83,6 +457,28 @@
       "signal_1": true
     },
     {
+      "student_id": "MOH_A20",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A21",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
       "student_id": "MOH_A21",
       "concept_id": "Q1_C2",
       "old_decision": "ACCEPT",
@@ -91,6 +487,50 @@
       "new_tier": 3,
       "old_reason": "Tier 2 accept: NLI entailment = 0.76",
       "new_reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A21",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A22",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A22",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A23",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
       "signal_1": true
     },
     {
@@ -105,6 +545,39 @@
       "signal_1": true
     },
     {
+      "student_id": "MOH_A24",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A25",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A26",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
       "student_id": "MOH_A26",
       "concept_id": "Q1_C2",
       "old_decision": "ACCEPT",
@@ -114,28 +587,61 @@
       "old_reason": "Tier 2 accept: NLI entailment = 0.94",
       "new_reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
       "signal_1": true
+    },
+    {
+      "student_id": "MOH_A26",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A27",
+      "concept_id": "Q1_C1",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
+    },
+    {
+      "student_id": "MOH_A27",
+      "concept_id": "Q1_C4",
+      "old_decision": "ACCEPT",
+      "new_decision": "DEFER",
+      "old_tier": 1,
+      "new_tier": 1,
+      "old_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
+      "new_reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "signal_1": true
     }
   ],
   "false_defer_good_c3_c4": [],
   "cbte_results": [
     {
-      "result_id": "a92f7179-ad15-4aa3-bcb2-2d8bd530d4d9",
+      "result_id": "523426d9-c388-4e58-991e-9a0bf270dd6f",
       "cgr_result_id": "5a38188f-25c3-4607-b5ff-e68253c1aa82",
       "student_id": "MOH_A00",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.392327Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.718398Z"
     },
     {
-      "result_id": "98a01f3f-4112-4423-8365-da3e07dc841f",
+      "result_id": "f68f5b83-a34c-43f0-8b3a-dac063e81892",
       "cgr_result_id": "2150c882-b110-476f-9331-15cd59f4dd4d",
       "student_id": "MOH_A00",
       "concept_id": "Q1_C2",
@@ -150,10 +656,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.790785Z"
     },
     {
-      "result_id": "f2d2a312-2af7-474c-87c9-e0b20c576b45",
+      "result_id": "8aa67b35-e12e-4c82-b454-bd0e46c033cb",
       "cgr_result_id": "3517462f-4589-4cd2-bf3b-db70b2eaa0a0",
       "student_id": "MOH_A00",
       "concept_id": "Q1_C3",
@@ -166,26 +672,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "f9a295c3-0871-4d84-ae7e-1c40d7888821",
+      "result_id": "e4978af5-8795-44a0-ab06-eedf45bdb315",
       "cgr_result_id": "3f2a179c-50f3-4663-a474-a427a6d34ebf",
       "student_id": "MOH_A00",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "db10924f-0382-435b-9939-423c41f03995",
+      "result_id": "cdf3dcf0-759e-46d2-9731-edd7a443ea58",
       "cgr_result_id": "25622f4f-85ad-403c-9ed1-4e4893028936",
       "student_id": "MOH_A01",
       "concept_id": "Q1_C1",
@@ -200,10 +706,10 @@
         "find"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.67 (1 keywords found)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "40cb215c-70bc-4d42-9aa2-1705339f39d2",
+      "result_id": "e0252215-f6c9-406f-b88f-cab20504523e",
       "cgr_result_id": "eb1b6048-846c-4070-9f5a-11dc2f806ae4",
       "student_id": "MOH_A01",
       "concept_id": "Q1_C2",
@@ -216,10 +722,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "6cc589ee-edf9-4fe8-a5c7-2e6c87aa48f9",
+      "result_id": "972fc603-70eb-4da6-ba1d-eea0dee957a8",
       "cgr_result_id": "869acd1b-8941-47a6-aa60-572a35fde1d6",
       "student_id": "MOH_A01",
       "concept_id": "Q1_C3",
@@ -232,42 +738,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "4434a84d-478a-4c9d-9156-496979c98f48",
+      "result_id": "4f221671-e54c-4c50-9c21-ac76a3c16be9",
       "cgr_result_id": "401eecf6-9659-41f1-8099-632ef000938d",
       "student_id": "MOH_A01",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "883947d0-a22d-45b8-a5b5-2923a326449a",
+      "result_id": "104bea18-9e94-4098-b14c-585bef0a1a14",
       "cgr_result_id": "ab2facd3-11bf-40a1-867d-41f4db8269be",
       "student_id": "MOH_A02",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "0bec5f7b-a1de-49b7-8f39-f869690a62bc",
+      "result_id": "cf561641-0505-4c8d-a984-6f7830349bf9",
       "cgr_result_id": "6bf35770-ac09-44c0-a738-45b7ca775b25",
       "student_id": "MOH_A02",
       "concept_id": "Q1_C2",
@@ -280,10 +786,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "65fd0c9b-6330-494c-aa29-15ad37dd162c",
+      "result_id": "2c875222-0db9-42bb-bcaa-27c45c1289be",
       "cgr_result_id": "d1bc1b99-f21a-4c72-b467-005866da5730",
       "student_id": "MOH_A02",
       "concept_id": "Q1_C3",
@@ -296,42 +802,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "1c1679ff-9d06-460b-b8f9-f51f156a4f9e",
+      "result_id": "a515bd24-3399-4225-b6d5-d0dc838fbb5a",
       "cgr_result_id": "a5513570-e904-40d4-8538-b0f659a24ddf",
       "student_id": "MOH_A02",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "9403c797-c02f-41a5-b0f0-197bd12649e3",
+      "result_id": "bf30bc07-d7d6-435b-9462-acc6220682c5",
       "cgr_result_id": "9b6acad3-7184-42dc-b7c4-43a08bfb0124",
       "student_id": "MOH_A03",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "7095c9e4-1593-49d2-aae1-020c14f73207",
+      "result_id": "cd55b3f2-a427-48f6-8fc7-1eed59b8e659",
       "cgr_result_id": "6ee263cc-5d65-4769-9057-76b37431b1e4",
       "student_id": "MOH_A03",
       "concept_id": "Q1_C2",
@@ -344,10 +850,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "7ab0a1d2-9910-41a2-83fe-5604908de7b9",
+      "result_id": "849ffa62-d427-435d-aa07-f5fabed7bc07",
       "cgr_result_id": "14dfb1ed-438c-43ad-9ef8-245f67e8e521",
       "student_id": "MOH_A03",
       "concept_id": "Q1_C3",
@@ -360,42 +866,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "ad93653c-c992-41f6-9361-d1e704a59568",
+      "result_id": "e5995fb6-cc2e-419b-a10d-3b7f6e6ad3bd",
       "cgr_result_id": "06f8e1ce-5cff-4593-990d-f47a15db897d",
       "student_id": "MOH_A03",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "f8b302c2-7ccb-4e7e-b6dd-df49595ebff2",
+      "result_id": "0ab3b9a0-7ebe-443b-a338-813101e0493a",
       "cgr_result_id": "05816d8d-f40f-4671-8499-b966e22e257e",
       "student_id": "MOH_A04",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "2c253e44-a15a-4e57-8ea2-aeda3b06096c",
+      "result_id": "44c289d3-66fe-46bb-8e62-3a93f56402ee",
       "cgr_result_id": "2e204f58-b335-4f40-a187-46c74b4f4364",
       "student_id": "MOH_A04",
       "concept_id": "Q1_C2",
@@ -408,10 +914,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "1e09a4a0-52bd-4c6a-9de0-1eb626d78208",
+      "result_id": "d24cc63a-45d4-4160-aaba-55c431bc3c03",
       "cgr_result_id": "82e7bda2-5482-4897-8b3c-e96b00446eb0",
       "student_id": "MOH_A04",
       "concept_id": "Q1_C3",
@@ -424,42 +930,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "fdbe8868-0d21-448b-aa3f-fd68dbf81440",
+      "result_id": "83f0dc7d-4256-45e0-b4a5-4bc49e08174b",
       "cgr_result_id": "2ca03475-7c56-4fc1-9bbb-735e88968d35",
       "student_id": "MOH_A04",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "c2d61467-5836-47f1-9ceb-4b5487271343",
+      "result_id": "e440a857-aacb-44f8-ab2c-56c244c2b406",
       "cgr_result_id": "b3d6484b-773a-42f3-a2eb-1fc5f093c789",
       "student_id": "MOH_A05",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "ae70da17-1515-47d8-b2af-b010f4d22312",
+      "result_id": "9f0d9288-296e-471e-9ded-75abc6ca975d",
       "cgr_result_id": "11dc1824-3c42-49d8-a927-ba956ea9da24",
       "student_id": "MOH_A05",
       "concept_id": "Q1_C2",
@@ -472,10 +978,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "fd093993-ebfd-4d5a-b150-2a2de026b650",
+      "result_id": "2d2ff3ad-9109-4a33-919f-8dc9b6ed776a",
       "cgr_result_id": "dd172b87-bd3a-4d8c-9012-a9bfd8598fff",
       "student_id": "MOH_A05",
       "concept_id": "Q1_C3",
@@ -490,26 +996,26 @@
         "replace"
       ],
       "reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "c02e589f-6316-4478-9375-816b6759d616",
+      "result_id": "3f04584b-0799-44f6-99f8-2cc7ed7185fe",
       "cgr_result_id": "08aacd20-b277-43cc-8b51-e50510f60b15",
       "student_id": "MOH_A05",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.408377Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "a1d12ba8-9015-4965-8d4a-6d7e5ec0a16c",
+      "result_id": "a6bd4dba-d0bc-4d38-83b0-5773edb0bdcf",
       "cgr_result_id": "129d837e-acea-48e5-a89d-eada89166292",
       "student_id": "MOH_A06",
       "concept_id": "Q1_C1",
@@ -524,10 +1030,10 @@
         "find"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.67 (1 keywords found)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.720437Z"
     },
     {
-      "result_id": "fa4de7c3-820b-4178-bba4-a51677a0dd71",
+      "result_id": "c1f7ecc5-19b4-453f-969a-21100417af7f",
       "cgr_result_id": "5761222b-c65e-4789-9177-ba08b9a553c6",
       "student_id": "MOH_A06",
       "concept_id": "Q1_C2",
@@ -540,10 +1046,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "7f04606e-c664-4e4f-9ce2-c41ef06e6827",
+      "result_id": "3f904d9d-cd77-419f-b9db-8eadedba9301",
       "cgr_result_id": "dcd56a6b-5bcb-487d-89f7-bbe76eb52d32",
       "student_id": "MOH_A06",
       "concept_id": "Q1_C3",
@@ -556,42 +1062,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "9b3e0864-dd04-4cf3-954a-816aea5b7459",
+      "result_id": "f0c6aa71-bbd9-40f2-89ba-971ff3c1901d",
       "cgr_result_id": "20fb0704-d74f-4bcc-acb2-b5f171980be1",
       "student_id": "MOH_A06",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "245bc83f-a4ae-4c91-ab74-5d6652e3b3dd",
+      "result_id": "d07b820f-51ba-4f58-8e45-b99a0314119d",
       "cgr_result_id": "c89af698-e29d-4d8b-8a79-1506f6e48bb8",
       "student_id": "MOH_A07",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "c812f032-7892-40f4-bcf3-8916fec7c5cd",
+      "result_id": "32071413-87ea-4f38-b48f-0d1df68bbe71",
       "cgr_result_id": "52093abf-a225-4b89-bc13-d11c448d776a",
       "student_id": "MOH_A07",
       "concept_id": "Q1_C2",
@@ -604,10 +1110,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "1b98bc1f-35c1-4e86-8bcb-59d4c9bf111d",
+      "result_id": "cb2e3686-b812-4df7-82ae-bf5d54345855",
       "cgr_result_id": "11a9a72a-11e4-4ba7-88b1-c318845c2d42",
       "student_id": "MOH_A07",
       "concept_id": "Q1_C3",
@@ -620,26 +1126,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "2af2ea86-cf8b-4398-b289-ebfe1e3b6c7c",
+      "result_id": "4cfbec1d-9059-434b-b5c8-5afaecc69c1c",
       "cgr_result_id": "eb7347eb-aee6-4a4b-923b-1555cb970d21",
       "student_id": "MOH_A07",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "9ceeced0-7631-441c-b46a-d1d85c60e55e",
+      "result_id": "40d218fc-4911-44cc-be25-c2d168b562ed",
       "cgr_result_id": "c2b4efce-6b6c-4bda-94d6-c383e30f6e60",
       "student_id": "MOH_A08",
       "concept_id": "Q1_C1",
@@ -654,10 +1160,10 @@
         "search"
       ],
       "reason": "Tier 3: trust=0.40 (nli=0.00, stab=1.0, kw=0.33, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "7a72a4a7-fcae-4e6a-aeee-02b61bfdd974",
+      "result_id": "4a7dd58a-03fd-4724-b98c-3c64ed340ff0",
       "cgr_result_id": "d8667c19-0f95-46b1-a155-2b9fee40eb54",
       "student_id": "MOH_A08",
       "concept_id": "Q1_C2",
@@ -670,10 +1176,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "673eb21f-b425-4de4-8c35-eeeda2e36600",
+      "result_id": "da65b8a4-70a7-4544-bbc7-71d429d59431",
       "cgr_result_id": "b7b77c58-3082-4f1e-8887-c6b3cad38e70",
       "student_id": "MOH_A08",
       "concept_id": "Q1_C3",
@@ -686,42 +1192,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "5d0a5e39-29a9-439c-aceb-414942fc739f",
+      "result_id": "d9d8b464-0de0-4f32-936e-aca189aa740a",
       "cgr_result_id": "ff686074-9f26-4e05-8c4e-0ae8346493cf",
       "student_id": "MOH_A08",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "3a0ac56a-97ca-4cff-b654-7dcca5fbe736",
+      "result_id": "4d6da2c0-22df-4a41-ae4c-d0b2a6d204b2",
       "cgr_result_id": "d82780a6-3043-41f4-b2dc-9ef91b20b0c1",
       "student_id": "MOH_A09",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "1ba5f3c6-5f8a-4b46-96f2-ce971086d18f",
+      "result_id": "9b545224-183f-4f0b-a26b-681b2c672a93",
       "cgr_result_id": "0b036339-8f1f-4e2c-ae35-a26bd5136131",
       "student_id": "MOH_A09",
       "concept_id": "Q1_C2",
@@ -734,10 +1240,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "75b83062-f3f2-42a4-963e-6177902b021a",
+      "result_id": "caa1b222-0f3c-46ae-bff2-b783ac7154f3",
       "cgr_result_id": "4c8dd0e0-68c8-44d4-a81b-d78566eca359",
       "student_id": "MOH_A09",
       "concept_id": "Q1_C3",
@@ -750,42 +1256,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "f7e2b7b3-b922-4c45-bfcb-26ca76b941ef",
+      "result_id": "6c80ac70-4da0-40d7-91f6-fa21b35ca151",
       "cgr_result_id": "851b4854-c16b-4568-82e9-bf2604175b15",
       "student_id": "MOH_A09",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "4f515d3d-d3f5-4595-bfda-ebae5360c62c",
+      "result_id": "d277fda4-a7e2-4e7a-a852-3857727e4859",
       "cgr_result_id": "5b70f50b-0922-44f3-985a-1c3ed89d1a9e",
       "student_id": "MOH_A10",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "4ecd9c6e-1f6f-468c-a0ed-718543279431",
+      "result_id": "7308bc25-6a8e-4915-9bb2-10ded6ad781d",
       "cgr_result_id": "8c1db3ef-6d47-4e18-b755-db3b37c8f99f",
       "student_id": "MOH_A10",
       "concept_id": "Q1_C2",
@@ -798,10 +1304,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "8764fa52-1f2a-4ac6-8fa2-c6707890c4fb",
+      "result_id": "9bd7bc75-7f75-44ad-a895-d1ced62260e7",
       "cgr_result_id": "0d86a44e-ee25-47ac-94cd-33a47a623611",
       "student_id": "MOH_A10",
       "concept_id": "Q1_C3",
@@ -814,26 +1320,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "40cefebe-8b6c-4da1-9c15-a04346425326",
+      "result_id": "1e856b85-ade2-48ac-8296-8bb306ea3f30",
       "cgr_result_id": "cc1afca7-8ae9-47b6-9eef-14d12160f0cf",
       "student_id": "MOH_A10",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.424396Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "2c99d7e0-0330-4553-8d62-6de6f557cae2",
+      "result_id": "49c5d530-dc34-4b28-9fd6-f00db594d555",
       "cgr_result_id": "d445f2e2-45d6-49c9-840a-a2ce7fe0e0fa",
       "student_id": "MOH_A11",
       "concept_id": "Q1_C1",
@@ -848,10 +1354,10 @@
         "search"
       ],
       "reason": "Tier 3: trust=0.40 (nli=0.00, stab=1.0, kw=0.33, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "35039ed5-398f-434a-80c6-4fec6d601697",
+      "result_id": "5153bd44-70f2-4618-8ec0-825183df3dee",
       "cgr_result_id": "ccc6d8ab-4a03-4d7d-aa8b-7bb6f38d2764",
       "student_id": "MOH_A11",
       "concept_id": "Q1_C2",
@@ -864,10 +1370,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "769a2604-c7f1-41fd-8193-1ab30999c066",
+      "result_id": "1f855e7c-a6f8-4391-b21e-c6368546757e",
       "cgr_result_id": "d1d9c6de-0116-4929-a96d-4ada4eafe577",
       "student_id": "MOH_A11",
       "concept_id": "Q1_C3",
@@ -882,42 +1388,42 @@
         "replace"
       ],
       "reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "e02e85bc-6099-425e-ba4f-52581dad652a",
+      "result_id": "ca343d9e-d027-45ff-9bed-b8ec2931d82c",
       "cgr_result_id": "69ffa9b4-a76c-4317-9804-8722e0c01eb7",
       "student_id": "MOH_A11",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.736372Z"
     },
     {
-      "result_id": "21e442c5-c05c-4e40-b697-6d025980b2a8",
+      "result_id": "e9d06b36-b37d-4e06-ade6-39f100f23c9d",
       "cgr_result_id": "61eab154-d21e-42d5-815b-5767ff51030e",
       "student_id": "MOH_A12",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "62b5de06-0bd9-4ce0-a136-1cb5f289c739",
+      "result_id": "94be578e-86cf-4d9e-a8d4-ff0d39488efe",
       "cgr_result_id": "1ae52c78-b127-44b9-803a-85fe48a42032",
       "student_id": "MOH_A12",
       "concept_id": "Q1_C2",
@@ -932,10 +1438,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "61aa83ae-d547-42a0-b73c-21050e5c1797",
+      "result_id": "d6670c01-5173-42b5-9594-9435d24a584f",
       "cgr_result_id": "31382ab7-7153-4377-9494-b10abfc31bf0",
       "student_id": "MOH_A12",
       "concept_id": "Q1_C3",
@@ -951,26 +1457,26 @@
         "rightmost"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.40 (2 keywords found)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "4ad2dbdf-44c4-4436-b5de-b0c2ea5fe14c",
+      "result_id": "e12d22af-9d35-4006-bd77-1dc34aa6b671",
       "cgr_result_id": "a5a409a0-6ed3-42d1-bb2d-dad889649a7e",
       "student_id": "MOH_A12",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "7185bbc4-d964-4275-9226-b95aa2abe7f9",
+      "result_id": "54f26c8f-251a-40ac-94fa-f812ddc31d99",
       "cgr_result_id": "bafd688b-39d5-4001-b064-e60b3349f197",
       "student_id": "MOH_A13",
       "concept_id": "Q1_C1",
@@ -985,10 +1491,10 @@
         "search"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.33 (1 keywords found)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "0d8627ec-5cf8-4878-a94c-1e6567252e1c",
+      "result_id": "55d0c435-0792-45ff-84b3-7de71a941611",
       "cgr_result_id": "204a0c41-2ea3-4c21-beed-4d6934f19ad9",
       "student_id": "MOH_A13",
       "concept_id": "Q1_C2",
@@ -1001,10 +1507,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "a9dbf962-8a12-4bed-9ece-ca896a956e3f",
+      "result_id": "00c02346-17a8-4f24-aee4-6326f3366593",
       "cgr_result_id": "32689d16-09b0-4b45-a912-eb9b96529191",
       "student_id": "MOH_A13",
       "concept_id": "Q1_C3",
@@ -1017,42 +1523,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "26590ae9-9c80-46e2-8ec9-4e3342be1761",
+      "result_id": "e7d57cad-3558-4db9-b259-3093f53384dd",
       "cgr_result_id": "b1644d14-99c6-47b8-9c10-609cbf9490f4",
       "student_id": "MOH_A13",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "dcc42656-50ae-4d12-8457-821155f81aaf",
+      "result_id": "331ff961-02b2-46c4-b0d8-4adc287f6143",
       "cgr_result_id": "f47621cb-4306-467f-828c-526565b016ea",
       "student_id": "MOH_A14",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "42092f43-e99f-4961-b009-6f0f3534ffa3",
+      "result_id": "58120502-a434-40fd-bb2d-2bebfa28d70a",
       "cgr_result_id": "e56983b0-f8ac-4c5c-84a9-775146493c92",
       "student_id": "MOH_A14",
       "concept_id": "Q1_C2",
@@ -1065,10 +1571,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "140522c7-ccd4-467b-9b60-9aa4f2fb2cbb",
+      "result_id": "f3ff1da0-6400-4cf9-980c-45615a452f74",
       "cgr_result_id": "97a5ee56-615d-41d9-9d80-d3bbe98f1421",
       "student_id": "MOH_A14",
       "concept_id": "Q1_C3",
@@ -1081,42 +1587,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "7cb93707-5306-405a-8c73-4f8d82f588ee",
+      "result_id": "a0b221d3-1392-44ca-9048-3683b43c7be5",
       "cgr_result_id": "3dee7fb4-6508-454b-b608-58bce1b228d8",
       "student_id": "MOH_A14",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "25c1f79e-26ea-4a28-a490-0bfd4a2fe81c",
+      "result_id": "0aabe095-6755-4c96-8fc4-1ab4613b8285",
       "cgr_result_id": "7de8c463-480b-49a6-bd6c-c66c814f022b",
       "student_id": "MOH_A15",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "4b4cd6ec-57c1-411b-94b5-01c8c850fd20",
+      "result_id": "a45ee785-d056-484b-95fd-cf2fb842eb8c",
       "cgr_result_id": "654b33c7-e7fc-4060-8165-8863533a951f",
       "student_id": "MOH_A15",
       "concept_id": "Q1_C2",
@@ -1129,10 +1635,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "69a8d280-06e5-49b4-8ef1-3870da7b740e",
+      "result_id": "dd47101a-bf5f-4a7b-b933-671d5d77cda4",
       "cgr_result_id": "d20e41e2-4787-4044-8eb8-68a3a3cb5057",
       "student_id": "MOH_A15",
       "concept_id": "Q1_C3",
@@ -1145,42 +1651,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "b64d1eca-b212-4fa5-8500-7b7f03b38f2b",
+      "result_id": "7b3ad646-5b58-4a8f-b0d6-70048be6eb14",
       "cgr_result_id": "aff8d742-e915-4f3b-8cb2-17d27a46c6a0",
       "student_id": "MOH_A15",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "6331083b-c50c-4086-b3ab-66228eb66c0f",
+      "result_id": "78c40a23-29ae-49dd-a6d7-608cb35a28cd",
       "cgr_result_id": "5321ec7d-dfe7-41f0-aa8d-f5790e7a4e59",
       "student_id": "MOH_A16",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "b3536756-98b5-4002-b1c0-b0d0fa1e4a39",
+      "result_id": "78eecc54-b478-46e7-a45b-675459d405b4",
       "cgr_result_id": "b552d77d-e062-4064-8079-551a07da14fd",
       "student_id": "MOH_A16",
       "concept_id": "Q1_C2",
@@ -1193,10 +1699,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "e4f760b1-f82e-4568-a690-279887634314",
+      "result_id": "5f138751-3657-487b-9033-10bb20a2a649",
       "cgr_result_id": "1beae605-3695-4586-b46d-d445aaa665c3",
       "student_id": "MOH_A16",
       "concept_id": "Q1_C3",
@@ -1209,26 +1715,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.440045Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "e5210ab0-1fe5-4a0a-9064-0be635658800",
+      "result_id": "2f00891e-679d-4d6d-bcc0-c35005e567e6",
       "cgr_result_id": "d8ca4ec8-0834-4e61-82c2-5e95cbf4db76",
       "student_id": "MOH_A16",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.456109Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "b38a35cf-a251-4b3e-ac1e-835f1f0966f4",
+      "result_id": "51553bff-e933-4996-a746-e655733f2ccf",
       "cgr_result_id": "832c4904-7960-4eb3-aba6-cdd372d24a76",
       "student_id": "MOH_A17",
       "concept_id": "Q1_C1",
@@ -1243,10 +1749,10 @@
         "find"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.33 (1 keywords found)",
-      "created_at": "2026-07-25T16:45:31.457268Z"
+      "created_at": "2026-07-25T16:54:57.752098Z"
     },
     {
-      "result_id": "d5ea25b2-9b59-4ec6-95af-7331e7bd8597",
+      "result_id": "66ecd8fa-61c2-46f9-b3b8-2d44ec7d8314",
       "cgr_result_id": "d9adb702-b4eb-4408-a479-6b9475172844",
       "student_id": "MOH_A17",
       "concept_id": "Q1_C2",
@@ -1259,10 +1765,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "d7d65bc6-cc4f-4fbb-b9bb-112ef3f875c1",
+      "result_id": "dc96a4ce-e42c-416e-825b-d1a66ce5f036",
       "cgr_result_id": "50de297c-ede0-4826-93a4-24de38dbd6de",
       "student_id": "MOH_A17",
       "concept_id": "Q1_C3",
@@ -1275,42 +1781,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "87eb3695-0f3d-4f62-b655-3122214d3259",
+      "result_id": "77c157d4-fe5a-45d0-a6f2-45aacccdb2b9",
       "cgr_result_id": "9a0f7ccf-7f26-4d60-8dfe-f97f30793f29",
       "student_id": "MOH_A17",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.459322Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "69263901-b095-4f00-98ca-497955f359e9",
+      "result_id": "6e6161a9-36b3-4210-bb2e-3ce9c818ca48",
       "cgr_result_id": "3bc45401-13e0-421a-88fd-0dd3368af376",
       "student_id": "MOH_A18",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.459322Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "6799fcdb-98ec-4160-a523-03995ba865ef",
+      "result_id": "e817dad6-6bbb-450e-9a85-d98a6636f426",
       "cgr_result_id": "19f49d26-e83c-4f71-b771-318f2e8708bc",
       "student_id": "MOH_A18",
       "concept_id": "Q1_C2",
@@ -1323,10 +1829,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.460440Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "bad1096a-ec6f-4458-b22c-7be0afc65e04",
+      "result_id": "34276529-50ed-4d9a-aa2c-9cc7a3ffdaf4",
       "cgr_result_id": "9ffd999e-6cee-4b47-8bb1-8e55c15c5407",
       "student_id": "MOH_A18",
       "concept_id": "Q1_C3",
@@ -1339,26 +1845,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.461447Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "920615bd-123c-45fd-b833-53be02b2fbf7",
+      "result_id": "900dc24c-a543-46f2-8f3d-3aece9d989b9",
       "cgr_result_id": "acf5389d-ea21-432c-b5de-3e955190182b",
       "student_id": "MOH_A18",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.462447Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "56174bfc-0085-4c14-af7d-3bae46777b91",
+      "result_id": "f9739007-3df4-47f1-b268-740e78b3da4e",
       "cgr_result_id": "7414177c-4cc5-4be0-91c5-95c579652b56",
       "student_id": "MOH_A19",
       "concept_id": "Q1_C1",
@@ -1373,10 +1879,10 @@
         "find"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.67 (1 keywords found)",
-      "created_at": "2026-07-25T16:45:31.463502Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "7b384124-f3a7-40c1-863e-a6a55696e7c7",
+      "result_id": "f3f06a2a-a212-4dac-9928-7263354d152f",
       "cgr_result_id": "dc190aee-77a0-4471-a2a4-70142798e1ff",
       "student_id": "MOH_A19",
       "concept_id": "Q1_C2",
@@ -1391,10 +1897,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.791788Z"
     },
     {
-      "result_id": "6da52aad-80e1-4943-9035-4b4b0d32cd1c",
+      "result_id": "42c90b91-1e88-4616-9a9f-f4b4d223eb63",
       "cgr_result_id": "dfc8ed31-5d59-4ee5-9ca1-fb9c3e693124",
       "student_id": "MOH_A19",
       "concept_id": "Q1_C3",
@@ -1407,42 +1913,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.464558Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "b1c1b995-bb53-4c39-af45-6fc0724be88b",
+      "result_id": "e77b1b2a-fc8a-4336-95ce-d250cd0df5fc",
       "cgr_result_id": "79546a5f-4435-4001-8690-8a756269d8e9",
       "student_id": "MOH_A19",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.465580Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "77e82f49-779a-4d31-90aa-146c5bd944dd",
+      "result_id": "38b5ff21-4af7-4d2b-9e59-1782d55e560f",
       "cgr_result_id": "25f2b0d8-039e-4962-9f26-c1f6efef6232",
       "student_id": "MOH_A20",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.466588Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "4109eedb-80d2-45b2-a1a5-72e506d3ee27",
+      "result_id": "13f118b8-f9e9-41d8-85bb-d7dba7bd81c9",
       "cgr_result_id": "724d0e5a-d87b-4f56-b783-df107581de05",
       "student_id": "MOH_A20",
       "concept_id": "Q1_C2",
@@ -1457,10 +1963,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "4278dd97-e1e5-4699-9386-d61aa318c933",
+      "result_id": "c4fc6cd6-e067-4930-915e-180c8b006bb9",
       "cgr_result_id": "073c4aae-20f8-493f-8b9b-95ddbde9b63e",
       "student_id": "MOH_A20",
       "concept_id": "Q1_C3",
@@ -1475,42 +1981,42 @@
         "replace"
       ],
       "reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "283fc6f2-72cc-40d6-bc72-444ec957fa2c",
+      "result_id": "dbdd9c25-8ead-4dde-b2e4-9858a3f4c40b",
       "cgr_result_id": "fa4a092f-b751-4130-aa25-f00deba22304",
       "student_id": "MOH_A20",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.468609Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "b827076d-46b5-4346-b209-4d8b97a7c267",
+      "result_id": "58d1237c-5d31-49b2-b83b-0dc62c77860d",
       "cgr_result_id": "6858d1d3-bc6e-4cf5-8556-59f1a87fb168",
       "student_id": "MOH_A21",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.469615Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "5d3a4c65-c0c3-4f81-a442-b59f9ee46621",
+      "result_id": "769c1860-5faa-4b38-9a2e-d4975e3949dd",
       "cgr_result_id": "912a81ae-bed5-43db-9d7d-6cc71417512a",
       "student_id": "MOH_A21",
       "concept_id": "Q1_C2",
@@ -1525,10 +2031,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "866a5f5d-159a-45c4-aed1-dbc0237b9287",
+      "result_id": "1b6a7379-2bf7-4676-b9ba-3364af271d40",
       "cgr_result_id": "3d1ff174-20d5-4cb9-b2dc-f548b3df65c0",
       "student_id": "MOH_A21",
       "concept_id": "Q1_C3",
@@ -1541,42 +2047,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.471783Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "1fc96642-b282-49e5-a9dc-a1c553f31e14",
+      "result_id": "fa21a48d-b5c1-4a59-9684-69d0305ff13e",
       "cgr_result_id": "a584f946-e217-427b-a1fb-b1fb4597c71a",
       "student_id": "MOH_A21",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.471783Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "8e7aae6d-f50d-43ba-88ca-ee9ba295aee8",
+      "result_id": "1fe67b3b-956d-4a12-ae16-77573c7d67c8",
       "cgr_result_id": "2da98d9c-7eda-4cd8-b86b-8a0eaf108bf7",
       "student_id": "MOH_A22",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.473064Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "a95187e3-b89d-410d-9528-24c00d35388e",
+      "result_id": "418f846c-103c-4a40-912f-403b7d4a23bd",
       "cgr_result_id": "1f33d1d4-33a8-42a5-a7fa-b4b2ab08fb94",
       "student_id": "MOH_A22",
       "concept_id": "Q1_C2",
@@ -1589,10 +2095,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.474088Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "7821024b-05c1-4272-a747-1db15f1f2cbf",
+      "result_id": "6d94f8fb-9626-4b2a-8b01-de89db9972a2",
       "cgr_result_id": "0311a75d-19fc-4fe0-8ce8-e77daa35ab24",
       "student_id": "MOH_A22",
       "concept_id": "Q1_C3",
@@ -1605,42 +2111,42 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.475153Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "929a7967-2734-43aa-b2ee-91542247876a",
+      "result_id": "6d6f5022-cfcc-4a9c-be2f-0b380e19f486",
       "cgr_result_id": "20ecbcb2-5454-4fa5-a8d7-b31b30eb0e3f",
       "student_id": "MOH_A22",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.475153Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "d7d9cf92-b0a7-4135-8774-adeebe0aa63e",
+      "result_id": "122e0868-ecd7-44b9-9a4f-69ceecab283c",
       "cgr_result_id": "f52cbdb5-9b92-4581-ae11-9258f7d0ee03",
       "student_id": "MOH_A23",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.476285Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "f1bc57b5-2a74-42b1-8536-462d15b900cc",
+      "result_id": "af6fb5e1-a46d-41a8-8f39-d85e8a3033f0",
       "cgr_result_id": "0737e2e0-aa0a-4b9a-a012-120fdb3e2a6b",
       "student_id": "MOH_A23",
       "concept_id": "Q1_C2",
@@ -1653,10 +2159,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "32f10f56-1140-411d-a17a-34c7deaf52c4",
+      "result_id": "5fe447c1-1d9c-4054-ad9b-00d9e5c4bd57",
       "cgr_result_id": "bc843ffe-3128-43dc-b965-ca7d6e0f6e4b",
       "student_id": "MOH_A23",
       "concept_id": "Q1_C3",
@@ -1669,10 +2175,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "40332fd3-60bd-4881-bc71-6cf21dad95ca",
+      "result_id": "fa97c935-4fc7-4605-8961-034adccdaafc",
       "cgr_result_id": "d7bcc8d0-8ca9-47d8-a5a4-81036db02387",
       "student_id": "MOH_A23",
       "concept_id": "Q1_C4",
@@ -1685,10 +2191,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "7ed5cefd-ca60-4ce8-a77a-e148fdfabe14",
+      "result_id": "f48c4f01-9170-4e78-9c85-f872d4e18698",
       "cgr_result_id": "2c4f926e-f1e0-44d5-a662-a039a7b18bf5",
       "student_id": "MOH_A24",
       "concept_id": "Q1_C1",
@@ -1704,10 +2210,10 @@
         "search"
       ],
       "reason": "Tier 1 auto-accept: evidence verified, keyword_score=0.67 (2 keywords found)",
-      "created_at": "2026-07-25T16:45:31.478295Z"
+      "created_at": "2026-07-25T16:54:57.768223Z"
     },
     {
-      "result_id": "86e06d94-71f0-4ff2-a69f-2f4b6ea06415",
+      "result_id": "a51beef8-f47f-4ad6-a032-330b3cd197dd",
       "cgr_result_id": "9579c211-56b6-4bd1-9454-de81c855663e",
       "student_id": "MOH_A24",
       "concept_id": "Q1_C2",
@@ -1722,10 +2228,10 @@
         "leaf"
       ],
       "reason": "Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "52d511aa-31a1-471f-95c9-056def06d395",
+      "result_id": "16b3cd24-476e-4f03-b471-7bfd3c709a8c",
       "cgr_result_id": "bf03bead-5c73-42b4-a0f3-53dd02f8120c",
       "student_id": "MOH_A24",
       "concept_id": "Q1_C3",
@@ -1740,42 +2246,42 @@
         "replace"
       ],
       "reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "80d1d060-c700-4d6f-b5da-ebc7faeb61e0",
+      "result_id": "1aa01ed4-1250-4801-bfb6-c958ab3f7002",
       "cgr_result_id": "efb60492-fb88-42f7-80a4-14719d43528a",
       "student_id": "MOH_A24",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.480316Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.783972Z"
     },
     {
-      "result_id": "a16489de-aa39-4733-b2cd-fa467b863471",
+      "result_id": "d7479820-916a-4995-9f87-5d8b2101ce4c",
       "cgr_result_id": "8daaa864-a67a-49d0-bebd-f0183ba18aed",
       "student_id": "MOH_A25",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.481320Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.784295Z"
     },
     {
-      "result_id": "7154e412-5ff9-4473-ba76-5267ea555ea4",
+      "result_id": "9a8dbd6f-c4ed-42d8-989e-5fd28bca3b18",
       "cgr_result_id": "c2b3aa11-1f45-4787-8904-ad1bf7d86dc9",
       "student_id": "MOH_A25",
       "concept_id": "Q1_C2",
@@ -1788,10 +2294,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.481320Z"
+      "created_at": "2026-07-25T16:54:57.785518Z"
     },
     {
-      "result_id": "c9d823eb-223e-4153-93fb-c982af019152",
+      "result_id": "53edc123-2bad-4c99-81cf-2d401ccb5a06",
       "cgr_result_id": "40d10536-ada2-4f5e-981e-181687e38396",
       "student_id": "MOH_A25",
       "concept_id": "Q1_C3",
@@ -1804,10 +2310,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.482326Z"
+      "created_at": "2026-07-25T16:54:57.785518Z"
     },
     {
-      "result_id": "7f72f75e-d9c2-4acd-8252-e60ed91c5da5",
+      "result_id": "2eea1da7-5225-414c-84aa-1403ce0c99b2",
       "cgr_result_id": "0f974144-7bef-490c-a054-60908136a5a4",
       "student_id": "MOH_A25",
       "concept_id": "Q1_C4",
@@ -1820,26 +2326,26 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "8f1938fe-5fd8-4d75-aea4-f7957ad6fed4",
+      "result_id": "7a6c80c5-a7db-45ba-9c52-e7da9c386254",
       "cgr_result_id": "8b6d02fd-d9f8-4b4f-9ca5-2f5351faf15f",
       "student_id": "MOH_A26",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.483333Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.786536Z"
     },
     {
-      "result_id": "92fb6e9e-c5f4-4061-bb74-ce5cb5179965",
+      "result_id": "9ffd2019-2a55-492b-87ba-b0f8ee7569bb",
       "cgr_result_id": "4f780362-a203-4f5d-91f4-04ad80400a72",
       "student_id": "MOH_A26",
       "concept_id": "Q1_C2",
@@ -1852,10 +2358,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "d62a90d3-4ce9-4f19-9f4a-4a841767a970",
+      "result_id": "8a3eb38b-b706-4130-8614-0ab57d1848a9",
       "cgr_result_id": "29f26ec5-7629-434f-95b8-689ae3190e12",
       "student_id": "MOH_A26",
       "concept_id": "Q1_C3",
@@ -1870,42 +2376,42 @@
         "replace"
       ],
       "reason": "Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "b0f6b605-937b-4d71-b02a-a444973f31c7",
+      "result_id": "667a11dc-19c9-4142-9617-0a8baabd006a",
       "cgr_result_id": "ae5be938-5462-4593-ae9e-82695db3b221",
       "student_id": "MOH_A26",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.485344Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.788769Z"
     },
     {
-      "result_id": "26611540-2e45-4ffc-9966-715961124c5b",
+      "result_id": "d58e444c-3328-41ef-b275-1cf766a29c6c",
       "cgr_result_id": "aa9861e1-d699-4f3f-a69f-a89fd8f63bd6",
       "student_id": "MOH_A27",
       "concept_id": "Q1_C1",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.788769Z"
     },
     {
-      "result_id": "6b85839c-2d98-4a1d-a604-fcaaed3e2718",
+      "result_id": "b99e8e44-1315-46b6-9772-4f087a9deedb",
       "cgr_result_id": "99f7ef0b-06ca-4a2e-a73d-365175b5c31a",
       "student_id": "MOH_A27",
       "concept_id": "Q1_C2",
@@ -1918,10 +2424,10 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.792790Z"
     },
     {
-      "result_id": "567ba635-4845-4051-85ca-148bf4596eed",
+      "result_id": "134d3614-85e7-45cd-974c-732750b39df9",
       "cgr_result_id": "ddfed1ee-da50-4860-8b2e-a863fafd0909",
       "student_id": "MOH_A27",
       "concept_id": "Q1_C3",
@@ -1934,23 +2440,23 @@
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
       "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "created_at": "2026-07-25T16:54:57.789780Z"
     },
     {
-      "result_id": "600a629b-6f60-4884-9e01-e7b3419cd48a",
+      "result_id": "b8c2b97b-1647-41f3-8c72-685dd8442855",
       "cgr_result_id": "ffb357c9-9c99-45f4-b288-ba9c5d49e0a3",
       "student_id": "MOH_A27",
       "concept_id": "Q1_C4",
       "trust_score": 0.9,
-      "decision": "ACCEPT",
+      "decision": "DEFER",
       "tier_resolved": 1,
       "signal_1_evidence_verified": true,
       "signal_2_nli_score": null,
       "signal_3_stability": null,
       "signal_4_keyword_score": 0.0,
       "keywords_found": [],
-      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)",
-      "created_at": "2026-07-25T16:45:31.486353Z"
+      "reason": "Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 \u2014 likely mis-specified concept, escalated for review.",
+      "created_at": "2026-07-25T16:54:57.790785Z"
     }
   ]
 }

@@ -44,6 +44,15 @@ class CBTEConfig(BaseModel):
     tau: float = 0.5
     tau_source: str = "manual"
     enable_tier3: bool = False
+    # Post-batch cohort audit (TC-012): a Tier-1 ABSENT auto-accept rate this
+    # high for one concept, across the whole graded cohort, is escalated to
+    # DEFER — evidence (Wave5 Mohler) shows a mis-specified/unearnable concept
+    # is indistinguishable, item by item, from a genuinely-missed one; only
+    # the population pattern tells them apart. Runs once per grading batch at
+    # the pipeline layer since CBTEModule grades one student at a time and
+    # never sees the cohort.
+    cohort_absent_escalation_threshold: float = 0.7
+    cohort_absent_min_students: int = 4
 
 
 class ConformalConfig(BaseModel):

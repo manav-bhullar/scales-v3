@@ -1,0 +1,97 @@
+{
+  "exam_id": "e2e_wave5_mohler_bst_delete",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Locating the target node in the BST",
+      "target_criteria": "Must correctly identify the need to search for the node to be deleted.",
+      "marks": 1,
+      "expected_keywords": [
+        "find",
+        "locate",
+        "search"
+      ],
+      "acceptable_variants": [
+        "traverse to the node",
+        "identify the node"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning traversal without explicit search logic.",
+      "source_rubric_span": "locating the node",
+      "source_reference_span": "Find the node",
+      "version": 1,
+      "created_at": "2026-07-25T14:36:56.376380Z",
+      "updated_at": "2026-07-25T14:36:56.376380Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Handling different node cases (leaf, one-child, two-child)",
+      "target_criteria": "Must acknowledge that deletion logic differs based on the number of children the node has.",
+      "marks": 2,
+      "expected_keywords": [
+        "leaf",
+        "one-child",
+        "two-child",
+        "cases"
+      ],
+      "acceptable_variants": [
+        "node degree",
+        "number of children"
+      ],
+      "partial_credit_rule": "1 mark if only one case is mentioned or if logic is incomplete.",
+      "source_rubric_span": "handling leaf vs one-child vs two-child cases",
+      "source_reference_span": "replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree)",
+      "version": 1,
+      "created_at": "2026-07-25T14:36:56.376380Z",
+      "updated_at": "2026-07-25T14:36:56.376380Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Applying the replacement rule (successor/predecessor)",
+      "target_criteria": "Must describe replacing the node with the in-order successor or predecessor.",
+      "marks": 1,
+      "expected_keywords": [
+        "replace",
+        "successor",
+        "predecessor",
+        "leftmost",
+        "rightmost"
+      ],
+      "acceptable_variants": [
+        "in-order successor",
+        "in-order predecessor"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning replacement without specifying successor/predecessor.",
+      "source_rubric_span": "the standard replacement rule (in-order successor or predecessor)",
+      "source_reference_span": "replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree)",
+      "version": 1,
+      "created_at": "2026-07-25T14:36:56.376380Z",
+      "updated_at": "2026-07-25T14:36:56.376380Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Maintaining BST property",
+      "target_criteria": "Must state that the resulting tree must remain a valid binary search tree.",
+      "marks": 1,
+      "expected_keywords": [
+        "valid",
+        "BST",
+        "property",
+        "structure"
+      ],
+      "acceptable_variants": [
+        "maintain BST order",
+        "preserve tree integrity"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "leaving the tree still a valid BST",
+      "source_reference_span": "replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree)",
+      "version": 1,
+      "created_at": "2026-07-25T14:36:56.376380Z",
+      "updated_at": "2026-07-25T14:36:56.376380Z"
+    }
+  ]
+}

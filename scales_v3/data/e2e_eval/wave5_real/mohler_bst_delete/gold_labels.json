@@ -1,0 +1,261 @@
+{
+  "exam_id": "e2e_wave5_mohler_bst_delete",
+  "question_id": "Q1",
+  "question_key": "Q-REAL1",
+  "total_marks": 5,
+  "gold_source": "UNT human graders (Mohler 2011), scores normalized 0-5",
+  "gold_labels": [
+    {
+      "student_id": "MOH_A00",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=8.0/10 g2=9.0/10 avg=4.5/5"
+    },
+    {
+      "student_id": "MOH_A01",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.5,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=6.0/10 avg=3.5/5"
+    },
+    {
+      "student_id": "MOH_A02",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.5,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=6.0/10 avg=3.5/5"
+    },
+    {
+      "student_id": "MOH_A03",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=5.0/10 avg=3.5/5"
+    },
+    {
+      "student_id": "MOH_A04",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        3.5
+      ],
+      "watch": "Real UNT grades: g1=6.0/10 g2=1.0/10 avg=2.0/5"
+    },
+    {
+      "student_id": "MOH_A05",
+      "expected_band": "high",
+      "expected_score_range": [
+        4.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=10.0/10 avg=5.0/5"
+    },
+    {
+      "student_id": "MOH_A06",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.0,
+        4.75
+      ],
+      "watch": "Real UNT grades: g1=8.5/10 g2=7.0/10 avg=4.0/5"
+    },
+    {
+      "student_id": "MOH_A07",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.0,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=7.0/10 avg=4.5/5"
+    },
+    {
+      "student_id": "MOH_A08",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=0.0/10 avg=2.0/5"
+    },
+    {
+      "student_id": "MOH_A09",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=10.0/10 avg=4.5/5"
+    },
+    {
+      "student_id": "MOH_A10",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        3.5
+      ],
+      "watch": "Real UNT grades: g1=6.0/10 g2=0.0/10 avg=1.5/5"
+    },
+    {
+      "student_id": "MOH_A11",
+      "expected_band": "high",
+      "expected_score_range": [
+        4.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=10.0/10 avg=5.0/5"
+    },
+    {
+      "student_id": "MOH_A12",
+      "expected_band": "high",
+      "expected_score_range": [
+        4.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=10.0/10 avg=5.0/5"
+    },
+    {
+      "student_id": "MOH_A13",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.5
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=8.0/10 avg=4.0/5"
+    },
+    {
+      "student_id": "MOH_A14",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.5,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=6.0/10 avg=3.5/5"
+    },
+    {
+      "student_id": "MOH_A15",
+      "expected_band": "high",
+      "expected_score_range": [
+        4.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=10.0/10 avg=5.0/5"
+    },
+    {
+      "student_id": "MOH_A16",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=0.0/10 avg=2.0/5"
+    },
+    {
+      "student_id": "MOH_A17",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.75,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=8.5/10 g2=10.0/10 avg=4.5/5"
+    },
+    {
+      "student_id": "MOH_A18",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        3.5
+      ],
+      "watch": "Real UNT grades: g1=6.0/10 g2=0.0/10 avg=1.5/5"
+    },
+    {
+      "student_id": "MOH_A19",
+      "expected_band": "mid",
+      "expected_score_range": [
+        1.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=3.0/10 avg=3.0/5"
+    },
+    {
+      "student_id": "MOH_A20",
+      "expected_band": "high",
+      "expected_score_range": [
+        4.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=10.0/10 avg=5.0/5"
+    },
+    {
+      "student_id": "MOH_A21",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=9.0/10 g2=8.0/10 avg=4.5/5"
+    },
+    {
+      "student_id": "MOH_A22",
+      "expected_band": "low",
+      "expected_score_range": [
+        0.0,
+        0.5
+      ],
+      "watch": "Real UNT grades: g1=0.0/10 g2=0.0/10 avg=0.0/5"
+    },
+    {
+      "student_id": "MOH_A23",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.0,
+        3.0
+      ],
+      "watch": "Real UNT grades: g1=5.0/10 g2=0.0/10 avg=1.5/5"
+    },
+    {
+      "student_id": "MOH_A24",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=7.0/10 avg=4.0/5"
+    },
+    {
+      "student_id": "MOH_A25",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        5.0
+      ],
+      "watch": "Real UNT grades: g1=10.0/10 g2=6.0/10 avg=4.0/5"
+    },
+    {
+      "student_id": "MOH_A26",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.0,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=7.0/10 avg=4.0/5"
+    },
+    {
+      "student_id": "MOH_A27",
+      "expected_band": "mid",
+      "expected_score_range": [
+        1.5,
+        4.25
+      ],
+      "watch": "Real UNT grades: g1=7.5/10 g2=4.0/10 avg=3.0/5"
+    }
+  ]
+}

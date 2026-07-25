@@ -15,7 +15,9 @@ SCALES stacks concepts; students should not see a four-part worksheet.
 - [ ] Question + reference + rubric look exam-realistic
 - [ ] Each gold `expected_score_range` matches your judgment
 - [ ] `DB1_LOW_01` (wrong definitions) and `DB1_LOW_02` stay low band
-- [ ] Reply **approve Q-DB1** (or **approve wave4**) to run live grading
+- [x] Reply **approve Q-DB1** (or **approve wave4**) to run live grading
+
+**Approved for live grading:** user — "do next" — 2026-07-25 (after CN2 SHRR complete).
 
 ## After approval
 

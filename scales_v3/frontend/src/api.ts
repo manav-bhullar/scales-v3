@@ -1,4 +1,5 @@
 import type {
+  BreakdownPayload,
   ExamSummary,
   FinalResult,
   ReviewPayload,
@@ -49,4 +50,8 @@ export const api = {
     ),
   getResults: (examId: string) =>
     request<FinalResult[]>(`/api/exams/${encodeURIComponent(examId)}/results`),
+  getBreakdown: (examId: string) =>
+    request<BreakdownPayload>(
+      `/api/exams/${encodeURIComponent(examId)}/breakdown`,
+    ),
 };

@@ -1,0 +1,262 @@
+[
+  {
+    "fit": 10,
+    "n": 65,
+    "high": 41,
+    "mid": 18,
+    "low": 6,
+    "grade_mean": 0.71,
+    "ans_med": 534,
+    "ref_len": 1032,
+    "q": "In the lecture you have learned about congestion control with TCP. Name the 2 phases of congestion control and explain how the Congestion Window (cwnd) and the Slow Start Threshold (ss_thresh) change in each phase (after initialization, where cwnd = 1 and ss_thresh = advertised window size) in 1-4 sentences .",
+    "ref": "Slow start (cwnd less than ss_thresh): \nIn the slow start phase, cwnd is incremented by one every time a segment is acknowledged. This results in an exponential growth as cwnd is essentially doubled after each Round Trip Time (RTT). This is done until either a packet is lost or ss_thresh is reached. When cwnd >= ss_thresh, the congestion avoidance phase is entered. \nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1. \n\nCongestion Avoidance (cwnd >= ss_thresh):: \nIn the congestion avoidance phase, cwnd is incremented more slowly. There are different incrementation strategies, but they usually grow linearly, e.g. only increment cwnd by 1 after all sent segments have been acknowledged. This is done until a packet is lost. Typically, this means that cwnd less than ss_thresh and the slow start phase is entered again. \nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.",
+    "samples": [
+      {
+        "grade": 0.25,
+        "ans": "Phase 1: Slow start (getting to equilibrium), Phase 2: Congestion avoidance. At initialization, the initial value of cwnd is1 MSS and the initial ss_thresh value is advertised window size. Phase 1: cwnd less than ss_thresh; Phase 2: cwnd greater than equal ss_thresh."
+      },
+      {
+        "grade": 0.75,
+        "ans": "The first phase of congestion control is called Slow start. The second phase is called congestion avoidance. In phase 1 the cwnd is initially set to one and is then increased by one every time a segment is acknowledged. This is continued until the ss_thresh is reached or packet loss is experienced. As soon as we hit cwnd >= ss_thres the increase of cwnd is slowed down. As soon as a timeout (=congestion) is received the two variables are recalculated: ss_thresh = cwnd / 2 and cwnd is reset to one"
+      },
+      {
+        "grade": 1.0,
+        "ans": "Phase 1 – Slow start: In phase 1, when cwnd less than ss_tresh, traffic starts by sending one segment (cwnd = 1) and for each time a segment is acknowledged, the cwnd will be increased by one. This results in each ACK generating 2 packets, so the cwnd will grow exponentially until it reaches the slow start threshold ss_thresh. Phase 2 – Congestion Avoidance: As soon as cwnd is equal or larger than ss_thresh, cwnd is increased by one each time all packets in the window are acknowledged, which res"
+      }
+    ]
+  },
+  {
+    "fit": 9,
+    "n": 92,
+    "high": 76,
+    "mid": 11,
+    "low": 5,
+    "grade_mean": 0.8,
+    "ans_med": 406,
+    "ref_len": 226,
+    "q": "In the lecture you have learned about congestion control with TCP. Name the 2 phases of congestion control and explain how the Congestion Window (cwnd) and the Slow Start Threshold (ss_thresh) change in each phase (after initialization, where cwnd = 1 and ss_thresh = advertised window size) in 1-4 sentences total.",
+    "ref": "Slow start: ss_thresh is constant, increment cwnd by one every time a segment is acknowledged until ss_tresh is reached, then slowed increase of cwnd Congestion Avoidance: cwnd is reset to 1 after adjusting ss_tresh = cwnd / 2",
+    "samples": [
+      {
+        "grade": 0.25,
+        "ans": "Phase 1: Slow start\n\nPhase 2: Congestion Avoidance"
+      },
+      {
+        "grade": 0.88,
+        "ans": "Phase one is slow start and phase two is congestion avoidance, cwnd starts at 1, and will rapidly grow until the value reached ss_thresh, after that cwnd will grow slowly, when a timeout occured, set ss_thresh to 50% of the current cwnd and cwnd is reset to one, then start over from slow start."
+      },
+      {
+        "grade": 1.0,
+        "ans": "Phase 1: Slow start\nEach time a segment is acknowledged the cwnd is multiplied by two till the ss_thresh is reached or a packet is lost. After the ss_thresh is reached we change to phase 2 - Congestion avoidance.\nPhase 2:Congestion Avoidance\nAfter each Acknowledgment the cwnd is increased by one until a packet is lost.\n\nWhen a packet is lost(timeout) on either phase the ss_thresh is set to 50% of the current size of the congestion windows and the cwnd is set to one."
+      }
+    ]
+  },
+  {
+    "fit": 9,
+    "n": 12,
+    "high": 7,
+    "mid": 2,
+    "low": 3,
+    "grade_mean": 0.67,
+    "ans_med": 195,
+    "ref_len": 1061,
+    "q": "Discuss 3 methods (each with at least one advantage and disadvantage) that address the problem of duplicate packets on the transport layer in a connection-oriented service.",
+    "ref": "1. to use temporarily valid TSAPs -method: -TSAP valid for one connection only -generate always new TSAPs -evaluation -in general not always applicable:-process server addressing method not possible, because -server is reached via　a designated/known TSAP - some TSAPs always exist as \"well-known\" 2. to identify connections individually -method: -each individual connection is assigned a new SeqNo and -endsystems remember already assigned SeqNo -evaluation -endsystems must be capable of storing this information -prerequisite: -connection oriented system (what if connection-less?) -endsystems, however, will be switched off and it is necessary that the information is reliably available whenever needed 3. to identify PDUs individually: individual sequential numbers for each PDU -method: -SeqNo basically never gets reset -e.g. 48 bit at 1000 msg/sec: reiteration after 8000 years -evaluation -higher usage of bandwidth and memory -sensible choice of the sequential number range depends on -the packet rate -a packet's probable \"lifetime\" within the network",
+    "samples": [
+      {
+        "grade": 0.0,
+        "ans": "Three-way Handshake Protocol\n+ ds\n- \n\nFlow Control on Transport Layer\n\nCredit Mechanism\n+ \n-\nMultiplexing / Demultiplexing\n+\n-"
+      },
+      {
+        "grade": 0.75,
+        "ans": "use temporarily valid TSAPS\n\nidentify connections individually\n- disadvantage: only for connection-oriented services\n\nidentify PDUs individually\n- disadvantage: higher bandwidth usage"
+      },
+      {
+        "grade": 1.0,
+        "ans": "1. TSAP only valid for one connection; some TSAP are well known\n2. identify each connection by SeqNo; Endsystem must store this information\n3. identify each PDU by SeqNo; higher usage of bandwidth and memory"
+      }
+    ]
+  },
+  {
+    "fit": 7,
+    "n": 79,
+    "high": 54,
+    "mid": 21,
+    "low": 4,
+    "grade_mean": 0.75,
+    "ans_med": 229,
+    "ref_len": 243,
+    "q": "Consider the following network topology from the lecture:With routing, we want to find the best path for our packets. For this, we first need to define a metric to evaluate the quality of a path. One possible choice could be the current load (i.e. the current utilization in terms of sent packets/bytes) on this path. Assume that A wants to send data to G, could this routing strategy cause any problems at the receiver end? Please explain your answer in 1-2 sentences.",
+    "ref": "Yes, using the current load to find the best path can lead to fluctuations/oscillations when there is more than one path between any pair of end systems in the network (here: CF and EI). This can cause packet reorderings at the receiving side.",
+    "samples": [
+      {
+        "grade": 0.0,
+        "ans": "I think the network topology is perfect. Because there so many paths between A and G, A-B-C-F-G, A-E-I-F-G etc. If some paths is fail, the data could through another path to send. But the problem is the right part is a little simple. It's not reliable and steady. It will be better, if there are more connection between G and the other nodes in right part, for example G-I, or G-j."
+      },
+      {
+        "grade": 0.75,
+        "ans": "The load would lead to oscillation. One path will always have more load than the other one. Therefor, the route will swich all the time."
+      },
+      {
+        "grade": 1.0,
+        "ans": "One problem can be that the selected path utilized so that it will have to take another path. This path will be longer and will need more traffic."
+      }
+    ]
+  },
+  {
+    "fit": 7,
+    "n": 58,
+    "high": 52,
+    "mid": 3,
+    "low": 3,
+    "grade_mean": 0.84,
+    "ans_med": 574,
+    "ref_len": 1886,
+    "q": "What are the benefits and drawbacks of SDN compared to traditional networking,where each switch/router has to manage forwarding and routing on its own? Describe two benefits and two drawbacks in 1-2 sentences each. ",
+    "ref": "Benefits:\n● Reduced complexity of the switches: They only have to act according to their flow\ntables and do not have to make any local routing decisions.\n● Due to centralized routing, the routing can converge way faster to a global optimum\nthan with decentralized routing because of a global view\n● Better Integration of application and network provides a better global view of the\nsystem.\n● Increased flexibility :\n1. We can update the routing logic on the fly, routers/switches are not limited\nto hard-coded routing algorithms anymore (Note: this is also possible with\nprogrammable switches).\n2. API to “program” the network: Software (application) “defines” the\nnetwork\n3. High-level programming languages for implementation of logic and making\nuse of powerful integrated development environments.\nNote: In case the reasoning/example sufficiently explains the benefit, naming like reduced\ncomplexity, increased flexibility can be omitted and response can still be granted 0.25 for\neach benefit.\n\nDrawbacks:\n● High complexity of the control servers: They have to make all the routing decisions\nfor the (sub)network and can therefore be a bottleneck.\n● Centralized routing in distributed systems in general: The routing completely depends\non the control server(s). To achieve better availability and fault tolerance, the number\nof control servers can be increased. However, this can lead to synchronization and\nconsistency issues. → CAP problem (consistency, availability, partition tolerance)\n● New technology adoption challenges:\n● Switching to SDN from traditional networking.\n● Training personnel on SDN.\nAll these will cost depending on the reconfiguration level but then for the long term, it\ndepends upon the ROI.\n● Security-related concerns :\n○ Lack of hardware security: eliminating the use of the physical routers and\nswitches, one also loses the security that comes with it.",
+    "samples": [
+      {
+        "grade": 0.25,
+        "ans": "Two benefits of SDN are the increased flexibility and the reduced switch complexity. Drawbacks are that SDN is slower and it costs more than traditional networking."
+      },
+      {
+        "grade": 0.875,
+        "ans": "Benefits:\n1. Support high-level programming languages for implementation of logic. This could benefit from powerful integrated developing environments.\n2. Reduced switch complexity by removing control logic from switch and host it on servers.\n\nDrawbacks:\n1. SDN controls the network by controller. However programmer has to test that whether one controller works with the element in the network.\n2. Since there is SDN-C layer, the routing security has to be focused on."
+      },
+      {
+        "grade": 1.0,
+        "ans": "Benefits:\nThe modification of the network control logic is easier to realise since you can change the logic by reprogramming the software instead of having to replace the hardware. \nIt reduces switch complexity by removing the control logic from the switch and hosting it on servers but still preserving the same forwarding performance.\n\nDrawbacks:\nThe cost of the SDN compatible Equipment is really high.\nSo far it is not a standard, you would be dependent on one company because if there is no stan"
+      }
+    ]
+  },
+  {
+    "fit": 6,
+    "n": 80,
+    "high": 70,
+    "mid": 8,
+    "low": 2,
+    "grade_mean": 0.92,
+    "ans_med": 295,
+    "ref_len": 111,
+    "q": "Please explain the problem with \"Distributed Queue Dual Buses\" that was discussed in the lecture in 1-3 sentences.",
+    "ref": "Depending on your position in the bus station have a disadvantage/advantage when reserving transmission rights.",
+    "samples": [
+      {
+        "grade": 0.0,
+        "ans": "Fairness is the problem，the data reserve is not depending on the location, some have more frames than others"
+      },
+      {
+        "grade": 1.0,
+        "ans": "The problem concerns fairness. Because each node reserves on one of the busses and sends on the other one, it highly depends on which position the node is located, because that influences how much/often it can reserve sth."
+      },
+      {
+        "grade": 1.0,
+        "ans": "The problem of DQDB is that nodes closest to the frameslot generator always have priority to send reservation-requests in one direction. The node closest to the station could theoretically fill the reservation slots in one direction over and over again. Especially nodes in the middle of the network who have equal distances to the framegenerators have an unfair disadvantage to send data in either direction."
+      }
+    ]
+  },
+  {
+    "fit": 6,
+    "n": 77,
+    "high": 76,
+    "mid": 0,
+    "low": 1,
+    "grade_mean": 0.97,
+    "ans_med": 743,
+    "ref_len": 428,
+    "q": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
+    "ref": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+    "samples": [
+      {
+        "grade": 0.0,
+        "ans": "1. Flow Control: ensures that a transmitter does not send faster than a receiver can receive\n2. Framing: data are packed in a frame, this frame contains e.g. the data, destination address and source \n3. Error Detection: important to ensure that all data has been received correctly. If an error is detected, the receiver may be signalled to send the data again"
+      },
+      {
+        "grade": 1.0,
+        "ans": "There are 3 service classes: Unconfirmed and Connectionless, Confirmed and Connectionless, and Connection-Oriented.\nIn the Unconfirmed and Connectionless service class, data frames are transmitted without any synchronisation.Therefore, flow control is not possible. Also, no handshaking (connect/disconnect) happens.\nIn the Confirmed and Connectionless service, data that has been sent is confirmed by the receiving party. This also doesn’t allow for flow control and no handshaking is taking place.\n"
+      },
+      {
+        "grade": 1.0,
+        "ans": "The \"Unconfirmed Connectionless Service\" provides the transmission of isolated, independent units. The sender expects them to arrive at the receiver but he never knows because there is no confirmation of a successful transfer. Also it doesn't provide flow control or connection or disconnection. It is used on L1 communication channels with a very low error rate.\nThe \"Confirmed Connectionless Service\" prevents the loss of data units. Every send unit is acknowledged and if there occours a timeout b"
+      }
+    ]
+  },
+  {
+    "fit": 6,
+    "n": 69,
+    "high": 39,
+    "mid": 22,
+    "low": 8,
+    "grade_mean": 0.68,
+    "ans_med": 532,
+    "ref_len": 805,
+    "q": "WHICH PROPERTY of spanning trees makes them appealing for broad- and multicasting? EXPLAIN how you can modify Link State Routing to construct a spanning tree for multicasting.",
+    "ref": "Property: There is a single unique path between every pair of nodes in the tree. Alternatively, you can say that spanning trees are subnets of a network that do not contain loops but contain all nodes. This means that no unnecessary duplicates are distributed in the network when forwarding packets using that tree structure.\n\nSpanning Tree with Link State Routing: Each intermediate system knows which multicast groups it belongs to, but initially doesn’t know which other IS belong to the groups. Therefore, you can add multicast group information to the link state packet and each node can construct multicast trees once the full network topology and group information are distributed in the whole network, as each node then has the complete state information stored locally (e.g. with Prim or Kruskal)",
+    "samples": [
+      {
+        "grade": 0.0,
+        "ans": "All nodes are connected at least one other, all nodes can be reached. Constructing a spanning tree: First measuring the distance to the neighbors, organize your package(send the distance), all nodes do the calculation which distances are the shortest."
+      },
+      {
+        "grade": 0.75,
+        "ans": "Spanning trees are appealing for broad- and multicasting because they include all routers without any loops, thus providing efficient paths. To construct a multicast spanning tree, each router has to provide additional information on multicast groups when sending information to neighbours, so each IS can then calculate a spanning tree for multicasting."
+      },
+      {
+        "grade": 1.0,
+        "ans": "Spanning trees allows to reach all other nodes of a network with a small subset of links. This is favorable for broadcasting and multicasting because it limits the number of packet-copies and prevents loops. Each IS broadcasts it’s local link state info periodically to all other IS. The info is distributed in packets and contains the distance to the neighbors as well as the info on multicast groups (each IS knows to which group it belongs to)! Then each IS has all the link state info and calcula"
+      }
+    ]
+  },
+  {
+    "fit": 6,
+    "n": 67,
+    "high": 60,
+    "mid": 6,
+    "low": 1,
+    "grade_mean": 0.89,
+    "ans_med": 660,
+    "ref_len": 2219,
+    "q": "WHAT are the challenges of Mobile Routing compared to routing in fixed and wired networks? Please NAME and DESCRIBE two challenges.",
+    "ref": "Possible Challenges:\n1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. Additionally, nodes can leave or join the network anywhere (within signal range) at any time.\n2.Security: Interception of packets or injection of faulty packages is easily possible in wireless networks. This may necessitate encryption and authentication.\n3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions of the transmitted signals. See the following correct example challenges:\ni)Hidden Terminal: Nodes’ transmissions may collide at other nodes without them noticing, because they are out of detection range of each other (A and C in this example) and therefore sense the medium to be free even though there is an overlap of the transmission ranges. \nii)Exposed Terminal: Nodes (C in this example) may not realize they could send collision-free, because a node in their detection range (B) is sending and they, therefore, detect the medium as busy, but the sending node (B) is out of the detection range of the destination node (D) so that no collision would occur.\niii)Near and Far Terminals: Signal strength decreases proportionally to the square of distance, so closer nodes may drown out the weaker signals of nodes farther away.\n4.Quality of Service (QoS): Due to the rapidly changing network topology, imprecise network information, and resource constraints of participating nodes, it is challenging to provide the desired QoS. Additionally, signal quality may also decline due to noise and occlusion.\n5.Scalability: Since it is not possible to know the number of participating nodes beforehand, it is vital that routing protocols, etc. are capable of dealing with increasing network sizes and workloads. \n6.Heterogeneity: Nodes may have different capabilities, responsibilities, and constraints, e.g. processing capacity, transmission ranges\n7.Dependability: Providing consistent, performant, and reliable routing behavior that higher-level services can trust is challenging in such a dynamic environment. \n8.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor in routing, etc.",
+    "samples": [
+      {
+        "grade": 0.25,
+        "ans": "1. application layer - the discovery of services - you will need service awareness and need places for the services security\n\t - outside you can always be attacked, or the mobile routing could be disturbed."
+      },
+      {
+        "grade": 1.0,
+        "ans": "Hidden Terminals: Two nodes (A and B) that are out of each other's range can not detect transmissions from either node to a third node (C) which is within their ranges. This can cause A and B to simultaneously attempt to transmit to C. Hence, A and C are “hidden” from each other. This leads to more collisions and reduced efficiency. Exposed Terminals: When two nodes are too close to each other it can interfere with their transmissions. When one node is transmitting, it signals to all other nodes"
+      },
+      {
+        "grade": 1.0,
+        "ans": "Mobile Routing has different challenges, since communication does not happen on a wired medium and is therefore broadcast by nature.  1. Hidden Terminals: If two nodes, A and C, can't hear each other due to their distance, and there is a node B located in the intersection of their transmission, their transmissions can collide at node B without A and C noticing it. CSMA/CD does not work here, since A and C will not hear each other and can therefore not detect a collision.   2. Exposed terminal pr"
+      }
+    ]
+  },
+  {
+    "fit": 6,
+    "n": 67,
+    "high": 53,
+    "mid": 12,
+    "low": 2,
+    "grade_mean": 0.82,
+    "ans_med": 331,
+    "ref_len": 625,
+    "q": "What are extension headers in IPv6 and where are they located in a packet? What is the main advantage of extension headers compared to IPv4?",
+    "ref": "Extension headers are used to extend the fixed IPv6 header with additional, optional network layer information. If present, they are located between the fixed header/main header and payload/upper-layer header/ transport-layer header.\n\nMain advantage: One of the following advantages are considered fully correct:\n1. It allows the appending of new options without changing the header.\n2. IPv6 packets with optional headers are typically processed faster/simpler by intermediate devices as most of the options are ignored (except “Hop-by-Hop Extension”) while they are processed by all routers in IPv4 unless ordered otherwise.",
+    "samples": [
+      {
+        "grade": 0.25,
+        "ans": "The extension headers are placed between fixed header and payload. The main advantage is that they are optional. This means that the use of space is more efficient because there won't be any redundant information placed there in order to keep the expected length."
+      },
+      {
+        "grade": 1.0,
+        "ans": "The extension headers are optional headers placed between the fixed headers and the payload. Using these, the header information is no longer limited in size (like in ipv4) and thus can be extended based on future requirements."
+      },
+      {
+        "grade": 1.0,
+        "ans": "Extension headers are header that can be added to a packet for a new functionality. Extension headers are present between fixed header and payload. \nAdvantages:\n1. They allow appending new options without changing fixed header\n2. They help in overcoming size limitation on packets."
+      }
+    ]
+  }
+]

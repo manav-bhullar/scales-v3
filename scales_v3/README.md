@@ -105,7 +105,22 @@ npm run dev
 # open http://127.0.0.1:5173
 ```
 
-Screens: exam dashboard → review queue (Agree / Correct, inline evidence highlight, Explain sheet) → results.
+Screens:
+
+- **Dashboard** — one card per exam, phase stepper, defer-rate ring.
+- **Review queue** (`/exams/:id/review`) — Agree / Correct the DEFERs, inline
+  evidence highlight, Explain sheet.
+- **Why these marks** (`/exams/:id/explain`) — per-student mark-by-mark
+  breakdown: each concept's verdict, marks, grader reasoning, quoted evidence,
+  which rubric keywords matched, and the CBTE signals behind the ACCEPT/DEFER.
+  Works before finalize, and unlike the queue it also shows **auto-accepted**
+  judgments. Two things to look at here:
+  - *Rubric health* strip — how many students earned each concept. A concept
+    almost nobody earns is usually mis-specified, not universally missed.
+  - *Zeros never checked* filter — zero-mark judgments CBTE trusted, so no
+    human ever saw them. This is the accept-audit surface; it is where an
+    over-strict rubric quietly costs students marks.
+- **Results** (`/exams/:id/results`) — finalized totals (needs finalize).
 
 API surface:
 - `GET /api/exams`

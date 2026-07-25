@@ -1,0 +1,91 @@
+{
+  "exam_id": "e2e_wave4_db1_acid",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Atomicity property definition",
+      "target_criteria": "Must describe all-or-nothing execution or rollback on failure.",
+      "marks": 1,
+      "expected_keywords": [
+        "all-or-nothing",
+        "rollback"
+      ],
+      "acceptable_variants": [
+        "atomic operation",
+        "all operations commit or none"
+      ],
+      "partial_credit_rule": "0.5 marks for partial description of the all-or-nothing concept.",
+      "source_rubric_span": "1) Atomicity: all-or-nothing / commit all ops or rollback.",
+      "source_reference_span": "Atomicity: a transaction is all-or-nothing \u2014 either every operation commits, or on failure the system rolls back so it looks like the transaction never happened.",
+      "version": 1,
+      "created_at": "2026-07-25T12:34:35.380258Z",
+      "updated_at": "2026-07-25T12:34:35.380258Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Consistency property definition",
+      "target_criteria": "Must describe preservation of integrity constraints or valid state transitions.",
+      "marks": 1,
+      "expected_keywords": [
+        "integrity constraints",
+        "valid state"
+      ],
+      "acceptable_variants": [
+        "database consistency",
+        "preserves business rules"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning valid state or integrity constraints alone.",
+      "source_rubric_span": "2) Consistency: preserves integrity constraints / valid state to valid state.",
+      "source_reference_span": "Consistency: a committed transaction takes the database from one valid state to another, preserving integrity constraints (keys, checks, business rules).",
+      "version": 1,
+      "created_at": "2026-07-25T12:34:35.380258Z",
+      "updated_at": "2026-07-25T12:34:35.380258Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Isolation property definition",
+      "target_criteria": "Must describe non-interference of concurrent transactions or serializability.",
+      "marks": 1,
+      "expected_keywords": [
+        "concurrent",
+        "serializable",
+        "interference"
+      ],
+      "acceptable_variants": [
+        "transactions do not see intermediate states",
+        "isolated execution"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning concurrent transactions do not interfere.",
+      "source_rubric_span": "3) Isolation: concurrent transactions do not see each other's uncommitted/intermediate effects (serializable idea OK).",
+      "source_reference_span": "Isolation: concurrent transactions do not interfere; the effect is as if transactions ran one after another (serializable, or at least their intermediate states are hidden per the isolation level).",
+      "version": 1,
+      "created_at": "2026-07-25T12:34:35.380258Z",
+      "updated_at": "2026-07-25T12:34:35.380258Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Durability property definition",
+      "target_criteria": "Must describe persistence of committed data against failure.",
+      "marks": 1,
+      "expected_keywords": [
+        "survive",
+        "failure",
+        "stable storage"
+      ],
+      "acceptable_variants": [
+        "committed data persists",
+        "survives power loss"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning data survives crashes or is stored permanently.",
+      "source_rubric_span": "4) Durability: committed data survives failure / persisted to stable storage.",
+      "source_reference_span": "Durability: once a transaction commits, its effects survive crashes/power loss (typically via logging / stable storage).",
+      "version": 1,
+      "created_at": "2026-07-25T12:34:35.380258Z",
+      "updated_at": "2026-07-25T12:34:35.380258Z"
+    }
+  ]
+}

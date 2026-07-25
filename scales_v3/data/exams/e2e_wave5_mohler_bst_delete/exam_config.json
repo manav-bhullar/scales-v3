@@ -1,0 +1,130 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave5_mohler_bst_delete",
+    "subject": "Data Structures (real student answers)",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "How do you delete a node from a binary search tree?",
+        "reference_answer": "Find the node, then replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree).",
+        "rubric": "Total 5 marks. Award marks for a correct explanation of how BST deletion works. Key ideas expected: locating the node; handling leaf vs one-child vs two-child cases; the standard replacement rule (in-order successor or predecessor); and leaving the tree still a valid BST. Partial credit for incomplete but directionally correct answers. Award 0 for blank, irrelevant, or clearly wrong procedures (e.g. treating the structure as a linked list).",
+        "total_marks": 5,
+        "student_answers": [
+          {
+            "student_id": "MOH_A00",
+            "answer_text": "if root, set root to NULL\nelse if deleting right leaf, set rightPtr of parent node to NULL\nelse if deleting left leaf, set leftPtr of parent node to NULL\nelse if deleting a left or right subtree child node, set the max leaf child in the left subtree as the new child node."
+          },
+          {
+            "student_id": "MOH_A01",
+            "answer_text": "Traverse the tree and find the node, if the node has no children, simply delete it; otherwise set the node's data equal to the data of one of its children then set the pointer for that child to NULL."
+          },
+          {
+            "student_id": "MOH_A02",
+            "answer_text": "first attaching the elements from the node to be deleting to alternate nodes and then deleting that node.  \n\ndelete node;"
+          },
+          {
+            "student_id": "MOH_A03",
+            "answer_text": "If you delete a node from a tree, you have to link that nodes parents to the children of that node."
+          },
+          {
+            "student_id": "MOH_A04",
+            "answer_text": "Must delete the information that the node contains (to free up memory/ \"garbage collect\") and also delete the pointer (in that node's \"parent\") that points to the node you wish to delete."
+          },
+          {
+            "student_id": "MOH_A05",
+            "answer_text": "you replace the node with the largest element of its left subtree or replace it with the smallest element of the right subtree."
+          },
+          {
+            "student_id": "MOH_A06",
+            "answer_text": "You traverse the tree till you find the node you are wanting to delete.  If the node has no children you delete it.  If the node has children, before you delete, you find the left-most of its children and attach it to the root then you can delete the node."
+          },
+          {
+            "student_id": "MOH_A07",
+            "answer_text": "Link the to-be-deleted's left child to the to-be-deleted's parent's left child pointer."
+          },
+          {
+            "student_id": "MOH_A08",
+            "answer_text": "The way you delete a node from a binary search tree is first you have take the root and then see the nodes that are coming from the root. And delete the nodes and set the root to NULL."
+          },
+          {
+            "student_id": "MOH_A09",
+            "answer_text": "You remove the element from the tree and move the next highest element from the left into its place."
+          },
+          {
+            "student_id": "MOH_A10",
+            "answer_text": "delete node;"
+          },
+          {
+            "student_id": "MOH_A11",
+            "answer_text": "the deletion of a node depends upon if it has children and if it is an AVL binary search tree. Assuming it is not an AVL tree, and the node being deleted has no children, you just set its pointer to null. If it has a left child or a right child exclusively, that child replaces the deleted node, if it has two children, the left most child of the right sub tree (or right most child of the left subtree)will replace it"
+          },
+          {
+            "student_id": "MOH_A12",
+            "answer_text": "If the node is a leaf, just set it's parent's pointer to null and delete it, if it has a single child, set the parent's pointer to the child and delete; if it has two children, set the node to one of the middle children and remove that child from its previous position as a leaf (rightmost child of the left subtree or leftmost child of the right subtree)."
+          },
+          {
+            "student_id": "MOH_A13",
+            "answer_text": "In a binary search tree, you must first establish a proper replacement for the node you are about to delete, usually a child from the soon to be deleted node.  Once that replacement node has been found, you simply reassign it to where the node that is going to be deleted is.  After the deleted node has been usurped, you remove the deleted node from memory so it may be used again."
+          },
+          {
+            "student_id": "MOH_A14",
+            "answer_text": "It all depends on where the node is located. If its a child it can just be deleted but for a node inside the tree it must be replaced with another node that works in its place."
+          },
+          {
+            "student_id": "MOH_A15",
+            "answer_text": "if the node has no children, delete it right away, otherwise, put either the furthest right node on the left side or the furthest left node on the right side in that place and perform a the above on that node to guarantee that it's children get handled properly."
+          },
+          {
+            "student_id": "MOH_A16",
+            "answer_text": "Create a temp Node\n\nSet temp's values to the Node after head \nor NULL in the case of only head Node in the list. \n\nSet head equal to temp.\nDelete temp"
+          },
+          {
+            "student_id": "MOH_A17",
+            "answer_text": "by searching down the tree until you find the node, and replacing the link to that node with the greatest child node on the left subtree or the least child node on the right subtree."
+          },
+          {
+            "student_id": "MOH_A18",
+            "answer_text": "Set the nodes to NULL, where that it doesn't point to anything, and the use the DELETE opertator to clear space from memory."
+          },
+          {
+            "student_id": "MOH_A19",
+            "answer_text": "You must first traverse the tree to find the appropriate value.  Then you must make sure that the node is a leaf node.  If it is, then you can delete the pointer to that specific node."
+          },
+          {
+            "student_id": "MOH_A20",
+            "answer_text": "if the node is a leaf, you set it's parent's pointer to null.\nif the node is in the tree you must replace the node with one in the tree:\neither the largest in the left of the tree or the smallest in the right of the tree.\nthis can be done recursively if needed."
+          },
+          {
+            "student_id": "MOH_A21",
+            "answer_text": "if the node is a leaf it can simply be deallocated/deleted from memory, and its parent's reference to it changed to NULL. If the node has a single child, the pointer to it should be made to point to its child before deleting the node. Should the node have two children, the easiest solution may be to copy the node's entire subtree to a new array or tree, delete the node and all descendants, then add the elements taken from the subtree back into the main tree."
+          },
+          {
+            "student_id": "MOH_A22",
+            "answer_text": "not answered"
+          },
+          {
+            "student_id": "MOH_A23",
+            "answer_text": "you cannot delete a node because that can cause a node to have more than 2 children"
+          },
+          {
+            "student_id": "MOH_A24",
+            "answer_text": "You search the tree for the node using recursion. When you find the node, you determine whether it is a leaf or a internal node. If it is a leaf, you just delete it and set the parent pointer to that node to NULL. If it is a  node, you replace the node with either of the children nodes."
+          },
+          {
+            "student_id": "MOH_A25",
+            "answer_text": "to delete the node, you would have to link the children nodes that are connected to the node to be deleted to the remaining nodes of the tree in such a way that nodes on the right of the parent node are larger than the parent and nodes on the left of the parent node are smaller"
+          },
+          {
+            "student_id": "MOH_A26",
+            "answer_text": "if it has no children, you just delete it. if it only has one child, just replace the node with whichever child it has. if it has both children, replace it with one of its children, and send the other child down along the other side of the new node."
+          },
+          {
+            "student_id": "MOH_A27",
+            "answer_text": "pointer to the child and delete it has 2 children set the node to the child and delete it. the node to th middle will then take its place"
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-25T14:42:47.064249Z"
+  }
+}

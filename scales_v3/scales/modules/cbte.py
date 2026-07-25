@@ -8,6 +8,9 @@ Skeleton scope (Sprint 4 / Phase 3):
 
 from __future__ import annotations
 
+import json as _debug_json
+import time as _debug_time
+
 from loguru import logger
 
 from scales.config import AppSettings, CBTEConfig, get_settings
@@ -17,6 +20,30 @@ from scales.models.trust import CBTEResult, TrustDecision
 from scales.services.llm_client import LLMClient
 from scales.services.nli_service import NLIService
 from scales.services.text_utils import fuzzy_keyword_match, verify_evidence
+
+# region agent log
+_DEBUG_LOG_PATH = r"D:\OneDrive - MSFT\Codes\text ans eval system\debug-5194ac.log"
+
+
+def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
+    try:
+        with open(_DEBUG_LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(
+                _debug_json.dumps(
+                    {
+                        "sessionId": "5194ac",
+                        "hypothesisId": hypothesis_id,
+                        "location": location,
+                        "message": message,
+                        "data": data,
+                        "timestamp": int(_debug_time.time() * 1000),
+                    }
+                )
+                + "\n"
+            )
+    except Exception:
+        pass
+# endregion agent log
 
 
 def build_verdict_hypothesis(knowledge_point: str, verdict: Verdict | str | None = None) -> str:
@@ -42,6 +69,86 @@ def _score_nli_prediction(pred, verdict: Verdict | str) -> float:
         return float(pred.neutral)
     # FULL / PARTIAL — evidence should entail the concept claim
     return float(pred.entailment)
+
+
+def apply_cohort_absent_audit(
+    cgr_results: list[CGRResult],
+    cbte_results: list[CBTEResult],
+    config: CBTEConfig,
+) -> list[CBTEResult]:
+    """Escalate Tier-1 ABSENT auto-accepts for concepts the cohort mostly missed.
+
+    ``CBTEModule.evaluate_batch`` is invoked once *per student* during live
+    grading (see ``GradingPipeline._grade_one_student``), so Signal 4
+    (keyword grounding) never has cross-student visibility. An ABSENT
+    verdict with no rubric keywords present is fast-accepted at a flat
+    trust=0.90 by ``_tier1_check`` regardless of whether the student
+    genuinely omitted the concept or the concept itself is unearnable —
+    those two situations produce an identical per-item signal. Only once
+    every student in the batch has been graded does the population pattern
+    (almost nobody earns this concept) become visible.
+
+    Call this once, after the full batch is graded, from the pipeline layer
+    (which is the only place the whole cohort exists at once). Mutates and
+    returns the ``CBTEResult`` rows it escalates from ACCEPT to DEFER.
+    """
+    threshold = config.cohort_absent_escalation_threshold
+    min_students = config.cohort_absent_min_students
+    if not cbte_results:
+        return []
+
+    cgr_by_key = {(r.student_id, r.concept_id): r for r in cgr_results}
+    by_concept: dict[str, list[CBTEResult]] = {}
+    for result in cbte_results:
+        by_concept.setdefault(result.concept_id, []).append(result)
+
+    flipped: list[CBTEResult] = []
+    for concept_id, rows in by_concept.items():
+        total = len(rows)
+        if total < min_students:
+            continue
+        suspicious: list[CBTEResult] = []
+        for r in rows:
+            if r.decision != TrustDecision.ACCEPT or r.tier_resolved != 1:
+                continue
+            cgr = cgr_by_key.get((r.student_id, r.concept_id))
+            if cgr is not None and cgr.verdict == Verdict.ABSENT:
+                suspicious.append(r)
+        rate = len(suspicious) / total
+        if rate < threshold:
+            continue
+        for r in suspicious:
+            r.decision = TrustDecision.DEFER
+            r.reason = (
+                f"{r.reason} | Cohort audit: {len(suspicious)}/{total} students "
+                f"({rate:.0%}) auto-accepted ABSENT on {concept_id} — likely "
+                "mis-specified concept, escalated for review."
+            )
+            flipped.append(r)
+        # region agent log
+        _debug_log(
+            "H4-fix",
+            "scales/modules/cbte.py:apply_cohort_absent_audit",
+            "Cohort audit escalated a concept's ABSENT auto-accepts to DEFER",
+            {
+                "concept_id": concept_id,
+                "suspicious_count": len(suspicious),
+                "total": total,
+                "rate": rate,
+                "threshold": threshold,
+                "escalated_student_ids": [r.student_id for r in suspicious],
+            },
+        )
+        # endregion agent log
+        logger.warning(
+            "Cohort audit: concept={} {}/{} ({:.0%}) ABSENT auto-accepts "
+            "escalated to DEFER (mis-specified concept suspected)",
+            concept_id,
+            len(suspicious),
+            total,
+            rate,
+        )
+    return flipped
 
 
 class CBTEModule:
@@ -236,6 +343,21 @@ class CBTEModule:
         #   keywords present (≥ threshold) → suspicious → escalate
         if verdict == Verdict.ABSENT:
             if keyword_score < kw_threshold and not (cgr_result.evidence_span or "").strip():
+                # region agent log
+                _debug_log(
+                    "H1",
+                    "scales/modules/cbte.py:_tier1_check:ABSENT-accept",
+                    "ABSENT fast-accepted at Tier1 with flat trust=0.90",
+                    {
+                        "student_id": cgr_result.student_id,
+                        "concept_id": cgr_result.concept_id,
+                        "marks_awarded": cgr_result.marks_awarded,
+                        "keyword_score": keyword_score,
+                        "kw_threshold": kw_threshold,
+                        "trust_score": 0.90,
+                    },
+                )
+                # endregion agent log
                 return self._make_result(
                     cgr_result=cgr_result,
                     trust_score=0.90,
@@ -252,10 +374,41 @@ class CBTEModule:
                     ),
                 )
             # Suspicious ABSENT (keywords found) or ABSENT with evidence residual
+            # region agent log
+            _debug_log(
+                "H2",
+                "scales/modules/cbte.py:_tier1_check:ABSENT-escalate",
+                "ABSENT escalated past Tier1",
+                {
+                    "student_id": cgr_result.student_id,
+                    "concept_id": cgr_result.concept_id,
+                    "marks_awarded": cgr_result.marks_awarded,
+                    "keyword_score": keyword_score,
+                    "kw_threshold": kw_threshold,
+                    "evidence_span_present": bool((cgr_result.evidence_span or "").strip()),
+                },
+            )
+            # endregion agent log
             return None
 
         # FULL / PARTIAL / INCORRECT: high keyword grounding → fast accept
         if keyword_score >= kw_threshold:
+            # region agent log
+            _debug_log(
+                "H3",
+                "scales/modules/cbte.py:_tier1_check:nonABSENT-accept",
+                "non-ABSENT fast-accepted at Tier1",
+                {
+                    "student_id": cgr_result.student_id,
+                    "concept_id": cgr_result.concept_id,
+                    "verdict": verdict.value,
+                    "marks_awarded": cgr_result.marks_awarded,
+                    "keyword_score": keyword_score,
+                    "kw_threshold": kw_threshold,
+                    "trust_score": 0.85,
+                },
+            )
+            # endregion agent log
             return self._make_result(
                 cgr_result=cgr_result,
                 trust_score=0.85,
@@ -274,6 +427,21 @@ class CBTEModule:
             )
 
         # Low keywords → escalate
+        # region agent log
+        _debug_log(
+            "H3",
+            "scales/modules/cbte.py:_tier1_check:nonABSENT-escalate",
+            "non-ABSENT escalated past Tier1",
+            {
+                "student_id": cgr_result.student_id,
+                "concept_id": cgr_result.concept_id,
+                "verdict": verdict.value,
+                "marks_awarded": cgr_result.marks_awarded,
+                "keyword_score": keyword_score,
+                "kw_threshold": kw_threshold,
+            },
+        )
+        # endregion agent log
         return None
 
     def _tier2_check(

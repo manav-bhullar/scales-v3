@@ -16,9 +16,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | `cgr.target_criteria_wiring` | TC-005 | restructure | code | Pass CQA target_criteria into every CGR prompt as the aut... | CGR grades from a lossy knowledge-point summary... |
 | `dataset.cn2.human_gold` | TC-008 | tighten | dataset | Human CN2 review: clarified GOOD_01 sender wording; demot... | GOOD_02 wrongly treated as high-band full credi... |
 | `dataset.os1.definition_required` | TC-004 | tighten | dataset | Clarified definition mark: FULL requires both explicit de... | CGR may again infer the missing definitions fro... |
+| `dataset.real_data_wave5` | TC-010 | measure | dataset | Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST no... | Evaluation evidence stays purely synthetic; FYP... |
 | `grading.mark_granularity` | TC-009 | restructure | metric | CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed... | Stays at 0/0.5/1.0; teacher keeps rounding bord... |
 | `metrics.pass_bar` | TC-002 | measure | metric | Executable Wave4 pass bar (false ACCEPT, silent zeros, de... | Must manually interpret metrics; easy to miss h... |
 | `metrics.silent_zero` | TC-006 | restructure | metric | Changed silent-zero from a hard gate to a review candidat... | Legitimate omitted concepts on otherwise high-b... |
+| `ui.accept_audit_surface` | TC-011 | restructure | code | New GET /api/exams/{id}/breakdown plus ExplainPage UI: pe... | Teachers can only see DEFERs again. Accepted ze... |
 
 ## History per screw
 
@@ -69,6 +71,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 - **TC-004** (2026-07-25, tighten): Clarified definition mark: FULL requires both explicit definitions; PARTIAL requires one explicit definition; resource-sharing implication alone earns ABSENT
   - if reverted: CGR may again infer the missing definitions from parts (a)-(d), allowing incomplete answers to recover definition credit
 
+### `dataset.real_data_wave5`
+
+- **TC-010** (2026-07-25, measure): Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST node deletion), 28 UNT student answers, gold bands derived from two human graders (0-10 normalized to 0-5); 5-mark rubric authored by us
+  - if reverted: Evaluation evidence stays purely synthetic; FYP claim 'works on real answers' unsupported
+
 ### `grading.mark_granularity`
 
 - **TC-009** (2026-07-25, restructure): CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed_marks_fractions so verdicts can express quarter-credit
@@ -85,3 +92,8 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
   - if reverted: Pass bar and ledger cannot detect Wave4 OS1-style silent zeros on GOOD
 - **TC-006** (2026-07-25, restructure): Changed silent-zero from a hard gate to a review candidate unless concept-level human gold confirms the zero was unexpected
   - if reverted: Legitimate omitted concepts on otherwise high-band students can falsely fail the pass bar
+
+### `ui.accept_audit_surface`
+
+- **TC-011** (2026-07-25, restructure): New GET /api/exams/{id}/breakdown plus ExplainPage UI: per-student, per-concept 'why these marks' view (verdict, marks, reasoning, quoted evidence, keyword found/missing split, CBTE signals, teacher override). Adds a cohort 'rubric health' strip and a 'Zeros never checked' filter that lists ACCEPTed zero-mark judgments.
+  - if reverted: Teachers can only see DEFERs again. Accepted zeros stay invisible, dead rubric concepts stay undetectable without a hand-written script, and every underscoring diagnosis needs a developer reading grading_results.json.

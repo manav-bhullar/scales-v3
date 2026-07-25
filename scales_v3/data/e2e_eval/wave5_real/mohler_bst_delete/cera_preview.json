@@ -1,0 +1,107 @@
+{
+  "exam_id": "e2e_wave5_mohler_bst_delete",
+  "question_id": "Q1",
+  "question_text": "How do you delete a node from a binary search tree?",
+  "reference_answer": "Find the node, then replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree).",
+  "total_marks": 5,
+  "marks_sum": 5,
+  "n_concepts": 4,
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Locating the target node in the BST",
+      "target_criteria": "Must describe the search process to find the node to be deleted.",
+      "marks": 1,
+      "expected_keywords": [
+        "search",
+        "find",
+        "locate"
+      ],
+      "acceptable_variants": [
+        "traverse to the node",
+        "identify the target node"
+      ],
+      "partial_credit_rule": "0.5 marks if the search process is mentioned but lacks detail on BST traversal logic.",
+      "source_rubric_span": "Locate/find the target node in the BST (search step). (1 mark)",
+      "source_reference_span": "Find the node",
+      "version": 1,
+      "created_at": "2026-07-25T14:33:31.666731Z",
+      "updated_at": "2026-07-25T14:33:31.666731Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Handling leaf node deletion",
+      "target_criteria": "Must describe removing a leaf node by setting the parent pointer to null.",
+      "marks": 1,
+      "expected_keywords": [
+        "leaf",
+        "null",
+        "remove"
+      ],
+      "acceptable_variants": [
+        "delete leaf node",
+        "set parent reference to null"
+      ],
+      "partial_credit_rule": "0.5 marks if the concept of a leaf is identified but the pointer update is missing.",
+      "source_rubric_span": "Simple case: leaf node — remove it / set parent pointer to null. (1 mark)",
+      "source_reference_span": "replace it with the leftmost node",
+      "version": 1,
+      "created_at": "2026-07-25T14:33:31.666731Z",
+      "updated_at": "2026-07-25T14:33:31.666731Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Replacement rule for internal nodes",
+      "target_criteria": "Must describe replacing the node with the in-order successor or in-order predecessor.",
+      "marks": 2,
+      "expected_keywords": [
+        "successor",
+        "predecessor",
+        "leftmost",
+        "rightmost"
+      ],
+      "acceptable_variants": [
+        "replace with leftmost of right subtree",
+        "replace with rightmost of left subtree"
+      ],
+      "partial_credit_rule": "1 mark if only one of the two replacement options is described correctly.",
+      "source_rubric_span": "Replacement rule for an internal node: replace with in-order successor (leftmost node of right subtree) OR in-order predecessor (rightmost node of left subtree). (2 marks)",
+      "source_reference_span": "replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree).",
+      "version": 1,
+      "created_at": "2026-07-25T14:33:31.666731Z",
+      "updated_at": "2026-07-25T14:33:31.666731Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Maintaining tree integrity",
+      "target_criteria": "Must describe re-linking pointers to ensure the BST property is preserved.",
+      "marks": 1,
+      "expected_keywords": [
+        "re-link",
+        "pointers",
+        "BST property",
+        "ordering"
+      ],
+      "acceptable_variants": [
+        "maintain BST structure",
+        "update child pointers"
+      ],
+      "partial_credit_rule": "0.5 marks if the need for re-linking is mentioned without explaining the BST property maintenance.",
+      "source_rubric_span": "Tree integrity: re-link pointers / BST ordering property still holds after deletion. (1 mark)",
+      "source_reference_span": "replace it with the leftmost node from its right subtree",
+      "version": 1,
+      "created_at": "2026-07-25T14:33:31.666731Z",
+      "updated_at": "2026-07-25T14:33:31.666731Z"
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 1,
+    "tokens_used": 1935,
+    "concept_count": 4
+  }
+}

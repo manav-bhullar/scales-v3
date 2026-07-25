@@ -1,0 +1,178 @@
+# Wave 2 CBTE re-eval (Signal-1 fix)
+
+- Exam: `e2e_wave5_mohler_bst_delete`
+- NLI: off
+- DEFER before → after: **23 → 79**
+- Decision/tier flips: **56**
+- False DEFER on STU_GOOD/STU_GOOD_ALT C3/C4: **0** (none)
+
+## Flips
+
+- `MOH_A00/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A00/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A01/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A02/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A02/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A03/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A03/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A04/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A04/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A05/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A05/Q1_C3`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.98
+  - new: Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)
+- `MOH_A05/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A06/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A07/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A07/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A08/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A09/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A09/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A10/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A10/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A11/Q1_C2`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.97
+  - new: Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)
+- `MOH_A11/Q1_C3`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.98
+  - new: Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)
+- `MOH_A11/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A12/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A12/Q1_C2`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 1.00
+  - new: Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)
+- `MOH_A12/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A13/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A14/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A14/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A15/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A15/Q1_C3`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.96
+  - new: Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)
+- `MOH_A15/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A16/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A16/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A17/Q1_C3`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.99
+  - new: Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)
+- `MOH_A17/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A18/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A18/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A19/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A20/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A20/Q1_C3`: ACCEPT(t3) → DEFER(t3) | sig1=True
+  - old: Tier 3: trust=0.58 (nli=0.54, stab=1.0, kw=0.20, tau=0.50)
+  - new: Tier 3: trust=0.36 (nli=0.00, stab=1.0, kw=0.20, tau=0.50)
+- `MOH_A20/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A21/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A21/Q1_C2`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.76
+  - new: Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)
+- `MOH_A21/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A22/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A22/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A23/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A24/Q1_C2`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.95
+  - new: Tier 3: trust=0.38 (nli=0.00, stab=1.0, kw=0.25, tau=0.50)
+- `MOH_A24/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A25/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A26/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A26/Q1_C2`: ACCEPT(t2) → DEFER(t3) | sig1=True
+  - old: Tier 2 accept: NLI entailment = 0.94
+  - new: Tier 3: trust=0.30 (nli=0.00, stab=1.0, kw=0.00, tau=0.50)
+- `MOH_A26/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.
+- `MOH_A27/Q1_C1`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 20/28 students (71%) auto-accepted ABSENT on Q1_C1 — likely mis-specified concept, escalated for review.
+- `MOH_A27/Q1_C4`: ACCEPT(t1) → DEFER(t1) | sig1=True
+  - old: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00)
+  - new: Tier 1 auto-accept: ABSENT verdict confirmed by missing keywords (score=0.00) | Cohort audit: 26/28 students (93%) auto-accepted ABSENT on Q1_C4 — likely mis-specified concept, escalated for review.

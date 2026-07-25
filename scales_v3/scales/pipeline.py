@@ -23,7 +23,7 @@ from scales.models.result import FinalResult
 from scales.models.review import CorrectionResult, ReviewItem, ReviewProgress
 from scales.models.trust import CBTEResult, TrustDecision
 from scales.modules.aggregator import AggregatorModule
-from scales.modules.cbte import CBTEModule
+from scales.modules.cbte import CBTEModule, apply_cohort_absent_audit
 from scales.modules.cera import CERAModule
 from scales.modules.cgr import CGRModule
 from scales.modules.exceptions import AggregatorValidationError, SHRRValidationError
@@ -113,9 +113,18 @@ class GradingPipeline:
             self._graded_students = []
 
         if not self._cqa_list:
-            cera_out = await self.cera.extract_concepts(question)
-            self._cqa_list = cera_out.cqa_tuples
-            self.store.save_cqa_tuples(self._cqa_list)
+            # Human-locked CQAs from a prior CERA review gate (skip re-extraction).
+            locked = self.store.load_cqa_tuples() if resume else []
+            if locked:
+                self._cqa_list = locked
+                logger.info(
+                    "Using {} locked CQAs from store (skip CERA re-extraction)",
+                    len(locked),
+                )
+            else:
+                cera_out = await self.cera.extract_concepts(question)
+                self._cqa_list = cera_out.cqa_tuples
+                self.store.save_cqa_tuples(self._cqa_list)
 
         already = set(self._graded_students)
         for student in question.student_answers:
@@ -130,6 +139,10 @@ class GradingPipeline:
                 cgr_results=self._cgr_results,
                 cbte_results=self._cbte_results,
             )
+
+        # Cohort audit (TC-012): must run here, once the whole batch is in —
+        # CBTEModule grades one student at a time and cannot see this pattern.
+        apply_cohort_absent_audit(self._cgr_results, self._cbte_results, self.cbte.config)
 
         deferred = sum(
             1 for r in self._cbte_results if r.decision == TrustDecision.DEFER
@@ -187,13 +200,45 @@ class GradingPipeline:
             question_text=question.question_text,
         )
         cgr_by_id = {r.concept_id: r for r in cgr_results}
-        cbte_results = self.cbte.evaluate_batch(
-            [
-                (cgr_by_id[cqa.concept_id], student.answer_text, cqa)
-                for cqa in self._cqa_list
-                if cqa.concept_id in cgr_by_id
-            ]
-        )
+        batch_items = [
+            (cgr_by_id[cqa.concept_id], student.answer_text, cqa)
+            for cqa in self._cqa_list
+            if cqa.concept_id in cgr_by_id
+        ]
+        # region agent log
+        try:
+            import json as _dj
+            import time as _dt
+
+            with open(
+                r"D:\OneDrive - MSFT\Codes\text ans eval system\debug-5194ac.log",
+                "a",
+                encoding="utf-8",
+            ) as _f:
+                _f.write(
+                    _dj.dumps(
+                        {
+                            "sessionId": "5194ac",
+                            "hypothesisId": "H6",
+                            "location": "scales/pipeline.py:_grade_one_student",
+                            "message": "evaluate_batch call scope",
+                            "data": {
+                                "student_id": student.student_id,
+                                "item_count": len(batch_items),
+                                "distinct_student_ids_in_batch": list(
+                                    {student.student_id}
+                                ),
+                                "concept_ids_in_batch": [c.concept_id for _, _, c in batch_items],
+                            },
+                            "timestamp": int(_dt.time() * 1000),
+                        }
+                    )
+                    + "\n"
+                )
+        except Exception:
+            pass
+        # endregion agent log
+        cbte_results = self.cbte.evaluate_batch(batch_items)
         self._cgr_results.extend(cgr_results)
         self._cbte_results.extend(cbte_results)
 

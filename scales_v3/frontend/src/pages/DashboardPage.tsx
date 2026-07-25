@@ -127,8 +127,14 @@ export function DashboardPage() {
                   </span>
                 )}
                 <Link
-                  to={`/exams/${encodeURIComponent(exam.exam_id)}/results`}
+                  to={`/exams/${encodeURIComponent(exam.exam_id)}/explain`}
                   className="m3-btn-tonal text-center"
+                >
+                  Why these marks
+                </Link>
+                <Link
+                  to={`/exams/${encodeURIComponent(exam.exam_id)}/results`}
+                  className="m3-btn-text text-center"
                 >
                   Results
                 </Link>
