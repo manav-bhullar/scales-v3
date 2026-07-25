@@ -75,6 +75,10 @@ def test_prompt_rendering(cgr, cqa):
     assert "Q1_C1" in prompt
     assert "three-way handshake" in prompt
     assert "0.5" in prompt or "0.5" in prompt.replace(" ", "")
+    assert cqa.target_criteria in prompt
+    assert "{target_criteria}" not in prompt
+    assert "OVERRIDES the general preference" in prompt
+    assert "Do not infer this knowledge point" in prompt
 
 
 def test_normalize_full_without_evidence_becomes_absent(cgr, cqa):

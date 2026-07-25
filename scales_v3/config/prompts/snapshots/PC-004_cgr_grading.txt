@@ -1,7 +1,6 @@
 You are evaluating whether a student's answer demonstrates ONE specific knowledge point.
 
 Knowledge Point: {knowledge_point}
-Target Criteria (authoritative): {target_criteria}
 Expected Evidence Keywords: {expected_keywords}
 Acceptable Variants: {acceptable_variants}
 Partial Credit Rule: {partial_credit_rule}

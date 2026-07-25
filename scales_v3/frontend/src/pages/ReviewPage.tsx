@@ -20,9 +20,6 @@ export function ReviewPage() {
 
   const load = useCallback(async () => {
     const data = await api.getReview(examId);
-    // Filter out already-resolved items using progress: show remaining only
-    // Backend returns full deferred queue; resolved ones still listed until we
-    // filter by matching corrections — progress.remaining is authoritative.
     setItems(data.items);
     setProgress(data.progress);
     setIndex(0);
@@ -32,10 +29,7 @@ export function ReviewPage() {
     load().catch((e: Error) => setError(e.message));
   }, [load]);
 
-  // Unresolved = items whose (student,concept) not yet corrected.
-  // We track locally by shrinking the working list after each submit.
   const current = items[index] ?? null;
-  const remainingLocal = items.length;
 
   const advance = () => {
     setExiting(true);
@@ -80,8 +74,6 @@ export function ReviewPage() {
       if (e.key === "a" || e.key === "A") {
         e.preventDefault();
         onAgree();
-      } else if (e.key === "c" || e.key === "C") {
-        // Correct mode is opened inside QueueCard — focus hint only
       } else if (e.key === "ArrowRight") {
         setIndex((i) => Math.min(i + 1, Math.max(items.length - 1, 0)));
       } else if (e.key === "ArrowLeft") {
@@ -98,7 +90,7 @@ export function ReviewPage() {
     setError(null);
     try {
       await api.finalize(examId);
-      setDoneMsg("Review complete — finals written.");
+      setDoneMsg("Finals written. You can open results.");
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -107,26 +99,32 @@ export function ReviewPage() {
   };
 
   const resolved = progress?.resolved ?? 0;
-  const total = progress?.total ?? remainingLocal;
+  const total = progress?.total ?? items.length;
+  const remaining = progress?.remaining ?? items.length;
   const pct = total ? Math.round((resolved / total) * 100) : 0;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-6 gap-3 flex-wrap">
+    <div className="shell" style={{ maxWidth: 820 }}>
+      <div className="flex items-start justify-between gap-4 flex-wrap mb-6">
         <div>
-          <Link to="/" className="m3-body-small" style={{ color: "var(--md-sys-color-primary)" }}>
+          <Link to="/" className="m3-btn-text" style={{ paddingLeft: 0 }}>
             ← Exams
           </Link>
-          <h1 className="m3-headline-medium m-0 mt-1">Review queue</h1>
-          <p className="m3-body-small m-0">{examId}</p>
+          <h1 className="m3-headline-large m-0 mt-1">Resolve DEFERs</h1>
+          <p className="m3-body-small m-0 mt-1" style={{ wordBreak: "break-all" }}>
+            {examId}
+          </p>
         </div>
-        <p className="m3-title-large m-0">
-          Item {Math.min(resolved + 1, total)} of {total}
-        </p>
+        <div className="text-right">
+          <p className="m3-display-large m-0" style={{ fontSize: "2.5rem" }}>
+            {remaining}
+          </p>
+          <p className="m3-label-small m-0">remaining</p>
+        </div>
       </div>
 
       <div
-        className="h-2 mb-6 overflow-hidden"
+        className="h-3 mb-8 overflow-hidden"
         style={{
           background: "var(--md-sys-color-surface-container-highest)",
           borderRadius: "var(--md-sys-shape-corner-full)",
@@ -135,26 +133,56 @@ export function ReviewPage() {
         aria-valuenow={pct}
         aria-valuemin={0}
         aria-valuemax={100}
+        aria-label="Review progress"
       >
         <div
           style={{
             width: `${pct}%`,
             height: "100%",
-            background: "var(--md-sys-color-primary)",
+            transformOrigin: "left",
+            background:
+              "linear-gradient(90deg, var(--md-sys-color-primary), color-mix(in srgb, var(--md-sys-color-tertiary) 55%, var(--md-sys-color-primary)))",
+            borderRadius: "inherit",
             transition: "width var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive)",
           }}
         />
       </div>
 
+      <p className="m3-body-small mt-0 mb-5">
+        Item {Math.min(resolved + (current ? 1 : 0), total)} of {total}
+        {" · "}
+        Shortcuts: <kbd>A</kbd> agree · <kbd>←</kbd>/<kbd>→</kbd> browse
+      </p>
+
       {error && (
-        <p className="m3-body-large mb-4" style={{ color: "var(--md-sys-color-error)" }}>
+        <p
+          className="m3-body-large mb-4 px-4 py-3"
+          style={{
+            color: "var(--md-sys-color-on-error-container)",
+            background: "var(--md-sys-color-error-container)",
+            borderRadius: "var(--md-sys-shape-corner-medium)",
+          }}
+        >
           {error}
         </p>
       )}
+
       {doneMsg && (
-        <p className="m3-body-large mb-4" style={{ color: "var(--md-sys-color-tertiary)" }}>
+        <p
+          className="m3-body-large mb-4 px-4 py-3"
+          style={{
+            background: "var(--md-sys-color-primary-container)",
+            color: "var(--md-sys-color-on-primary-container)",
+            borderRadius: "var(--md-sys-shape-corner-medium)",
+          }}
+        >
           {doneMsg}{" "}
-          <Link to={`/exams/${encodeURIComponent(examId)}/results`}>View results</Link>
+          <Link
+            to={`/exams/${encodeURIComponent(examId)}/results`}
+            style={{ fontWeight: 700, color: "inherit" }}
+          >
+            View results →
+          </Link>
         </p>
       )}
 
@@ -163,25 +191,23 @@ export function ReviewPage() {
           key={current.review_item_id}
           item={current}
           exiting={exiting}
+          busy={busy}
           onAgree={onAgree}
           onCorrect={(v, m, c) => void submit(v, m, c)}
           onExplain={() => setExplainOpen(true)}
         />
       ) : (
-        <div className="m3-card p-8 text-center">
-          <h2 className="m3-headline-medium">Queue clear</h2>
-          <p className="m3-body-large">
-            All deferred items have corrections. Finalize to aggregate marks.
+        <div className="m3-surface p-10 text-center">
+          <p className="m3-label-small m-0 mb-2">Queue clear</p>
+          <h2 className="m3-headline-large m-0">All DEFERs resolved</h2>
+          <p className="m3-body-large mt-3 mb-6 max-w-md mx-auto">
+            Finalize to fold teacher corrections into final scores for every
+            student.
           </p>
           <button
             type="button"
+            className="m3-fab"
             disabled={finalizing}
-            className="border-0 cursor-pointer px-6 py-3 mt-4"
-            style={{
-              background: "var(--md-sys-color-primary)",
-              color: "var(--md-sys-color-on-primary)",
-              borderRadius: "var(--md-sys-shape-corner-full)",
-            }}
             onClick={() => void finalize()}
           >
             {finalizing ? "Finalizing…" : "Finalize exam"}
@@ -189,19 +215,16 @@ export function ReviewPage() {
         </div>
       )}
 
-      <p className="m3-body-small mt-4">
-        Shortcuts: <kbd>A</kbd> agree · <kbd>←</kbd>/<kbd>→</kbd> navigate
-      </p>
-
       <BottomSheet
         open={explainOpen}
-        title="Trust signals"
+        title="Why this was deferred"
         onClose={() => setExplainOpen(false)}
       >
         {current && (
           <TrustDetail
             signals={current.signals}
             deferReason={current.defer_reason}
+            trustScore={current.trust_score}
           />
         )}
       </BottomSheet>

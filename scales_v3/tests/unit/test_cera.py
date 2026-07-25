@@ -95,6 +95,9 @@ def test_prompt_contains_question_fields(cera, question):
     assert "three-way handshake" in prompt
     assert "Q1" in prompt
     assert "4" in prompt
+    assert "partial_credit_rule whenever the rubric allows partial marks" in prompt
+    assert "a 1-mark CQA" in prompt
+    assert "Never broaden an exclusion" in prompt
 
 
 def test_prompt_feedback_appended(cera, question):

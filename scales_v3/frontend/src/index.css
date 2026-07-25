@@ -1,49 +1,64 @@
 @import "tailwindcss";
 
+/*
+  Material 3 Expressive — SCALES teacher UI
+  Seed: deep teal primary (academic ink), coral tertiary for DEFER attention.
+  Avoids the generic purple-on-white AI look.
+*/
+
 :root {
-  /* Material 3 Expressive — seeded light scheme (indigo primary) */
-  --md-sys-color-primary: #4459a9;
+  --md-sys-color-primary: #006a60;
   --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #dbe1ff;
-  --md-sys-color-on-primary-container: #00174b;
+  --md-sys-color-primary-container: #9ff2e4;
+  --md-sys-color-on-primary-container: #00201c;
 
-  --md-sys-color-secondary: #585e71;
+  --md-sys-color-secondary: #4a635e;
   --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #dde2f9;
-  --md-sys-color-on-secondary-container: #151b2c;
+  --md-sys-color-secondary-container: #cce8e1;
+  --md-sys-color-on-secondary-container: #05201c;
 
-  --md-sys-color-tertiary: #006c4f;
+  --md-sys-color-tertiary: #9c4325;
   --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-tertiary-container: #6ffbbe;
-  --md-sys-color-on-tertiary-container: #002116;
+  --md-sys-color-tertiary-container: #ffdbcf;
+  --md-sys-color-on-tertiary-container: #380d00;
 
   --md-sys-color-error: #ba1a1a;
   --md-sys-color-on-error: #ffffff;
   --md-sys-color-error-container: #ffdad6;
   --md-sys-color-on-error-container: #410002;
 
-  --md-sys-color-surface: #faf8ff;
-  --md-sys-color-on-surface: #1a1b23;
+  --md-sys-color-surface: #f4fbf8;
+  --md-sys-color-on-surface: #161d1b;
+  --md-sys-color-surface-dim: #d5dbd8;
+  --md-sys-color-surface-bright: #f4fbf8;
   --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f4f2fa;
-  --md-sys-color-surface-container: #eeedf5;
-  --md-sys-color-surface-container-high: #e8e7ef;
-  --md-sys-color-surface-container-highest: #e2e1e9;
-  --md-sys-color-outline: #757680;
-  --md-sys-color-outline-variant: #c5c6d0;
+  --md-sys-color-surface-container-low: #eef5f2;
+  --md-sys-color-surface-container: #e8efec;
+  --md-sys-color-surface-container-high: #e2e9e6;
+  --md-sys-color-surface-container-highest: #dce3e0;
+  --md-sys-color-outline: #6f7976;
+  --md-sys-color-outline-variant: #bec9c5;
+  --md-sys-color-inverse-surface: #2b3230;
+  --md-sys-color-inverse-on-surface: #ecf2ef;
 
+  /* Expressive shapes — larger, friendlier radii */
   --md-sys-shape-corner-extra-small: 8px;
   --md-sys-shape-corner-small: 12px;
   --md-sys-shape-corner-medium: 20px;
   --md-sys-shape-corner-large: 28px;
-  --md-sys-shape-corner-extra-large: 36px;
+  --md-sys-shape-corner-extra-large: 40px;
   --md-sys-shape-corner-full: 9999px;
 
+  /* Emphasized easing (M3 Expressive) */
   --md-sys-motion-easing-expressive: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --md-sys-motion-duration-short: 200ms;
   --md-sys-motion-duration-medium: 400ms;
-  --md-sys-motion-duration-long: 600ms;
+  --md-sys-motion-duration-long: 700ms;
 
-  font-family: "Roboto Flex", "Roboto", system-ui, sans-serif;
+  font-family: "Roboto Flex", system-ui, sans-serif;
+  font-optical-sizing: auto;
   color: var(--md-sys-color-on-surface);
   background: var(--md-sys-color-surface);
 }
@@ -55,57 +70,95 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--md-sys-color-surface);
+  background:
+    radial-gradient(1200px 600px at 8% -10%, color-mix(in srgb, var(--md-sys-color-primary-container) 55%, transparent), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--md-sys-color-tertiary-container) 45%, transparent), transparent 50%),
+    radial-gradient(700px 400px at 50% 110%, color-mix(in srgb, var(--md-sys-color-secondary-container) 40%, transparent), transparent 55%),
+    var(--md-sys-color-surface);
+  background-attachment: fixed;
 }
 
 #root {
   min-height: 100vh;
 }
 
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+kbd {
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: var(--md-sys-color-surface-container-highest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* Type scale — expressive optical sizes */
 .m3-display-large {
-  font-size: 3.5rem;
+  font-size: clamp(2.75rem, 6vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "GRAD" 0;
+}
+
+.m3-headline-large {
+  font-size: 2rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 36;
 }
 
 .m3-headline-medium {
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.25;
+  font-variation-settings: "opsz" 28;
 }
 
 .m3-title-large {
   font-size: 1.375rem;
   font-weight: 600;
   line-height: 1.3;
+  font-variation-settings: "opsz" 24;
 }
 
 .m3-body-large {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
+  font-variation-settings: "opsz" 16;
 }
 
 .m3-body-small {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.4;
-  color: color-mix(in srgb, var(--md-sys-color-on-surface) 70%, transparent);
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 68%, transparent);
+  font-variation-settings: "opsz" 14;
 }
 
 .m3-label-small {
   font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 72%, transparent);
 }
 
-.m3-card {
+.m3-surface {
   background: var(--md-sys-color-surface-container-lowest);
-  border-radius: var(--md-sys-shape-corner-large);
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent),
-    0 8px 24px color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  box-shadow:
+    0 1px 2px color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent),
+    0 12px 40px color-mix(in srgb, var(--md-sys-color-primary) 7%, transparent);
 }
 
 .m3-card-exit {
@@ -113,26 +166,132 @@ body {
 }
 
 .m3-card-enter {
-  animation: card-enter var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-expressive);
+  animation: card-enter var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-spring);
 }
 
 @keyframes card-exit {
   to {
     opacity: 0;
-    transform: translateX(40px) scale(0.96);
+    transform: translateX(48px) scale(0.94);
   }
 }
 
 @keyframes card-enter {
   from {
     opacity: 0;
-    transform: translateY(24px) scale(0.98);
+    transform: translateY(28px) scale(0.96);
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
   }
 }
 
 .evidence-mark {
   background: var(--md-sys-color-tertiary-container);
   color: var(--md-sys-color-on-tertiary-container);
-  border-radius: 4px;
-  padding: 0 2px;
+  border-radius: 6px;
+  padding: 0.05em 0.2em;
+  box-decoration-break: clone;
+}
+
+.m3-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  padding: 1rem 1.75rem;
+  font-weight: 650;
+  font-size: 1rem;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow:
+    0 2px 6px color-mix(in srgb, var(--md-sys-color-primary) 28%, transparent),
+    0 8px 24px color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent);
+  transition:
+    transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring),
+    box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-expressive);
+}
+
+.m3-fab:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.m3-fab:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.m3-fab:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.m3-btn-tonal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 0;
+  cursor: pointer;
+  padding: 0.85rem 1.35rem;
+  font-weight: 600;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  text-decoration: none;
+  transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring);
+}
+
+.m3-btn-tonal:hover {
+  transform: scale(1.02);
+}
+
+.m3-btn-text {
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: var(--md-sys-shape-corner-full);
+  text-decoration: none;
+}
+
+.m3-btn-text:hover {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 8%, transparent);
+}
+
+.shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.results-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    padding: 2rem 1.75rem 4rem;
+  }
+
+  .results-grid {
+    grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.25fr);
+  }
 }

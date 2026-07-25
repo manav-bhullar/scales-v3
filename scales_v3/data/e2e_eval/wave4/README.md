@@ -96,7 +96,7 @@ Re-score Wave 3 (or at least compare ledger) after any prompt/threshold change s
 | Metric | Pass |
 |--------|------|
 | False ACCEPT | 0 on the 2 LOW students |
-| Silent zeros | 0 ACCEPT+0-marks on HIGH-band (GOOD) students |
+| Silent-zero candidates | inspect ACCEPT+0 on HIGH students; gate only with concept-level human gold |
 | GOOD students | provisional or post-review in high band |
 | DEFER rate | not > 40% on n=8 (noisy; investigate if higher) |
 | Mid/partial | not all scored 0 |

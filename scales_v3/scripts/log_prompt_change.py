@@ -52,7 +52,7 @@ CHANGELOG_MD = PROMPTS_DIR / "PROMPT_CHANGELOG.md"
 SNAPSHOTS = PROMPTS_DIR / "snapshots"
 SCREWS_MD = PROMPTS_DIR / "SCREWS.md"
 
-KINDS = ("prompt", "settings", "code", "metric")
+KINDS = ("prompt", "settings", "code", "metric", "dataset")
 DIRECTIONS = ("tighten", "loosen", "restructure", "measure")
 
 
@@ -446,7 +446,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--kind",
         choices=KINDS,
         default="prompt",
-        help="prompt | settings | code | metric (default: prompt)",
+        help="prompt | settings | code | metric | dataset (default: prompt)",
     )
     add.add_argument(
         "--prompt",

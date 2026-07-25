@@ -39,12 +39,14 @@ export function ResultsPage() {
   const detail = results.find((r) => r.student_id === selected) ?? null;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
-      <Link to="/" className="m3-body-small" style={{ color: "var(--md-sys-color-primary)" }}>
+    <div className="shell">
+      <Link to="/" className="m3-btn-text" style={{ paddingLeft: 0 }}>
         ← Exams
       </Link>
-      <h1 className="m3-headline-medium m-0 mt-2">Results</h1>
-      <p className="m3-body-small">{examId}</p>
+      <h1 className="m3-headline-large m-0 mt-2">Results</h1>
+      <p className="m3-body-small" style={{ wordBreak: "break-all" }}>
+        {examId}
+      </p>
 
       {error && (
         <p className="m3-body-large" style={{ color: "var(--md-sys-color-error)" }}>
@@ -53,99 +55,104 @@ export function ResultsPage() {
       )}
 
       {!error && results.length === 0 && (
-        <p className="m3-body-large mt-4">
-          No finals yet. Complete the review queue and finalize first.
-        </p>
+        <div className="m3-surface p-8 mt-6">
+          <h2 className="m3-headline-medium m-0">No finals yet</h2>
+          <p className="m3-body-large mt-2 mb-0">
+            Resolve the DEFER queue and finalize first.
+          </p>
+          <Link
+            to={`/exams/${encodeURIComponent(examId)}/review`}
+            className="m3-fab no-underline mt-5 inline-flex"
+          >
+            Open review
+          </Link>
+        </div>
       )}
 
       {results.length > 0 && (
-        <div className="grid gap-6 mt-6" style={{ gridTemplateColumns: "1fr 1.2fr" }}>
-          <section className="m3-card p-4">
-            <div className="flex gap-2 mb-3">
-              <button
-                type="button"
-                className="border-0 cursor-pointer px-3 py-1"
-                style={{
-                  borderRadius: "var(--md-sys-shape-corner-full)",
-                  background:
-                    sortKey === "score"
-                      ? "var(--md-sys-color-secondary-container)"
-                      : "var(--md-sys-color-surface-container-high)",
-                }}
-                onClick={() => setSortKey("score")}
-              >
-                Sort by score
-              </button>
-              <button
-                type="button"
-                className="border-0 cursor-pointer px-3 py-1"
-                style={{
-                  borderRadius: "var(--md-sys-shape-corner-full)",
-                  background:
-                    sortKey === "deferred"
-                      ? "var(--md-sys-color-secondary-container)"
-                      : "var(--md-sys-color-surface-container-high)",
-                }}
-                onClick={() => setSortKey("deferred")}
-              >
-                Sort by deferred
-              </button>
+        <div className="results-grid mt-8">
+          <section className="m3-surface p-5">
+            <div className="flex gap-2 mb-4 flex-wrap">
+              {(
+                [
+                  ["score", "By score"],
+                  ["deferred", "By deferred"],
+                ] as const
+              ).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  className="border-0 cursor-pointer px-4 py-2"
+                  style={{
+                    borderRadius: "var(--md-sys-shape-corner-full)",
+                    fontWeight: 600,
+                    background:
+                      sortKey === key
+                        ? "var(--md-sys-color-secondary-container)"
+                        : "var(--md-sys-color-surface-container-high)",
+                    color:
+                      sortKey === key
+                        ? "var(--md-sys-color-on-secondary-container)"
+                        : "var(--md-sys-color-on-surface)",
+                  }}
+                  onClick={() => setSortKey(key)}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
-            <table className="w-full" style={{ borderCollapse: "collapse" }}>
-              <thead>
-                <tr className="m3-label-small text-left">
-                  <th className="py-2">Student</th>
-                  <th>Score</th>
-                  <th>Trust</th>
-                  <th>Deferred?</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sorted.map((r) => (
-                  <tr
-                    key={r.student_id}
-                    className="cursor-pointer"
-                    style={{
-                      background:
-                        selected === r.student_id
+            <ul className="list-none m-0 p-0 flex flex-col gap-2">
+              {sorted.map((r) => {
+                const active = selected === r.student_id;
+                return (
+                  <li key={r.student_id}>
+                    <button
+                      type="button"
+                      className="w-full text-left border-0 cursor-pointer px-4 py-3"
+                      style={{
+                        borderRadius: "var(--md-sys-shape-corner-large)",
+                        background: active
                           ? "var(--md-sys-color-primary-container)"
-                          : "transparent",
-                    }}
-                    onClick={() => setSelected(r.student_id)}
-                  >
-                    <td className="py-2 m3-body-large">{r.student_id}</td>
-                    <td className="m3-body-large">
-                      {r.final_score}/{r.total_marks}
-                    </td>
-                    <td className="m3-body-small">{r.overall_trust.toFixed(2)}</td>
-                    <td className="m3-body-small">
-                      {r.has_deferred_concepts ? "yes" : "no"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                          : "var(--md-sys-color-surface-container-low)",
+                        color: active
+                          ? "var(--md-sys-color-on-primary-container)"
+                          : "var(--md-sys-color-on-surface)",
+                      }}
+                      onClick={() => setSelected(r.student_id)}
+                    >
+                      <span className="m3-title-large block">{r.student_id}</span>
+                      <span className="m3-body-small">
+                        {r.final_score}/{r.total_marks}
+                        {" · trust "}
+                        {r.overall_trust.toFixed(2)}
+                        {r.has_deferred_concepts ? " · had DEFER" : ""}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </section>
 
           {detail && (
-            <section className="m3-card p-5">
+            <section className="m3-surface p-6 md:p-8">
               <p className="m3-label-small m-0">{detail.student_id}</p>
-              <p className="m3-display-large m-0" style={{ fontSize: "3rem" }}>
+              <p className="m3-display-large m-0 mt-1">
                 {detail.final_score}
                 <span className="m3-title-large"> / {detail.total_marks}</span>
               </p>
-              <p className="m3-body-small">
+              <p className="m3-body-small mt-2">
                 Overall trust {detail.overall_trust.toFixed(2)} ·{" "}
-                {detail.all_concepts_resolved ? "All resolved" : "Unresolved remain"}
+                {detail.all_concepts_resolved ? "All concepts resolved" : "Unresolved remain"}
               </p>
-              <ul className="list-none p-0 m-0 mt-4 flex flex-col gap-3">
+              <ul className="list-none p-0 m-0 mt-6 flex flex-col gap-3">
                 {detail.concept_results.map((c) => (
                   <li
                     key={c.concept_id}
-                    className="p-3"
+                    className="p-4"
                     style={{
                       background: "var(--md-sys-color-surface-container-low)",
-                      borderRadius: "var(--md-sys-shape-corner-small)",
+                      borderRadius: "var(--md-sys-shape-corner-large)",
                     }}
                   >
                     <div className="flex items-center justify-between gap-2 flex-wrap">
@@ -160,23 +167,24 @@ export function ResultsPage() {
                               c.reviewed_by === "teacher"
                                 ? "var(--md-sys-color-tertiary-container)"
                                 : "var(--md-sys-color-surface-container-highest)",
+                            color:
+                              c.reviewed_by === "teacher"
+                                ? "var(--md-sys-color-on-tertiary-container)"
+                                : undefined,
                           }}
-                          title={
-                            c.reviewed_by === "teacher"
-                              ? "Teacher corrected"
-                              : "Auto-accepted"
-                          }
                         >
-                          {c.reviewed_by === "teacher" ? "👤 teacher" : "⚡ auto"}
+                          {c.reviewed_by === "teacher" ? "Teacher" : "Auto"}
                         </span>
                       </div>
                     </div>
-                    <p className="m3-body-small m-0 mt-1">{c.knowledge_point}</p>
+                    <p className="m3-body-small m-0 mt-2">{c.knowledge_point}</p>
                     <p className="m3-body-small m-0">
                       {c.marks_awarded}/{c.max_marks} · trust {c.trust_score.toFixed(2)}
                     </p>
                     {c.teacher_comment && (
-                      <p className="m3-body-small m-0 mt-1">Comment: {c.teacher_comment}</p>
+                      <p className="m3-body-small m-0 mt-2">
+                        Comment: {c.teacher_comment}
+                      </p>
                     )}
                   </li>
                 ))}

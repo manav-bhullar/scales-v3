@@ -4,94 +4,115 @@
     {
       "concept_id": "Q1_C1",
       "question_id": "Q1",
-      "knowledge_point": "Resources shared by threads within a process",
-      "target_criteria": "Identify that threads share address space, code, data, heap, or open files.",
+      "knowledge_point": "Definition of process and thread and their relationship",
+      "target_criteria": "FULL (1) only when both definitions and the within-process relationship are explicit. PARTIAL (0.5) when exactly one side is explicitly defined. ABSENT (0) when the answer only discusses shared/private resources or merely implies the relationship without defining either term.",
       "marks": 1,
       "expected_keywords": [
-        "address space",
-        "shared memory",
-        "code",
-        "data",
-        "heap"
+        "independent",
+        "execution unit",
+        "within a process"
       ],
       "acceptable_variants": [
-        "threads share the same memory space",
-        "threads share process resources like file descriptors"
+        "process is a program instance, thread is a sub-unit",
+        "threads run inside a process"
       ],
-      "partial_credit_rule": null,
-      "source_rubric_span": "Shared by threads of one process: address space / code+data/heap / open files",
-      "source_reference_span": "Threads in the same process typically share the process address space: code, data/heap, and open OS resources",
+      "partial_credit_rule": "0.5 marks for defining only one of the two terms.",
+      "source_rubric_span": "1) Core distinction: a process is an independent running program/program instance with its own resource boundary; a thread is an execution unit within a process. Award FULL (1) only when both definitions and the within-process relationship are explicit. Award PARTIAL (0.5) when exactly one side is explicitly defined. Award ABSENT (0) when the answer only discusses shared/private resources or merely implies the relationship without defining either term; do not infer definitions from parts (a)-(d).",
+      "source_reference_span": "A process is an independent program instance; threads are concurrent execution units within a process.",
       "version": 1,
-      "created_at": "2026-07-25T01:40:18.097793Z",
-      "updated_at": "2026-07-25T01:40:18.097793Z"
+      "created_at": "2026-07-25T02:42:15.965510Z",
+      "updated_at": "2026-07-25T02:42:15.965510Z"
     },
     {
       "concept_id": "Q1_C2",
       "question_id": "Q1",
-      "knowledge_point": "Resources private to each thread",
-      "target_criteria": "Identify that each thread has its own stack and register context/program counter.",
+      "knowledge_point": "Resources shared by threads of the same process",
+      "target_criteria": "Identify shared resources such as address space, code, data, heap, or open files.",
       "marks": 1,
       "expected_keywords": [
-        "stack",
-        "registers",
-        "program counter",
-        "thread context"
+        "address space",
+        "code",
+        "data",
+        "heap",
+        "open files"
       ],
       "acceptable_variants": [
-        "each thread has a private stack",
-        "threads maintain their own execution state"
+        "shared memory",
+        "shared resources"
       ],
-      "partial_credit_rule": null,
-      "source_rubric_span": "Per-thread private: stack and/or registers/PC/thread context.",
-      "source_reference_span": "Each thread has its own stack, register context / program counter, and thread-local scheduling state",
+      "partial_credit_rule": "0.5 marks for identifying at least one shared resource.",
+      "source_rubric_span": "2) Shared by threads of one process: address space / code+data/heap / open files (any clear statement of shared memory space).",
+      "source_reference_span": "Threads in the same process typically share the process address space: code, data/heap, and open OS resources such as file descriptors",
       "version": 1,
-      "created_at": "2026-07-25T01:40:18.097793Z",
-      "updated_at": "2026-07-25T01:40:18.097793Z"
+      "created_at": "2026-07-25T02:42:15.965510Z",
+      "updated_at": "2026-07-25T02:42:15.965510Z"
     },
     {
       "concept_id": "Q1_C3",
       "question_id": "Q1",
-      "knowledge_point": "Advantage of multithreading over multiprocess",
-      "target_criteria": "Identify that multithreading is lighter weight, faster to create/switch, or facilitates easier communication.",
+      "knowledge_point": "Resources private to each thread",
+      "target_criteria": "Identify per-thread private resources such as stack, registers, or program counter.",
       "marks": 1,
       "expected_keywords": [
-        "lighter weight",
-        "faster context switch",
-        "shared memory communication"
+        "stack",
+        "registers",
+        "program counter"
       ],
       "acceptable_variants": [
-        "lower overhead for creation",
-        "easier data sharing between threads"
+        "thread context",
+        "thread-local storage"
       ],
-      "partial_credit_rule": null,
-      "source_rubric_span": "Advantage: lighter weight, faster create/switch, easy shared-memory communication",
-      "source_reference_span": "cheaper context switch / shared memory communication is easy",
+      "partial_credit_rule": "0.5 marks for identifying at least one private resource.",
+      "source_rubric_span": "3) Per-thread private: stack and/or registers/PC/thread context.",
+      "source_reference_span": "Each thread has its own stack, register context / program counter, and thread-local scheduling state (thread ID).",
       "version": 1,
-      "created_at": "2026-07-25T01:40:18.097793Z",
-      "updated_at": "2026-07-25T01:40:18.097793Z"
+      "created_at": "2026-07-25T02:42:15.965510Z",
+      "updated_at": "2026-07-25T02:42:15.965510Z"
     },
     {
       "concept_id": "Q1_C4",
       "question_id": "Q1",
+      "knowledge_point": "Advantage of multithreading",
+      "target_criteria": "Identify one clear advantage such as lighter weight, faster creation/switching, or easy shared-memory communication.",
+      "marks": 1,
+      "expected_keywords": [
+        "lighter weight",
+        "faster",
+        "shared memory"
+      ],
+      "acceptable_variants": [
+        "efficient context switching",
+        "low overhead communication"
+      ],
+      "partial_credit_rule": "0.5 marks for a partially correct or vague advantage.",
+      "source_rubric_span": "4) Advantage: lighter weight, faster create/switch, easy shared-memory communication (any one clear advantage).",
+      "source_reference_span": "Advantage: cheaper context switch / shared memory communication is easy \u2014 creating threads and sharing data is lighter than creating processes and using IPC.",
+      "version": 1,
+      "created_at": "2026-07-25T02:42:15.972806Z",
+      "updated_at": "2026-07-25T02:42:15.972806Z"
+    },
+    {
+      "concept_id": "Q1_C5",
+      "question_id": "Q1",
       "knowledge_point": "Disadvantage or risk of multithreading",
-      "target_criteria": "Identify that multithreading lacks isolation, risks memory corruption, or requires synchronization.",
+      "target_criteria": "Identify one clear risk such as weaker isolation, shared-memory corruption, or synchronization requirements.",
       "marks": 1,
       "expected_keywords": [
         "isolation",
-        "memory corruption",
+        "corruption",
         "synchronization",
-        "race conditions"
+        "races"
       ],
       "acceptable_variants": [
-        "one thread can crash the process",
-        "requires complex locking mechanisms"
+        "shared memory bugs",
+        "need for locks"
       ],
-      "partial_credit_rule": null,
-      "source_rubric_span": "Disadvantage: weaker isolation / shared-memory bugs / need locks",
-      "source_reference_span": "one buggy thread can corrupt shared memory and crash the whole process; also needs synchronization",
+      "partial_credit_rule": "0.5 marks for a partially correct or vague risk.",
+      "source_rubric_span": "5) Disadvantage: weaker isolation / shared-memory bugs / need locks; process isolation is safer (any one clear risk).",
+      "source_reference_span": "Disadvantage: one buggy thread can corrupt shared memory and crash the whole process; also needs synchronization (races). Separate processes give stronger isolation.",
       "version": 1,
-      "created_at": "2026-07-25T01:40:18.097793Z",
-      "updated_at": "2026-07-25T01:40:18.097793Z"
+      "created_at": "2026-07-25T02:42:15.972806Z",
+      "updated_at": "2026-07-25T02:42:15.972806Z"
     }
   ]
 }

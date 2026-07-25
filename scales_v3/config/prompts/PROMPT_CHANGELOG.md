@@ -59,6 +59,128 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-007 — 2026-07-25 — `scales/services/text_utils.py` — `cbte.keyword_variant_matching` (loosen)
+
+**Kind:** code  
+**Direction:** loosen
+
+**Screw:** `cbte.keyword_variant_matching`
+
+**What:** acceptable_variants now match by token containment (>=0.75 of variant content tokens in answer) as fallback to exact normalized substring; stopword-only variants never hit
+
+**Why:** OS1 v6 false DEFER: MID_01/Q1_C1 FULL + verified evidence deferred at Tier 3 (kw=0.00) because variant 'threads run inside a process' missed paraphrase 'threads are smaller units inside it'; teacher SHRR confirmed FULL/1.0 (AGREE)
+
+**If reverted:** False DEFER on paraphrased-but-correct answers returns (OS1 defer 10%->12.5%, wave3 27->28); Tier-2 NLI runs on items Tier 1 could clear
+
+**Tradeoff:** Variant hit alone can push kw over tier1_keyword_threshold (1/len(expected)) and fast-accept a wrong FULL if CGR errs AND variant fuzzily matches; watch false ACCEPT on next live runs
+
+**Evidence:** wave4 OS1 cbte_reeval_tc007.json (DEFER 5->4, only MID_01/Q1_C1 flips), wave3 cbte_reeval_tc007.json (28->27, flip agrees with teacher record W3_GOOD_04/Q1_C3)
+
+**Result:** Offline replay: OS1 false DEFER 1->0, false ACCEPT unchanged 0; wave3 no decision moves against teacher corrections; 116 unit tests pass (3 new pins)
+
+**Snapshot:** `snapshots/TC-007_text_utils.py`
+
+**File hash (16):** `eaaf2de91733adfd`
+
+
+### TC-006 — 2026-07-25 — `scripts/metrics_ledger.py` — `metrics.silent_zero` (restructure)
+
+**Kind:** metric  
+**Direction:** restructure
+
+**Screw:** `metrics.silent_zero`
+
+**What:** Changed silent-zero from a hard gate to a review candidate unless concept-level human gold confirms the zero was unexpected
+
+**Why:** After adding a scored definition concept, GOOD_01 correctly received ABSENT there, but the band-only heuristic falsely called it a silent-zero failure
+
+**If reverted:** Legitimate omitted concepts on otherwise high-band students can falsely fail the pass bar
+
+**Tradeoff:** Silent-zero safety is advisory until concept-level gold is authored; total-score high-band gate still catches under-scoring
+
+**Evidence:** wave4 OS1 5-mark v6; GOOD_01 expected definition=ABSENT
+
+**Result:** Pass bar reports silent-zero as N/A/candidate without concept gold
+
+**Snapshot:** `snapshots/TC-006_metrics_ledger.py`
+
+**File hash (16):** `6787401117ee6146`
+
+
+### TC-005 — 2026-07-25 — `scales/modules/cgr.py` — `cgr.target_criteria_wiring` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `cgr.target_criteria_wiring`
+
+**What:** Pass CQA target_criteria into every CGR prompt as the authoritative scoring contract
+
+**Why:** CERA preserved the OS1 strict definition rule in target_criteria, but CGR never rendered that field, so the grader could not see teacher FULL/PARTIAL/ABSENT exclusions
+
+**If reverted:** CGR grades from a lossy knowledge-point summary and can violate teacher-authored scoring criteria
+
+**Tradeoff:** Longer prompts and stricter rubric adherence may change Wave3 verdicts; run regression after verification
+
+**Evidence:** cgr.py _build_prompt omitted cqa.target_criteria; OS1 v5 Q1_C1
+
+**Result:** Pending OS1 v6 and Wave3 regression
+
+**Also touched:** `cgr_grading.txt`
+
+**Snapshot:** `snapshots/TC-005_cgr.py`
+
+**File hash (16):** `fe068c5de987050b`
+
+
+### TC-004 — 2026-07-25 — `data/e2e_eval/wave4/os1_process_vs_thread/exam.json` — `dataset.os1.definition_required` (tighten)
+
+**Kind:** dataset  
+**Direction:** tighten
+
+**Screw:** `dataset.os1.definition_required`
+
+**What:** Clarified definition mark: FULL requires both explicit definitions; PARTIAL requires one explicit definition; resource-sharing implication alone earns ABSENT
+
+**Why:** In the first 5-mark rerun, CGR gave GOOD_02 FULL and GOOD_01/PARTIAL_A PARTIAL by inferring definitions from address-space sharing, contrary to human marking
+
+**If reverted:** CGR may again infer the missing definitions from parts (a)-(d), allowing incomplete answers to recover definition credit
+
+**Tradeoff:** Strict wording may mark concise but valid implicit distinctions as ABSENT; monitor independently written real answers
+
+**Evidence:** wave4_os1_gemini_5mark_v2; Q1_C1 judgments for GOOD_01, GOOD_02, PARTIAL_A
+
+**Result:** Pending strict 5-mark v3 rerun
+
+**Snapshot:** `snapshots/TC-004_exam.json`
+
+**File hash (16):** `11ec83783e27989b`
+
+
+### TC-003 — 2026-07-25 — `data/e2e_eval/wave4/os1_process_vs_thread/exam.json` — `dataset.os1.definition_required` (tighten)
+
+**Kind:** dataset  
+**Direction:** tighten
+
+**Screw:** `dataset.os1.definition_required`
+
+**What:** Changed OS1 from 4 to 5 marks by adding an explicit process/thread definition-distinction concept; preserved student answers and revised human gold ranges
+
+**Why:** Human gold review found GOOD_01 and GOOD_02 covered applied parts but omitted the core definition requested by the stem; the old rubric could still award 4/4
+
+**If reverted:** The stem/reference will again require a definition that the rubric and CERA do not score, allowing incomplete answers to receive full marks
+
+**Tradeoff:** Old 4-mark OS1 ledger/report is no longer directly comparable; CERA and grading must be rerun from scratch
+
+**Evidence:** Human review 2026-07-25; OS1_GOOD_01 and OS1_GOOD_02; VALIDATION.md
+
+**Result:** Pending fresh CERA+Gemini grade on the 5-mark rubric
+
+**Snapshot:** `snapshots/TC-003_exam.json`
+
+**File hash (16):** `78701185b170f496`
+
+
 ### TC-002 — 2026-07-25 — `scripts/metrics_ledger.py` — `metrics.pass_bar` (measure)
 
 **Kind:** metric  
@@ -105,6 +227,54 @@ python scripts/log_prompt_change.py add `
 **Snapshot:** `snapshots/TC-001_metrics_ledger.py`
 
 **File hash (16):** `c1a0c1af8ce04f23`
+
+
+### PC-005 — 2026-07-25 — `cera_extraction.txt` — `cera.rubric_constraint_fidelity` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cera.rubric_constraint_fidelity`
+
+**What:** Require CERA to preserve 0.5 rules on 1-mark concepts and carry explicit FULL/PARTIAL/ABSENT exclusions literally
+
+**Why:** OS1 strict definition exclusion was lost during CERA decomposition, so downstream CGR still inferred partial credit from resource-sharing text
+
+**If reverted:** CERA can simplify away teacher rubric exclusions, making CGR grade a different rubric from the one the teacher approved
+
+**Tradeoff:** Longer and stricter CQA rules may reduce generalization; inspect CQA tuples after each new question
+
+**Evidence:** wave4 OS1 v4 Q1_C1 partial_credit_rule omitted resource-sharing-only=ABSENT
+
+**Result:** Pending OS1 v5 verification
+
+**Snapshot:** `snapshots/PC-005_cera_extraction.txt`
+
+**File hash (16):** `b7a350be5def68c2`
+
+
+### PC-004 — 2026-07-25 — `cgr_grading.txt` — `cgr.partial_rule_precedence` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cgr.partial_rule_precedence`
+
+**What:** Made concept-specific partial-credit rules override the general PARTIAL preference; forbid inferring a concept from related subparts
+
+**Why:** Strict OS1 definition rule still received inferred PARTIAL credit from address-space answers, causing GOOD_02 to exceed human gold
+
+**If reverted:** Generic prefer-PARTIAL wording can override explicit rubric exclusions and award inferred credit for omitted concepts
+
+**Tradeoff:** Could increase ABSENT on terse answers whose concept is only implicit; must recheck Wave3 paraphrase performance and false DEFER
+
+**Evidence:** wave4_os1_gemini_5mark_strict_v3 Q1_C1: GOOD_01, GOOD_02, PARTIAL_A
+
+**Result:** Pending OS1 v4 and Wave3 regression
+
+**Snapshot:** `snapshots/PC-004_cgr_grading.txt`
+
+**File hash (16):** `96b0dd40c8839552`
 
 
 ### PC-003 — 2026-07-23 — `cgr_grading.txt` — `cgr.partial_over_absent` (loosen)

@@ -85,6 +85,9 @@ def test_silent_zero_counts_accepted_zeros_on_non_low():
 def test_pass_bar_fails_on_silent_zero_and_high_miss():
     grading, gold = _grading_silent_zero_case()
     m = compute_metrics(grading, gold)
+    # This fixture stands in for concept-level human gold confirming that the
+    # accepted zero was unexpected.
+    m["silent_zero_gold_aware"] = True
     report = evaluate_pass_bar(m)
     assert report["pass"] is False
     assert "no_silent_zeros" in report["failed"]
@@ -93,6 +96,17 @@ def test_pass_bar_fails_on_silent_zero_and_high_miss():
     text = format_pass_bar(report)
     assert "PASS BAR: FAIL" in text
     assert "no_silent_zeros" in text
+
+
+def test_silent_zero_candidate_does_not_gate_without_concept_gold():
+    grading, gold = _grading_silent_zero_case()
+    m = compute_metrics(grading, gold)
+    assert m["silent_zero_count"] == 1
+    assert m["silent_zero_gold_aware"] is False
+    report = evaluate_pass_bar(m)
+    criterion = next(c for c in report["criteria"] if c["name"] == "no_silent_zeros")
+    assert criterion["applicable"] is False
+    assert "no_silent_zeros" not in report["failed"]
 
 
 def test_pass_bar_passes_clean_smoke():
