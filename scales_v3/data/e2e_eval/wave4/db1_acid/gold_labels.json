@@ -1,0 +1,56 @@
+{
+  "exam_id": "e2e_wave4_db1_acid",
+  "question_id": "Q1",
+  "question_key": "Q-DB1",
+  "total_marks": 4,
+  "gold_labels": [
+    {
+      "student_id": "DB1_GOOD_01",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "All four properties with clear definitions"
+    },
+    {
+      "student_id": "DB1_GOOD_02",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "Short but accurate — should still band high"
+    },
+    {
+      "student_id": "DB1_MID_01",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "Vague buzzwords — PARTIAL not full ABSENT"
+    },
+    {
+      "student_id": "DB1_MID_02",
+      "expected_band": "mid",
+      "expected_score_range": [2.0, 3.5],
+      "watch": "Strong A/C/D; Isolation fuzzy"
+    },
+    {
+      "student_id": "DB1_PARTIAL_A",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "Only Atomicity + Durability"
+    },
+    {
+      "student_id": "DB1_PARTIAL_B",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "Only Consistency + Isolation"
+    },
+    {
+      "student_id": "DB1_LOW_01",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.5],
+      "watch": "Wrong definitions — false ACCEPT must stay ~0"
+    },
+    {
+      "student_id": "DB1_LOW_02",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.0],
+      "watch": "Empty knowledge"
+    }
+  ]
+}

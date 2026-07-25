@@ -1,0 +1,38 @@
+{
+  "exam_id": "e2e_wave4_os1_process_vs_thread",
+  "question_id": "Q1",
+  "student_answers": [
+    {
+      "student_id": "OS1_GOOD_01",
+      "answer_text": "(a) Threads of the same process share the process address space \u2014 code, heap/data, and usually open file descriptors.\n(b) Each thread keeps its own stack, registers, and program counter (its own execution context).\n(c) Multithreading is lighter: creating a thread and sharing data in memory is cheaper than multiple processes plus IPC.\n(d) Risk: a bad thread can overwrite shared memory and crash the whole process; you also need locks to avoid races. Separate processes isolate faults better."
+    },
+    {
+      "student_id": "OS1_GOOD_02",
+      "answer_text": "Process owns the address space that sibling threads share (code + data).\nEach thread has a private stack and register set.\nAdvantage of threads: faster context switch and easy shared-memory cooperation.\nDisadvantage: no strong isolation \u2014 one thread fault can take down all threads in the process; synchronization required."
+    },
+    {
+      "student_id": "OS1_MID_01",
+      "answer_text": "A process is a running program and threads are smaller units inside it. Threads share memory. Each thread somehow has its own workspace. Threads are faster than processes. But threads can interfere with each other."
+    },
+    {
+      "student_id": "OS1_MID_02",
+      "answer_text": "(a) Threads share the same memory space of the process.\n(b) Each thread has its own stack.\n(c) Communicating between threads is easier than between processes.\n(d) I know there is some isolation problem but I cannot explain it clearly."
+    },
+    {
+      "student_id": "OS1_PARTIAL_A",
+      "answer_text": "Threads share the process address space (code and data). That is all I remember; not sure what each thread owns privately or the advantages/disadvantages."
+    },
+    {
+      "student_id": "OS1_PARTIAL_B",
+      "answer_text": "Advantage: threads are lighter and can share memory easily. Disadvantage: need synchronization because of races. I forgot what is shared vs private between process and thread."
+    },
+    {
+      "student_id": "OS1_LOW_01",
+      "answer_text": "A process is a CPU core and a thread is a GPU core. Processes share the stack while threads each have their own hard disk partition."
+    },
+    {
+      "student_id": "OS1_LOW_02",
+      "answer_text": "I do not know this topic."
+    }
+  ]
+}

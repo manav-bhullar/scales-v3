@@ -1,0 +1,56 @@
+{
+  "exam_id": "e2e_wave4_os1_process_vs_thread",
+  "question_id": "Q1",
+  "question_key": "Q-OS1",
+  "total_marks": 4,
+  "gold_labels": [
+    {
+      "student_id": "OS1_GOOD_01",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "Full shared/private + advantage + isolation risk"
+    },
+    {
+      "student_id": "OS1_GOOD_02",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "Compressed but complete"
+    },
+    {
+      "student_id": "OS1_MID_01",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "Vague paraphrase — PARTIAL not ABSENT"
+    },
+    {
+      "student_id": "OS1_MID_02",
+      "expected_band": "mid",
+      "expected_score_range": [1.5, 3.0],
+      "watch": "Strong on share/stack/IPC; weak on disadvantage detail"
+    },
+    {
+      "student_id": "OS1_PARTIAL_A",
+      "expected_band": "mid_low",
+      "expected_score_range": [0.5, 1.5],
+      "watch": "Only shared address space"
+    },
+    {
+      "student_id": "OS1_PARTIAL_B",
+      "expected_band": "mid_low",
+      "expected_score_range": [0.5, 2.0],
+      "watch": "Only advantage/disadvantage; missing share/private"
+    },
+    {
+      "student_id": "OS1_LOW_01",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.5],
+      "watch": "Nonsense / inverted facts — false ACCEPT ~0"
+    },
+    {
+      "student_id": "OS1_LOW_02",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.0],
+      "watch": "Empty knowledge"
+    }
+  ]
+}

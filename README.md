@@ -22,6 +22,8 @@ cp .env.example .env
 
 python scripts/verify_setup.py
 pytest tests/unit/ -v
+# Roadmap gates only (contracts / harness / regression):
+pytest tests/unit/ -v -m "contracts or harness or regression"
 ```
 
 ## Prompt fine-tuning log

@@ -1,0 +1,97 @@
+{
+  "exam_id": "e2e_wave4_os1_process_vs_thread",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Resources shared by threads within a process",
+      "target_criteria": "Identify that threads share address space, code, data, heap, or open files.",
+      "marks": 1,
+      "expected_keywords": [
+        "address space",
+        "shared memory",
+        "code",
+        "data",
+        "heap"
+      ],
+      "acceptable_variants": [
+        "threads share the same memory space",
+        "threads share process resources like file descriptors"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Shared by threads of one process: address space / code+data/heap / open files",
+      "source_reference_span": "Threads in the same process typically share the process address space: code, data/heap, and open OS resources",
+      "version": 1,
+      "created_at": "2026-07-25T01:40:18.097793Z",
+      "updated_at": "2026-07-25T01:40:18.097793Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Resources private to each thread",
+      "target_criteria": "Identify that each thread has its own stack and register context/program counter.",
+      "marks": 1,
+      "expected_keywords": [
+        "stack",
+        "registers",
+        "program counter",
+        "thread context"
+      ],
+      "acceptable_variants": [
+        "each thread has a private stack",
+        "threads maintain their own execution state"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Per-thread private: stack and/or registers/PC/thread context.",
+      "source_reference_span": "Each thread has its own stack, register context / program counter, and thread-local scheduling state",
+      "version": 1,
+      "created_at": "2026-07-25T01:40:18.097793Z",
+      "updated_at": "2026-07-25T01:40:18.097793Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Advantage of multithreading over multiprocess",
+      "target_criteria": "Identify that multithreading is lighter weight, faster to create/switch, or facilitates easier communication.",
+      "marks": 1,
+      "expected_keywords": [
+        "lighter weight",
+        "faster context switch",
+        "shared memory communication"
+      ],
+      "acceptable_variants": [
+        "lower overhead for creation",
+        "easier data sharing between threads"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Advantage: lighter weight, faster create/switch, easy shared-memory communication",
+      "source_reference_span": "cheaper context switch / shared memory communication is easy",
+      "version": 1,
+      "created_at": "2026-07-25T01:40:18.097793Z",
+      "updated_at": "2026-07-25T01:40:18.097793Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Disadvantage or risk of multithreading",
+      "target_criteria": "Identify that multithreading lacks isolation, risks memory corruption, or requires synchronization.",
+      "marks": 1,
+      "expected_keywords": [
+        "isolation",
+        "memory corruption",
+        "synchronization",
+        "race conditions"
+      ],
+      "acceptable_variants": [
+        "one thread can crash the process",
+        "requires complex locking mechanisms"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Disadvantage: weaker isolation / shared-memory bugs / need locks",
+      "source_reference_span": "one buggy thread can corrupt shared memory and crash the whole process; also needs synchronization",
+      "version": 1,
+      "created_at": "2026-07-25T01:40:18.097793Z",
+      "updated_at": "2026-07-25T01:40:18.097793Z"
+    }
+  ]
+}

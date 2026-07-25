@@ -34,6 +34,9 @@ def test_settings_yaml_loads():
         "openai",
         "anthropic",
         "openrouter",
+        "zai",
+        "cerebras",
+        "mistral",
     }
     assert settings.llm.cgr_model.split("/", 1)[0] in {
         "groq",
@@ -41,6 +44,9 @@ def test_settings_yaml_loads():
         "openai",
         "anthropic",
         "openrouter",
+        "zai",
+        "cerebras",
+        "mistral",
     }
     assert settings.cbte.tau == 0.5
     assert settings.cbte.enable_tier3 is False

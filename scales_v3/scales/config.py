@@ -91,13 +91,54 @@ class EnvSecrets(BaseSettings):
         extra="ignore",
     )
 
+    # Single key (backward compatible) + optional pool for Gemini rate-limit rotation
     google_api_key: str | None = None
+    google_api_keys: str | None = None  # comma-separated
+    google_api_key_1: str | None = None
+    google_api_key_2: str | None = None
+    google_api_key_3: str | None = None
+    google_api_key_4: str | None = None
+    google_api_key_5: str | None = None
+
     openai_api_key: str | None = None
     anthropic_api_key: str | None = None
     groq_api_key: str | None = None
     # LiteLLM expects OPENROUTER_API_KEY; also accept open_router_api_key from .env
     openrouter_api_key: str | None = None
     open_router_api_key: str | None = None
+    # LiteLLM: CEREBRAS_API_KEY + model prefix cerebras/...
+    cerebras_api_key: str | None = None
+    # LiteLLM / OpenAI-compatible shim for z.ai GLM (https://z.ai/manage-apikey/apikey-list)
+    zai_api_key: str | None = None
+    z_ai_api_key: str | None = None  # alias
+    # Optional override; default https://api.z.ai/api/paas/v4
+    # Coding Plan keys often need https://api.z.ai/api/coding/paas/v4
+    zai_api_base: str | None = None
+    # LiteLLM: MISTRAL_API_KEY + model prefix mistral/...
+    mistral_api_key: str | None = None
+
+    def gemini_api_keys(self) -> list[str]:
+        """Ordered unique Gemini / Google AI Studio keys for rotation."""
+        found: list[str] = []
+        seen: set[str] = set()
+
+        def add(raw: str | None) -> None:
+            if not raw:
+                return
+            for part in raw.replace(";", ",").split(","):
+                key = part.strip()
+                if key and key not in seen and "your-google" not in key.lower():
+                    seen.add(key)
+                    found.append(key)
+
+        add(self.google_api_key)
+        add(self.google_api_keys)
+        add(self.google_api_key_1)
+        add(self.google_api_key_2)
+        add(self.google_api_key_3)
+        add(self.google_api_key_4)
+        add(self.google_api_key_5)
+        return found
 
 
 def load_yaml_settings(path: Path | None = None) -> dict[str, Any]:

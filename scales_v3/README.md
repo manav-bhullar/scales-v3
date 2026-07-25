@@ -63,12 +63,15 @@ pytest tests/unit/ -v
 
 | Setting | Location | Notes |
 |---------|----------|--------|
-| `OPENROUTER_API_KEY` | `.env` | Primary for Wave 3+ live grading (`open_router_api_key` also accepted) |
-| `GROQ_API_KEY` | `.env` | Optional Groq fallback |
-| `GOOGLE_API_KEY` | `.env` | Optional Gemini fallback |
-| LLM models | `config/settings.yaml` | Default: OpenRouter Llama (`openrouter/meta-llama/llama-3.3-70b-instruct` CERA, `openrouter/meta-llama/llama-3.1-8b-instruct` CGR) |
+| `CEREBRAS_API_KEY` | `.env` | Optional Cerebras (`cerebras/llama3.1-8b`, `cerebras/llama-3.3-70b`) |
+| `ZAI_API_KEY` | `.env` | Optional Z.ai GLM (`zai/glm-4.7`, etc.) |
+| `GOOGLE_API_KEY` (+ `_2`…`_5`) | `.env` | Gemini; multiple keys rotate on 429 quota |
+| `OPENROUTER_API_KEY` | `.env` | OpenRouter fallback |
+| `GROQ_API_KEY` | `.env` | Groq fallback |
+| `MISTRAL_API_KEY` | `.env` | Mistral (`mistral/mistral-small-2506`, etc.) |
+| LLM models | `config/settings.yaml` | Default: OpenRouter Llama 70B for CERA + CGR |
 | NLI model | `config/settings.yaml` | `cross-encoder/nli-deberta-v3-base` on `cpu` |
-| Concurrency | `llm.max_concurrent_calls` | Keep at `1` on Groq free TPM limits |
+| Concurrency | `llm.max_concurrent_calls` | Keep at `1` on free TPM limits |
 
 ## Pipeline CLI (Sprint 5)
 
@@ -168,6 +171,8 @@ scales_v3/
 5. SHRR + Aggregator + end-to-end pipeline — done  
 6. API + UI (Material 3 Expressive) — done  
 7. Evaluation / FYP metrics (ledger + gold growth in progress)
+   - Wave 3: TCP handshake regression (n=24)
+   - Wave 4 smoke: CN2 GBN/SR, OS1 process/thread, DB1 ACID (n=8 each) — see `data/e2e_eval/wave4/README.md`
 
 ## Prompt fine-tuning log
 

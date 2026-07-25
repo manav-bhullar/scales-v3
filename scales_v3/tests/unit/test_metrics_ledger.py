@@ -74,6 +74,10 @@ def test_compute_metrics_basic():
     assert m["false_accept_count"] == 1  # S_LO C2 ACCEPT with marks>0
     # S_HI provisional = 1.0 (only ACCEPT), in [1,2]; S_LO = 1.0 out of [0,0.5]
     assert m["band_hit_rate"] == 0.5
+    # No silent zeros here: S_HI's ACCEPT items both have marks>0; S_LO is low-band
+    assert m["silent_zero_count"] == 0
+    assert "silent_zero_rate" in m
+    assert "underscored_students" in m
 
 
 def test_compute_post_review_metrics_uses_final_scores():

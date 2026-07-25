@@ -1,0 +1,56 @@
+{
+  "exam_id": "e2e_wave4_cn2_gbn_vs_sr",
+  "question_id": "Q1",
+  "question_key": "Q-CN2",
+  "total_marks": 4,
+  "gold_labels": [
+    {
+      "student_id": "CN2_GOOD_01",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "Full coverage of receiver + sender + trade-off"
+    },
+    {
+      "student_id": "CN2_GOOD_02",
+      "expected_band": "high",
+      "expected_score_range": [3.0, 4.0],
+      "watch": "Compressed wording — should still score high"
+    },
+    {
+      "student_id": "CN2_MID_01",
+      "expected_band": "mid_low",
+      "expected_score_range": [1.0, 2.5],
+      "watch": "Vague but on-topic — prefer PARTIAL over ABSENT"
+    },
+    {
+      "student_id": "CN2_MID_02",
+      "expected_band": "mid",
+      "expected_score_range": [1.5, 3.0],
+      "watch": "Knows GBN cumulative + SR out-of-order + trade-off; weak on sender detail"
+    },
+    {
+      "student_id": "CN2_PARTIAL_A",
+      "expected_band": "mid_low",
+      "expected_score_range": [0.5, 1.5],
+      "watch": "Only GBN receiver solid"
+    },
+    {
+      "student_id": "CN2_PARTIAL_B",
+      "expected_band": "mid_low",
+      "expected_score_range": [0.5, 2.0],
+      "watch": "Only SR receiver + one-packet retransmit idea"
+    },
+    {
+      "student_id": "CN2_LOW_01",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.5],
+      "watch": "Congestion-control confusion — false ACCEPT must stay ~0"
+    },
+    {
+      "student_id": "CN2_LOW_02",
+      "expected_band": "low",
+      "expected_score_range": [0.0, 0.0],
+      "watch": "Empty knowledge"
+    }
+  ]
+}

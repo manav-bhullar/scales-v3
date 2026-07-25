@@ -2,11 +2,12 @@
 # Sensitive API keys live in .env — never commit them.
 
 # ─── LLM Configuration ───
-# Wave 3+: OpenRouter (LiteLLM ids). Groq/Gemini remain optional fallbacks.
+# Wave 4+: Gemini 3.1 Flash-Lite has free API quota and structured output.
+# Four team keys rotate on 429. Keep one model fixed per research run.
 llm:
-  cera_model: "openrouter/meta-llama/llama-3.3-70b-instruct"
-  cgr_model: "openrouter/meta-llama/llama-3.1-8b-instruct"
-  stability_model: "openrouter/meta-llama/llama-3.1-8b-instruct"
+  cera_model: "gemini/gemini-3.1-flash-lite"
+  cgr_model: "gemini/gemini-3.1-flash-lite"
+  stability_model: "gemini/gemini-3.1-flash-lite"
   temperature: 0.1
   max_retries: 5
   retry_delay_seconds: 5

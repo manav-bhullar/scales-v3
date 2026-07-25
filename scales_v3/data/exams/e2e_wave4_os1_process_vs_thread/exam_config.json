@@ -1,0 +1,50 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave4_os1_process_vs_thread",
+    "subject": "Operating Systems",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "Explain the difference between a process and a thread.\n\n(a) What resources does a process own that threads of the same process typically share?\n(b) What does each thread have of its own?\n(c) Give one advantage of using multiple threads inside one process instead of multiple processes.\n(d) Give one disadvantage or risk of multithreading compared with separate processes.",
+        "reference_answer": "A process is an independent program instance; threads are concurrent execution units within a process.\n(a) Threads in the same process typically share the process address space: code, data/heap, and open OS resources such as file descriptors (and often the same PID-level resources).\n(b) Each thread has its own stack, register context / program counter, and thread-local scheduling state (thread ID).\n(c) Advantage: cheaper context switch / shared memory communication is easy \u2014 creating threads and sharing data is lighter than creating processes and using IPC.\n(d) Disadvantage: one buggy thread can corrupt shared memory and crash the whole process; also needs synchronization (races). Separate processes give stronger isolation.",
+        "rubric": "Total 4 marks (1 mark each):\n1) Shared by threads of one process: address space / code+data/heap / open files (any clear statement of shared memory space).\n2) Per-thread private: stack and/or registers/PC/thread context.\n3) Advantage: lighter weight, faster create/switch, easy shared-memory communication (any one clear advantage).\n4) Disadvantage: weaker isolation / shared-memory bugs / need locks; process isolation is safer (any one clear risk).\nPartial credit (0.5) if partially correct.\nAward 0 if absent, confuses process with CPU core only, or contradictory.",
+        "total_marks": 4,
+        "student_answers": [
+          {
+            "student_id": "OS1_GOOD_01",
+            "answer_text": "(a) Threads of the same process share the process address space \u2014 code, heap/data, and usually open file descriptors.\n(b) Each thread keeps its own stack, registers, and program counter (its own execution context).\n(c) Multithreading is lighter: creating a thread and sharing data in memory is cheaper than multiple processes plus IPC.\n(d) Risk: a bad thread can overwrite shared memory and crash the whole process; you also need locks to avoid races. Separate processes isolate faults better."
+          },
+          {
+            "student_id": "OS1_GOOD_02",
+            "answer_text": "Process owns the address space that sibling threads share (code + data).\nEach thread has a private stack and register set.\nAdvantage of threads: faster context switch and easy shared-memory cooperation.\nDisadvantage: no strong isolation \u2014 one thread fault can take down all threads in the process; synchronization required."
+          },
+          {
+            "student_id": "OS1_MID_01",
+            "answer_text": "A process is a running program and threads are smaller units inside it. Threads share memory. Each thread somehow has its own workspace. Threads are faster than processes. But threads can interfere with each other."
+          },
+          {
+            "student_id": "OS1_MID_02",
+            "answer_text": "(a) Threads share the same memory space of the process.\n(b) Each thread has its own stack.\n(c) Communicating between threads is easier than between processes.\n(d) I know there is some isolation problem but I cannot explain it clearly."
+          },
+          {
+            "student_id": "OS1_PARTIAL_A",
+            "answer_text": "Threads share the process address space (code and data). That is all I remember; not sure what each thread owns privately or the advantages/disadvantages."
+          },
+          {
+            "student_id": "OS1_PARTIAL_B",
+            "answer_text": "Advantage: threads are lighter and can share memory easily. Disadvantage: need synchronization because of races. I forgot what is shared vs private between process and thread."
+          },
+          {
+            "student_id": "OS1_LOW_01",
+            "answer_text": "A process is a CPU core and a thread is a GPU core. Processes share the stack while threads each have their own hard disk partition."
+          },
+          {
+            "student_id": "OS1_LOW_02",
+            "answer_text": "I do not know this topic."
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-25T01:39:58.768979Z"
+  }
+}

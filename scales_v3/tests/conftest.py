@@ -12,6 +12,9 @@ from scales.models.exam import ExamInput, QuestionInput, StudentAnswer
 from scales.models.grading import CGRResult, Verdict
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+EVAL_DIR = PROJECT_ROOT / "data" / "e2e_eval"
+EXAMS_DIR = PROJECT_ROOT / "data" / "exams"
 
 
 def pytest_addoption(parser):
@@ -25,6 +28,15 @@ def pytest_addoption(parser):
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "live: tests that call real external services")
+    config.addinivalue_line(
+        "markers", "contracts: eval dataset integrity gates (roadmap Step 0)"
+    )
+    config.addinivalue_line(
+        "markers", "harness: CLI/tooling the roadmap depends on (Steps 2 and 4)"
+    )
+    config.addinivalue_line(
+        "markers", "regression: pinned behaviour on frozen run artifacts (Step 6)"
+    )
 
 
 def _load_json(name: str):
