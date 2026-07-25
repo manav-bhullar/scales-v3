@@ -59,6 +59,50 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-009 — 2026-07-25 — `config/settings.yaml` — `grading.mark_granularity` (restructure)
+
+**Kind:** metric  
+**Direction:** restructure
+
+**Screw:** `grading.mark_granularity`
+
+**What:** CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed_marks_fractions so verdicts can express quarter-credit
+
+**Why:** Teacher SHRR on CN2 PARTIAL_B/C1 and OS1: repeatedly wanted a mark between ABSENT(0) and PARTIAL(0.5), and between PARTIAL and FULL; 0/0.5/1.0 forces rounding that loses signal
+
+**If reverted:** Stays at 0/0.5/1.0; teacher keeps rounding borderline answers, adding noise to band-hit/MAE
+
+**Tradeoff:** Touches rubric text, CGR prompt few-shot, aggregator, and every existing gold expected_score_range; risks destabilizing frozen wave3 regression — must re-baseline
+
+**Evidence:** teacher_corrections.json CN2 PARTIAL_B/C1 comment; user review 2026-07-25
+
+**Result:** Deferred to before Phase D scale-up; logged only
+
+**File hash (16):** `585941f9a31b4465`
+
+
+### TC-008 — 2026-07-25 — `data/e2e_eval/wave4/cn2_gbn_vs_sr/gold_labels.json` — `dataset.cn2.human_gold` (tighten)
+
+**Kind:** dataset  
+**Direction:** tighten
+
+**Screw:** `dataset.cn2.human_gold`
+
+**What:** Human CN2 review: clarified GOOD_01 sender wording; demoted GOOD_02 gold to mid 2.5-3.5; documented LOW_01 as intentional congestion-control confusion; DB1 stem rewritten to one-line exam style; contract test allows human band demotions
+
+**Why:** User found 'later packet' ambiguous; compressed GOOD_02 too weak for full marks; (a)-(d) stems are artificial vs real exams
+
+**If reverted:** GOOD_02 wrongly treated as high-band full credit; ambiguous GBN wording returns; DB1 looks like a 4-part worksheet again
+
+**Tradeoff:** CN2 now has only 1 high-band answer; band-hit math is slightly less balanced on n=8
+
+**Evidence:** User review 2026-07-25; VALIDATION.md cn2 + db1; wave4 README authoring rule
+
+**Result:** Gold + stem updates applied; awaiting approve Q-CN2 for live grade
+
+**File hash (16):** `567543b659d606e5`
+
+
 ### TC-007 — 2026-07-25 — `scales/services/text_utils.py` — `cbte.keyword_variant_matching` (loosen)
 
 **Kind:** code  

@@ -85,7 +85,12 @@ def test_exam_gold_student_ids_match(key: str, exam_path: Path, gold_path: Path)
 
 @pytest.mark.contracts
 def test_wave4_smoke_shape():
-    """Wave4 smoke exams: 8 answers, 2 per band family."""
+    """Wave4 smoke exams: 8 answers, 2 LOWs (safety), ≥1 HIGH; mid mix flexible.
+
+    Human gold review may demote a 'GOOD' answer out of the high band
+    (CN2_GOOD_02 → mid after compressed-wording review). Shape must still
+    keep two LOWs near zero for the false-ACCEPT safety test.
+    """
     wave4 = EVAL_DIR / "wave4"
     folders = [
         wave4 / "os1_process_vs_thread",
@@ -100,6 +105,6 @@ def test_wave4_smoke_shape():
         answers = exam.questions[0].student_answers
         assert len(answers) == 8, f"{folder.name}: expected 8 smoke answers"
         bands = [g["expected_band"] for g in gold["gold_labels"]]
-        assert bands.count("high") == 2
-        assert bands.count("low") == 2
-        assert sum(1 for b in bands if b in ("mid", "mid_low")) == 4
+        assert bands.count("low") == 2, f"{folder.name}: need exactly 2 low (safety)"
+        assert bands.count("high") >= 1, f"{folder.name}: need ≥1 high-band answer"
+        assert all(b in ("high", "mid", "mid_low", "low") for b in bands)

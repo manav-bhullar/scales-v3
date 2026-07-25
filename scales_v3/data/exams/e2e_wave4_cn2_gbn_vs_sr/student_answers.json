@@ -1,0 +1,38 @@
+{
+  "exam_id": "e2e_wave4_cn2_gbn_vs_sr",
+  "question_id": "Q1",
+  "student_answers": [
+    {
+      "student_id": "CN2_GOOD_01",
+      "answer_text": "(a) In Go-Back-N the receiver drops out-of-order packets and only sends cumulative ACKs for the last correctly received in-order packet; it does not keep packets that fill a gap later.\n(b) Selective Repeat buffers correctly received out-of-order packets and ACKs them individually so the gap can be filled without discarding good data.\n(c) After a loss, GBN retransmits the lost packet and every packet already sent after it that is still in the current window. SR retransmits only the missing packet.\n(d) Prefer SR on lossy or bandwidth-limited links because it avoids useless retransmissions, even though the receiver needs more buffer and bookkeeping."
+    },
+    {
+      "student_id": "CN2_GOOD_02",
+      "answer_text": "GBN receiver: discard anything not next-expected; cumulative ACK only.\nSR receiver: store out-of-order OK frames and ACK each; only the hole is requested again.\nSender difference: GBN goes back and resends a whole suffix of the window; SR resends solely the unacked frame.\nTrade-off: choose SR when retransmitting extras is expensive (wireless/loss), accepting more complex receiver state."
+    },
+    {
+      "student_id": "CN2_MID_01",
+      "answer_text": "Go-Back-N and Selective Repeat both use windows. In GBN if something is lost the receiver somehow rejects later packets. In SR it is more selective. GBN retransmits more packets than SR. SR is better when the network loses packets often."
+    },
+    {
+      "student_id": "CN2_MID_02",
+      "answer_text": "(a) GBN receiver waits for in-order delivery and uses cumulative acknowledgements.\n(b) SR can accept packets out of order.\n(c) I think GBN retransmits multiple packets and SR only one, but I am fuzzy on the exact window behaviour.\n(d) SR preferred on noisy links to save bandwidth."
+    },
+    {
+      "student_id": "CN2_PARTIAL_A",
+      "answer_text": "Only sure about (a): Go-Back-N receiver discards out-of-order packets and ACKs the last in-order one. Not sure about Selective Repeat or the sender retransmission difference."
+    },
+    {
+      "student_id": "CN2_PARTIAL_B",
+      "answer_text": "Selective Repeat buffers out-of-order packets and ACKs individually so only the lost packet is resent. I cannot clearly explain GBN receiver behaviour or the trade-off."
+    },
+    {
+      "student_id": "CN2_LOW_01",
+      "answer_text": "Go-Back-N and Selective Repeat are TCP congestion-control algorithms like slow start and AIMD. The receiver always uses a three-way handshake before ARQ."
+    },
+    {
+      "student_id": "CN2_LOW_02",
+      "answer_text": "I do not know this topic."
+    }
+  ]
+}

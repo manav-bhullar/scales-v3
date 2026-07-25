@@ -1,0 +1,94 @@
+{
+  "exam_id": "e2e_wave4_cn2_gbn_vs_sr",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "GBN receiver behavior",
+      "target_criteria": "Must state that GBN receiver discards out-of-order packets and only uses cumulative ACKs for the last in-order packet.",
+      "marks": 1,
+      "expected_keywords": [
+        "discard",
+        "cumulative ACK",
+        "no buffering"
+      ],
+      "acceptable_variants": [
+        "GBN drops out-of-order packets",
+        "GBN only acknowledges the last correctly received in-order packet"
+      ],
+      "partial_credit_rule": "0.5 marks if only mentions discarding or only mentions cumulative ACK.",
+      "source_rubric_span": "GBN receiver: discard out-of-order / only cumulative ACK of last in-order; no gap buffering.",
+      "source_reference_span": "In GBN the receiver discards out-of-order packets and only cumulatively acknowledges the last in-order packet; it does not buffer gaps.",
+      "version": 1,
+      "created_at": "2026-07-25T03:55:10.822542Z",
+      "updated_at": "2026-07-25T03:55:10.822542Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "SR receiver behavior",
+      "target_criteria": "Must state that SR receiver buffers out-of-order packets and uses individual ACKs or NAKs.",
+      "marks": 1,
+      "expected_keywords": [
+        "buffer",
+        "individual ACK",
+        "NAK"
+      ],
+      "acceptable_variants": [
+        "SR stores out-of-order packets",
+        "SR acknowledges packets individually"
+      ],
+      "partial_credit_rule": "0.5 marks if only mentions buffering or only mentions individual ACKs.",
+      "source_rubric_span": "SR receiver: buffer out-of-order correct packets; individual ACK (or NAK) of missing packet.",
+      "source_reference_span": "In Selective Repeat the receiver buffers out-of-order correctly received packets and individually acknowledges them (or NAKs the missing one) so only the lost packet needs recovery.",
+      "version": 1,
+      "created_at": "2026-07-25T03:55:10.822542Z",
+      "updated_at": "2026-07-25T03:55:10.822542Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Sender retransmission behavior difference",
+      "target_criteria": "Must distinguish that GBN retransmits all packets in the window while SR retransmits only the missing packet.",
+      "marks": 1,
+      "expected_keywords": [
+        "retransmit",
+        "all subsequent",
+        "only missing"
+      ],
+      "acceptable_variants": [
+        "GBN retransmits the whole window",
+        "SR retransmits selectively"
+      ],
+      "partial_credit_rule": "0.5 marks if only describes GBN or only describes SR behavior correctly.",
+      "source_rubric_span": "Sender: GBN retransmits lost + all later window packets; SR retransmits only missing packet(s).",
+      "source_reference_span": "On timeout/loss, GBN retransmits the lost packet and all subsequent packets in the window; SR retransmits only the missing/unacked packet(s).",
+      "version": 1,
+      "created_at": "2026-07-25T03:55:10.822542Z",
+      "updated_at": "2026-07-25T03:55:10.822542Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Trade-off between GBN and SR",
+      "target_criteria": "Must identify that SR is preferred for lossy links/bandwidth efficiency, acknowledging the cost of complexity or buffering.",
+      "marks": 1,
+      "expected_keywords": [
+        "bandwidth",
+        "lossy",
+        "complexity",
+        "buffering"
+      ],
+      "acceptable_variants": [
+        "SR is better for high loss links",
+        "SR saves bandwidth but requires more memory"
+      ],
+      "partial_credit_rule": "0.5 marks if mentions the benefit (efficiency) but ignores the cost (complexity) or vice versa.",
+      "source_rubric_span": "Trade-off: SR preferred when retransmissions are costly / lossy links; mentions complexity or buffer cost of SR as the downside is OK.",
+      "source_reference_span": "SR is preferred when bandwidth is scarce or loss is non-negligible, because it avoids unnecessary retransmissions \u2014 at the cost of more complex buffering and individual ACKs at the receiver.",
+      "version": 1,
+      "created_at": "2026-07-25T03:55:10.822542Z",
+      "updated_at": "2026-07-25T03:55:10.822542Z"
+    }
+  ]
+}

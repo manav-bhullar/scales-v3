@@ -4,6 +4,12 @@
 **Topic:** ACID properties (4 marks)  
 **Students:** 8 synthetic
 
+## Question-style note (2026-07-25)
+
+Stem rewritten to a **single exam-realistic line** (no `(a)–(d)` subparts).
+The rubric still awards **4 atomic marks** (A/C/I/D) internally — that is how
+SCALES stacks concepts; students should not see a four-part worksheet.
+
 ## Approve checklist
 
 - [ ] Question + reference + rubric look exam-realistic

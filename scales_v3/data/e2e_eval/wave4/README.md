@@ -1,8 +1,8 @@
 # Wave 4 — Multi-question smoke expansion
 
-**Status:** authored, awaiting your gold validation before live API spend.
+**Status:** OS1 graded + SHRR done; CN2 human-reviewed (awaiting approve); DB1 stem rewritten to real-exam style.
 
-Wave 4 adds **three new subjects/topics** beyond TCP Wave 3. Each exam has **8 synthetic answers** (2 good / 2 mid / 2 partial / 2 low) for cheap smoke testing before scaling to 20+.
+Wave 4 adds **three new subjects/topics** beyond TCP Wave 3. Each exam has **8 synthetic answers** (band mix for cheap smoke) before scaling to 20+.
 
 | Key | Folder | Exam ID | Subject | Topic |
 |-----|--------|---------|---------|-------|
@@ -11,6 +11,13 @@ Wave 4 adds **three new subjects/topics** beyond TCP Wave 3. Each exam has **8 s
 | Q-DB1 | `db1_acid/` | `e2e_wave4_db1_acid` | Databases | ACID properties |
 
 TCP Wave 3 (`../wave3/`) remains the **regression** set. Do not delete it.
+
+### Authoring rule (from human review 2026-07-25)
+
+**Do not** write exam stems as `(a)(b)(c)(d)` worksheets just to make CERA easy.
+Real exams are usually **one line or two parts**. Keep the **rubric / CQA concepts
+atomic** (3–5 marks) behind the scenes. CN2 still has a 4-part stem (accepted for
+this smoke); DB1+ must follow the one-line / two-part rule.
 
 ## Roadmap (follow in order)
 

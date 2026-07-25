@@ -5,18 +5,18 @@
     "questions": [
       {
         "question_id": "Q1",
-        "question_text": "Explain the ACID properties of database transactions.\n\n(a) What does Atomicity guarantee?\n(b) What does Consistency guarantee?\n(c) What does Isolation guarantee?\n(d) What does Durability guarantee?",
-        "reference_answer": "ACID describes reliability guarantees for transactions.\n(a) Atomicity: a transaction is all-or-nothing — either every operation commits, or on failure the system rolls back so it looks like the transaction never happened.\n(b) Consistency: a committed transaction takes the database from one valid state to another, preserving integrity constraints (keys, checks, business rules).\n(c) Isolation: concurrent transactions do not interfere; the effect is as if transactions ran one after another (serializable, or at least their intermediate states are hidden per the isolation level).\n(d) Durability: once a transaction commits, its effects survive crashes/power loss (typically via logging / stable storage).",
-        "rubric": "Total 4 marks (1 mark each):\n1) Atomicity: all-or-nothing / commit all ops or rollback.\n2) Consistency: preserves integrity constraints / valid state to valid state.\n3) Isolation: concurrent transactions do not see each other's uncommitted/intermediate effects (serializable idea OK).\n4) Durability: committed data survives failure / persisted to stable storage.\nPartial credit (0.5) if partially correct.\nAward 0 if absent, swaps definitions wrongly with no recovery, or contradictory.",
+        "question_text": "What do the ACID properties guarantee for a database transaction? Briefly explain each property.",
+        "reference_answer": "ACID describes reliability guarantees for transactions.\nAtomicity: a transaction is all-or-nothing — either every operation commits, or on failure the system rolls back so it looks like the transaction never happened.\nConsistency: a committed transaction takes the database from one valid state to another, preserving integrity constraints (keys, checks, business rules).\nIsolation: concurrent transactions do not interfere; the effect is as if transactions ran one after another (serializable, or at least their intermediate states are hidden per the isolation level).\nDurability: once a transaction commits, its effects survive crashes/power loss (typically via logging / stable storage).",
+        "rubric": "Total 4 marks (1 mark each; concepts stay atomic even though the stem is one line):\n1) Atomicity: all-or-nothing / commit all ops or rollback.\n2) Consistency: preserves integrity constraints / valid state to valid state.\n3) Isolation: concurrent transactions do not see each other's uncommitted/intermediate effects (serializable idea OK).\n4) Durability: committed data survives failure / persisted to stable storage.\nPartial credit (0.5) if partially correct.\nAward 0 if absent, swaps definitions wrongly with no recovery, or contradictory.",
         "total_marks": 4,
         "student_answers": [
           {
             "student_id": "DB1_GOOD_01",
-            "answer_text": "(a) Atomicity means the transaction is all-or-nothing: either all changes commit or the DBMS rolls everything back on failure.\n(b) Consistency means after commit the database still satisfies its integrity constraints — it moves from one valid state to another.\n(c) Isolation means concurrent transactions do not interfere; each behaves as if it ran alone (or at least does not see dirty intermediate states).\n(d) Durability means once committed, the results survive a crash because they are written to stable storage / the log."
+            "answer_text": "Atomicity means the transaction is all-or-nothing: either all changes commit or the DBMS rolls everything back on failure. Consistency means after commit the database still satisfies its integrity constraints — it moves from one valid state to another. Isolation means concurrent transactions do not interfere; each behaves as if it ran alone (or at least does not see dirty intermediate states). Durability means once committed, the results survive a crash because they are written to stable storage / the log."
           },
           {
             "student_id": "DB1_GOOD_02",
-            "answer_text": "A = all operations succeed or none (rollback).\nC = constraints/rules still hold after the transaction.\nI = transactions appear not to step on each other while running together.\nD = committed updates are permanent even after power loss."
+            "answer_text": "A = all operations succeed or none (rollback). C = constraints/rules still hold after the transaction. I = transactions appear not to step on each other while running together. D = committed updates are permanent even after power loss."
           },
           {
             "student_id": "DB1_MID_01",
@@ -24,7 +24,7 @@
           },
           {
             "student_id": "DB1_MID_02",
-            "answer_text": "(a) Atomicity: transaction commits completely or is undone.\n(b) Consistency: database stays valid.\n(c) Isolation: I think it relates to locking so users do not conflict, but I am unsure of the formal meaning.\n(d) Durability: data remains after commit even if the system fails."
+            "answer_text": "Atomicity: transaction commits completely or is undone. Consistency: database stays valid. Isolation: I think it relates to locking so users do not conflict, but I am unsure of the formal meaning. Durability: data remains after commit even if the system fails."
           },
           {
             "student_id": "DB1_PARTIAL_A",
@@ -52,8 +52,9 @@
     "n_students": 8,
     "focus": [
       "Third subject (Databases) — definitional short answers",
-      "Smoke gold before expanding to 20+"
+      "Smoke gold before expanding to 20+",
+      "Stem is one exam-realistic line; rubric still 4 atomic marks"
     ],
-    "note": "Do not live-grade until VALIDATION.md approved"
+    "note": "Do not live-grade until VALIDATION.md approved. Stem rewritten 2026-07-25 to avoid (a)-(d) subparts."
   }
 }

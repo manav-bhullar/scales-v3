@@ -6,7 +6,7 @@
       {
         "question_id": "Q1",
         "question_text": "Compare Go-Back-N (GBN) and Selective Repeat (SR) ARQ protocols used for reliable data transfer.\n\n(a) How does the receiver behave when it detects a lost or corrupted packet in GBN?\n(b) How does the receiver behave in Selective Repeat for the same situation?\n(c) What is the main difference in sender retransmission behaviour between GBN and SR?\n(d) Briefly state one trade-off: when might SR be preferred over GBN?",
-        "reference_answer": "Go-Back-N and Selective Repeat are sliding-window ARQ protocols.\n(a) In GBN the receiver discards out-of-order packets and only cumulatively acknowledges the last in-order packet; it does not buffer gaps.\n(b) In Selective Repeat the receiver buffers out-of-order correctly received packets and individually acknowledges them (or NAKs the missing one) so only the lost packet needs recovery.\n(c) On timeout/loss, GBN retransmits the lost packet and all subsequent packets in the window; SR retransmits only the missing/unacked packet(s).\n(d) SR is preferred when bandwidth is scarce or loss is non-negligible, because it avoids unnecessary retransmissions — at the cost of more complex buffering and individual ACKs at the receiver.",
+        "reference_answer": "Go-Back-N and Selective Repeat are sliding-window ARQ protocols.\n(a) In GBN the receiver discards out-of-order packets and only cumulatively acknowledges the last in-order packet; it does not buffer gaps.\n(b) In Selective Repeat the receiver buffers out-of-order correctly received packets and individually acknowledges them (or NAKs the missing one) so only the lost packet needs recovery.\n(c) On timeout/loss, GBN retransmits the lost packet and all subsequent packets in the window; SR retransmits only the missing/unacked packet(s).\n(d) SR is preferred when bandwidth is scarce or loss is non-negligible, because it avoids unnecessary retransmissions \u2014 at the cost of more complex buffering and individual ACKs at the receiver.",
         "rubric": "Total 4 marks (1 mark each):\n1) GBN receiver: discard out-of-order / only cumulative ACK of last in-order; no gap buffering.\n2) SR receiver: buffer out-of-order correct packets; individual ACK (or NAK) of missing packet.\n3) Sender: GBN retransmits lost + all later window packets; SR retransmits only missing packet(s).\n4) Trade-off: SR preferred when retransmissions are costly / lossy links; mentions complexity or buffer cost of SR as the downside is OK.\nPartial credit (0.5) if idea is partially correct but missing key detail.\nAward 0 if absent, confuses with TCP congestion control only, or contradictory.",
         "total_marks": 4,
         "student_answers": [
@@ -44,16 +44,7 @@
           }
         ]
       }
-    ]
-  },
-  "meta": {
-    "wave": 4,
-    "question_key": "Q-CN2",
-    "n_students": 8,
-    "focus": [
-      "Same CN domain as TCP, different concepts",
-      "Smoke gold before expanding to 20+"
     ],
-    "note": "Do not live-grade until VALIDATION.md approved"
+    "created_at": "2026-07-25T03:54:46.919797Z"
   }
 }

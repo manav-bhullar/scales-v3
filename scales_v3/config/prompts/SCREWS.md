@@ -14,7 +14,9 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | `cgr.partial_rule_precedence` | PC-004 | tighten | prompt | Made concept-specific partial-credit rules override the g... | Generic prefer-PARTIAL wording can override exp... |
 | `cgr.structured_verdicts` | PC-001 | restructure | prompt | Initial v3 CGR prompt: mandatory evidence_span, discrete ... | Lose structured evidence for CBTE; fall back to... |
 | `cgr.target_criteria_wiring` | TC-005 | restructure | code | Pass CQA target_criteria into every CGR prompt as the aut... | CGR grades from a lossy knowledge-point summary... |
+| `dataset.cn2.human_gold` | TC-008 | tighten | dataset | Human CN2 review: clarified GOOD_01 sender wording; demot... | GOOD_02 wrongly treated as high-band full credi... |
 | `dataset.os1.definition_required` | TC-004 | tighten | dataset | Clarified definition mark: FULL requires both explicit de... | CGR may again infer the missing definitions fro... |
+| `grading.mark_granularity` | TC-009 | restructure | metric | CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed... | Stays at 0/0.5/1.0; teacher keeps rounding bord... |
 | `metrics.pass_bar` | TC-002 | measure | metric | Executable Wave4 pass bar (false ACCEPT, silent zeros, de... | Must manually interpret metrics; easy to miss h... |
 | `metrics.silent_zero` | TC-006 | restructure | metric | Changed silent-zero from a hard gate to a review candidat... | Legitimate omitted concepts on otherwise high-b... |
 
@@ -55,12 +57,22 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 - **TC-005** (2026-07-25, restructure): Pass CQA target_criteria into every CGR prompt as the authoritative scoring contract
   - if reverted: CGR grades from a lossy knowledge-point summary and can violate teacher-authored scoring criteria
 
+### `dataset.cn2.human_gold`
+
+- **TC-008** (2026-07-25, tighten): Human CN2 review: clarified GOOD_01 sender wording; demoted GOOD_02 gold to mid 2.5-3.5; documented LOW_01 as intentional congestion-control confusion; DB1 stem rewritten to one-line exam style; contract test allows human band demotions
+  - if reverted: GOOD_02 wrongly treated as high-band full credit; ambiguous GBN wording returns; DB1 looks like a 4-part worksheet again
+
 ### `dataset.os1.definition_required`
 
 - **TC-003** (2026-07-25, tighten): Changed OS1 from 4 to 5 marks by adding an explicit process/thread definition-distinction concept; preserved student answers and revised human gold ranges
   - if reverted: The stem/reference will again require a definition that the rubric and CERA do not score, allowing incomplete answers to receive full marks
 - **TC-004** (2026-07-25, tighten): Clarified definition mark: FULL requires both explicit definitions; PARTIAL requires one explicit definition; resource-sharing implication alone earns ABSENT
   - if reverted: CGR may again infer the missing definitions from parts (a)-(d), allowing incomplete answers to recover definition credit
+
+### `grading.mark_granularity`
+
+- **TC-009** (2026-07-25, restructure): CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed_marks_fractions so verdicts can express quarter-credit
+  - if reverted: Stays at 0/0.5/1.0; teacher keeps rounding borderline answers, adding noise to band-hit/MAE
 
 ### `metrics.pass_bar`
 
