@@ -1,0 +1,111 @@
+{
+  "exam_id": "e2e_wave6_conn_n20_nested",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Selection of connectionless service",
+      "target_criteria": "Student correctly identifies connectionless service as the appropriate choice.",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "Connectionless"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "connectionless"
+      ],
+      "acceptable_variants": [
+        "use connectionless",
+        "connectionless service"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Chooses connectionless (1 mark)",
+      "source_reference_span": "Connectionless",
+      "version": 1,
+      "created_at": "2026-07-26T21:37:10.853834Z",
+      "updated_at": "2026-07-26T21:37:10.853836Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on multiple partners",
+      "target_criteria": "any of: communicate with various partners / multiple websites counts as the reason",
+      "marks": 1.5,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "communicate with various partners",
+        "websites"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "partners",
+        "websites"
+      ],
+      "acceptable_variants": [
+        "multiple websites",
+        "changing partners"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning only one partner or general browsing context.",
+      "source_rubric_span": "Many / changing partners (websites) (1.5 marks)",
+      "source_reference_span": "communicate with various partners (websites)",
+      "version": 1,
+      "created_at": "2026-07-26T21:37:10.853854Z",
+      "updated_at": "2026-07-26T21:37:10.853854Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on short interaction duration",
+      "target_criteria": "any of: short periods of time / short data transfers counts as the reason",
+      "marks": 1.0,
+      "rubric_item_id": "R3",
+      "evidence_facets": [
+        "short periods of time",
+        "short data transfers"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "short",
+        "brief"
+      ],
+      "acceptable_variants": [
+        "brief interactions",
+        "short duration"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning skimming or brief browsing.",
+      "source_rubric_span": "Short / brief interactions per site (1 mark)",
+      "source_reference_span": "short periods of time, short data transfers",
+      "version": 1,
+      "created_at": "2026-07-26T21:37:10.853865Z",
+      "updated_at": "2026-07-26T21:37:10.853866Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on connection overhead",
+      "target_criteria": "Student explains that connection-oriented services incur unnecessary overhead for setup and teardown.",
+      "marks": 1.5,
+      "rubric_item_id": "R4",
+      "evidence_facets": [
+        "overhead in the connecting and disconnecting phase"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "overhead",
+        "connecting",
+        "disconnecting"
+      ],
+      "acceptable_variants": [
+        "setup and teardown overhead",
+        "connection establishment cost"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning overhead without specifying setup/teardown.",
+      "source_rubric_span": "Connection-oriented setup/teardown overhead argument (1.5 marks)",
+      "source_reference_span": "incur a lot of overhead in the connecting and disconnecting phase",
+      "version": 1,
+      "created_at": "2026-07-26T21:37:10.853876Z",
+      "updated_at": "2026-07-26T21:37:10.853877Z"
+    }
+  ]
+}

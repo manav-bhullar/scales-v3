@@ -1,0 +1,121 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave6_dll3_n20_nested",
+    "subject": "SAF Wave6 coarse \u2014 Q-DLL3 (nested)",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
+        "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead\u2192 duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+        "rubric": "Total 3 marks:\n1) Unconfirmed connectionless (1 mark)\n2) Confirmed connectionless (1 mark)\n3) Connection-oriented (1 mark)",
+        "total_marks": 3,
+        "rubric_items": [
+          {
+            "rubric_item_id": "R1",
+            "label": "Unconfirmed connectionless",
+            "marks": 1.0,
+            "atomic": true,
+            "description": ""
+          },
+          {
+            "rubric_item_id": "R2",
+            "label": "Confirmed connectionless",
+            "marks": 1.0,
+            "atomic": true,
+            "description": ""
+          },
+          {
+            "rubric_item_id": "R3",
+            "label": "Connection-oriented",
+            "marks": 1.0,
+            "atomic": true,
+            "description": ""
+          }
+        ],
+        "student_answers": [
+          {
+            "student_id": "QDLL3_00",
+            "answer_text": "(1)Unconfirmed Connectionless Service, (2)Confirmed Connectionless Service and (3)Connection-Oriented Service.\n\n(3) uses a 3-phased communication with Connection, Data Transfer and Disconnection and can therefore provide flow control which (1) and (2) can't.\n\n(1) and (2) both send data units without a connection. Their main difference is that (1) just sends without any feedback and (2) provides acknowledgements in case the data was received succesfully."
+          },
+          {
+            "student_id": "QDLL3_01",
+            "answer_text": "1) Unconfirmed Connectionless Service:\n-Loss of data possible\n-No flow-control\n-No connect / disconnect\n\n2) Confirmed Connection less Service:\n-No loss of data (through ack.)\n-No flow-control\n-No connect / disconnect\n-Need to retransmit false data\n-Errors and duplication due to retransmission\n\n3) Connection-Oriented Service:\n-Needs time for connecting/disconnecting\n-No loss!\n-No duplication\n-No sequencing errors\n-Flow-control"
+          },
+          {
+            "student_id": "QDLL3_02",
+            "answer_text": "1. Unconfirmed Conn.less Service: Sending of data without any form of acknowledgement. Loss of data is possible.\n2. Confirmed Conn.less Service: Each frame that is being send is being acknowledged individually. No loss of data. Dupliactes can happen due to retransmission.\n3. Connection-Oriented Service: 3-phased communication with Connection-phase, Data transfer-phase and Disconnection-phase. No loss of data and no duplication due to Flow control."
+          },
+          {
+            "student_id": "QDLL3_03",
+            "answer_text": "1. Unconfirmed Connectionless service, it transmits isolated and independent unit. The other pear does not try to collect data, and transmission only correct frames.\n2. Confirmed connectionless service, where receipt of data units  is acknowledged, thus no loss will occur. Timeout and retransmit could possibly happen.\n3. Connection-oriented service, which provides flow control and guarantees that no loss, no duplication nor no sequencing error will occur."
+          },
+          {
+            "student_id": "QDLL3_04",
+            "answer_text": "1. Unconfirmed connectionless service: transmission of isolated, idependent units without acknowledgement, possible loss of data / no flow control\n2. Confirmed connectionless service: transmission with acknowledgement with no loss, has timeouts and retransmission / no flow control\n3. Connection-oriented service:  connection over error free channel with a flow control"
+          },
+          {
+            "student_id": "QDLL3_05",
+            "answer_text": "1. unconfirmed connectionless: transmit a frame and expect it to arrive, but sender cannot know because no feedback. No flow-control and no connect/disconnect\n2. confirmed connectionless: Receiver of frame sends ACK back to Sender of frame. No flow-control, no connect/disconnect and duplicates may happen, but frame-sender gets feedback.\n3. connection-oriented: connection over error-free channel with flow control."
+          },
+          {
+            "student_id": "QDLL3_06",
+            "answer_text": "1.Unconfirmed Conn.less Service \n Features\n   No flow control\n   No connect or disconnect \n 2.Confirmed Conn.less Service\n Features\n   No flow control\n   No connect or disconnect\n   Duplicates and sequence errors may happen due to \u201cretransmit\u201d\n 3.Connection-Oriented Service\nConnection over error free channel\n  No loss, no duplication, no sequencing error\n   Flow control\n3-phased communication\nThey are different in features."
+          },
+          {
+            "student_id": "QDLL3_07",
+            "answer_text": "1.unconfirmed connection-less service 2.confirmed connection-less service 3.connection-oriented service.\n2. there is flow-control in connection-oriented service. But in other two there's no flow-control, no connect or disconnect.\nThere is no loss, no duplication, no sequencing error in connection-oriented service."
+          },
+          {
+            "student_id": "QDLL3_08",
+            "answer_text": "Unconfirmed Connectionless Service:\n-This service has no flow control and the data unit does not get acknowledged from receiver. So there are no Timeouts.\nConfirmed Connectionless Service:\n-This service has no flow control and the data unit does get acknowledged from receiver. So there could be Timeouts and retransmits.\n\nConnection-Oriented Service:\n-This service has flow control. Is implemented in a 3-phased communication.\n1. Connection\n2. Data Transfer\n3. Disconnection"
+          },
+          {
+            "student_id": "QDLL3_09",
+            "answer_text": "Unconfirmed Connectionless Service:  recipient sends no feedback at all (no flow control, connect or disconnect), for channels with very low error rate or where a timing error is more critical than the data error (e.g. LAN)\n\nConfirmed Connectionless Service: recipient sends acknowledgement after receiving frame, no flow control (e.g. Wi-Fi)\n\nConnection-Oriented Service: connection established before transmitting until transmission is complete, connection closed afterwards"
+          },
+          {
+            "student_id": "QDLL3_10",
+            "answer_text": "Unconfirmed Connectionless Service: no flow control\nConfirmed Connectionless Service: no flow control, duplication and sequencing error may happen\nConnection-Oriented Service: flow control, no loss, no duplication, no sequencing error"
+          },
+          {
+            "student_id": "QDLL3_11",
+            "answer_text": "Unconfirmed connectionless service (UCS), confirmed connectionless service (CCS) and connection-oriented service (COS). UCS doesn\u2019t have correction mechanism and flow control. The data probably gets lost. CCS reply ACK when receiving the correct data and it has timeout-and-retransmit mechanism. It is more reliable than CCS but probably incurs some sequence errors. COS has connection and disconnection mechanism. It can achieve flow control, no loss and no sequencing error."
+          },
+          {
+            "student_id": "QDLL3_12",
+            "answer_text": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error"
+          },
+          {
+            "student_id": "QDLL3_13",
+            "answer_text": "- Unconfirmed Conn.less Service\nat this layer you can send a data layer and you as a sender will not be able to check, if the data unit arrived. That means loss of data is possible. (Upper layer have to check if the data is corrupted)\n\n- Confirmed Conn.less Service\nWhen a receiver gets data it send an acknowledgement back to the sender to let it know it arrived. If after a certain time frame the receiver did not send the acknowledgement, the sender will retransmit the data \n\n- Connection-Oriented Service\nNeeds a 3-phased communication:\n1. Connection: sender sends a connect request and receiver responses to confirm the connection\n2. Data Transfer: multiple Data can be transfered between each other \n3. Disconnection: the disconection must be requested and acknowledged from both communication partners to disconnect"
+          },
+          {
+            "student_id": "QDLL3_14",
+            "answer_text": "1.Confirmed Conn.less Service: Receipt of data Units acknowledged.\n2.Unconfirmed Conn.less Service:Transmission of isolated , Independent Units.\n3.Connection-Oriented Service: Connection over error free Channel."
+          },
+          {
+            "student_id": "QDLL3_15",
+            "answer_text": "Unacknowledged Connectionless Service, the data link layer of the sending machine sends an independent frame to the data link layer on the receiving machine.\nAcknowledged Connectionless Service, there is no logical connection is set up between the host machines, however, each frame was sent is acknowledged by the destination machine.\nAcknowledged connection-oriented service, a logical connection is set up on the two machines and the data is transmitted along the logical path."
+          },
+          {
+            "student_id": "QDLL3_16",
+            "answer_text": "Unacknowledged connectionless service:\nSending machine sends frames to the receiving machine without feedback.\nNo logical connection.\n\nAcknowledged connectionless service:\nSending machine sends frames to the receiving machine and gets feedback.\nNo logical connection.\nIf there is no feedback for a frame in a specific time, the sending machine sends it again.\n\nAcknowledged connection-oriented service:\nA logical connection between sending- and receivin machine is setted up.\nOn this connection the packets are sendet and numbered for a specific order.\nAfter the sending/receiving of data, the connection will be closed."
+          },
+          {
+            "student_id": "QDLL3_17",
+            "answer_text": "Unconfirmed Connectionless Service (=Frames are transmitted as independent units --> Data can be lost)\nConfirmed Connectionless Service (=Frames still transmitted independently but with acknowledgement)\nConnection oriented Service (=3 Phases: Connection --> Data Transfer --> Disconnection)"
+          },
+          {
+            "student_id": "QDLL3_18",
+            "answer_text": "Unconfirmed connectionless: Transmission of isolated, independent data units. \nConfirmed connectionless: Receipt of data units needs to be acknowledged by receiver. \nConnection oriented: Transmission of data units is performed in free, pre-defined channels."
+          },
+          {
+            "student_id": "QDLL3_19",
+            "answer_text": "1. Flow Control: ensures that a transmitter does not send faster than a receiver can receive\n2. Framing: data are packed in a frame, this frame contains e.g. the data, destination address and source \n3. Error Detection: important to ensure that all data has been received correctly. If an error is detected, the receiver may be signalled to send the data again"
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-26T21:42:09.651836Z"
+  }
+}

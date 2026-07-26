@@ -1,0 +1,122 @@
+{
+  "exam_id": "e2e_wave6_async_n20_flat",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Asynchronous framing mechanism",
+      "target_criteria": "Must mention start and stop bits",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "start bit",
+        "stop bit"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "start",
+        "stop",
+        "bit"
+      ],
+      "acceptable_variants": [
+        "uses start and stop bits",
+        "surrounded by start/stop bits"
+      ],
+      "partial_credit_rule": "Mentioning only one of start or stop bit earns 0.5 marks",
+      "source_rubric_span": "Asynchronous framing (start/stop)",
+      "source_reference_span": "Every character a self-contained unit surrounded by a start bit and a stop bit",
+      "version": 1,
+      "created_at": "2026-07-26T21:47:51.894003Z",
+      "updated_at": "2026-07-26T21:47:51.894006Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Asynchronous trade-off",
+      "target_criteria": "any of: simple/cheap pattern OR low transmission rates",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "easy and cheap pattern",
+        "low transmission rates"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "cheap",
+        "simple",
+        "low",
+        "rate"
+      ],
+      "acceptable_variants": [
+        "simple but slow",
+        "inexpensive but low throughput"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Asynchronous trade-off (simple/cheap vs low rate)",
+      "source_reference_span": "easy and cheap pattern, but causes low transmission rates",
+      "version": 1,
+      "created_at": "2026-07-26T21:47:51.894015Z",
+      "updated_at": "2026-07-26T21:47:51.894015Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Synchronous framing mechanism",
+      "target_criteria": "any of: continuous stream of data / frames / SYN or flag",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "continuous stream of data",
+        "frames",
+        "SYN or flag"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "stream",
+        "frames",
+        "SYN",
+        "flag"
+      ],
+      "acceptable_variants": [
+        "uses frames defined by flags",
+        "data pooled into frames"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Synchronous framing (frames / SYN / flag)",
+      "source_reference_span": "Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag",
+      "version": 1,
+      "created_at": "2026-07-26T21:47:51.894021Z",
+      "updated_at": "2026-07-26T21:47:51.894021Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Synchronous trade-off",
+      "target_criteria": "any of: higher rate / synchronization / higher complexity",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "higher transmission rates",
+        "synchronization",
+        "higher complexity"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "higher",
+        "rate",
+        "synchronization",
+        "complexity"
+      ],
+      "acceptable_variants": [
+        "more complex but faster",
+        "requires sync for higher speeds"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Synchronous trade-off (rate / sync / complexity)",
+      "source_reference_span": "higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
+      "version": 1,
+      "created_at": "2026-07-26T21:47:51.894027Z",
+      "updated_at": "2026-07-26T21:47:51.894027Z"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "exam_id": "e2e_wave6_conn_n20_flat",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Selection of connectionless service",
+      "target_criteria": "Student correctly identifies connectionless service as the appropriate choice.",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "connectionless"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "connectionless"
+      ],
+      "acceptable_variants": [
+        "connectionless service",
+        "connectionless protocol"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Chooses connectionless (1 mark)",
+      "source_reference_span": "Connectionless",
+      "version": 1,
+      "created_at": "2026-07-26T21:40:06.644985Z",
+      "updated_at": "2026-07-26T21:40:06.644987Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on multiple/changing partners",
+      "target_criteria": "any of: various partners / websites counts as the reason for changing communication targets.",
+      "marks": 1.5,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "various partners",
+        "websites"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "partners",
+        "websites"
+      ],
+      "acceptable_variants": [
+        "communicating with many different websites",
+        "multiple changing destinations"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning only one aspect of the changing partner scenario.",
+      "source_rubric_span": "Many / changing partners (websites) (1.5 marks)",
+      "source_reference_span": "communicate with various partners (websites)",
+      "version": 1,
+      "created_at": "2026-07-26T21:40:06.644998Z",
+      "updated_at": "2026-07-26T21:40:06.644998Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on short interaction duration",
+      "target_criteria": "any of: short periods of time / short data transfers counts as the reason for interaction duration.",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "short periods of time",
+        "short data transfers"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "short",
+        "periods",
+        "transfers"
+      ],
+      "acceptable_variants": [
+        "brief interactions",
+        "short duration of communication"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning only one aspect of the short interaction duration.",
+      "source_rubric_span": "Short / brief interactions per site (1 mark)",
+      "source_reference_span": "short periods of time / very short data transfers",
+      "version": 1,
+      "created_at": "2026-07-26T21:40:06.645005Z",
+      "updated_at": "2026-07-26T21:40:06.645005Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Reasoning based on connection-oriented overhead",
+      "target_criteria": "any of: overhead in the connecting and disconnecting phase / setup and teardown costs counts as the reason for avoiding connection-oriented services.",
+      "marks": 1.5,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "overhead in the connecting and disconnecting phase",
+        "setup and teardown costs"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "overhead",
+        "connecting",
+        "disconnecting",
+        "setup",
+        "teardown"
+      ],
+      "acceptable_variants": [
+        "connection setup and teardown overhead",
+        "cost of establishing and closing connections"
+      ],
+      "partial_credit_rule": "Partial credit for mentioning only one aspect of the overhead argument.",
+      "source_rubric_span": "Connection-oriented setup/teardown overhead argument (1.5 marks)",
+      "source_reference_span": "incur a lot of overhead in the connecting and disconnecting phase",
+      "version": 1,
+      "created_at": "2026-07-26T21:40:06.645011Z",
+      "updated_at": "2026-07-26T21:40:06.645012Z"
+    }
+  ]
+}

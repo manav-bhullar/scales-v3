@@ -1,0 +1,82 @@
+{
+  "exam_id": "e2e_wave6_conn_n20_nested",
+  "sample_students": [
+    "QCONN_00",
+    "QCONN_01"
+  ],
+  "flags": {
+    "Q1_C3": [
+      "QCONN_00"
+    ],
+    "Q1_C4": [
+      "QCONN_00",
+      "QCONN_01"
+    ],
+    "Q1_C2": [
+      "QCONN_01"
+    ]
+  },
+  "warnings": [
+    "Calibration FLAG Q1_C3: ABSENT on sample ['QCONN_00'] \u2014 review evidence_mode / facets / target_criteria before trusting batch",
+    "Calibration FLAG Q1_C4: ABSENT on sample ['QCONN_00', 'QCONN_01'] \u2014 review evidence_mode / facets / target_criteria before trusting batch",
+    "Calibration FLAG Q1_C2: ABSENT on sample ['QCONN_01'] \u2014 review evidence_mode / facets / target_criteria before trusting batch"
+  ],
+  "results": [
+    {
+      "student_id": "QCONN_00",
+      "concept_id": "Q1_C1",
+      "verdict": "FULL",
+      "marks_awarded": 1.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_00",
+      "concept_id": "Q1_C2",
+      "verdict": "FULL",
+      "marks_awarded": 1.5,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_00",
+      "concept_id": "Q1_C3",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_00",
+      "concept_id": "Q1_C4",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_01",
+      "concept_id": "Q1_C1",
+      "verdict": "FULL",
+      "marks_awarded": 1.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_01",
+      "concept_id": "Q1_C2",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_01",
+      "concept_id": "Q1_C3",
+      "verdict": "FULL",
+      "marks_awarded": 1.0,
+      "band": "high"
+    },
+    {
+      "student_id": "QCONN_01",
+      "concept_id": "Q1_C4",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    }
+  ]
+}
