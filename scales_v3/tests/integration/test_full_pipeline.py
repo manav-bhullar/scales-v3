@@ -19,11 +19,14 @@ from scales.services.nli_service import NLIPrediction
 
 
 def _cqa_item(n: int, kp: str, keywords: list[str]) -> CQAExtractionItem:
+    facet = " ".join(keywords) if keywords else kp
     return CQAExtractionItem(
         concept_id=f"Q1_C{n}",
         knowledge_point=kp,
         target_criteria=kp,
         marks=1,
+        evidence_facets=[facet],
+        evidence_mode="ANY",
         expected_keywords=keywords,
         acceptable_variants=[],
         partial_credit_rule=None,

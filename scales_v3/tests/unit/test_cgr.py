@@ -78,9 +78,23 @@ def test_prompt_renders_whole_marks_without_trailing_zero(cgr, cqa):
         question_text="Explain TCP handshake.",
     )
     assert "Maximum Marks: 1\n" in prompt or "Maximum Marks: 1\r" in prompt or (
-        "Maximum Marks: 1" in prompt and "Maximum Marks: 1.0" not in prompt
+        "Maximum Marks: 1 " in prompt
     )
-    assert "PARTIAL → 0.5" in prompt or "0.5" in prompt
+    assert "1.0" not in prompt.split("Maximum Marks:")[1][:8]
+
+
+def test_prompt_includes_evidence_mode(cgr, cqa):
+    cqa.evidence_facets = ["three-way handshake", "connection setup"]
+    cqa.evidence_mode = "ANY"
+    prompt = cgr._build_prompt(
+        student_answer="TCP uses a three-way handshake.",
+        cqa=cqa,
+        question_text="Explain TCP handshake.",
+    )
+    assert "Evidence Mode: ANY" in prompt
+    assert "Evidence Facets:" in prompt
+    assert "Mode ANY: if ANY one Evidence Facet" in prompt
+    assert "Mode ALL:" in prompt
 
 
 def test_prompt_rendering(cgr, cqa):
@@ -90,6 +104,8 @@ def test_prompt_rendering(cgr, cqa):
         question_text="Explain TCP handshake.",
     )
     assert "Q1_C1" in prompt
+    assert "PARTIAL → 0.5" in prompt or "0.5" in prompt
+    assert "Maximum Marks: 1" in prompt and "Maximum Marks: 1.0" not in prompt
     assert "three-way handshake" in prompt
     assert "0.5" in prompt or "0.5" in prompt.replace(" ", "")
     assert cqa.target_criteria in prompt

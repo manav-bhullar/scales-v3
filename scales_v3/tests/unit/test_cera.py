@@ -23,6 +23,8 @@ def _item(**overrides) -> CQAExtractionItem:
         "knowledge_point": "TCP uses three-way handshake",
         "target_criteria": "Mentions handshake",
         "marks": 1,
+        "evidence_facets": ["three-way handshake"],
+        "evidence_mode": "ANY",
         "expected_keywords": ["handshake", "three-way"],
         "acceptable_variants": ["3-step setup"],
         "partial_credit_rule": None,
@@ -223,8 +225,25 @@ def test_nested_atomic_one_to_one_ok(cera):
         ],
     )
     items = [
-        _item(concept_id="Q1_C1", marks=1.5, rubric_item_id="R1", knowledge_point="def"),
-        _item(concept_id="Q1_C2", marks=1.5, rubric_item_id="R2", knowledge_point="trade"),
+        _item(
+            concept_id="Q1_C1",
+            marks=1.5,
+            rubric_item_id="R1",
+            knowledge_point="def",
+            evidence_facets=["concatenates frames"],
+            expected_keywords=["concatenates"],
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=1.5,
+            rubric_item_id="R2",
+            knowledge_point="trade",
+            evidence_facets=["advantage", "disadvantage"],
+            evidence_mode="ALL",
+            expected_keywords=["advantage", "disadvantage"],
+            partial_credit_rule="one side only → half",
+            target_criteria="both advantage and disadvantage",
+        ),
     ]
     assert cera._validate_cqa_list(items, q) == []
 
@@ -244,10 +263,44 @@ def test_nested_may_split_additive_ok(cera):
         ],
     )
     items = [
-        _item(concept_id="Q1_C1", marks=0.75, rubric_item_id="R1", knowledge_point="concat"),
-        _item(concept_id="Q1_C2", marks=0.75, rubric_item_id="R1", knowledge_point="channel"),
-        _item(concept_id="Q1_C3", marks=0.75, rubric_item_id="R2", knowledge_point="adv"),
-        _item(concept_id="Q1_C4", marks=0.75, rubric_item_id="R2", knowledge_point="disadv"),
+        _item(
+            concept_id="Q1_C1",
+            marks=0.75,
+            rubric_item_id="R1",
+            knowledge_point="concat",
+            evidence_facets=["concatenates frames"],
+            expected_keywords=["concatenates"],
+            partial_credit_rule="vague mention → half",
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=0.75,
+            rubric_item_id="R1",
+            knowledge_point="channel",
+            evidence_facets=["without releasing channel"],
+            expected_keywords=["channel"],
+            partial_credit_rule="vague mention → half",
+        ),
+        _item(
+            concept_id="Q1_C3",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="adv",
+            evidence_facets=["more efficient", "no padding"],
+            expected_keywords=["efficient", "padding"],
+            target_criteria="any of: more efficient / no padding",
+            partial_credit_rule="vague efficiency claim → half",
+        ),
+        _item(
+            concept_id="Q1_C4",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="disadv",
+            evidence_facets=["waiting", "buffering", "delay"],
+            expected_keywords=["waiting", "buffering", "delay"],
+            target_criteria="any of: waiting / buffering / delay",
+            partial_credit_rule="vague disadvantage → half",
+        ),
     ]
     assert cera._validate_cqa_list(items, q) == []
 
@@ -267,9 +320,32 @@ def test_nested_atomic_rejects_split(cera):
         ],
     )
     items = [
-        _item(concept_id="Q1_C1", marks=0.75, rubric_item_id="R1", knowledge_point="a"),
-        _item(concept_id="Q1_C2", marks=0.75, rubric_item_id="R1", knowledge_point="b"),
-        _item(concept_id="Q1_C3", marks=1.5, rubric_item_id="R2", knowledge_point="c"),
+        _item(
+            concept_id="Q1_C1",
+            marks=0.75,
+            rubric_item_id="R1",
+            knowledge_point="a",
+            evidence_facets=["a"],
+            expected_keywords=["a"],
+            partial_credit_rule="half",
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=0.75,
+            rubric_item_id="R1",
+            knowledge_point="b",
+            evidence_facets=["b"],
+            expected_keywords=["b"],
+            partial_credit_rule="half",
+        ),
+        _item(
+            concept_id="Q1_C3",
+            marks=1.5,
+            rubric_item_id="R2",
+            knowledge_point="c",
+            evidence_facets=["c"],
+            expected_keywords=["c"],
+        ),
     ]
     errors = cera._validate_cqa_list(items, q)
     assert any("atomic=True" in e for e in errors)
@@ -290,8 +366,22 @@ def test_nested_child_sum_mismatch(cera):
         ],
     )
     items = [
-        _item(concept_id="Q1_C1", marks=1.0, rubric_item_id="R1", knowledge_point="a"),
-        _item(concept_id="Q1_C2", marks=2.0, rubric_item_id="R2", knowledge_point="b"),
+        _item(
+            concept_id="Q1_C1",
+            marks=1.0,
+            rubric_item_id="R1",
+            knowledge_point="a",
+            evidence_facets=["a"],
+            expected_keywords=["a"],
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=2.0,
+            rubric_item_id="R2",
+            knowledge_point="b",
+            evidence_facets=["b"],
+            expected_keywords=["b"],
+        ),
     ]
     errors = cera._validate_cqa_list(items, q)
     assert any("child concept marks sum" in e for e in errors)
@@ -339,3 +429,229 @@ async def test_extract_rejects_bad_rubric_item_totals(cera):
     )
     with pytest.raises(CERAValidationError, match="rubric_items"):
         await cera.extract_concepts(q)
+
+
+def test_evidence_facets_required(cera, question):
+    items = [
+        _item(concept_id="Q1_C1", marks=1, evidence_facets=[]),
+        _item(concept_id="Q1_C2", marks=1, knowledge_point="SYN"),
+        _item(concept_id="Q1_C3", marks=1, knowledge_point="SYN-ACK"),
+        _item(concept_id="Q1_C4", marks=1, knowledge_point="purpose"),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("evidence_facets must be non-empty" in e for e in errors)
+
+
+def test_evidence_mode_all_requires_partial(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["name", "explain"],
+            evidence_mode="ALL",
+            expected_keywords=["name", "explain"],
+            partial_credit_rule=None,
+            target_criteria="name and explain",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("evidence_mode=ALL requires" in e for e in errors)
+
+
+def test_any_mode_rejects_and_chain_criteria(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["waiting", "delay"],
+            evidence_mode="ANY",
+            expected_keywords=["waiting", "delay"],
+            target_criteria="Must explain waiting leading to delay",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("AND-chain" in e for e in errors)
+
+
+def test_any_mode_allows_because_in_or_explanation(cera, question):
+    """'because' alone is not enough to flag — used in facet glosses."""
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["more efficient", "no padding"],
+            evidence_mode="ANY",
+            expected_keywords=["efficient", "padding"],
+            target_criteria="any of: more efficient (e.g. because no padding) / no padding",
+        ),
+    ]
+    assert cera._validate_cqa_list(items, question) == []
+
+
+
+def test_any_mode_or_set_ok(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["waiting", "delay"],
+            evidence_mode="ANY",
+            expected_keywords=["waiting", "delay"],
+            target_criteria="any of: waiting / delay counts",
+        ),
+    ]
+    assert cera._validate_cqa_list(items, question) == []
+
+
+def test_any_mode_requires_any_of_phrase(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["waiting", "delay"],
+            evidence_mode="ANY",
+            expected_keywords=["waiting", "delay"],
+            target_criteria="Student mentions waiting or delay somehow",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("any of:" in e for e in errors)
+
+def test_keywords_must_cover_facets(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["waiting for frames", "increased delay"],
+            expected_keywords=["waiting"],  # delay uncovered
+            target_criteria="any of waiting / delay",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("cover every evidence facet" in e for e in errors)
+
+
+def test_may_split_child_requires_partial(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames. Advantage efficient. Disadvantage delay.",
+        rubric="Def 1.5; Adv/Disadv 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=True),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=False),
+        ],
+    )
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=1.5,
+            rubric_item_id="R1",
+            knowledge_point="def",
+            evidence_facets=["concatenates"],
+            expected_keywords=["concatenates"],
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="adv",
+            evidence_facets=["efficient"],
+            expected_keywords=["efficient"],
+            partial_credit_rule=None,
+            target_criteria="efficiency",
+        ),
+        _item(
+            concept_id="Q1_C3",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="disadv",
+            evidence_facets=["delay"],
+            expected_keywords=["delay"],
+            partial_credit_rule=None,
+            target_criteria="delay",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, q)
+    assert any("MAY-SPLIT child" in e for e in errors)
+
+
+def test_may_split_rejects_fake_null_partial_string(cera):
+    from scales.models.rubric import RubricItem
+    from scales.modules.cera import is_real_partial_credit_rule, normalize_partial_credit_rule
+
+    assert not is_real_partial_credit_rule("null")
+    assert not is_real_partial_credit_rule("No partial credit defined for this specific sub-concept.")
+    assert not is_real_partial_credit_rule("none")
+    assert normalize_partial_credit_rule("null") is None
+    assert is_real_partial_credit_rule("vague mention → half")
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames. Advantage efficient. Disadvantage delay.",
+        rubric="Def 1.5; Adv/Disadv 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=True),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=False),
+        ],
+    )
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=1.5,
+            rubric_item_id="R1",
+            knowledge_point="def",
+            evidence_facets=["concatenates"],
+            expected_keywords=["concatenates"],
+        ),
+        _item(
+            concept_id="Q1_C2",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="adv",
+            evidence_facets=["efficient"],
+            expected_keywords=["efficient"],
+            partial_credit_rule="null",
+            target_criteria="efficiency",
+        ),
+        _item(
+            concept_id="Q1_C3",
+            marks=0.75,
+            rubric_item_id="R2",
+            knowledge_point="disadv",
+            evidence_facets=["delay"],
+            expected_keywords=["delay"],
+            partial_credit_rule="No partial credit defined.",
+            target_criteria="delay",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, q)
+    assert any("real partial_credit_rule" in e for e in errors)
+
+
+def test_all_mode_rejects_fake_null_partial(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=["name", "explain"],
+            evidence_mode="ALL",
+            expected_keywords=["name", "explain"],
+            partial_credit_rule="null",
+            target_criteria="name and explain",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("evidence_mode=ALL requires a real partial_credit_rule" in e for e in errors)
+
+
+def test_prompt_mentions_evidence_facets(cera, question):
+    prompt = cera._build_prompt(question)
+    assert "evidence_facets" in prompt
+    assert 'evidence_mode' in prompt
+    assert "ANY" in prompt and "ALL" in prompt

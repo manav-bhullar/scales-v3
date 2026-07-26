@@ -81,6 +81,8 @@ class CGRModule:
         prompt = (
             self._prompt_template.replace("{knowledge_point}", cqa.knowledge_point)
             .replace("{target_criteria}", cqa.target_criteria)
+            .replace("{evidence_facets}", str(cqa.evidence_facets or []))
+            .replace("{evidence_mode}", cqa.evidence_mode or "ANY")
             .replace("{expected_keywords}", str(cqa.expected_keywords))
             .replace("{acceptable_variants}", str(cqa.acceptable_variants))
             .replace(

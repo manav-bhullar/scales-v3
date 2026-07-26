@@ -79,6 +79,10 @@ class GradingPipeline:
         exam: ExamInput,
         *,
         resume: bool = True,
+        calibrate: bool = True,
+        calibrate_strict: bool = False,
+        calibrate_n: int = 2,
+        gold_labels: list | None = None,
     ) -> GradingPhaseResult:
         if not exam.questions:
             raise ValueError("Exam has no questions")
@@ -112,6 +116,7 @@ class GradingPipeline:
             self._cbte_results = []
             self._graded_students = []
 
+        fresh_start = not self._graded_students
         if not self._cqa_list:
             # Human-locked CQAs from a prior CERA review gate (skip re-extraction).
             locked = self.store.load_cqa_tuples() if resume else []
@@ -126,6 +131,20 @@ class GradingPipeline:
                 self._cqa_list = cera_out.cqa_tuples
                 self.store.save_cqa_tuples(self._cqa_list)
 
+        # Warn-only pre-grade check (skip on resume mid-batch).
+        if calibrate and fresh_start and self._cqa_list:
+            from scales.modules.calibration import run_pregrade_calibration
+
+            calib = await run_pregrade_calibration(
+                self.cgr,
+                self._cqa_list,
+                question,
+                n=calibrate_n,
+                gold_labels=gold_labels,
+                strict=calibrate_strict,
+            )
+            if self.store is not None:
+                self.store.save_calibration_report(calib)
         already = set(self._graded_students)
         for student in question.student_answers:
             if student.student_id in already:

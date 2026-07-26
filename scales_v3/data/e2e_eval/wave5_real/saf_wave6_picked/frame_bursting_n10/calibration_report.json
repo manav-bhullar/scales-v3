@@ -1,0 +1,56 @@
+{
+  "sample_students": [
+    "BURST_00",
+    "BURST_01"
+  ],
+  "results": [
+    {
+      "student_id": "BURST_00",
+      "concept_id": "Q1_C1",
+      "verdict": "FULL",
+      "marks_awarded": 1.5,
+      "band": "high"
+    },
+    {
+      "student_id": "BURST_00",
+      "concept_id": "Q1_C2",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    },
+    {
+      "student_id": "BURST_00",
+      "concept_id": "Q1_C3",
+      "verdict": "FULL",
+      "marks_awarded": 0.75,
+      "band": "high"
+    },
+    {
+      "student_id": "BURST_01",
+      "concept_id": "Q1_C1",
+      "verdict": "FULL",
+      "marks_awarded": 1.5,
+      "band": "high"
+    },
+    {
+      "student_id": "BURST_01",
+      "concept_id": "Q1_C2",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "band": "high"
+    },
+    {
+      "student_id": "BURST_01",
+      "concept_id": "Q1_C3",
+      "verdict": "FULL",
+      "marks_awarded": 0.75,
+      "band": "high"
+    }
+  ],
+  "flags": {
+    "Q1_C2": [
+      "BURST_00",
+      "BURST_01"
+    ]
+  }
+}

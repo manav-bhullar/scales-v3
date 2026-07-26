@@ -40,7 +40,7 @@
     },
     {
       "student_id": "BURST_03",
-      "expected_band": "mid_high",
+      "expected_band": "mid",
       "expected_score_range": [
         1.85,
         2.65
@@ -51,7 +51,7 @@
     },
     {
       "student_id": "BURST_04",
-      "expected_band": "mid_high",
+      "expected_band": "mid",
       "expected_score_range": [
         1.85,
         2.65
@@ -62,7 +62,7 @@
     },
     {
       "student_id": "BURST_05",
-      "expected_band": "mid_high",
+      "expected_band": "mid",
       "expected_score_range": [
         1.85,
         2.65
@@ -73,7 +73,7 @@
     },
     {
       "student_id": "BURST_06",
-      "expected_band": "mid_high",
+      "expected_band": "mid",
       "expected_score_range": [
         1.85,
         2.65

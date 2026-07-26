@@ -59,6 +59,50 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-015 — 2026-07-26 — `scales/modules/calibration.py` — `cera.fake_partial_and_calibrate` (tighten)
+
+**Kind:** code  
+**Direction:** tighten
+
+**Screw:** `cera.fake_partial_and_calibrate`
+
+**What:** Reject fake partial_credit_rule strings (null/No partial…) when required; warn-only pre-grade calibration in pipeline (skip on resume; --calibrate-strict opt-in)
+
+**Why:** CERA wrote string null as partial; silent hole. Calibration catches over-strict leaves before full batch.
+
+**If reverted:** Fake partials pass validation again; no pre-batch smoke warnings
+
+**Tradeoff:** Default calibrate adds ~2*N_concepts LLM calls on fresh grade; use --no-calibrate to skip
+
+**Evidence:** Q-BURST v2 cqa had partial_credit_rule string null on C2/C3
+
+**Snapshot:** `snapshots/TC-015_calibration.py`
+
+**File hash (16):** `0c7e797c23d61547`
+
+
+### TC-014 — 2026-07-26 — `scales/models/cqa.py` — `cera.evidence_facets_mode` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `cera.evidence_facets_mode`
+
+**What:** Add evidence_facets + evidence_mode (ANY/ALL); validators for ALL-requires-partial, ANY AND-lint, keyword facet coverage, MAY-SPLIT child partial; CGR mechanical ANY/ALL; calibrate_cqas.py
+
+**Why:** Nested Q-BURST under-scored because CERA wrote AND-chains and mechanism requirements with null partial on split leaves
+
+**If reverted:** Advantage/disadvantage leaves become over-strict again; silent wrong zeros return
+
+**Tradeoff:** Stricter CERA validation may need more retries; teacher ALL must write partial rule
+
+**Evidence:** Q-BURST nested MAE 0.60 vs flat 0.15; BURST_00 delay ABSENT
+
+**Snapshot:** `snapshots/TC-014_cqa.py`
+
+**File hash (16):** `5deb7fbb5deadfb5`
+
+
 ### TC-013 — 2026-07-26 — `scales/models/rubric.py` — `cera.rubric_item_nesting` (restructure)
 
 **Kind:** code  

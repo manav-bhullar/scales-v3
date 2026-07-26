@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import re
-from typing import Any
+from typing import Any, Literal
 
 from loguru import logger
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 from scales.config import AppSettings, get_settings, prompt_path
 from scales.models.cqa import CQATuple
@@ -22,6 +22,47 @@ from scales.services.exceptions import LLMAPIError, LLMValidationError
 from scales.services.llm_client import LLMClient
 
 _CONCEPT_ID_RE = re.compile(r"^[^_]+_C\d+$")
+# Prose AND-chains that must not appear when evidence_mode is ANY with multiple facets.
+# Keep this narrow — "because" alone is too common in OR-set explanations.
+_AND_CHAIN_RE = re.compile(
+    r"\b("
+    r"must explain|"
+    r"leading to|leads to|"
+    r"as well as|"
+    r"and also|"
+    r"both\s+.{1,40}?\s+and"
+    r")\b",
+    re.IGNORECASE,
+)
+# LLM sometimes writes the string "null" / "No partial credit…" instead of JSON null.
+_FAKE_PARTIAL_RE = re.compile(
+    r"^(?:"
+    r"null|none|n/?a|nil|"
+    r"no partial(?:\s+credit)?(?:\s+defined)?(?:\s+for this(?: specific)? sub-?concept)?\.?|"
+    r"partial(?:\s+credit)?\s*[:=]?\s*(?:none|null|n/?a|not (?:defined|specified|applicable))"
+    r")$",
+    re.IGNORECASE,
+)
+
+
+def is_real_partial_credit_rule(rule: str | None) -> bool:
+    """True only for a usable half-credit rule (not None / empty / fake null text)."""
+    if rule is None:
+        return False
+    text = rule.strip()
+    if not text:
+        return False
+    if _FAKE_PARTIAL_RE.match(text):
+        return False
+    if text.lower().startswith("no partial"):
+        return False
+    return True
+
+
+def normalize_partial_credit_rule(rule: str | None) -> str | None:
+    """Return rule if real, else None."""
+    return rule.strip() if is_real_partial_credit_rule(rule) else None
+
 
 
 class CQAExtractionItem(BaseModel):
@@ -32,11 +73,23 @@ class CQAExtractionItem(BaseModel):
     target_criteria: str = ""
     marks: float = Field(..., gt=0)
     rubric_item_id: str | None = None
+    evidence_facets: list[str] = Field(default_factory=list)
+    evidence_mode: Literal["ANY", "ALL"] = "ANY"
     expected_keywords: list[str] = Field(default_factory=list)
     acceptable_variants: list[str] = Field(default_factory=list)
     partial_credit_rule: str | None = None
     source_rubric_span: str = ""
     source_reference_span: str = ""
+
+    @field_validator("evidence_mode", mode="before")
+    @classmethod
+    def normalize_evidence_mode(cls, value: object) -> str:
+        if value is None or value == "":
+            return "ANY"
+        mode = str(value).strip().upper()
+        if mode not in ("ANY", "ALL"):
+            raise ValueError("evidence_mode must be ANY or ALL")
+        return mode
 
 
 class CERAExtractionResponse(BaseModel):
@@ -51,6 +104,20 @@ class CERAOutput(BaseModel):
     extraction_metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+def _facet_has_keyword_coverage(facet: str, keywords: list[str]) -> bool:
+    """True if some keyword is a case-insensitive substring of the facet (or vice versa)."""
+    f = facet.strip().lower()
+    if not f:
+        return False
+    for kw in keywords:
+        k = kw.strip().lower()
+        if not k:
+            continue
+        if k in f or f in k:
+            return True
+    return False
+
+
 class CERAModule:
     """Decompose question + reference + rubric into orthogonal CQA tuples."""
 
@@ -63,7 +130,7 @@ class CERAModule:
         self,
         llm_client: LLMClient,
         settings: AppSettings | None = None,
-        max_validation_retries: int = 3,
+        max_validation_retries: int = 5,
     ) -> None:
         self.llm = llm_client
         self.settings = settings or get_settings()
@@ -141,6 +208,53 @@ class CERAModule:
                 )
         return errors
 
+    def _validate_evidence_fields(self, item: CQAExtractionItem) -> list[str]:
+        """Validate facets / mode / partial / AND-lint / keyword coverage."""
+        errors: list[str] = []
+        cid = item.concept_id
+        facets = [f.strip() for f in item.evidence_facets if f and f.strip()]
+        if not facets:
+            errors.append(
+                f"{cid}: evidence_facets must be non-empty "
+                "(extract observable evidence phrases from the reference answer)"
+            )
+            return errors
+
+        mode = (item.evidence_mode or "ANY").upper()
+        if mode == "ALL" and not is_real_partial_credit_rule(item.partial_credit_rule):
+            errors.append(
+                f"{cid}: evidence_mode=ALL requires a real partial_credit_rule "
+                "(some facets → PARTIAL / half marks). "
+                "Do not write 'null' or 'No partial credit…' as text."
+            )
+
+        if mode == "ANY" and len(facets) > 1:
+            criteria = item.target_criteria or ""
+            match = _AND_CHAIN_RE.search(criteria)
+            if match:
+                errors.append(
+                    f"{cid}: evidence_mode=ANY with multiple facets but "
+                    f"target_criteria looks like an AND-chain (matched '{match.group(0)}'). "
+                    "Rewrite as an OR-set ('any of: …'), or switch to ALL only if "
+                    "the question/rubric explicitly demands all facets."
+                )
+            elif "any of" not in criteria.lower():
+                errors.append(
+                    f"{cid}: evidence_mode=ANY with multiple facets requires "
+                    "target_criteria to state an OR-set starting with 'any of: …' "
+                    f"(facets={facets}). Do not require a mechanism beyond one facet."
+                )
+
+        uncovered = [
+            f for f in facets if not _facet_has_keyword_coverage(f, item.expected_keywords)
+        ]
+        if uncovered:
+            errors.append(
+                f"{cid}: expected_keywords must cover every evidence facet "
+                f"(uncovered: {uncovered}). Add at least one keyword per facet."
+            )
+        return errors
+
     def _validate_nested_linkage(
         self,
         items: list[CQAExtractionItem],
@@ -189,6 +303,15 @@ class CERAModule:
                     f"{rid}: atomic concept marks {kids[0].marks} != "
                     f"bucket marks {ri.marks}"
                 )
+            # Split children must keep partial-credit semantics.
+            if (not ri.atomic) and len(kids) > 1:
+                for kid in kids:
+                    if not is_real_partial_credit_rule(kid.partial_credit_rule):
+                        errors.append(
+                            f"{kid.concept_id}: MAY-SPLIT child under {rid} "
+                            "requires a real partial_credit_rule "
+                            "(not null / 'No partial credit…')"
+                        )
         return errors
 
     def _validate_cqa_list(
@@ -233,6 +356,7 @@ class CERAModule:
                 errors.append(
                     f"{item.concept_id}: must match pattern '{{question_id}}_C{{N}}'"
                 )
+            errors.extend(self._validate_evidence_fields(item))
 
         if question.rubric_items:
             errors.extend(self._validate_nested_linkage(items, question))
@@ -251,11 +375,13 @@ class CERAModule:
                 target_criteria=item.target_criteria.strip(),
                 marks=item.marks,
                 rubric_item_id=item.rubric_item_id,
+                evidence_facets=[f.strip() for f in item.evidence_facets if f and f.strip()],
+                evidence_mode=item.evidence_mode,
                 expected_keywords=[kw.strip() for kw in item.expected_keywords if kw.strip()],
                 acceptable_variants=[
                     v.strip() for v in item.acceptable_variants if v and v.strip()
                 ],
-                partial_credit_rule=item.partial_credit_rule,
+                partial_credit_rule=normalize_partial_credit_rule(item.partial_credit_rule),
                 source_rubric_span=item.source_rubric_span.strip(),
                 source_reference_span=item.source_reference_span.strip(),
                 version=1,

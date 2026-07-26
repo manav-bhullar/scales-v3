@@ -1,0 +1,105 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave6_async_n20_flat",
+    "subject": "SAF Wave6 coarse — Q-ASYNC (flat)",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "What is the difference between asynchronous and synchronous transmission mode in the Data Link Layer.",
+        "reference_answer": "Asynchronous transmission: Every character a self-contained unit surrounded by a start bit and a stop bit, which is an easy and cheap pattern, but causes low transmission rates.\n\nSynchronous transmission: Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
+        "rubric": "Total 4 marks:\n1) Asynchronous framing (start/stop) (1 mark)\n2) Asynchronous trade-off (simple/cheap vs low rate) (1 mark)\n3) Synchronous framing (frames / SYN / flag) (1 mark)\n4) Synchronous trade-off (rate / sync / complexity) (1 mark)",
+        "total_marks": 4,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "QASYNC_00",
+            "answer_text": "- Asynchronous: start and stop bit between every byte (bad transmission rate, but easy to realize)\n\n- Synchronous: use of flags/SYN for start and end of data frames containing multiple bytes (higher transmission rate, but more complex)"
+          },
+          {
+            "student_id": "QASYNC_01",
+            "answer_text": "Asy : each character is bounded by a start bit and a stop bit, simple and inexpensive, but low transmission rates\nSy: several characters pooled to frames , more complex,but higher transmission rates"
+          },
+          {
+            "student_id": "QASYNC_02",
+            "answer_text": "Asynchronous Transmission: Each character is bounded by a start bit and a stop bit.\nSynchronous Transmission: Several characters pooled to a Frames."
+          },
+          {
+            "student_id": "QASYNC_03",
+            "answer_text": "Asynchronous mode:\nEach character is bounded by a start bit and a stop bit.\n\nSynchronous mode:\nSeveral characters are pooled to one frame which is defined by a SYN or a flag."
+          },
+          {
+            "student_id": "QASYNC_04",
+            "answer_text": "Asynchronous transmission sends single bytes which are bounded by a start bit and an end bit.\n\nIn comparison synchronous transmission is able to send a block of bytes (Frame). These blocks are defined by SYN or flag."
+          },
+          {
+            "student_id": "QASYNC_05",
+            "answer_text": "Asynchronous: \n•\tEach character is framed by a start bit and an end bit\n•\tSlow transmission\n•\tNo gaps between data\n\nSynchronous:  \n•\tCharacters are pooled in frames, which are defined by flags or SYNs (synchronous idle characters)\n•\tFast transmission\n•\tGaps between data"
+          },
+          {
+            "student_id": "QASYNC_06",
+            "answer_text": "Asynchronous: Each byte is sent individually, bounded by a start and a stop bit. Transmission of each of those bytes can take place at any time.\nSynchronous: Single bytes are pooled together in order to build a frame. Each frame is defined by a flag."
+          },
+          {
+            "student_id": "QASYNC_07",
+            "answer_text": "Asynchronous: Each character is bounded by a start bit and a stop bit; they are sent individually. \n\nSynchronous: Several Characters pooled to frames; leads to higher transmission rates. Frames defined by SYN or flag."
+          },
+          {
+            "student_id": "QASYNC_08",
+            "answer_text": "In an asynchronous transmission each byte is sent separately and has a start and an end bit.\nIn a synchronous transmission data is sent in frames which can lead to higher transmission rates but becomes more complex."
+          },
+          {
+            "student_id": "QASYNC_09",
+            "answer_text": "In asynchronous transmission each character is bounded by a start and a stop bit. This is simple and inexpensive but has a low transmission. \nSynchronous transmission, sveral characters are put together to frames. This is more complex but has a higher transmission rate."
+          },
+          {
+            "student_id": "QASYNC_10",
+            "answer_text": "In asynchronous transmission every packet has start and stop  bits and fixed block length, whereas synchronous transmission has variable length and only one start and end for the whole transmission."
+          },
+          {
+            "student_id": "QASYNC_11",
+            "answer_text": "In asynchronous transmission, each character contains a start bit as prefix and a stop bit as suffix.\nIn a synchronous transmission, several characters are grouped together in a frame, which are defined by a SYN or flag."
+          },
+          {
+            "student_id": "QASYNC_12",
+            "answer_text": "Synchronous transmission sends data in a sort of blocks or frames.\n\nIn Unsynchronous transmission the data is sended in form of byte and character.\nStart and  Stop-Bits are added."
+          },
+          {
+            "student_id": "QASYNC_13",
+            "answer_text": "Synchronous: Characters are sent in frames. Their size defined by a SYN or flag sent at the start and the end of the transmission.\nAsynchronous: Characters begin and end are marked a start and a stop bit. Each character is sent independently."
+          },
+          {
+            "student_id": "QASYNC_14",
+            "answer_text": "Synchronous: characters are packed into frames. Begin/end of a frame is indicated by a Flag or SYN\nAsynchronous: Each character is packed seperatly. The begin/end of a character is  indicated  by a start/stop bit"
+          },
+          {
+            "student_id": "QASYNC_15",
+            "answer_text": "asynchronous: Each character bounded by start and stop bit, low transmission rates\nsynchronous: characters pooled in frames/messages defined by syn or flags, a higher transmission rate"
+          },
+          {
+            "student_id": "QASYNC_16",
+            "answer_text": "asynchronous: characters are bounded with a start and stop bit, the transmission rate is low with up to 200bit/sec\n\nsynchronous: characters are pooled in frames with a SYN or flag - this has a higher transmission rate and is also more complex"
+          },
+          {
+            "student_id": "QASYNC_17",
+            "answer_text": "In Synchronous Transmission, data is sent in form of blocks or frames，this transmission is full-duplex mode And the data flow is constant.But in Asynchronous Transmission,data is sent in form of bit or characters,this transmission is semi-duplex. And the data flow is random.\nIn addition , Synchronous Transmission is fast but Asynchronous Transmission is slow."
+          },
+          {
+            "student_id": "QASYNC_18",
+            "answer_text": "Synchronous transmission uses the same clock on both the sender and receiver to synchronize the transmission of multiple bytes in a frame. Asynchronous transmission uses a flag at the front of a byte and end of a byte to synchronize the transmission of each byte."
+          },
+          {
+            "student_id": "QASYNC_19",
+            "answer_text": "In synchronous transmission for multiple bytes to be transmitted there is only one frame consisting of a start marker, all the bytes and a stop marker. Asynchronous transmission though uses one frame per byte so no markers are needed."
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "wave": 6,
+    "question_key": "Q-ASYNC",
+    "architecture": "flat",
+    "n_students": 20,
+    "rubric_style": "coarse_label_marks_only"
+  }
+}

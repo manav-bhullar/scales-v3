@@ -1,0 +1,105 @@
+{
+  "exam": {
+    "exam_id": "e2e_wave6_conn_n20_flat",
+    "subject": "SAF Wave6 coarse — Q-CONN (flat)",
+    "questions": [
+      {
+        "question_id": "Q1",
+        "question_text": "Consider the following scenario: You are browsing the web for a very specific and important piece of information. However, you are not quite sure how to find it and adopt an iterative process of refining your query after every search, depending on the shown results and a skim of the first few websites. Is it better to use a connection-oriented or connectionless service for your communication in this scenario? Explain your answer in 1-4 sentences.",
+        "reference_answer": "Connectionless, because you will communicate with various partners (websites) for short periods of time. If you would initiate a connection with every website you skim, that would incur a lot of overhead in the connecting and disconnecting phase, just to have very short data transfers.",
+        "rubric": "Total 5 marks:\n1) Chooses connectionless (1 mark)\n2) Many / changing partners (websites) (1.5 marks)\n3) Short / brief interactions per site (1 mark)\n4) Connection-oriented setup/teardown overhead argument (1.5 marks)",
+        "total_marks": 5,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "QCONN_00",
+            "answer_text": "Für das gestellte Stenario ist Connectionless Service besser. Da durch Skalierbarkeit mehrere Webseiten gleichzeitig aufgeruden und gefunden werden können. Dadurch lässt sich schneller ein Ziel definieren und finden."
+          },
+          {
+            "student_id": "QCONN_01",
+            "answer_text": "In this case it is better to use a conncetionless service, because it is not necessary to hold a connection in the time you are reading the first results. So more people can search at the same time."
+          },
+          {
+            "student_id": "QCONN_02",
+            "answer_text": "It is better to use a connection oriented service since you will be communicating especially with one search engine multiple times, and a loss of the query data is not acceptable."
+          },
+          {
+            "student_id": "QCONN_03",
+            "answer_text": "It is better to use a connectionless service in this scenario.\nDuring the process of refining the query, the connection would be idle but still blocked for other users.\nTherefor a connectionless service is better here."
+          },
+          {
+            "student_id": "QCONN_04",
+            "answer_text": "It is better to use a connectionless service, because subsequent telegrams from sender to receiver use different lines. This method can avoid connection failure."
+          },
+          {
+            "student_id": "QCONN_05",
+            "answer_text": "Better to use a connectionless service"
+          },
+          {
+            "student_id": "QCONN_06",
+            "answer_text": "Connection-oriented service is better due to the importance of the information so in this waz will be losed."
+          },
+          {
+            "student_id": "QCONN_07",
+            "answer_text": "Connection-oriented service is better, cause it has to use this, for an iterative process with very specific and important information."
+          },
+          {
+            "student_id": "QCONN_08",
+            "answer_text": "Connection-oriented service. We need a reliable connection for getting correct information. There are so many data on the web, so flow control or congestion control is also required."
+          },
+          {
+            "student_id": "QCONN_09",
+            "answer_text": "Ein Verbindungsorientierter Service ist dafür am besten geeignet, da ich die Informationen  vollständig und korrekt erhalten möchte. Ein verbindungsloser Service wäre zu unzuverlässig."
+          },
+          {
+            "student_id": "QCONN_10",
+            "answer_text": "Es ist besser einen verbindungslosen Service zu Benutzen, da"
+          },
+          {
+            "student_id": "QCONN_11",
+            "answer_text": "I think a connection oriented service is better since it guarantees that all parts of the communication is correctly transmitted. When using connectionless it is possible to drop a query or the results."
+          },
+          {
+            "student_id": "QCONN_12",
+            "answer_text": "I would choose connection-oriented service because is the information is specific and important. With connectionless service results could be lost."
+          },
+          {
+            "student_id": "QCONN_13",
+            "answer_text": "It's better to use a connection-oriented service for communication because the query should be refined after each search, so it's important to have a reliable connection without errors or lost data."
+          },
+          {
+            "student_id": "QCONN_14",
+            "answer_text": "connection-oriented service is better ,because this process is iterative ,and this iterative need very important imformation."
+          },
+          {
+            "student_id": "QCONN_15",
+            "answer_text": "Connection-oriented service is better."
+          },
+          {
+            "student_id": "QCONN_16",
+            "answer_text": "Connection-oriented service, since the process is iterative and the next step needs the information from previous step."
+          },
+          {
+            "student_id": "QCONN_17",
+            "answer_text": "Connection-oriented(?)"
+          },
+          {
+            "student_id": "QCONN_18",
+            "answer_text": "The answer is connection-oriented. An iterative search with a response is required. Only connection-oriented can communicate back."
+          },
+          {
+            "student_id": "QCONN_19",
+            "answer_text": "connection-oriented\nthis service has no loss,  no duplication, and no sequential error, which are what the user need."
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "wave": 6,
+    "question_key": "Q-CONN",
+    "architecture": "flat",
+    "n_students": 20,
+    "rubric_style": "coarse_label_marks_only"
+  }
+}

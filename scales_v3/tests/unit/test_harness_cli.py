@@ -38,6 +38,8 @@ def _cqa_item(n: int, kp: str, keywords: list[str]) -> CQAExtractionItem:
         knowledge_point=kp,
         target_criteria=kp,
         marks=1,
+        evidence_facets=[kp],
+        evidence_mode="ANY",
         expected_keywords=keywords,
         acceptable_variants=[],
         partial_credit_rule=None,
@@ -123,6 +125,10 @@ async def test_run_pipeline_cli_grade_status_finalize(tmp_path, monkeypatch):
     grade_args = NS()
     grade_args.exam_json = str(exam_json)
     grade_args.no_resume = True
+    grade_args.no_calibrate = True
+    grade_args.calibrate_strict = False
+    grade_args.calibrate_n = 2
+    grade_args.gold_json = ""
     assert await rp.cmd_grade(grade_args) == 0
     assert (tmp_path / exam.exam_id / "grading_results.json").exists()
 

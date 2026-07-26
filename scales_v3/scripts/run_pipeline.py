@@ -40,8 +40,20 @@ async def cmd_grade(args: argparse.Namespace) -> int:
     path = Path(args.exam_json)
     payload = json.loads(path.read_text(encoding="utf-8"))
     exam = ExamInput.model_validate(payload.get("exam", payload))
+    gold_labels = None
+    if args.gold_json:
+        gold_path = Path(args.gold_json)
+        gold_doc = json.loads(gold_path.read_text(encoding="utf-8"))
+        gold_labels = gold_doc.get("gold_labels", gold_doc)
     pipeline = _build_pipeline(exam.exam_id)
-    result = await pipeline.run_grading_phase(exam, resume=not args.no_resume)
+    result = await pipeline.run_grading_phase(
+        exam,
+        resume=not args.no_resume,
+        calibrate=not args.no_calibrate,
+        calibrate_strict=args.calibrate_strict,
+        calibrate_n=args.calibrate_n,
+        gold_labels=gold_labels,
+    )
     print(json.dumps(result.status.model_dump(mode="json") if result.status else {}, indent=2))
     print(f"Deferred items: {result.deferred_count}")
     print(f"Exam store: data/exams/{exam.exam_id}/")
@@ -97,6 +109,27 @@ def main() -> int:
     p_grade = sub.add_parser("grade", help="Run CERA→CGR→CBTE grading phase")
     p_grade.add_argument("--exam-json", required=True, help="Path to ExamInput JSON")
     p_grade.add_argument("--no-resume", action="store_true", help="Ignore prior grading JSON")
+    p_grade.add_argument(
+        "--no-calibrate",
+        action="store_true",
+        help="Skip warn-only pre-grade CQA smoke (default: run calibration)",
+    )
+    p_grade.add_argument(
+        "--calibrate-strict",
+        action="store_true",
+        help="Abort grading if calibration flags majority-ABSENT concepts",
+    )
+    p_grade.add_argument(
+        "--calibrate-n",
+        type=int,
+        default=2,
+        help="Number of sample answers for pre-grade calibration (default 2)",
+    )
+    p_grade.add_argument(
+        "--gold-json",
+        default="",
+        help="Optional gold_labels.json to prefer high-band students for calibration",
+    )
     p_grade.set_defaults(func=lambda a: asyncio.run(cmd_grade(a)))
 
     p_status = sub.add_parser("status", help="Show grading/review status")

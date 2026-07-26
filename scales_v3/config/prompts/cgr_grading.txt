@@ -2,6 +2,8 @@ You are evaluating whether a student's answer demonstrates ONE specific knowledg
 
 Knowledge Point: {knowledge_point}
 Target Criteria (authoritative): {target_criteria}
+Evidence Facets: {evidence_facets}
+Evidence Mode: {evidence_mode}
 Expected Evidence Keywords: {expected_keywords}
 Acceptable Variants: {acceptable_variants}
 Partial Credit Rule: {partial_credit_rule}
@@ -19,6 +21,15 @@ Task:
 3. List arguments AGAINST awarding marks (gaps, inaccuracies, missing detail).
 4. Based on the balance of arguments, judge:
    FULL (fully demonstrates), PARTIAL (partially), ABSENT (not addressed), INCORRECT (contradicts)
+
+   Evidence Mode (mechanical — overrides vague reading of Target Criteria):
+   - Mode ANY: if ANY one Evidence Facet is clearly present (including paraphrase),
+     award FULL. Do not require other facets. Do not invent a "must explain why"
+     requirement unless Target Criteria / Partial Credit Rule say so.
+   - Mode ALL: FULL only when all Evidence Facets are present; PARTIAL when some
+     but not all are present; ABSENT when none are present. Follow the Partial
+     Credit Rule for what "some" earns.
+   - When Evidence Facets is empty, fall back to Target Criteria alone.
 
    Partial-credit policy (important):
    - Prefer PARTIAL over ABSENT when the student clearly addresses this knowledge point

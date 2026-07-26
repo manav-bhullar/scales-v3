@@ -59,6 +59,10 @@ class ExamStore:
     def final_path(self) -> Path:
         return self.root / "final_results.json"
 
+    @property
+    def calibration_path(self) -> Path:
+        return self.root / "calibration_report.json"
+
     # ─── Generic I/O ──────────────────────────────────────────────────────
 
     def _write_json(self, path: Path, payload: dict[str, Any]) -> None:
@@ -90,6 +94,9 @@ class ExamStore:
     def load_cqa_tuples(self) -> list[CQATuple]:
         raw = self._read_json(self.cqa_path)
         return [CQATuple.model_validate(row) for row in raw.get("cqa_tuples", [])]
+
+    def save_calibration_report(self, report: dict[str, Any]) -> None:
+        self._write_json(self.calibration_path, {"exam_id": self.exam_id, **report})
 
     def save_student_answers(self, answers: list[StudentAnswer], question_id: str) -> None:
         self._write_json(

@@ -23,6 +23,8 @@ def _cqa_item(n: int, kp: str, keywords: list[str]) -> CQAExtractionItem:
         knowledge_point=kp,
         target_criteria=kp,
         marks=1,
+        evidence_facets=[kp],
+        evidence_mode="ANY",
         expected_keywords=keywords,
         acceptable_variants=[],
         partial_credit_rule=None,
@@ -123,7 +125,7 @@ async def test_full_lifecycle_with_review_and_resume(tmp_path, monkeypatch):
 
     client.call = AsyncMock(side_effect=fake_llm)
 
-    phase1 = await pipeline.run_grading_phase(exam, resume=False)
+    phase1 = await pipeline.run_grading_phase(exam, resume=False, calibrate=False)
     assert set(phase1.graded_students) == {"S1", "S2"}
     assert store.grading_path.exists()
 
@@ -204,7 +206,7 @@ async def test_no_deferrals_auto_finalizes(tmp_path, monkeypatch):
         )
 
     client.call = AsyncMock(side_effect=fake_llm)
-    phase1 = await pipeline.run_grading_phase(exam, resume=False)
+    phase1 = await pipeline.run_grading_phase(exam, resume=False, calibrate=False)
     assert phase1.deferred_count == 0
     assert phase1.status is not None
     assert phase1.status.final_results_count == 1

@@ -1,0 +1,98 @@
+{
+  "exam_id": "e2e_wave6_saf_burst_n10_v2",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Definition of frame bursting",
+      "target_criteria": "FULL: conveys that multiple frames are concatenated / sent in one transmission (and ideally without releasing the channel). PARTIAL: vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea.",
+      "marks": 1.5,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "concatenating a sequence of multiple frames",
+        "one single transmission",
+        "without ever releasing control of the channel"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "concatenating",
+        "multiple",
+        "transmission",
+        "channel"
+      ],
+      "acceptable_variants": [
+        "sending multiple frames as a single burst",
+        "grouping frames together to reduce overhead"
+      ],
+      "partial_credit_rule": "Vague mention of bursting or sending multiple frames without the concatenation or single-transmission concept earns partial credit.",
+      "source_rubric_span": "Definition of frame bursting (1.5 marks)",
+      "source_reference_span": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.",
+      "version": 1,
+      "created_at": "2026-07-26T21:12:42.005277Z",
+      "updated_at": "2026-07-26T21:12:42.005280Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Advantage of frame bursting compared to carrier extension",
+      "target_criteria": "FULL: identifies that it is more efficient because it uses real data instead of padding/garbage. PARTIAL: none specified.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "more efficient than carrier extension",
+        "single frames not filled up with garbage"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "efficient",
+        "garbage",
+        "padding"
+      ],
+      "acceptable_variants": [
+        "avoids using padding bits",
+        "better bandwidth utilization than carrier extension"
+      ],
+      "partial_credit_rule": "No partial credit defined for this specific sub-concept.",
+      "source_rubric_span": "Advantage and disadvantage vs carrier extension (1.5 marks)",
+      "source_reference_span": "it is more efficient than carrier extension as single frames not filled up with garbage.",
+      "version": 1,
+      "created_at": "2026-07-26T21:12:42.005294Z",
+      "updated_at": "2026-07-26T21:12:42.005295Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Disadvantage of frame bursting compared to carrier extension",
+      "target_criteria": "FULL: identifies that it requires waiting/buffering frames which leads to delay. PARTIAL: none specified.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "need frames waiting for transmission",
+        "buffering",
+        "delay of frames"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "waiting",
+        "buffering",
+        "delay"
+      ],
+      "acceptable_variants": [
+        "requires frame buffering",
+        "introduces latency due to waiting for frames"
+      ],
+      "partial_credit_rule": "No partial credit defined for this specific sub-concept.",
+      "source_rubric_span": "Advantage and disadvantage vs carrier extension (1.5 marks)",
+      "source_reference_span": "need frames waiting for transmission or buffering and delay of frames",
+      "version": 1,
+      "created_at": "2026-07-26T21:12:42.005304Z",
+      "updated_at": "2026-07-26T21:12:42.005304Z"
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 6557,
+    "concept_count": 3
+  }
+}

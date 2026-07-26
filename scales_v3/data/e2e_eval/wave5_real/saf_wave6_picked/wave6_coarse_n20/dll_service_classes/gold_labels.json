@@ -1,0 +1,227 @@
+{
+  "question_key": "Q-DLL3",
+  "total_marks": 3,
+  "gold_source": "SAF ASAG2024 normalized_grade",
+  "gold_labels": [
+    {
+      "student_id": "QDLL3_00",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_01",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_02",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_03",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_04",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_05",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_06",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_07",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_08",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_09",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_10",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_11",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_12",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.5,
+        3.0
+      ],
+      "human_normalized": 1.0,
+      "human_score": 3.0,
+      "watch": "SAF human 1.0 \u2192 3.0/3.0"
+    },
+    {
+      "student_id": "QDLL3_13",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_14",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_15",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_16",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_17",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_18",
+      "expected_band": "high",
+      "expected_score_range": [
+        1.75,
+        2.75
+      ],
+      "human_normalized": 0.75,
+      "human_score": 2.25,
+      "watch": "SAF human 0.75 \u2192 2.25/3.0"
+    },
+    {
+      "student_id": "QDLL3_19",
+      "expected_band": "low",
+      "expected_score_range": [
+        0.0,
+        0.6
+      ],
+      "human_normalized": 0.0,
+      "human_score": 0.0,
+      "watch": "SAF human 0.0 \u2192 0.0/3.0"
+    }
+  ]
+}

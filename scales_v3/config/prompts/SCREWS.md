@@ -8,6 +8,8 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | Screw | Last id | Direction | Kind | What (latest) | If reverted |
 |-------|---------|-----------|------|---------------|-------------|
 | `cbte.keyword_variant_matching` | TC-007 | loosen | code | acceptable_variants now match by token containment (>=0.7... | False DEFER on paraphrased-but-correct answers ... |
+| `cera.evidence_facets_mode` | TC-014 | restructure | code | Add evidence_facets + evidence_mode (ANY/ALL); validators... | Advantage/disadvantage leaves become over-stric... |
+| `cera.fake_partial_and_calibrate` | TC-015 | tighten | code | Reject fake partial_credit_rule strings (null/No partial…... | Fake partials pass validation again; no pre-bat... |
 | `cera.rubric_constraint_fidelity` | PC-005 | tighten | prompt | Require CERA to preserve 0.5 rules on 1-mark concepts and... | CERA can simplify away teacher rubric exclusion... |
 | `cera.rubric_item_nesting` | TC-013 | restructure | code | Optional RubricItem buckets above CQAs; hybrid 1:1 atomic... | Lose bucket blast-radius control; CERA free to ... |
 | `cgr.exact_evidence_quotes` | PC-002 | tighten | prompt | Require exact contiguous evidence quotes; forbid paraphra... | Signal-1 false DEFERs return on GOOD (Wave2 STU... |
@@ -30,6 +32,16 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **TC-007** (2026-07-25, loosen): acceptable_variants now match by token containment (>=0.75 of variant content tokens in answer) as fallback to exact normalized substring; stopword-only variants never hit
   - if reverted: False DEFER on paraphrased-but-correct answers returns (OS1 defer 10%->12.5%, wave3 27->28); Tier-2 NLI runs on items Tier 1 could clear
+
+### `cera.evidence_facets_mode`
+
+- **TC-014** (2026-07-26, restructure): Add evidence_facets + evidence_mode (ANY/ALL); validators for ALL-requires-partial, ANY AND-lint, keyword facet coverage, MAY-SPLIT child partial; CGR mechanical ANY/ALL; calibrate_cqas.py
+  - if reverted: Advantage/disadvantage leaves become over-strict again; silent wrong zeros return
+
+### `cera.fake_partial_and_calibrate`
+
+- **TC-015** (2026-07-26, tighten): Reject fake partial_credit_rule strings (null/No partial…) when required; warn-only pre-grade calibration in pipeline (skip on resume; --calibrate-strict opt-in)
+  - if reverted: Fake partials pass validation again; no pre-batch smoke warnings
 
 ### `cera.rubric_constraint_fidelity`
 

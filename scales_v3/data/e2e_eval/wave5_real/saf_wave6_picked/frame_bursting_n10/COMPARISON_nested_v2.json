@@ -1,0 +1,99 @@
+{
+  "old_nested": {
+    "exam_id": "e2e_wave6_saf_burst_n10",
+    "mae": 0.6,
+    "band_hit": 3,
+    "over": 1,
+    "under": 6,
+    "mean": 1.65,
+    "defers": 12,
+    "scores": {
+      "BURST_00": 1.5,
+      "BURST_01": 2.25,
+      "BURST_02": 3.0,
+      "BURST_03": 3.0,
+      "BURST_04": 1.5,
+      "BURST_05": 2.25,
+      "BURST_06": 1.5,
+      "BURST_07": 0.75,
+      "BURST_08": 0.75,
+      "BURST_09": 0.0
+    }
+  },
+  "flat": {
+    "exam_id": "e2e_wave6_saf_burst_n10_flat",
+    "mae": 0.15,
+    "band_hit": 8,
+    "over": 1,
+    "under": 1,
+    "mean": 2.1,
+    "defers": 7,
+    "scores": {
+      "BURST_00": 3.0,
+      "BURST_01": 2.25,
+      "BURST_02": 3.0,
+      "BURST_03": 3.0,
+      "BURST_04": 2.25,
+      "BURST_05": 2.25,
+      "BURST_06": 2.25,
+      "BURST_07": 1.5,
+      "BURST_08": 1.5,
+      "BURST_09": 0.0
+    }
+  },
+  "new_nested_v2": {
+    "exam_id": "e2e_wave6_saf_burst_n10_v2",
+    "mae": 0.15,
+    "band_hit": 8,
+    "over": 2,
+    "under": 0,
+    "mean": 2.25,
+    "defers": 6,
+    "scores": {
+      "BURST_00": 3.0,
+      "BURST_01": 3.0,
+      "BURST_02": 3.0,
+      "BURST_03": 3.0,
+      "BURST_04": 2.25,
+      "BURST_05": 3.0,
+      "BURST_06": 2.25,
+      "BURST_07": 1.5,
+      "BURST_08": 1.5,
+      "BURST_09": 0.0
+    },
+    "concepts": [
+      {
+        "id": "Q1_C1",
+        "mode": "ANY",
+        "facets": [
+          "concatenating a sequence of multiple frames",
+          "single transmission",
+          "without releasing control of the channel"
+        ],
+        "marks": 1.5,
+        "kp": "Definition of frame bursting"
+      },
+      {
+        "id": "Q1_C2",
+        "mode": "ANY",
+        "facets": [
+          "more efficient than carrier extension",
+          "single frames not filled up with garbage"
+        ],
+        "marks": 0.75,
+        "kp": "Advantage of frame bursting vs carrier extension"
+      },
+      {
+        "id": "Q1_C3",
+        "mode": "ANY",
+        "facets": [
+          "frames waiting for transmission",
+          "buffering",
+          "delay of frames"
+        ],
+        "marks": 0.75,
+        "kp": "Disadvantage of frame bursting vs carrier extension"
+      }
+    ]
+  }
+}
