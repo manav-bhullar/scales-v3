@@ -20,7 +20,7 @@ class ConceptFeedback(BaseModel):
     knowledge_point: str
     verdict: Verdict
     marks_awarded: float = Field(..., ge=0)
-    max_marks: int = Field(..., gt=0)
+    max_marks: float = Field(..., gt=0)
     evidence_span: str = Field(default="")
     reasoning: str = Field(default="")
     trust_score: float = Field(..., ge=0.0, le=1.0)

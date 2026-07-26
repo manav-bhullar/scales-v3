@@ -89,7 +89,7 @@ class SHRRModule:
 
     # ─── Corrections ──────────────────────────────────────────────────────
 
-    def validate_teacher_marks(self, marks: float, max_marks: int) -> float:
+    def validate_teacher_marks(self, marks: float, max_marks: float) -> float:
         allowed = sorted({round(frac * max_marks, 10) for frac in self._allowed_fractions})
         if not any(abs(marks - value) < 1e-9 for value in allowed):
             raise SHRRValidationError(

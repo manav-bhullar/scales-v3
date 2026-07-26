@@ -113,6 +113,18 @@ def test_invalid_marks_rejected(shrr: SHRRModule):
         shrr.submit_correction(items[0], teacher_verdict=Verdict.FULL, teacher_marks=0.75)
 
 
+def test_half_of_one_point_five_accepted(shrr: SHRRModule):
+    """On a 1.5-mark concept, PARTIAL = 0.75 is a legal teacher award."""
+    cgr = _cgr("S1", "Q1_C1", Verdict.PARTIAL, 0.75)
+    items = shrr.build_review_items(
+        [(_cbte_defer("S1", "Q1_C1", cgr.result_id), cgr, _cqa(marks=1.5), "text")],
+    )
+    result = shrr.submit_correction(
+        items[0], teacher_verdict=Verdict.PARTIAL, teacher_marks=0.75
+    )
+    assert result.correction.teacher_marks == 0.75
+
+
 def test_overwrite_correction(shrr: SHRRModule):
     cgr = _cgr("S1", "Q1_C1", Verdict.PARTIAL, 0.5)
     items = shrr.build_review_items(

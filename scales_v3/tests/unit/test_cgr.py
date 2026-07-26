@@ -66,6 +66,23 @@ def test_allowed_marks_for_two(cgr, cqa_two_marks):
     assert cgr._allowed_marks(cqa_two_marks.marks) == [0.0, 1.0, 2.0]
 
 
+def test_allowed_marks_for_one_point_five(cgr):
+    assert cgr._allowed_marks(1.5) == [0.0, 0.75, 1.5]
+
+
+def test_prompt_renders_whole_marks_without_trailing_zero(cgr, cqa):
+    """Integer concept weights must stay '1' in prompts (not '1.0')."""
+    prompt = cgr._build_prompt(
+        student_answer="TCP uses a three-way handshake.",
+        cqa=cqa,
+        question_text="Explain TCP handshake.",
+    )
+    assert "Maximum Marks: 1\n" in prompt or "Maximum Marks: 1\r" in prompt or (
+        "Maximum Marks: 1" in prompt and "Maximum Marks: 1.0" not in prompt
+    )
+    assert "PARTIAL → 0.5" in prompt or "0.5" in prompt
+
+
 def test_prompt_rendering(cgr, cqa):
     prompt = cgr._build_prompt(
         student_answer="TCP uses a three-way handshake.",

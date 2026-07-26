@@ -59,6 +59,32 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-012 — 2026-07-26 — `scales/models/cqa.py` — `grading.concept_mark_quarters` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `grading.concept_mark_quarters`
+
+**What:** Allow CQA concept marks as float multiples of 0.25 (e.g. 1.5); awards stay 0/half/full of the concept. Float-safe CERA mark-sum check; format_marks keeps whole numbers as '1' not '1.0' in CGR prompts; CERA prompt tells the LLM not to round half marks to int.
+
+**Why:** Real teacher rubrics use 0.25/0.5/1.5 concept weights (SAF pack wrote 1.5+1.5 but CERA was forced to 1+2+1+1 by int schema).
+
+**If reverted:** Concept weights snap back to integers; half-mark rubric clauses are silently rounded and CERA drifts from teacher rubrics again.
+
+**Tradeoff:** PARTIAL of a 1.25-mark concept is 0.625; results/ledger may show finer decimals. LLM could still propose weird splits until validation rejects them.
+
+**Evidence:** Wave5 SAF CERA drift 1+2+1+1 vs rubric 1+1.5+1.5+1; architecture review 2026-07-26
+
+**Result:** Unit suite green; concept marks float+quarter validated; CGR/SHRR accept 0/0.75/1.5 for 1.5-mark concepts
+
+**Also touched:** `cera_extraction.txt`
+
+**Snapshot:** `snapshots/TC-012_cqa.py`
+
+**File hash (16):** `a7bfdce7934f0f05`
+
+
 ### TC-011 — 2026-07-25 — `api/main.py` — `ui.accept_audit_surface` (restructure)
 
 **Kind:** code  

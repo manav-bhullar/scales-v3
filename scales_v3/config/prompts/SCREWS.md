@@ -17,6 +17,7 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | `dataset.cn2.human_gold` | TC-008 | tighten | dataset | Human CN2 review: clarified GOOD_01 sender wording; demot... | GOOD_02 wrongly treated as high-band full credi... |
 | `dataset.os1.definition_required` | TC-004 | tighten | dataset | Clarified definition mark: FULL requires both explicit de... | CGR may again infer the missing definitions fro... |
 | `dataset.real_data_wave5` | TC-010 | measure | dataset | Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST no... | Evaluation evidence stays purely synthetic; FYP... |
+| `grading.concept_mark_quarters` | TC-012 | restructure | code | Allow CQA concept marks as float multiples of 0.25 (e.g. ... | Concept weights snap back to integers; half-mar... |
 | `grading.mark_granularity` | TC-009 | restructure | metric | CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed... | Stays at 0/0.5/1.0; teacher keeps rounding bord... |
 | `metrics.pass_bar` | TC-002 | measure | metric | Executable Wave4 pass bar (false ACCEPT, silent zeros, de... | Must manually interpret metrics; easy to miss h... |
 | `metrics.silent_zero` | TC-006 | restructure | metric | Changed silent-zero from a hard gate to a review candidat... | Legitimate omitted concepts on otherwise high-b... |
@@ -75,6 +76,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **TC-010** (2026-07-25, measure): Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST node deletion), 28 UNT student answers, gold bands derived from two human graders (0-10 normalized to 0-5); 5-mark rubric authored by us
   - if reverted: Evaluation evidence stays purely synthetic; FYP claim 'works on real answers' unsupported
+
+### `grading.concept_mark_quarters`
+
+- **TC-012** (2026-07-26, restructure): Allow CQA concept marks as float multiples of 0.25 (e.g. 1.5); awards stay 0/half/full of the concept. Float-safe CERA mark-sum check; format_marks keeps whole numbers as '1' not '1.0' in CGR prompts; CERA prompt tells the LLM not to round half marks to int.
+  - if reverted: Concept weights snap back to integers; half-mark rubric clauses are silently rounded and CERA drifts from teacher rubrics again.
 
 ### `grading.mark_granularity`
 

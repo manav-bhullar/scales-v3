@@ -1,0 +1,36 @@
+{
+  "status": "rubrics_in_progress",
+  "n_target_per_question": 50,
+  "questions": [
+    {
+      "key": "Q-CONN",
+      "folder": "conn_oriented_vs_less",
+      "approved": true,
+      "question_text": "Consider the following scenario: You are browsing the web for a very specific and important piece of information. However, you are not quite sure how to find it and adopt an iterative process of refining your query after every search, depending on the shown results and a skim of the first few websites. Is it better to use a connection-oriented or connectionless service for your communication in this scenario? Explain your answer in 1-4 sentences.",
+      "reference_answer": "Connectionless, because you will communicate with various partners (websites) for short periods of time. If you would initiate a connection with every website you skim, that would incur a lot of overhead in the connecting and disconnecting phase, just to have very short data transfers.",
+      "rubric": "Total 5 marks:\n1) Chooses connectionless (or datagram / UDP-style / no connection setup). (1 mark)\n2) States there are many / changing partners (many websites / servers). (1.5 marks)\n3) States interactions are short / brief / little data per site (skim). (1 mark)\n4) Explains connection-oriented would add high setup/teardown overhead (handshake / connect+disconnect cost) relative to short transfers. (1.5 marks)\nPartial credit (half of a concept) when the idea is present but incomplete.\nAward 0 if the student picks connection-oriented without a valid argument, or gives an unrelated answer. Naming \"connectionless\" alone without reason earns concept 1 only.",
+      "total_marks": 5,
+      "n_available": 84
+    },
+    {
+      "key": "Q-DLL3",
+      "folder": "dll_service_classes",
+      "approved": true,
+      "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
+      "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+      "rubric": "Total 3 marks (1 mark each):\n\n1) Unconfirmed connectionless\n   FULL (1): names the class AND explains the core idea (no ACK / loss possible; no connection setup).\n   PARTIAL (0.5): only the name, OR only a correct explanation without a clear name.\n   ABSENT (0): missing or wrong.\n\n2) Confirmed connectionless\n   FULL (1): names the class AND explains ACK/confirmation (and that there is still no connect/disconnect, or notes retransmit/duplicates as relevant).\n   PARTIAL (0.5): only the name, OR only a correct explanation without a clear name.\n   ABSENT (0): missing or wrong.\n\n3) Connection-oriented\n   FULL (1): names the class AND explains connect/disconnect and/or reliability / flow control.\n   PARTIAL (0.5): only the name, OR only a correct explanation without a clear name.\n   ABSENT (0): missing or wrong.\n\nSo: names only for all three → about 1.5/3; full name+explanation for all three → 3/3.",
+      "total_marks": 3,
+      "n_available": 77
+    },
+    {
+      "key": "Q-ASYNC",
+      "folder": "async_vs_sync_dll",
+      "approved": true,
+      "question_text": "What is the difference between asynchronous and synchronous transmission mode in the Data Link Layer.",
+      "reference_answer": "Asynchronous transmission: Every character a self-contained unit surrounded by a start bit and a stop bit, which is an easy and cheap pattern, but causes low transmission rates.\n\nSynchronous transmission: Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
+      "rubric": "Total 4 marks (1 mark each):\n\n1) Asynchronous framing: each character is a self-contained unit with start and stop bits (or equivalent wording).\n   PARTIAL (0.5): mentions async vaguely without start/stop framing.\n\n2) Asynchronous trade-off: simple/cheap/easy, but low(er) transmission rate.\n   PARTIAL (0.5): states only one side (cheap OR slow).\n\n3) Synchronous framing: characters sent as a continuous stream / frames, delimited by SYN or flag (or equivalent).\n   PARTIAL (0.5): says \"frames\" or \"stream\" without any delimiter/sync idea.\n\n4) Synchronous trade-off: higher transmission rate and/or needs sender–receiver synchronization; may note higher complexity.\n   PARTIAL (0.5): states only rate OR only sync/complexity.\n\nAward 0 when absent or clearly wrong (e.g. swaps async and sync definitions).",
+      "total_marks": 4,
+      "n_available": 74
+    }
+  ]
+}

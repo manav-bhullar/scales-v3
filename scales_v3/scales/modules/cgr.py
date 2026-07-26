@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from scales.config import AppSettings, get_settings, prompt_path
 from scales.models.cqa import CQATuple
 from scales.models.grading import CGRResult, Verdict
+from scales.models.marks import format_marks
 from scales.modules.exceptions import CGRValidationError
 from scales.services.exceptions import LLMAPIError, LLMValidationError
 from scales.services.llm_client import LLMClient
@@ -54,7 +55,7 @@ class CGRModule:
             raise FileNotFoundError(f"CGR prompt template missing: {path}")
         return path.read_text(encoding="utf-8")
 
-    def _allowed_marks(self, max_marks: int) -> list[float]:
+    def _allowed_marks(self, max_marks: float) -> list[float]:
         return sorted({round(frac * max_marks, 10) for frac in self._allowed_fractions})
 
     def _clamp_marks(self, marks_awarded: float, cqa: CQATuple) -> float:
@@ -86,8 +87,8 @@ class CGRModule:
                 "{partial_credit_rule}",
                 cqa.partial_credit_rule or "None (FULL or ABSENT/INCORRECT only)",
             )
-            .replace("{marks}", str(cqa.marks))
-            .replace("{half_marks}", str(half_marks))
+            .replace("{marks}", format_marks(cqa.marks))
+            .replace("{half_marks}", format_marks(half_marks))
             .replace("{question_text}", question_text)
             .replace(
                 "{student_answer}",

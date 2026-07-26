@@ -1,0 +1,189 @@
+{
+  "exam_id": "e2e_wave5_saf_tcp_congestion",
+  "question_id": "Q1",
+  "question_key": "Q-REAL2",
+  "total_marks": 5,
+  "gold_source": "SAF human grades in ASAG2024 (normalized 0–1 → 0–5)",
+  "gold_labels": [
+    {
+      "student_id": "SAF_00",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_01",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_02",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_03",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_04",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_05",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_06",
+      "expected_band": "high",
+      "expected_score_range": [
+        3.25,
+        4.25
+      ],
+      "watch": "SAF human grade=0.75 → 3.75/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_07",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_08",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_09",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_10",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_11",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_12",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_13",
+      "expected_band": "mid",
+      "expected_score_range": [
+        2.0,
+        3.0
+      ],
+      "watch": "SAF human grade=0.5 → 2.5/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_14",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        1.38,
+        2.38
+      ],
+      "watch": "SAF human grade=0.375 → 1.875/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_15",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        1.38,
+        2.38
+      ],
+      "watch": "SAF human grade=0.375 → 1.875/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_16",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.75,
+        1.75
+      ],
+      "watch": "SAF human grade=0.25 → 1.25/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_17",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.75,
+        1.75
+      ],
+      "watch": "SAF human grade=0.25 → 1.25/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_18",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.75,
+        1.75
+      ],
+      "watch": "SAF human grade=0.25 → 1.25/5 (ASAG2024 normalized_grade)"
+    },
+    {
+      "student_id": "SAF_19",
+      "expected_band": "mid_low",
+      "expected_score_range": [
+        0.75,
+        1.75
+      ],
+      "watch": "SAF human grade=0.25 → 1.25/5 (ASAG2024 normalized_grade)"
+    }
+  ]
+}

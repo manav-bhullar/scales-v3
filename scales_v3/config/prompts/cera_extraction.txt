@@ -5,6 +5,8 @@ Rules:
 - Each CQA tests exactly ONE knowledge point
 - CQAs must be mutually exclusive (no double-penalization)
 - Mark allocations must sum exactly to total_marks
+- Concept `marks` must be a multiple of 0.25 (e.g. 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2).
+  Follow the rubric: if it assigns 1.5 to a concept, use marks=1.5 — do not round to int.
 - Include expected keywords and 2-3 acceptable paraphrase variants
 - Include a partial_credit_rule whenever the rubric allows partial marks, even for
   a 1-mark CQA (for example, 0.5 out of 1). Use null only when the rubric truly
@@ -44,3 +46,8 @@ Reference: TCP uses a three-way handshake (SYN → SYN-ACK → ACK) to establish
 Rubric: 1 mark naming handshake; 1 mark SYN; 1 mark SYN-ACK; 1 mark purpose.
 Example CQA: concept_id=Q1_C1, knowledge_point="TCP uses three-way handshake", marks=1,
 expected_keywords=["three-way","handshake"], acceptable_variants=["3-step connection setup"].
+
+Few-shot example (half marks):
+Question: Name TCP congestion phases and explain cwnd growth. [5 marks]
+Rubric: 1 + 1.5 + 1.5 + 1.
+Example: marks may be 1, 1.5, 1.5, 1 (sum 5). Do not rewrite 1.5 as 1 or 2.

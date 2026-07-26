@@ -11,6 +11,11 @@ from pydantic import BaseModel, Field
 from scales.config import AppSettings, get_settings, prompt_path
 from scales.models.cqa import CQATuple
 from scales.models.exam import QuestionInput
+from scales.models.marks import (
+    format_marks,
+    is_multiple_of_mark_step,
+    marks_sum_matches,
+)
 from scales.modules.exceptions import CERAValidationError
 from scales.services.exceptions import LLMAPIError, LLMValidationError
 from scales.services.llm_client import LLMClient
@@ -24,7 +29,7 @@ class CQAExtractionItem(BaseModel):
     concept_id: str = Field(..., min_length=1)
     knowledge_point: str = Field(..., min_length=1)
     target_criteria: str = ""
-    marks: int = Field(..., gt=0)
+    marks: float = Field(..., gt=0)
     expected_keywords: list[str] = Field(default_factory=list)
     acceptable_variants: list[str] = Field(default_factory=list)
     partial_credit_rule: str | None = None
@@ -81,7 +86,7 @@ class CERAModule:
             .replace("{question_text}", question.question_text)
             .replace("{reference_answer}", question.reference_answer)
             .replace("{rubric}", rubric)
-            .replace("{total_marks}", str(question.total_marks))
+            .replace("{total_marks}", format_marks(question.total_marks))
         )
         if feedback:
             prompt += (
@@ -101,8 +106,8 @@ class CERAModule:
             errors.append("cqa_tuples must contain at least one concept")
             return errors
 
-        marks_sum = sum(item.marks for item in items)
-        if marks_sum != question.total_marks:
+        marks_sum = sum(float(item.marks) for item in items)
+        if not marks_sum_matches(marks_sum, question.total_marks):
             errors.append(
                 f"marks sum {marks_sum} != total_marks {question.total_marks}"
             )
@@ -116,6 +121,11 @@ class CERAModule:
                 errors.append(f"{item.concept_id}: knowledge_point is empty")
             if item.marks <= 0:
                 errors.append(f"{item.concept_id}: marks must be > 0")
+            elif not is_multiple_of_mark_step(item.marks):
+                errors.append(
+                    f"{item.concept_id}: marks must be a multiple of 0.25 "
+                    f"(got {item.marks})"
+                )
             if not item.expected_keywords:
                 errors.append(f"{item.concept_id}: expected_keywords must be non-empty")
             expected_prefix = f"{question.question_id}_C"

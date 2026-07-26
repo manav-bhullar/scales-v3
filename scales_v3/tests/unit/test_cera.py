@@ -61,6 +61,35 @@ def test_validate_marks_sum_ok(cera, question):
     assert cera._validate_cqa_list(items, question) == []
 
 
+def test_validate_quarter_mark_split_ok(cera):
+    """Rubric 1 + 1.5 + 1.5 + 1 on a 5-mark question must validate."""
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="TCP congestion phases?",
+        reference_answer="Slow start and congestion avoidance.",
+        rubric="1 + 1.5 + 1.5 + 1",
+        total_marks=5,
+    )
+    items = [
+        _item(concept_id="Q1_C1", marks=1, knowledge_point="names"),
+        _item(concept_id="Q1_C2", marks=1.5, knowledge_point="slow start"),
+        _item(concept_id="Q1_C3", marks=1.5, knowledge_point="CA"),
+        _item(concept_id="Q1_C4", marks=1, knowledge_point="loss"),
+    ]
+    assert cera._validate_cqa_list(items, q) == []
+
+
+def test_validate_rejects_non_quarter_marks(cera, question):
+    items = [
+        _item(concept_id="Q1_C1", marks=0.83),
+        _item(concept_id="Q1_C2", marks=1.17, knowledge_point="SYN"),
+        _item(concept_id="Q1_C3", marks=1, knowledge_point="SYN-ACK"),
+        _item(concept_id="Q1_C4", marks=1, knowledge_point="purpose"),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("multiple of 0.25" in e for e in errors)
+
+
 def test_validate_marks_sum_mismatch(cera, question):
     items = [_item(concept_id="Q1_C1", marks=1), _item(concept_id="Q1_C2", marks=1)]
     errors = cera._validate_cqa_list(items, question)
@@ -97,6 +126,8 @@ def test_prompt_contains_question_fields(cera, question):
     assert "4" in prompt
     assert "partial_credit_rule whenever the rubric allows partial marks" in prompt
     assert "a 1-mark CQA" in prompt
+    assert "multiple of 0.25" in prompt
+    assert "do not round to int" in prompt
     assert "Never broaden an exclusion" in prompt
 
 

@@ -1,0 +1,92 @@
+{
+  "exam_id": "e2e_wave5_saf_tcp_congestion",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Naming the two phases of TCP congestion control",
+      "target_criteria": "Must correctly identify both Slow Start and Congestion Avoidance phases.",
+      "marks": 1,
+      "expected_keywords": [
+        "Slow Start",
+        "Congestion Avoidance"
+      ],
+      "acceptable_variants": [
+        "Slow-start and congestion avoidance",
+        "Slow start phase and congestion avoidance phase"
+      ],
+      "partial_credit_rule": "0.5 marks if only one phase is named.",
+      "source_rubric_span": "1) Names both phases: Slow Start and Congestion Avoidance. (1 mark)",
+      "source_reference_span": "Slow start (cwnd less than ss_thresh): ... Congestion Avoidance (cwnd >= ss_thresh):",
+      "version": 1,
+      "created_at": "2026-07-26T14:59:15.742845Z",
+      "updated_at": "2026-07-26T14:59:15.742848Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Slow Start behavior",
+      "target_criteria": "Explain that cwnd grows fast (exponentially/doubling per RTT) while cwnd < ss_thresh.",
+      "marks": 2,
+      "expected_keywords": [
+        "exponential",
+        "doubling",
+        "fast"
+      ],
+      "acceptable_variants": [
+        "cwnd increases by 1 per ACK",
+        "cwnd grows exponentially until ss_thresh"
+      ],
+      "partial_credit_rule": "1 mark if the growth is described as 'fast' but lacks the specific mechanism (exponential/doubling).",
+      "source_rubric_span": "2) Slow Start behaviour: while cwnd < ss_thresh, cwnd grows fast (typically +1 per ACK \u2192 exponential / doubles each RTT) until ss_thresh (or loss). (1.5 marks)",
+      "source_reference_span": "In the slow start phase, cwnd is incremented by one every time a segment is acknowledged. This results in an exponential growth as cwnd is essentially doubled after each Round Trip Time (RTT).",
+      "version": 1,
+      "created_at": "2026-07-26T14:59:15.742858Z",
+      "updated_at": "2026-07-26T14:59:15.742859Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Congestion Avoidance behavior",
+      "target_criteria": "Explain that cwnd grows slowly (linearly) when cwnd >= ss_thresh.",
+      "marks": 1,
+      "expected_keywords": [
+        "linear",
+        "slowly"
+      ],
+      "acceptable_variants": [
+        "cwnd increases by 1 per RTT",
+        "linear growth"
+      ],
+      "partial_credit_rule": "0.5 marks if the growth is described as 'slow' but lacks the specific mechanism (linear).",
+      "source_rubric_span": "3) Congestion Avoidance behaviour: when cwnd >= ss_thresh, cwnd grows more slowly (typically linear, e.g. +1 per RTT / after window ACKed). (1.5 marks)",
+      "source_reference_span": "In the congestion avoidance phase, cwnd is incremented more slowly. There are different incrementation strategies, but they usually grow linearly",
+      "version": 1,
+      "created_at": "2026-07-26T14:59:15.742865Z",
+      "updated_at": "2026-07-26T14:59:15.742865Z"
+    },
+    {
+      "concept_id": "Q1_C4",
+      "question_id": "Q1",
+      "knowledge_point": "Reaction to congestion/loss",
+      "target_criteria": "Explain that upon loss, ss_thresh is halved (cwnd/2) and cwnd is reset (to 1).",
+      "marks": 1,
+      "expected_keywords": [
+        "halved",
+        "reset",
+        "ss_thresh",
+        "cwnd"
+      ],
+      "acceptable_variants": [
+        "ss_thresh = cwnd / 2 and cwnd = 1",
+        "halve ss_thresh and reset cwnd"
+      ],
+      "partial_credit_rule": "0.5 marks if only one of the two actions (halving ss_thresh or resetting cwnd) is mentioned.",
+      "source_rubric_span": "4) Loss / congestion reaction (as in the reference): ss_thresh becomes cwnd/2 (or similar halving) and cwnd is reset (typically to 1) \u2014 may be stated for either phase. (1 mark)",
+      "source_reference_span": "After a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.",
+      "version": 1,
+      "created_at": "2026-07-26T14:59:15.742871Z",
+      "updated_at": "2026-07-26T14:59:15.742871Z"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ class ReviewItem(BaseModel):
     concept_id: str = Field(..., min_length=1)
     question_id: str = Field(default="")
     knowledge_point: str = Field(..., min_length=1)
-    max_marks: int = Field(..., gt=0)
+    max_marks: float = Field(..., gt=0)
     student_answer: str = Field(default="")
     system_verdict: Verdict
     system_marks: float = Field(..., ge=0)
