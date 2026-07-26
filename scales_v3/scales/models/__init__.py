@@ -12,6 +12,7 @@ from scales.models.pipeline import (
 )
 from scales.models.result import ConceptFeedback, FinalResult
 from scales.models.review import CorrectionResult, ReviewItem, ReviewProgress
+from scales.models.rubric import RubricItem
 from scales.models.trust import CBTEResult, TrustDecision
 
 __all__ = [
@@ -19,6 +20,7 @@ __all__ = [
     "QuestionInput",
     "StudentAnswer",
     "CQATuple",
+    "RubricItem",
     "CGRResult",
     "Verdict",
     "CBTEResult",

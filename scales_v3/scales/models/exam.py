@@ -7,6 +7,8 @@ from uuid import uuid4
 
 from pydantic import BaseModel, Field, field_validator
 
+from scales.models.rubric import RubricItem
+
 
 def _utc_now() -> datetime:
     return datetime.now(timezone.utc)
@@ -27,6 +29,8 @@ class QuestionInput(BaseModel):
     reference_answer: str = Field(..., min_length=1)
     rubric: str = Field(default="")
     total_marks: int = Field(..., gt=0)
+    # Optional coarse buckets. Empty = flat CERA (legacy 1 line ≈ 1 concept).
+    rubric_items: list[RubricItem] = Field(default_factory=list)
     student_answers: list[StudentAnswer] = Field(default_factory=list)
 
     @field_validator("total_marks")

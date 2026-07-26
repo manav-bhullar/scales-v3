@@ -21,6 +21,8 @@ class CQATuple(BaseModel):
     knowledge_point: str = Field(..., min_length=1)
     target_criteria: str = Field(default="")
     marks: float = Field(..., gt=0)
+    # Parent teacher bucket when nested rubrics are used; None = flat / legacy.
+    rubric_item_id: str | None = None
     expected_keywords: list[str] = Field(default_factory=list)
     acceptable_variants: list[str] = Field(default_factory=list)
     partial_credit_rule: str | None = None

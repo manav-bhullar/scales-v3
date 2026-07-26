@@ -59,6 +59,28 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-013 — 2026-07-26 — `scales/models/rubric.py` — `cera.rubric_item_nesting` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `cera.rubric_item_nesting`
+
+**What:** Optional RubricItem buckets above CQAs; hybrid 1:1 atomic or 1:N may-split; additive child sums; CERA prompt + validators
+
+**Why:** Teacher rubrics are often coarse; short answers stay 1 rubric=1 concept; middle answers need controlled splits without a rule engine
+
+**If reverted:** Lose bucket blast-radius control; CERA free to invent global splits again
+
+**Tradeoff:** More validation surface; teacher must set atomic flags; UI for buckets deferred
+
+**Evidence:** RATAS additive RKT; Wave6 Q-BURST 1.5+1.5; STRICTNESS_RESEARCH.md
+
+**Snapshot:** `snapshots/TC-013_rubric.py`
+
+**File hash (16):** `37d288cb34e9d817`
+
+
 ### TC-012 — 2026-07-26 — `scales/models/cqa.py` — `grading.concept_mark_quarters` (restructure)
 
 **Kind:** code  

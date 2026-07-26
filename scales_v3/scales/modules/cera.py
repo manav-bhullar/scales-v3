@@ -16,6 +16,7 @@ from scales.models.marks import (
     is_multiple_of_mark_step,
     marks_sum_matches,
 )
+from scales.models.rubric import RubricItem
 from scales.modules.exceptions import CERAValidationError
 from scales.services.exceptions import LLMAPIError, LLMValidationError
 from scales.services.llm_client import LLMClient
@@ -30,6 +31,7 @@ class CQAExtractionItem(BaseModel):
     knowledge_point: str = Field(..., min_length=1)
     target_criteria: str = ""
     marks: float = Field(..., gt=0)
+    rubric_item_id: str | None = None
     expected_keywords: list[str] = Field(default_factory=list)
     acceptable_variants: list[str] = Field(default_factory=list)
     partial_credit_rule: str | None = None
@@ -74,6 +76,24 @@ class CERAModule:
             raise FileNotFoundError(f"CERA prompt template missing: {path}")
         return path.read_text(encoding="utf-8")
 
+    def _format_rubric_items(self, items: list[RubricItem]) -> str:
+        if not items:
+            return (
+                "(No structured rubric_items — treat each rubric line as one concept "
+                "unless the line clearly contains multiple independent ideas.)"
+            )
+        lines: list[str] = []
+        for ri in items:
+            mode = "ATOMIC (exactly 1 concept, same marks)" if ri.atomic else (
+                "MAY SPLIT (1..N concepts whose marks sum to this bucket)"
+            )
+            desc = f" — {ri.description}" if ri.description.strip() else ""
+            lines.append(
+                f"- {ri.rubric_item_id}: {ri.label} "
+                f"({format_marks(ri.marks)} marks) [{mode}]{desc}"
+            )
+        return "\n".join(lines)
+
     def _build_prompt(self, question: QuestionInput, feedback: str | None = None) -> str:
         # Use replace() — prompt templates contain literal JSON braces / {N} patterns.
         rubric = (
@@ -87,6 +107,7 @@ class CERAModule:
             .replace("{reference_answer}", question.reference_answer)
             .replace("{rubric}", rubric)
             .replace("{total_marks}", format_marks(question.total_marks))
+            .replace("{rubric_items}", self._format_rubric_items(question.rubric_items))
         )
         if feedback:
             prompt += (
@@ -95,6 +116,80 @@ class CERAModule:
                 "Fix all issues and return a corrected CQA list."
             )
         return prompt
+
+    def _validate_rubric_items(self, question: QuestionInput) -> list[str]:
+        errors: list[str] = []
+        items = question.rubric_items
+        if not items:
+            return errors
+        ids = [ri.rubric_item_id for ri in items]
+        if len(ids) != len(set(ids)):
+            errors.append("duplicate rubric_item_id values found")
+        bucket_sum = sum(float(ri.marks) for ri in items)
+        if not marks_sum_matches(bucket_sum, question.total_marks):
+            errors.append(
+                f"rubric_items marks sum {bucket_sum} != total_marks "
+                f"{question.total_marks}"
+            )
+        for ri in items:
+            if not ri.label.strip():
+                errors.append(f"{ri.rubric_item_id}: label is empty")
+            if not is_multiple_of_mark_step(ri.marks):
+                errors.append(
+                    f"{ri.rubric_item_id}: marks must be a multiple of 0.25 "
+                    f"(got {ri.marks})"
+                )
+        return errors
+
+    def _validate_nested_linkage(
+        self,
+        items: list[CQAExtractionItem],
+        question: QuestionInput,
+    ) -> list[str]:
+        """When rubric_items are present: additive bucket sums + atomic rules."""
+        errors: list[str] = []
+        by_id = {ri.rubric_item_id: ri for ri in question.rubric_items}
+        children: dict[str, list[CQAExtractionItem]] = {rid: [] for rid in by_id}
+
+        for item in items:
+            rid = item.rubric_item_id
+            if not rid:
+                errors.append(
+                    f"{item.concept_id}: rubric_item_id required when "
+                    "question has rubric_items"
+                )
+                continue
+            if rid not in by_id:
+                errors.append(
+                    f"{item.concept_id}: unknown rubric_item_id '{rid}'"
+                )
+                continue
+            children[rid].append(item)
+
+        for rid, ri in by_id.items():
+            kids = children[rid]
+            if not kids:
+                errors.append(f"{rid}: no concepts linked to this rubric item")
+                continue
+            child_sum = sum(float(k.marks) for k in kids)
+            if not marks_sum_matches(child_sum, ri.marks):
+                errors.append(
+                    f"{rid}: child concept marks sum {child_sum} != "
+                    f"bucket marks {ri.marks}"
+                )
+            if ri.atomic and len(kids) != 1:
+                errors.append(
+                    f"{rid}: atomic=True requires exactly 1 concept "
+                    f"(got {len(kids)})"
+                )
+            elif ri.atomic and kids and not marks_sum_matches(
+                float(kids[0].marks), ri.marks
+            ):
+                errors.append(
+                    f"{rid}: atomic concept marks {kids[0].marks} != "
+                    f"bucket marks {ri.marks}"
+                )
+        return errors
 
     def _validate_cqa_list(
         self,
@@ -138,6 +233,9 @@ class CERAModule:
                 errors.append(
                     f"{item.concept_id}: must match pattern '{{question_id}}_C{{N}}'"
                 )
+
+        if question.rubric_items:
+            errors.extend(self._validate_nested_linkage(items, question))
         return errors
 
     def _to_cqa_tuples(
@@ -152,6 +250,7 @@ class CERAModule:
                 knowledge_point=item.knowledge_point.strip(),
                 target_criteria=item.target_criteria.strip(),
                 marks=item.marks,
+                rubric_item_id=item.rubric_item_id,
                 expected_keywords=[kw.strip() for kw in item.expected_keywords if kw.strip()],
                 acceptable_variants=[
                     v.strip() for v in item.acceptable_variants if v and v.strip()
@@ -168,6 +267,12 @@ class CERAModule:
         """Run CERA with validation retries until CQAs are valid."""
         if question.total_marks <= 0:
             raise CERAValidationError("total_marks must be > 0")
+
+        ri_errors = self._validate_rubric_items(question)
+        if ri_errors:
+            raise CERAValidationError(
+                "Invalid rubric_items: " + "; ".join(ri_errors)
+            )
 
         if not question.rubric.strip():
             logger.warning(

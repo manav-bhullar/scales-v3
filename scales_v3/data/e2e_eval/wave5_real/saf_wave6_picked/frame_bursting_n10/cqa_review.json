@@ -1,0 +1,86 @@
+{
+  "exam_id": "e2e_wave6_saf_burst_n10",
+  "question_id": "Q1",
+  "question_text": "What is \"frame bursting\"? Also, give 1 advantage and disadvantage compared to the carrier extension.",
+  "reference_answer": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.\nAdvantage :it is more efficient than carrier extension as single frames not filled up with garbage.\nDisadvantage :need frames waiting for transmission or buffering and delay of frames",
+  "total_marks": 3,
+  "marks_sum": 3.0,
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Definition of frame bursting",
+      "target_criteria": "FULL: conveys that multiple frames are concatenated / sent in one transmission (and ideally without releasing the channel / shared medium control). PARTIAL: vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea.",
+      "marks": 1.5,
+      "rubric_item_id": "R1",
+      "expected_keywords": [
+        "concatenated",
+        "single transmission",
+        "frame bursting"
+      ],
+      "acceptable_variants": [
+        "sending multiple frames in one go",
+        "grouping frames together for one transmission"
+      ],
+      "partial_credit_rule": "0.75 marks for vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea.",
+      "source_rubric_span": "Definition of frame bursting (1.5 marks) — ATOMIC / do not split.",
+      "source_reference_span": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:26.098413Z",
+      "updated_at": "2026-07-26T19:58:26.098416Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Advantage of frame bursting compared to carrier extension",
+      "target_criteria": "Must explain that it is more efficient because it uses real data instead of padding/garbage.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "expected_keywords": [
+        "efficient",
+        "no garbage",
+        "no padding"
+      ],
+      "acceptable_variants": [
+        "avoids filling frames with padding",
+        "better bandwidth utilization than carrier extension"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Advantage idea (from reference): more efficient than carrier extension (real data instead of garbage/padding fill).",
+      "source_reference_span": "Advantage :it is more efficient than carrier extension as single frames not filled up with garbage.",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:26.098428Z",
+      "updated_at": "2026-07-26T19:58:26.098429Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Disadvantage of frame bursting compared to carrier extension",
+      "target_criteria": "Must explain that it requires waiting for frames or buffering, leading to delay.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "expected_keywords": [
+        "buffering",
+        "waiting",
+        "delay"
+      ],
+      "acceptable_variants": [
+        "introduces latency due to buffering",
+        "requires frames to be queued before transmission"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Disadvantage idea: needs waiting/buffered frames → delay.",
+      "source_reference_span": "Disadvantage :need frames waiting for transmission or buffering and delay of frames",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:26.098437Z",
+      "updated_at": "2026-07-26T19:58:26.098437Z"
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 1,
+    "tokens_used": 2500,
+    "concept_count": 3
+  },
+  "status": "awaiting_human_cera_review"
+}

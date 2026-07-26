@@ -1,0 +1,51 @@
+{
+  "nested": {
+    "exam_id": "e2e_wave6_saf_burst_n10",
+    "mae": 0.6,
+    "band_hit": 3,
+    "over": 1,
+    "under": 6,
+    "mean_sys": 1.65,
+    "mean_human": 2.1,
+    "defers": 12,
+    "scores": {
+      "BURST_00": 1.5,
+      "BURST_01": 2.25,
+      "BURST_02": 3.0,
+      "BURST_03": 3.0,
+      "BURST_04": 1.5,
+      "BURST_05": 2.25,
+      "BURST_06": 1.5,
+      "BURST_07": 0.75,
+      "BURST_08": 0.75,
+      "BURST_09": 0.0
+    }
+  },
+  "flat": {
+    "exam_id": "e2e_wave6_saf_burst_n10_flat",
+    "mae": 0.15,
+    "band_hit": 8,
+    "over": 1,
+    "under": 1,
+    "mean_sys": 2.1,
+    "mean_human": 2.1,
+    "defers": 7,
+    "scores": {
+      "BURST_00": 3.0,
+      "BURST_01": 2.25,
+      "BURST_02": 3.0,
+      "BURST_03": 3.0,
+      "BURST_04": 2.25,
+      "BURST_05": 2.25,
+      "BURST_06": 2.25,
+      "BURST_07": 1.5,
+      "BURST_08": 1.5,
+      "BURST_09": 0.0
+    }
+  },
+  "closer": {
+    "nested": 0,
+    "flat": 5,
+    "tie": 5
+  }
+}

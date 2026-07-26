@@ -1,0 +1,70 @@
+{
+  "architecture": "nested_hybrid",
+  "exam_id": "e2e_wave6_saf_burst_n10",
+  "concepts": [
+    {
+      "id": "Q1_C1",
+      "rid": "R1",
+      "marks": 1.5,
+      "kp": "Definition of frame bursting"
+    },
+    {
+      "id": "Q1_C2",
+      "rid": "R2",
+      "marks": 0.75,
+      "kp": "Advantage of frame bursting over carrier extension"
+    },
+    {
+      "id": "Q1_C3",
+      "rid": "R2",
+      "marks": 0.75,
+      "kp": "Disadvantage of frame bursting over carrier extension"
+    }
+  ],
+  "mae": 0.6,
+  "band_hit": 3,
+  "over": 1,
+  "under": 6,
+  "scores": {
+    "BURST_00": {
+      "sys": 1.5,
+      "human": 3.0
+    },
+    "BURST_01": {
+      "sys": 2.25,
+      "human": 3.0
+    },
+    "BURST_02": {
+      "sys": 3.0,
+      "human": 3.0
+    },
+    "BURST_03": {
+      "sys": 3.0,
+      "human": 2.25
+    },
+    "BURST_04": {
+      "sys": 1.5,
+      "human": 2.25
+    },
+    "BURST_05": {
+      "sys": 2.25,
+      "human": 2.25
+    },
+    "BURST_06": {
+      "sys": 1.5,
+      "human": 2.25
+    },
+    "BURST_07": {
+      "sys": 0.75,
+      "human": 1.5
+    },
+    "BURST_08": {
+      "sys": 0.75,
+      "human": 1.5
+    },
+    "BURST_09": {
+      "sys": 0.0,
+      "human": 0.0
+    }
+  }
+}

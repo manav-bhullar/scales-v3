@@ -1,0 +1,52 @@
+{
+  "exam_id": "e2e_wave6_saf_burst_n10_flat",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Definition of frame bursting",
+      "target_criteria": "FULL: conveys that multiple frames are concatenated / sent in one transmission (and ideally without releasing the channel / shared medium control).",
+      "marks": 1.5,
+      "rubric_item_id": "1",
+      "expected_keywords": [
+        "concatenated",
+        "multiple frames",
+        "single transmission"
+      ],
+      "acceptable_variants": [
+        "sending a sequence of frames without releasing the channel",
+        "transmitting multiple frames in one go to reduce overhead"
+      ],
+      "partial_credit_rule": "PARTIAL (0.75): vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea. ABSENT: missing or wrong.",
+      "source_rubric_span": "1) Definition of frame bursting (1.5 marks)",
+      "source_reference_span": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.",
+      "version": 1,
+      "created_at": "2026-07-26T20:04:19.952300Z",
+      "updated_at": "2026-07-26T20:04:19.952303Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Advantage and disadvantage of frame bursting compared to carrier extension",
+      "target_criteria": "FULL (1.5): states both an advantage (e.g., higher efficiency/no padding) AND a disadvantage (e.g., delay/buffering) vs carrier extension.",
+      "marks": 1.5,
+      "rubric_item_id": "2",
+      "expected_keywords": [
+        "efficiency",
+        "padding",
+        "delay",
+        "buffering"
+      ],
+      "acceptable_variants": [
+        "more efficient than carrier extension because it avoids garbage padding",
+        "requires buffering frames which introduces latency"
+      ],
+      "partial_credit_rule": "PARTIAL (0.75): only advantage OR only disadvantage (one side present). ABSENT: neither side present or wrong.",
+      "source_rubric_span": "2) Advantage AND disadvantage vs carrier extension (1.5 marks) \u2014 SINGLE concept.",
+      "source_reference_span": "Advantage :it is more efficient than carrier extension as single frames not filled up with garbage. Disadvantage :need frames waiting for transmission or buffering and delay of frames",
+      "version": 1,
+      "created_at": "2026-07-26T20:04:19.952333Z",
+      "updated_at": "2026-07-26T20:04:19.952334Z"
+    }
+  ]
+}

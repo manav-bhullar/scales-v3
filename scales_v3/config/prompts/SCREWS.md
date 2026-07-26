@@ -9,6 +9,7 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 |-------|---------|-----------|------|---------------|-------------|
 | `cbte.keyword_variant_matching` | TC-007 | loosen | code | acceptable_variants now match by token containment (>=0.7... | False DEFER on paraphrased-but-correct answers ... |
 | `cera.rubric_constraint_fidelity` | PC-005 | tighten | prompt | Require CERA to preserve 0.5 rules on 1-mark concepts and... | CERA can simplify away teacher rubric exclusion... |
+| `cera.rubric_item_nesting` | TC-013 | restructure | code | Optional RubricItem buckets above CQAs; hybrid 1:1 atomic... | Lose bucket blast-radius control; CERA free to ... |
 | `cgr.exact_evidence_quotes` | PC-002 | tighten | prompt | Require exact contiguous evidence quotes; forbid paraphra... | Signal-1 false DEFERs return on GOOD (Wave2 STU... |
 | `cgr.partial_over_absent` | PC-003 | loosen | prompt | Partial-credit policy: prefer PARTIAL over ABSENT; accept... | Mid/purpose answers harsh ABSENT again; Wave3 m... |
 | `cgr.partial_rule_precedence` | PC-004 | tighten | prompt | Made concept-specific partial-credit rules override the g... | Generic prefer-PARTIAL wording can override exp... |
@@ -34,6 +35,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **PC-005** (2026-07-25, tighten): Require CERA to preserve 0.5 rules on 1-mark concepts and carry explicit FULL/PARTIAL/ABSENT exclusions literally
   - if reverted: CERA can simplify away teacher rubric exclusions, making CGR grade a different rubric from the one the teacher approved
+
+### `cera.rubric_item_nesting`
+
+- **TC-013** (2026-07-26, restructure): Optional RubricItem buckets above CQAs; hybrid 1:1 atomic or 1:N may-split; additive child sums; CERA prompt + validators
+  - if reverted: Lose bucket blast-radius control; CERA free to invent global splits again
 
 ### `cgr.exact_evidence_quotes`
 

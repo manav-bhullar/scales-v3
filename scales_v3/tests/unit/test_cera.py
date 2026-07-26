@@ -206,3 +206,136 @@ async def test_single_mark_question(cera):
     result = await cera.extract_concepts(q)
     assert len(result.cqa_tuples) == 1
     assert result.cqa_tuples[0].marks == 1
+
+
+def test_nested_atomic_one_to_one_ok(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames.",
+        rubric="Definition 1.5; Adv/Disadv 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=True),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=True),
+        ],
+    )
+    items = [
+        _item(concept_id="Q1_C1", marks=1.5, rubric_item_id="R1", knowledge_point="def"),
+        _item(concept_id="Q1_C2", marks=1.5, rubric_item_id="R2", knowledge_point="trade"),
+    ]
+    assert cera._validate_cqa_list(items, q) == []
+
+
+def test_nested_may_split_additive_ok(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames without releasing channel.",
+        rubric="Definition 1.5; Adv/Disadv 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=False),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=False),
+        ],
+    )
+    items = [
+        _item(concept_id="Q1_C1", marks=0.75, rubric_item_id="R1", knowledge_point="concat"),
+        _item(concept_id="Q1_C2", marks=0.75, rubric_item_id="R1", knowledge_point="channel"),
+        _item(concept_id="Q1_C3", marks=0.75, rubric_item_id="R2", knowledge_point="adv"),
+        _item(concept_id="Q1_C4", marks=0.75, rubric_item_id="R2", knowledge_point="disadv"),
+    ]
+    assert cera._validate_cqa_list(items, q) == []
+
+
+def test_nested_atomic_rejects_split(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames.",
+        rubric="Definition 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=True),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=True),
+        ],
+    )
+    items = [
+        _item(concept_id="Q1_C1", marks=0.75, rubric_item_id="R1", knowledge_point="a"),
+        _item(concept_id="Q1_C2", marks=0.75, rubric_item_id="R1", knowledge_point="b"),
+        _item(concept_id="Q1_C3", marks=1.5, rubric_item_id="R2", knowledge_point="c"),
+    ]
+    errors = cera._validate_cqa_list(items, q)
+    assert any("atomic=True" in e for e in errors)
+
+
+def test_nested_child_sum_mismatch(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="x",
+        reference_answer="y",
+        rubric="z",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=False),
+            RubricItem(rubric_item_id="R2", label="Adv/Disadv", marks=1.5, atomic=False),
+        ],
+    )
+    items = [
+        _item(concept_id="Q1_C1", marks=1.0, rubric_item_id="R1", knowledge_point="a"),
+        _item(concept_id="Q1_C2", marks=2.0, rubric_item_id="R2", knowledge_point="b"),
+    ]
+    errors = cera._validate_cqa_list(items, q)
+    assert any("child concept marks sum" in e for e in errors)
+
+
+def test_prompt_includes_structured_rubric_items(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="Frame bursting?",
+        reference_answer="Concatenates frames.",
+        rubric="Definition 1.5; Adv/Disadv 1.5",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="Definition", marks=1.5, atomic=False),
+            RubricItem(
+                rubric_item_id="R2",
+                label="Adv and disadv",
+                marks=1.5,
+                atomic=True,
+            ),
+        ],
+    )
+    prompt = cera._build_prompt(q)
+    assert "R1" in prompt and "MAY SPLIT" in prompt
+    assert "R2" in prompt and "ATOMIC" in prompt
+    assert "Prefer 1 rubric item → 1 concept" in prompt
+
+
+@pytest.mark.asyncio
+async def test_extract_rejects_bad_rubric_item_totals(cera):
+    from scales.models.rubric import RubricItem
+
+    q = QuestionInput(
+        question_id="Q1",
+        question_text="x",
+        reference_answer="y",
+        rubric="z",
+        total_marks=3,
+        rubric_items=[
+            RubricItem(rubric_item_id="R1", label="A", marks=1.0, atomic=True),
+            RubricItem(rubric_item_id="R2", label="B", marks=1.0, atomic=True),
+        ],
+    )
+    with pytest.raises(CERAValidationError, match="rubric_items"):
+        await cera.extract_concepts(q)

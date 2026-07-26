@@ -16,12 +16,24 @@ Rules:
   rubric says implied/related evidence earns ABSENT, retain that rule verbatim.
 - Every CQA must trace to a specific rubric clause AND reference answer section
 - concept_id must follow the pattern: "{question_id}_C{N}" starting at C1
+- Hybrid nesting (when Structured Rubric Items are listed below):
+  * Prefer 1 rubric item → 1 concept when the item is ATOMIC or is already a
+    single idea (typical for short answers).
+  * Only split a rubric item into multiple concepts when it is marked MAY SPLIT
+    and clearly contains independent ideas. Child concept marks must sum exactly
+    to that item's marks. Set rubric_item_id on every CQA to the parent item id.
+  * Do not invent unearnable sub-concepts the student cannot demonstrate from
+    the question stem and reference answer.
+- When no structured rubric items are provided, keep 1 rubric line ≈ 1 concept
+  unless a single line clearly packs multiple independent ideas.
 
 Question ID: {question_id}
 Question: {question_text}
 Reference Answer: {reference_answer}
 Rubric: {rubric}
 Total Marks: {total_marks}
+Structured Rubric Items:
+{rubric_items}
 
 Output as structured JSON with this schema:
 {
@@ -31,6 +43,7 @@ Output as structured JSON with this schema:
       "knowledge_point": "...",
       "target_criteria": "...",
       "marks": 1,
+      "rubric_item_id": "R1",
       "expected_keywords": ["..."],
       "acceptable_variants": ["..."],
       "partial_credit_rule": null,
@@ -51,3 +64,8 @@ Few-shot example (half marks):
 Question: Name TCP congestion phases and explain cwnd growth. [5 marks]
 Rubric: 1 + 1.5 + 1.5 + 1.
 Example: marks may be 1, 1.5, 1.5, 1 (sum 5). Do not rewrite 1.5 as 1 or 2.
+
+Few-shot example (nested bucket, MAY SPLIT):
+Rubric item R1 "Definition of frame bursting" marks=1.5 MAY SPLIT → may become
+Q1_C1 (concatenates frames / one transmission, 0.75) + Q1_C2 (does not release
+channel, 0.75), both with rubric_item_id="R1".

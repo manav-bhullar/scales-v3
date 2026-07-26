@@ -1,0 +1,74 @@
+{
+  "exam_id": "e2e_wave6_saf_burst_n10",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Definition of frame bursting",
+      "target_criteria": "FULL: conveys that multiple frames are concatenated / sent in one transmission (and ideally without releasing the channel / shared medium control). PARTIAL: vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea.",
+      "marks": 1.5,
+      "rubric_item_id": "R1",
+      "expected_keywords": [
+        "concatenated",
+        "single transmission",
+        "frame bursting"
+      ],
+      "acceptable_variants": [
+        "sending multiple frames in one go",
+        "grouping frames together for transmission"
+      ],
+      "partial_credit_rule": "0.75 marks for vague mention of bursting/sending multiple frames without the concatenation / single-transmission idea.",
+      "source_rubric_span": "Definition of frame bursting (1.5 marks) \u2014 ATOMIC / do not split.",
+      "source_reference_span": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:48.653447Z",
+      "updated_at": "2026-07-26T19:58:48.653449Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Advantage of frame bursting over carrier extension",
+      "target_criteria": "Must explain that frame bursting is more efficient because it uses real data instead of padding/garbage.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "expected_keywords": [
+        "efficient",
+        "no garbage",
+        "no padding"
+      ],
+      "acceptable_variants": [
+        "avoids filling frames with padding",
+        "better bandwidth utilization than carrier extension"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Advantage idea (from reference): more efficient than carrier extension (real data instead of garbage/padding fill).",
+      "source_reference_span": "Advantage :it is more efficient than carrier extension as single frames not filled up with garbage.",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:48.653458Z",
+      "updated_at": "2026-07-26T19:58:48.653459Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Disadvantage of frame bursting over carrier extension",
+      "target_criteria": "Must explain that frame bursting requires waiting for frames to buffer, leading to increased delay.",
+      "marks": 0.75,
+      "rubric_item_id": "R2",
+      "expected_keywords": [
+        "buffering",
+        "delay",
+        "waiting"
+      ],
+      "acceptable_variants": [
+        "latency due to frame accumulation",
+        "requires frames to be buffered before transmission"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Disadvantage idea: needs waiting/buffered frames \u2192 delay.",
+      "source_reference_span": "Disadvantage :need frames waiting for transmission or buffering and delay of frames",
+      "version": 1,
+      "created_at": "2026-07-26T19:58:48.653465Z",
+      "updated_at": "2026-07-26T19:58:48.653465Z"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "exam_id": "e2e_wave6_saf_burst_n10",
+  "question_id": "Q1",
+  "question_key": "Q-BURST",
+  "total_marks": 3,
+  "gold_source": "SAF ASAG2024 normalized_grade \u2192 0-3",
+  "gold_labels": [
+    {
+      "student_id": "BURST_00",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.6,
+        3.0
+      ],
+      "watch": "SAF human grade=1.0 \u2192 3.0/3",
+      "human_normalized": 1.0,
+      "human_score_3": 3.0
+    },
+    {
+      "student_id": "BURST_01",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.6,
+        3.0
+      ],
+      "watch": "SAF human grade=1.0 \u2192 3.0/3",
+      "human_normalized": 1.0,
+      "human_score_3": 3.0
+    },
+    {
+      "student_id": "BURST_02",
+      "expected_band": "high",
+      "expected_score_range": [
+        2.6,
+        3.0
+      ],
+      "watch": "SAF human grade=1.0 \u2192 3.0/3",
+      "human_normalized": 1.0,
+      "human_score_3": 3.0
+    },
+    {
+      "student_id": "BURST_03",
+      "expected_band": "mid_high",
+      "expected_score_range": [
+        1.85,
+        2.65
+      ],
+      "watch": "SAF human grade=0.75 \u2192 2.25/3",
+      "human_normalized": 0.75,
+      "human_score_3": 2.25
+    },
+    {
+      "student_id": "BURST_04",
+      "expected_band": "mid_high",
+      "expected_score_range": [
+        1.85,
+        2.65
+      ],
+      "watch": "SAF human grade=0.75 \u2192 2.25/3",
+      "human_normalized": 0.75,
+      "human_score_3": 2.25
+    },
+    {
+      "student_id": "BURST_05",
+      "expected_band": "mid_high",
+      "expected_score_range": [
+        1.85,
+        2.65
+      ],
+      "watch": "SAF human grade=0.75 \u2192 2.25/3",
+      "human_normalized": 0.75,
+      "human_score_3": 2.25
+    },
+    {
+      "student_id": "BURST_06",
+      "expected_band": "mid_high",
+      "expected_score_range": [
+        1.85,
+        2.65
+      ],
+      "watch": "SAF human grade=0.75 \u2192 2.25/3",
+      "human_normalized": 0.75,
+      "human_score_3": 2.25
+    },
+    {
+      "student_id": "BURST_07",
+      "expected_band": "mid",
+      "expected_score_range": [
+        1.1,
+        1.9
+      ],
+      "watch": "SAF human grade=0.5 \u2192 1.5/3",
+      "human_normalized": 0.5,
+      "human_score_3": 1.5
+    },
+    {
+      "student_id": "BURST_08",
+      "expected_band": "mid",
+      "expected_score_range": [
+        1.1,
+        1.9
+      ],
+      "watch": "SAF human grade=0.5 \u2192 1.5/3",
+      "human_normalized": 0.5,
+      "human_score_3": 1.5
+    },
+    {
+      "student_id": "BURST_09",
+      "expected_band": "low",
+      "expected_score_range": [
+        0.0,
+        0.5
+      ],
+      "watch": "SAF human grade=0.0 \u2192 0.0/3",
+      "human_normalized": 0.0,
+      "human_score_3": 0.0
+    }
+  ]
+}
