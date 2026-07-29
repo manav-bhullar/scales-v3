@@ -1,0 +1,69 @@
+You are evaluating whether a student's answer demonstrates ONE specific knowledge point.
+
+Knowledge Point: {knowledge_point}
+Target Criteria (authoritative): {target_criteria}
+Evidence Facets: {evidence_facets}
+Evidence Mode: {evidence_mode}
+Expected Evidence Keywords: {expected_keywords}
+Acceptable Variants: {acceptable_variants}
+Partial Credit Rule: {partial_credit_rule}
+Maximum Marks: {marks}
+
+Question: {question_text}
+Student Answer: {student_answer}
+
+Task:
+1. Find the most relevant sentence/phrase in the student answer.
+   You MUST quote it EXACTLY as it appears — do not paraphrase or modify punctuation,
+   arrows, apostrophes, or list markers. Copy a contiguous span from the student text.
+   If no relevant text exists, set evidence_span to "" and verdict to ABSENT.
+1b. For each Evidence Facet, state the underlying idea/property it tests in one short
+    sentence, then decide whether the evidence_span expresses that same idea (yes/no),
+    even when wording differs.
+2. List arguments FOR awarding marks (how the evidence supports the concept).
+3. List arguments AGAINST awarding marks (gaps, inaccuracies, missing detail).
+4. Based on the balance of arguments, judge:
+   FULL (fully demonstrates), PARTIAL (partially), ABSENT (not addressed), INCORRECT (contradicts)
+
+   Evidence Mode (mechanical — overrides vague reading of Target Criteria):
+   - Mode ANY: if ANY one Evidence Facet is clearly present (including paraphrase),
+     award FULL. Do not require other facets. Do not invent a "must explain why"
+     requirement unless Target Criteria / Partial Credit Rule say so.
+   - Mode ALL: FULL only when all Evidence Facets are present; PARTIAL when some
+     but not all are present; ABSENT when none are present. Follow the Partial
+     Credit Rule for what "some" earns.
+   - When Evidence Facets is empty, fall back to Target Criteria alone.
+
+   Semantic matching (critical):
+   - Match meaning, not token overlap. If the student's wording expresses the same
+     mechanism/property/trade-off, treat the facet as present.
+   - Do NOT require technical terms when plain language communicates the same idea.
+   - Treat acceptable_variants as examples, not a closed list. Equivalent paraphrases
+     not listed there can still satisfy the facet.
+   - Do not downgrade simply because sentence order, phrasing, or examples differ from
+     the reference answer.
+
+   Partial-credit policy (important):
+   - Prefer PARTIAL over ABSENT when the student clearly addresses this knowledge point
+     but is incomplete, vague, missing flags/sequence numbers, or uses informal wording.
+   - Synonyms and paraphrase count (e.g. "makes both ends ready", "syncs sequence numbers",
+     "sets up a reliable connection" can support a purpose / handshake concept).
+   - Do NOT require the literal word "purpose" if the purpose idea is stated.
+   - Use ABSENT only when this concept is not present at all (or only unrelated content).
+   - Use INCORRECT when the student asserts something that contradicts the knowledge point
+     (wrong protocol, wrong flags, etc.).
+   - The concept-specific Partial Credit Rule above OVERRIDES the general preference
+     for PARTIAL. Follow it literally.
+   - Do not infer this knowledge point from an answer to a related concept or another
+     subpart. Award only for evidence that directly satisfies this concept's criteria.
+   - If the Partial Credit Rule says that implied/indirect evidence is ABSENT, return
+     ABSENT even when the evidence is relevant to the broader question.
+5. Award marks using ONLY these discrete values: 0, {half_marks}, or {marks}.
+   - FULL → {marks}
+   - PARTIAL → {half_marks}
+   - ABSENT or INCORRECT → 0
+
+Output as structured JSON with fields:
+concept_id, verdict, marks_awarded, evidence_span, reasoning, counter_arguments
+
+concept_id must be: {concept_id}

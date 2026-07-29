@@ -1,0 +1,617 @@
+{
+  "runs": [
+    {
+      "exam_id": "e2e_wave6_conn_n20_nested",
+      "n_concepts": 4,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "Connectionless"
+          ],
+          "kp": "Selection of connectionless service",
+          "rid": "R1"
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "communicate with various partners",
+            "websites"
+          ],
+          "kp": "Reasoning based on multiple partners",
+          "rid": "R2"
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "short periods of time",
+            "short data transfers"
+          ],
+          "kp": "Reasoning based on short interaction duration",
+          "rid": "R3"
+        },
+        {
+          "id": "Q1_C4",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "overhead in the connecting and disconnecting phase"
+          ],
+          "kp": "Reasoning based on connection overhead",
+          "rid": "R4"
+        }
+      ],
+      "mae": 1.9625,
+      "band_hit": 5,
+      "n": 20,
+      "over": 0,
+      "under": 15,
+      "defers": 60,
+      "scores": {
+        "QCONN_00": 2.5,
+        "QCONN_01": 2.0,
+        "QCONN_02": 0.75,
+        "QCONN_03": 1.0,
+        "QCONN_04": 1.0,
+        "QCONN_05": 1.0,
+        "QCONN_06": 0.0,
+        "QCONN_07": 0.0,
+        "QCONN_08": 0.75,
+        "QCONN_09": 0.0,
+        "QCONN_10": 1.0,
+        "QCONN_11": 0.0,
+        "QCONN_12": 0.0,
+        "QCONN_13": 0.75,
+        "QCONN_14": 0.0,
+        "QCONN_15": 0.0,
+        "QCONN_16": 0.0,
+        "QCONN_17": 0.0,
+        "QCONN_18": 0.0,
+        "QCONN_19": 0.0
+      },
+      "question_key": "Q-CONN",
+      "architecture": "nested"
+    },
+    {
+      "exam_id": "e2e_wave6_conn_n20_flat",
+      "n_concepts": 4,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "connectionless"
+          ],
+          "kp": "Selection of connectionless service",
+          "rid": null
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "various partners",
+            "websites"
+          ],
+          "kp": "Reasoning based on multiple/changing partners",
+          "rid": null
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "short periods of time",
+            "short data transfers"
+          ],
+          "kp": "Reasoning based on short interaction duration",
+          "rid": null
+        },
+        {
+          "id": "Q1_C4",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "overhead in the connecting and disconnecting phase",
+            "setup and teardown costs"
+          ],
+          "kp": "Reasoning based on connection-oriented overhead",
+          "rid": null
+        }
+      ],
+      "mae": 2.075,
+      "band_hit": 5,
+      "n": 20,
+      "over": 0,
+      "under": 15,
+      "defers": 59,
+      "scores": {
+        "QCONN_00": 2.5,
+        "QCONN_01": 2.0,
+        "QCONN_02": 0.0,
+        "QCONN_03": 1.0,
+        "QCONN_04": 1.0,
+        "QCONN_05": 1.0,
+        "QCONN_06": 0.0,
+        "QCONN_07": 0.0,
+        "QCONN_08": 0.0,
+        "QCONN_09": 0.0,
+        "QCONN_10": 1.0,
+        "QCONN_11": 0.0,
+        "QCONN_12": 0.0,
+        "QCONN_13": 0.0,
+        "QCONN_14": 0.0,
+        "QCONN_15": 0.0,
+        "QCONN_16": 0.0,
+        "QCONN_17": 0.0,
+        "QCONN_18": 0.0,
+        "QCONN_19": 0.0
+      },
+      "question_key": "Q-CONN",
+      "architecture": "flat"
+    },
+    {
+      "exam_id": "e2e_wave6_dll3_n20_nested",
+      "n_concepts": 3,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "no ACK",
+            "no flow control",
+            "no connection setup"
+          ],
+          "kp": "Unconfirmed connectionless service class",
+          "rid": "R1"
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "with ACK",
+            "no loss of data",
+            "duplicates possible",
+            "sequence errors possible"
+          ],
+          "kp": "Confirmed connectionless service class",
+          "rid": "R2"
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "3 phased communication",
+            "flow control",
+            "no data loss",
+            "connect and disconnect"
+          ],
+          "kp": "Connection-oriented service class",
+          "rid": "R3"
+        }
+      ],
+      "mae": 0.2,
+      "band_hit": 17,
+      "n": 20,
+      "over": 3,
+      "under": 0,
+      "defers": 12,
+      "scores": {
+        "QDLL3_00": 3.0,
+        "QDLL3_01": 3.0,
+        "QDLL3_02": 3.0,
+        "QDLL3_03": 3.0,
+        "QDLL3_04": 3.0,
+        "QDLL3_05": 3.0,
+        "QDLL3_06": 3.0,
+        "QDLL3_07": 2.5,
+        "QDLL3_08": 3.0,
+        "QDLL3_09": 3.0,
+        "QDLL3_10": 3.0,
+        "QDLL3_11": 3.0,
+        "QDLL3_12": 3.0,
+        "QDLL3_13": 3.0,
+        "QDLL3_14": 2.0,
+        "QDLL3_15": 2.5,
+        "QDLL3_16": 3.0,
+        "QDLL3_17": 3.0,
+        "QDLL3_18": 2.0,
+        "QDLL3_19": 0.5
+      },
+      "question_key": "Q-DLL3",
+      "architecture": "nested"
+    },
+    {
+      "exam_id": "e2e_wave6_dll3_n20_flat",
+      "n_concepts": 3,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "no ACK",
+            "loss of data possible",
+            "no flow control",
+            "no connect or disconnect"
+          ],
+          "kp": "Unconfirmed connectionless service class",
+          "rid": null
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "with ACK",
+            "no loss of data",
+            "timeout and retransmit",
+            "duplicates and sequence errors possible"
+          ],
+          "kp": "Confirmed connectionless service class",
+          "rid": null
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "no data loss",
+            "3 phased communication",
+            "connect and disconnect",
+            "flow control"
+          ],
+          "kp": "Connection-oriented service class",
+          "rid": null
+        }
+      ],
+      "mae": 0.35,
+      "band_hit": 12,
+      "n": 20,
+      "over": 5,
+      "under": 3,
+      "defers": 13,
+      "scores": {
+        "QDLL3_00": 3.0,
+        "QDLL3_01": 3.0,
+        "QDLL3_02": 3.0,
+        "QDLL3_03": 3.0,
+        "QDLL3_04": 3.0,
+        "QDLL3_05": 3.0,
+        "QDLL3_06": 3.0,
+        "QDLL3_07": 2.0,
+        "QDLL3_08": 3.0,
+        "QDLL3_09": 3.0,
+        "QDLL3_10": 3.0,
+        "QDLL3_11": 3.0,
+        "QDLL3_12": 3.0,
+        "QDLL3_13": 3.0,
+        "QDLL3_14": 1.5,
+        "QDLL3_15": 3.0,
+        "QDLL3_16": 3.0,
+        "QDLL3_17": 3.0,
+        "QDLL3_18": 1.0,
+        "QDLL3_19": 1.0
+      },
+      "question_key": "Q-DLL3",
+      "architecture": "flat"
+    },
+    {
+      "exam_id": "e2e_wave6_async_n20_nested",
+      "n_concepts": 4,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "start bit",
+            "stop bit"
+          ],
+          "kp": "Asynchronous transmission framing",
+          "rid": "R1"
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "easy pattern",
+            "cheap pattern",
+            "low transmission rates"
+          ],
+          "kp": "Asynchronous transmission trade-off",
+          "rid": "R2"
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "frames",
+            "SYN",
+            "flag"
+          ],
+          "kp": "Synchronous transmission framing",
+          "rid": "R3"
+        },
+        {
+          "id": "Q1_C4",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "higher complexity",
+            "higher transmission rates",
+            "requires synchronization"
+          ],
+          "kp": "Synchronous transmission trade-off",
+          "rid": "R4"
+        }
+      ],
+      "mae": 1.2,
+      "band_hit": 6,
+      "n": 20,
+      "over": 0,
+      "under": 14,
+      "defers": 9,
+      "scores": {
+        "QASYNC_00": 4.0,
+        "QASYNC_01": 4.0,
+        "QASYNC_02": 2.0,
+        "QASYNC_03": 2.0,
+        "QASYNC_04": 2.0,
+        "QASYNC_05": 3.5,
+        "QASYNC_06": 2.0,
+        "QASYNC_07": 3.0,
+        "QASYNC_08": 3.0,
+        "QASYNC_09": 4.0,
+        "QASYNC_10": 1.5,
+        "QASYNC_11": 2.0,
+        "QASYNC_12": 2.0,
+        "QASYNC_13": 2.0,
+        "QASYNC_14": 2.0,
+        "QASYNC_15": 4.0,
+        "QASYNC_16": 4.0,
+        "QASYNC_17": 2.0,
+        "QASYNC_18": 2.0,
+        "QASYNC_19": 1.0
+      },
+      "question_key": "Q-ASYNC",
+      "architecture": "nested"
+    },
+    {
+      "exam_id": "e2e_wave6_async_n20_flat",
+      "n_concepts": 4,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.0,
+          "mode": "ALL",
+          "facets": [
+            "start bit",
+            "stop bit"
+          ],
+          "kp": "Asynchronous framing mechanism",
+          "rid": null
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "easy and cheap pattern",
+            "low transmission rates"
+          ],
+          "kp": "Asynchronous trade-off",
+          "rid": null
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "continuous stream of data",
+            "frames",
+            "SYN or flag"
+          ],
+          "kp": "Synchronous framing mechanism",
+          "rid": null
+        },
+        {
+          "id": "Q1_C4",
+          "marks": 1.0,
+          "mode": "ANY",
+          "facets": [
+            "higher transmission rates",
+            "synchronization",
+            "higher complexity"
+          ],
+          "kp": "Synchronous trade-off",
+          "rid": null
+        }
+      ],
+      "mae": 1.25,
+      "band_hit": 7,
+      "n": 20,
+      "over": 0,
+      "under": 13,
+      "defers": 13,
+      "scores": {
+        "QASYNC_00": 4.0,
+        "QASYNC_01": 4.0,
+        "QASYNC_02": 2.0,
+        "QASYNC_03": 2.0,
+        "QASYNC_04": 1.5,
+        "QASYNC_05": 3.5,
+        "QASYNC_06": 2.0,
+        "QASYNC_07": 3.0,
+        "QASYNC_08": 3.0,
+        "QASYNC_09": 4.0,
+        "QASYNC_10": 1.0,
+        "QASYNC_11": 2.0,
+        "QASYNC_12": 2.0,
+        "QASYNC_13": 2.0,
+        "QASYNC_14": 2.0,
+        "QASYNC_15": 4.0,
+        "QASYNC_16": 4.0,
+        "QASYNC_17": 3.0,
+        "QASYNC_18": 1.0,
+        "QASYNC_19": 1.0
+      },
+      "question_key": "Q-ASYNC",
+      "architecture": "flat"
+    },
+    {
+      "exam_id": "e2e_wave6_burst_n20_nested",
+      "n_concepts": 3,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "concatenating a sequence of multiple frames",
+            "single transmission",
+            "without releasing control of the channel"
+          ],
+          "kp": "Definition of frame bursting",
+          "rid": "R1"
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 0.75,
+          "mode": "ANY",
+          "facets": [
+            "more efficient",
+            "not filled up with garbage"
+          ],
+          "kp": "Advantage of frame bursting over carrier extension",
+          "rid": "R2"
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 0.75,
+          "mode": "ANY",
+          "facets": [
+            "waiting for frames",
+            "buffering",
+            "delay of frames"
+          ],
+          "kp": "Disadvantage of frame bursting over carrier extension",
+          "rid": "R2"
+        }
+      ],
+      "mae": 0.1125,
+      "band_hit": 17,
+      "n": 20,
+      "over": 2,
+      "under": 1,
+      "defers": 25,
+      "scores": {
+        "QBURST_00": 3.0,
+        "QBURST_01": 3.0,
+        "QBURST_02": 2.25,
+        "QBURST_03": 3.0,
+        "QBURST_04": 3.0,
+        "QBURST_05": 3.0,
+        "QBURST_06": 3.0,
+        "QBURST_07": 3.0,
+        "QBURST_08": 3.0,
+        "QBURST_09": 3.0,
+        "QBURST_10": 3.0,
+        "QBURST_11": 3.0,
+        "QBURST_12": 3.0,
+        "QBURST_13": 3.0,
+        "QBURST_14": 2.25,
+        "QBURST_15": 3.0,
+        "QBURST_16": 2.25,
+        "QBURST_17": 1.5,
+        "QBURST_18": 1.5,
+        "QBURST_19": 0.0
+      },
+      "question_key": "Q-BURST",
+      "architecture": "nested"
+    },
+    {
+      "exam_id": "e2e_wave6_burst_n20_flat",
+      "n_concepts": 3,
+      "concepts": [
+        {
+          "id": "Q1_C1",
+          "marks": 1.5,
+          "mode": "ANY",
+          "facets": [
+            "concatenating a sequence of multiple frames",
+            "one single transmission",
+            "without ever releasing control of the channel"
+          ],
+          "kp": "Definition of frame bursting",
+          "rid": "R1"
+        },
+        {
+          "id": "Q1_C2",
+          "marks": 0.75,
+          "mode": "ANY",
+          "facets": [
+            "more efficient",
+            "single frames not filled up with garbage"
+          ],
+          "kp": "Advantage of frame bursting compared to carrier extension",
+          "rid": "R2"
+        },
+        {
+          "id": "Q1_C3",
+          "marks": 0.75,
+          "mode": "ANY",
+          "facets": [
+            "need frames waiting for transmission",
+            "buffering",
+            "delay of frames"
+          ],
+          "kp": "Disadvantage of frame bursting compared to carrier extension",
+          "rid": "R2"
+        }
+      ],
+      "mae": 0.15,
+      "band_hit": 16,
+      "n": 20,
+      "over": 2,
+      "under": 2,
+      "defers": 23,
+      "scores": {
+        "QBURST_00": 3.0,
+        "QBURST_01": 3.0,
+        "QBURST_02": 2.25,
+        "QBURST_03": 3.0,
+        "QBURST_04": 3.0,
+        "QBURST_05": 3.0,
+        "QBURST_06": 3.0,
+        "QBURST_07": 3.0,
+        "QBURST_08": 3.0,
+        "QBURST_09": 3.0,
+        "QBURST_10": 3.0,
+        "QBURST_11": 3.0,
+        "QBURST_12": 2.25,
+        "QBURST_13": 3.0,
+        "QBURST_14": 2.25,
+        "QBURST_15": 3.0,
+        "QBURST_16": 2.25,
+        "QBURST_17": 1.5,
+        "QBURST_18": 1.5,
+        "QBURST_19": 0.0
+      },
+      "question_key": "Q-BURST",
+      "architecture": "flat"
+    }
+  ]
+}

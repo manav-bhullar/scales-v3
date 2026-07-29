@@ -1,0 +1,75 @@
+{
+  "run_ts": "2026-07-29T17:14:17.912841+00:00",
+  "n_students_per_q": 10,
+  "seed": 42,
+  "summary": [
+    {
+      "question_id": "CE01",
+      "status": "ok",
+      "mae": 0.5,
+      "total_marks": 3.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE02",
+      "status": "ok",
+      "mae": 1.5,
+      "total_marks": 3.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE03",
+      "status": "ok",
+      "mae": 0.75,
+      "total_marks": 4.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE04",
+      "status": "ok",
+      "mae": 0.85,
+      "total_marks": 3.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE05",
+      "status": "ok",
+      "mae": 0.5,
+      "total_marks": 4.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE06",
+      "status": "no_students"
+    },
+    {
+      "question_id": "CE07",
+      "status": "ok",
+      "mae": 0.35,
+      "total_marks": 4.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE08",
+      "status": "ok",
+      "mae": 0.8,
+      "total_marks": 4.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE09",
+      "status": "ok",
+      "mae": 1.2,
+      "total_marks": 4.0,
+      "n_students": 10
+    },
+    {
+      "question_id": "CE10",
+      "status": "ok",
+      "mae": 0.725,
+      "total_marks": 5.0,
+      "n_students": 10
+    }
+  ],
+  "overall_mae": 0.797
+}

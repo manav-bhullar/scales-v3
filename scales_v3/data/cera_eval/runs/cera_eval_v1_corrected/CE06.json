@@ -1,0 +1,96 @@
+{
+  "id": "CE06",
+  "question_text": "What is the \"Dynamic Host Configuration Protocol (DHCP)\"? What is it used for?",
+  "reference_answer": "The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used in Internet Protocol (IP) networks, whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on the network. Further, DHCP has largely replaced RARP (and BOOTP)\n Uses of DHCP are: Simplifies installation and configuration of end systems. Allows for manual and automatic IP address assignment. May provide additional configuration information (DNS server, netmask, default router, etc.)",
+  "rubric": "Total 4 marks:\n1) Definition of DHCP (2 marks)\n2) Uses / purpose of DHCP (2 marks)",
+  "total_marks": 4,
+  "marks_sum": 4.0,
+  "concept_count": 2,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE06_C1",
+      "question_id": "CE06",
+      "knowledge_point": "Define DHCP as a network management protocol that automates IP address and configuration assignment.",
+      "target_criteria": "FULL = at least 2 of 3 definition parts (network management protocol / dynamically assigns IP / configures parameters); PARTIAL = exactly 1; ABSENT = 0",
+      "marks": 2.0,
+      "rubric_item_id": "1",
+      "evidence_facets": [
+        "network management protocol",
+        "dynamically assigns IP address",
+        "configures network parameters"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "network",
+        "management",
+        "protocol",
+        "dynamically",
+        "assigns",
+        "IP",
+        "address",
+        "configuration"
+      ],
+      "acceptable_variants": [
+        "A protocol for managing network settings",
+        "Automated IP address assignment system",
+        "A tool that gives devices their network configuration automatically",
+        "Protocol used to set up IP addresses on a network"
+      ],
+      "partial_credit_rule": "exactly 1 definition part → 1.0 mark",
+      "source_rubric_span": "Definition of DHCP (2 marks)",
+      "source_reference_span": "The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used in Internet Protocol (IP) networks, whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on the network.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:20.126653Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "select_n",
+      "min_count": 2
+    },
+    {
+      "concept_id": "CE06_C2",
+      "question_id": "CE06",
+      "knowledge_point": "Identify the primary uses of DHCP in network administration.",
+      "target_criteria": "FULL = at least 2 distinct uses from the catalog; PARTIAL = exactly 1; ABSENT = 0",
+      "marks": 2.0,
+      "rubric_item_id": "2",
+      "evidence_facets": [
+        "simplifies installation and configuration",
+        "allows manual and automatic IP assignment",
+        "provides additional configuration info like DNS or router"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "simplifies",
+        "installation",
+        "configuration",
+        "manual",
+        "automatic",
+        "IP",
+        "assignment",
+        "DNS",
+        "router"
+      ],
+      "acceptable_variants": [
+        "Makes setting up devices easier",
+        "Handles both static and dynamic IP allocation",
+        "Distributes extra settings like DNS and gateway info",
+        "Reduces manual network setup effort"
+      ],
+      "partial_credit_rule": "exactly 1 use → 1.0 mark",
+      "source_rubric_span": "Uses / purpose of DHCP (2 marks)",
+      "source_reference_span": "Uses of DHCP are: Simplifies installation and configuration of end systems. Allows for manual and automatic IP address assignment. May provide additional configuration information (DNS server, netmask, default router, etc.)",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:20.126665Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "select_n",
+      "min_count": 2
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 7956,
+    "concept_count": 2
+  },
+  "run_ts": "2026-07-29T10:01:20.126773Z",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

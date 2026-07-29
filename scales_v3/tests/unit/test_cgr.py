@@ -83,19 +83,35 @@ def test_prompt_renders_whole_marks_without_trailing_zero(cgr, cqa):
     assert "1.0" not in prompt.split("Maximum Marks:")[1][:8]
 
 
-def test_prompt_includes_evidence_mode(cgr, cqa):
+def test_prompt_includes_evidence_role(cgr, cqa):
     cqa.evidence_facets = ["three-way handshake", "connection setup"]
+    cqa.evidence_role = "synonym_set"
     cqa.evidence_mode = "ANY"
     prompt = cgr._build_prompt(
         student_answer="TCP uses a three-way handshake.",
         cqa=cqa,
         question_text="Explain TCP handshake.",
     )
-    assert "Evidence Mode: ANY" in prompt
+    assert "Evidence Role: synonym_set" in prompt
     assert "Evidence Facets:" in prompt
-    assert "Mode ANY: if ANY one Evidence Facet" in prompt
-    assert "Mode ALL:" in prompt
+    assert "criteria-first" in prompt
+    assert "select_n" in prompt
+    assert "Mode ANY: if ANY one Evidence Facet" not in prompt
 
+
+def test_prompt_includes_select_n_min_count(cgr, cqa):
+    cqa.evidence_role = "select_n"
+    cqa.min_count = 2
+    cqa.evidence_facets = ["Adaptation", "Security", "Scalability"]
+    cqa.target_criteria = "FULL = at least 2 distinct valid challenges"
+    prompt = cgr._build_prompt(
+        student_answer="Adaptation and Security are challenges.",
+        cqa=cqa,
+        question_text="Name two challenges.",
+    )
+    assert "Evidence Role: select_n" in prompt
+    assert "Min Count (for select_n): 2" in prompt
+    assert "count DISTINCT valid catalog hits" in prompt
 
 def test_prompt_rendering(cgr, cqa):
     prompt = cgr._build_prompt(

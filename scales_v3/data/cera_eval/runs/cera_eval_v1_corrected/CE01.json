@@ -1,0 +1,167 @@
+{
+  "id": "CE01",
+  "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
+  "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+  "rubric": "Total 3 marks:\n1) Naming the 3 classes (1.5 marks)\n2) Explaining distinguishing properties of each class (1.5 marks)",
+  "total_marks": 3,
+  "marks_sum": 3.0,
+  "concept_count": 4,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE01_C1",
+      "question_id": "CE01",
+      "knowledge_point": "Identify the three service classes offered by the Data Link Layer",
+      "target_criteria": "FULL requires naming all three classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented",
+      "marks": 1.5,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "unconfirmed connectionless",
+        "confirmed connectionless",
+        "connection-oriented"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "unconfirmed",
+        "connectionless",
+        "confirmed",
+        "connection-oriented"
+      ],
+      "acceptable_variants": [
+        "unconfirmed connectionless service",
+        "confirmed connectionless service",
+        "connection-oriented service",
+        "connectionless unconfirmed",
+        "connectionless confirmed"
+      ],
+      "partial_credit_rule": "0.5 marks per correctly named class",
+      "source_rubric_span": "Naming the 3 classes (1.5 marks)",
+      "source_reference_span": "1.unconfirmed connectionless... 2.confirmed connectionless... 3.connection-oriented",
+      "version": 1,
+      "created_at": "2026-07-29T11:26:12.330888Z",
+      "updated_at": "2026-07-29T11:26:12.330891Z",
+      "evidence_role": "checklist",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE01_C2",
+      "question_id": "CE01",
+      "knowledge_point": "Describe the distinguishing properties of unconfirmed connectionless service",
+      "target_criteria": "FULL requires identifying the lack of ACK, potential data loss, and absence of flow/connection control",
+      "marks": 0.5,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "no ACK",
+        "loss of data possible",
+        "no flow control",
+        "no connect or disconnect"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "ACK",
+        "loss",
+        "flow",
+        "connect",
+        "disconnect"
+      ],
+      "acceptable_variants": [
+        "no acknowledgement sent",
+        "data might be lost",
+        "no flow management",
+        "no connection setup or teardown"
+      ],
+      "partial_credit_rule": "0.125 marks per property present",
+      "source_rubric_span": "Explaining distinguishing properties of each class (1.5 marks)",
+      "source_reference_span": "unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.",
+      "version": 1,
+      "created_at": "2026-07-29T11:26:12.330908Z",
+      "updated_at": "2026-07-29T11:26:12.330909Z",
+      "evidence_role": "checklist",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE01_C3",
+      "question_id": "CE01",
+      "knowledge_point": "Describe the distinguishing properties of confirmed connectionless service",
+      "target_criteria": "FULL requires identifying the use of ACK, potential for duplicates/sequence errors, and absence of flow/connection control",
+      "marks": 0.5,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "with ACK",
+        "no loss of data",
+        "duplicates and sequence errors possible",
+        "no flow control",
+        "no connect or disconnect"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "ACK",
+        "loss",
+        "duplicates",
+        "sequence",
+        "flow",
+        "connect",
+        "disconnect"
+      ],
+      "acceptable_variants": [
+        "uses acknowledgements",
+        "no data loss but potential duplicates",
+        "sequence errors can occur",
+        "no flow control or connection management"
+      ],
+      "partial_credit_rule": "0.1 marks per property present",
+      "source_rubric_span": "Explaining distinguishing properties of each class (1.5 marks)",
+      "source_reference_span": "confirmed connectionless - with ACK, no loss of data... duplicates and sequence errors possible, no flow control, no connect or disconnect.",
+      "version": 1,
+      "created_at": "2026-07-29T11:26:12.330920Z",
+      "updated_at": "2026-07-29T11:26:12.330920Z",
+      "evidence_role": "checklist",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE01_C4",
+      "question_id": "CE01",
+      "knowledge_point": "Describe the distinguishing properties of connection-oriented service",
+      "target_criteria": "FULL requires identifying reliable delivery and the use of connection/flow control",
+      "marks": 0.5,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "no data loss",
+        "no duplication or sequencing errors",
+        "3 phased communication with connect and disconnect",
+        "flow control"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "loss",
+        "duplication",
+        "sequencing",
+        "connect",
+        "disconnect",
+        "flow"
+      ],
+      "acceptable_variants": [
+        "reliable data transfer",
+        "no errors in sequence or duplicates",
+        "uses connection setup and teardown",
+        "includes flow control"
+      ],
+      "partial_credit_rule": "0.125 marks per property present",
+      "source_rubric_span": "Explaining distinguishing properties of each class (1.5 marks)",
+      "source_reference_span": "connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+      "version": 1,
+      "created_at": "2026-07-29T11:26:12.330930Z",
+      "updated_at": "2026-07-29T11:26:12.330931Z",
+      "evidence_role": "checklist",
+      "min_count": null
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 9735,
+    "concept_count": 4
+  },
+  "run_ts": "2026-07-29T11:26:12.331083+00:00",
+  "iteration": "v1_iter_after_quality_review",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

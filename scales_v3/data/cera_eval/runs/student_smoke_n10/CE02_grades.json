@@ -1,0 +1,288 @@
+{
+  "question_id": "CE02",
+  "total_marks": 3.0,
+  "n_students": 10,
+  "mae": 1.5,
+  "students": [
+    {
+      "student_id": "CE02_S01",
+      "human_norm": 0.0,
+      "human_est_marks": 0.0,
+      "system_marks": 0.0,
+      "abs_err": 0.0,
+      "answer_preview": "connection-oriented this service has no loss,  no duplication, and no sequential error, which are what the user need.",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "connection-oriented"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks": 0.0,
+      "abs_err": 3.0,
+      "answer_preview": "A connection-oriented service would be better since information could be lost or delayed in a connectionless service. Since you want to refine your search queries it is important t",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "A connection-oriented service would be better since information could be lost or delayed in a connectionless service."
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "the time needed for the handshake should be negligible in comparison to a connectionless service"
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S03",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "We'd have use connection-oriented service for the communication, as we're going to adopt an iterative process. So it's important to get the search results and refine it for the nex",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "We'd have use connection-oriented service for the communication"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S04",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "Ein Verbindungsorientierter Service ist dafür am besten geeignet, da ich die Informationen  vollständig und korrekt erhalten möchte. Ein verbindungsloser Service wäre zu unzuverläs",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "Ein Verbindungsorientierter Service ist dafür am besten geeignet"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S05",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "I would say the connection-oriented service is better, because I am browsing for very specific and important information. Though I need the guarantee that my query responds consist",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "I would say the connection-oriented service is better"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S06",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "A connection-oriented service can be used to have access to previous results in a form of a session, especially if the next query n+1 is based on the previous n-k queries. A connec",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "When using a connection-less service there's only the current response."
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S07",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "A connection-oriented service can be used to have access to previous results in a form of a session, especially if the next query n+1 is based on the previous n-k queries. A connec",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "When using a connection-less service there's only the current response."
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S08",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "I would choose connection-oriented service because is the information is specific and important. With connectionless service results could be lost.",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "I would choose connection-oriented service"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S09",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "I would choose a connection-oriented  service because i would want to ensure that the whole piece of information is transferred because it features no loss, no duplication and no s",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "I would choose a connection-oriented  service"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE02_S10",
+      "human_norm": 0.5,
+      "human_est_marks": 1.5,
+      "system_marks": 0.0,
+      "abs_err": 1.5,
+      "answer_preview": "connection-oriented service is better ,because this process is iterative ,and this iterative need very important imformation.",
+      "concepts": [
+        {
+          "concept_id": "CE02_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "connection-oriented service is better"
+        },
+        {
+          "concept_id": "CE02_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    }
+  ]
+}

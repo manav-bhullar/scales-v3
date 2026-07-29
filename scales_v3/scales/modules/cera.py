@@ -6,10 +6,15 @@ import re
 from typing import Any, Literal
 
 from loguru import logger
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from scales.config import AppSettings, get_settings, prompt_path
-from scales.models.cqa import CQATuple
+from scales.models.cqa import (
+    CQATuple,
+    EvidenceRole,
+    derive_evidence_mode,
+    derive_evidence_role,
+)
 from scales.models.exam import QuestionInput
 from scales.models.marks import (
     format_marks,
@@ -22,7 +27,7 @@ from scales.services.exceptions import LLMAPIError, LLMValidationError
 from scales.services.llm_client import LLMClient
 
 _CONCEPT_ID_RE = re.compile(r"^[^_]+_C\d+$")
-# Prose AND-chains that must not appear when evidence_mode is ANY with multiple facets.
+# Prose AND-chains that must not appear for synonym_set with multiple facets.
 # Keep this narrow — "because" alone is too common in OR-set explanations.
 _AND_CHAIN_RE = re.compile(
     r"\b("
@@ -74,12 +79,40 @@ class CQAExtractionItem(BaseModel):
     marks: float = Field(..., gt=0)
     rubric_item_id: str | None = None
     evidence_facets: list[str] = Field(default_factory=list)
+    evidence_role: EvidenceRole = "synonym_set"
+    min_count: int | None = None
+    # Legacy field — derived from evidence_role when omitted.
     evidence_mode: Literal["ANY", "ALL"] = "ANY"
     expected_keywords: list[str] = Field(default_factory=list)
     acceptable_variants: list[str] = Field(default_factory=list)
     partial_credit_rule: str | None = None
     source_rubric_span: str = ""
     source_reference_span: str = ""
+
+    @model_validator(mode="before")
+    @classmethod
+    def migrate_role_and_mode(cls, data: Any) -> Any:
+        if not isinstance(data, dict):
+            return data
+        role = data.get("evidence_role")
+        mode = data.get("evidence_mode")
+        if not role and mode:
+            mode_u = str(mode).strip().upper()
+            data["evidence_role"] = derive_evidence_role(
+                "ALL" if mode_u == "ALL" else "ANY"
+            )
+            role = data["evidence_role"]
+        if not role:
+            data["evidence_role"] = "synonym_set"
+            role = "synonym_set"
+        role_s = str(role).strip().lower()
+        if role_s not in ("synonym_set", "checklist", "select_n"):
+            raise ValueError(
+                "evidence_role must be synonym_set, checklist, or select_n"
+            )
+        data["evidence_role"] = role_s
+        data["evidence_mode"] = derive_evidence_mode(role_s)  # type: ignore[arg-type]
+        return data
 
     @field_validator("evidence_mode", mode="before")
     @classmethod
@@ -90,6 +123,15 @@ class CQAExtractionItem(BaseModel):
         if mode not in ("ANY", "ALL"):
             raise ValueError("evidence_mode must be ANY or ALL")
         return mode
+
+    @field_validator("min_count")
+    @classmethod
+    def min_count_positive(cls, value: int | None) -> int | None:
+        if value is None:
+            return None
+        if int(value) < 1:
+            raise ValueError("min_count must be >= 1 when set")
+        return int(value)
 
 
 class CERAExtractionResponse(BaseModel):
@@ -209,7 +251,7 @@ class CERAModule:
         return errors
 
     def _validate_evidence_fields(self, item: CQAExtractionItem) -> list[str]:
-        """Validate facets / mode / partial / AND-lint / keyword coverage."""
+        """Validate facets / role / partial / AND-lint / keyword coverage."""
         errors: list[str] = []
         cid = item.concept_id
         facets = [f.strip() for f in item.evidence_facets if f and f.strip()]
@@ -220,30 +262,75 @@ class CERAModule:
             )
             return errors
 
-        mode = (item.evidence_mode or "ANY").upper()
-        if mode == "ALL" and not is_real_partial_credit_rule(item.partial_credit_rule):
-            errors.append(
-                f"{cid}: evidence_mode=ALL requires a real partial_credit_rule "
-                "(some facets → PARTIAL / half marks). "
-                "Do not write 'null' or 'No partial credit…' as text."
-            )
+        role = (item.evidence_role or "synonym_set").strip().lower()
+        criteria = item.target_criteria or ""
+        criteria_l = criteria.lower()
 
-        if mode == "ANY" and len(facets) > 1:
-            criteria = item.target_criteria or ""
-            match = _AND_CHAIN_RE.search(criteria)
-            if match:
+        if role == "checklist":
+            if not is_real_partial_credit_rule(item.partial_credit_rule):
                 errors.append(
-                    f"{cid}: evidence_mode=ANY with multiple facets but "
-                    f"target_criteria looks like an AND-chain (matched '{match.group(0)}'). "
-                    "Rewrite as an OR-set ('any of: …'), or switch to ALL only if "
-                    "the question/rubric explicitly demands all facets."
+                    f"{cid}: evidence_role=checklist requires a real partial_credit_rule "
+                    "(some facets → PARTIAL / half marks). "
+                    "Do not write 'null' or 'No partial credit…' as text."
                 )
-            elif "any of" not in criteria.lower():
+            if "full requires" not in criteria_l and "requires" not in criteria_l:
                 errors.append(
-                    f"{cid}: evidence_mode=ANY with multiple facets requires "
-                    "target_criteria to state an OR-set starting with 'any of: …' "
-                    f"(facets={facets}). Do not require a mechanism beyond one facet."
+                    f"{cid}: evidence_role=checklist should state FULL requirements "
+                    "in target_criteria (e.g. 'FULL requires: …')."
                 )
+
+        elif role == "select_n":
+            if item.min_count is None or int(item.min_count) < 1:
+                errors.append(
+                    f"{cid}: evidence_role=select_n requires min_count >= 1 "
+                    "(e.g. name at least 2 challenges → min_count=2)."
+                )
+            elif len(facets) < int(item.min_count):
+                errors.append(
+                    f"{cid}: evidence_role=select_n needs len(evidence_facets) >= "
+                    f"min_count ({item.min_count}); got {len(facets)} facets."
+                )
+            if not is_real_partial_credit_rule(item.partial_credit_rule):
+                errors.append(
+                    f"{cid}: evidence_role=select_n requires a real partial_credit_rule "
+                    "(e.g. 'exactly 1 valid item → half marks')."
+                )
+            if "at least" not in criteria_l and "min_count" not in criteria_l:
+                # Prefer explicit count language in criteria.
+                if str(item.min_count) not in criteria:
+                    errors.append(
+                        f"{cid}: evidence_role=select_n target_criteria must state "
+                        f"FULL needs at least {item.min_count} distinct valid items "
+                        f"from the catalog."
+                    )
+
+        elif role == "synonym_set":
+            if len(facets) > 1:
+                match = _AND_CHAIN_RE.search(criteria)
+                if match:
+                    errors.append(
+                        f"{cid}: evidence_role=synonym_set with multiple facets but "
+                        f"target_criteria looks like an AND-chain "
+                        f"(matched '{match.group(0)}'). "
+                        "Rewrite as an OR-set ('any of: …'), or switch to checklist "
+                        "if all properties are required."
+                    )
+                elif "any of" not in criteria_l:
+                    errors.append(
+                        f"{cid}: evidence_role=synonym_set with multiple facets "
+                        "requires target_criteria to state an OR-set starting with "
+                        f"'any of: …' (facets={facets})."
+                    )
+            if item.min_count is not None:
+                errors.append(
+                    f"{cid}: evidence_role=synonym_set must not set min_count "
+                    "(use select_n when a minimum count is required)."
+                )
+        else:
+            errors.append(
+                f"{cid}: evidence_role must be synonym_set, checklist, or select_n "
+                f"(got {role!r})"
+            )
 
         uncovered = [
             f for f in facets if not _facet_has_keyword_coverage(f, item.expected_keywords)
@@ -376,7 +463,9 @@ class CERAModule:
                 marks=item.marks,
                 rubric_item_id=item.rubric_item_id,
                 evidence_facets=[f.strip() for f in item.evidence_facets if f and f.strip()],
-                evidence_mode=item.evidence_mode,
+                evidence_role=item.evidence_role,
+                min_count=item.min_count,
+                evidence_mode=derive_evidence_mode(item.evidence_role),
                 expected_keywords=[kw.strip() for kw in item.expected_keywords if kw.strip()],
                 acceptable_variants=[
                     v.strip() for v in item.acceptable_variants if v and v.strip()

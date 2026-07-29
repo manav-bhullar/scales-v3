@@ -1,0 +1,468 @@
+{
+  "question_id": "CE03",
+  "total_marks": 4.0,
+  "n_students": 10,
+  "mae": 0.75,
+  "students": [
+    {
+      "student_id": "CE03_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.5,
+      "abs_err": 0.5,
+      "answer_preview": "In asynchronous transmission each character is bounded by a start and a stop bit. This is simple and inexpensive but has a low transmission.  Synchronous transmission, sveral chara",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In asynchronous transmission each character is bounded by a start and a stop bit."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "sveral characters are put together to frames."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "This is simple and inexpensive but has a low transmission."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "This is more complex but has a higher transmission rate."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "Asynchronous transmission: -Each character bounded by a start bit and stop bit -Simple, inexpensive, but low transmission rates (because of too many start and stop bits)  Synchrono",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Each character bounded by a start bit and stop bit"
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Several characters pooled together to frames\n-Frames defined by Flag or SYN"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Simple, inexpensive, but low transmission rates"
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "More complex, but higher transmission rates"
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "Asynchronous transmission  -Each character is bounded by a start bit and a stop bit  -Simple + inexpensive, but low transmission rates, often up to 200 bit/sec   Synchronous transm",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Each character is bounded by a start bit and a stop bit"
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Several characters pooled to frames \n-Frames defined by SYN or flag"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Simple + inexpensive, but low transmission rates"
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "More complex, but higher transmission rates"
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "While in asynchronous transmission every character is bounded by a start and a end bit, in synchronous transmission several character are bound to frames, these frames are bound by",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "in asynchronous transmission every character is bounded by a start and a end bit"
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "in synchronous transmission several character are bound to frames, these frames are bound by SYN or flag."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The asynchronous transmission is simple and inexpensive, but has a low transmission rate"
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "the synchronous transmission has a higher transmission rate, but is more complex."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "asynchronous transmission: -works character by character -each character who should transmission has a start and stop bit  synchronous transmission: -several characters pooled to f",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-works character by character\n-each character who should transmission has a start and stop bit"
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-several characters pooled to frames\n-the frames where defined by SYN or flag"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.5,
+      "abs_err": 1.5,
+      "answer_preview": "In an asynchronous transmission each byte is sent separately and has a start and an end bit. In a synchronous transmission data is sent in frames which can lead to higher transmiss",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In an asynchronous transmission each byte is sent separately and has a start and an end bit."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "In a synchronous transmission data is sent in frames"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "can lead to higher transmission rates but becomes more complex."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "Synchronous Data transmission means that many characters/symbols are transferred within a frame while asynchronous transmission transfers the data byte wise /character wise each, s",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "asynchronous transmission transfers the data byte wise /character wise each, so the data is not collected into a frame. Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start"
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Synchronous Data transmission means that many characters/symbols are transferred within a frame"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed"
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed especially in fast transmission."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "Asynchronous mode: Each character is bounded by a start bit and a stop bit.  Synchronous mode: Several characters are pooled to one frame which is defined by a SYN or a flag.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Each character is bounded by a start bit and a stop bit."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Several characters are pooled to one frame which is defined by a SYN or a flag."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S09",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.5,
+      "abs_err": 0.5,
+      "answer_preview": "With asynchronous transmission, each transmitted character is send together with one start bit and stop bit. With synchronous transmission, several characters are send together as ",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "each transmitted character is send together with one start bit and stop bit."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "With synchronous transmission, several characters are send together as a frame, defined with special flags (SYN) at the beginning and the end of each frame."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Asynchronous transmission is simpler, but does only allow for slow data transmission rates compared to the synchronous transmission mode."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Asynchronous transmission is simpler, but does only allow for slow data transmission rates compared to the synchronous transmission mode."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S10",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "Asynchronous transmission bound each character by a start bit and a stop bit. It is simple and effective, however, it has low transmission rates, 200bit/sec.   Synchronous Transmis",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Asynchronous transmission bound each character by a start bit and a stop bit."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Synchronous Transmission has several characters pooled to frames, each frame define by SYN or Flag"
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "It is simple and effective, however, it has low transmission rates"
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "it is complex but has higher transmission rates than asynchronous transmission."
+        }
+      ]
+    }
+  ]
+}

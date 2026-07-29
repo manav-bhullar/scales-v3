@@ -7,26 +7,15 @@
         "question_id": "Q1",
         "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
         "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
-        "rubric": "Total 3 marks:\n1) Unconfirmed connectionless (1 mark)\n2) Confirmed connectionless (1 mark)\n3) Connection-oriented (1 mark)",
+        "rubric": "Total 3 marks:\n1) Three DLL service classes named and distinguished (3 marks)",
         "total_marks": 3,
         "rubric_items": [
           {
             "rubric_item_id": "R1",
-            "label": "Unconfirmed connectionless",
-            "marks": 1.0,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R2",
-            "label": "Confirmed connectionless",
-            "marks": 1.0,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R3",
-            "label": "Connection-oriented",
-            "marks": 1.0,
-            "atomic": true
+            "label": "Three DLL service classes named and distinguished",
+            "marks": 3.0,
+            "atomic": false,
+            "description": "MAY SPLIT into the three service classes."
           }
         ],
         "student_answers": [

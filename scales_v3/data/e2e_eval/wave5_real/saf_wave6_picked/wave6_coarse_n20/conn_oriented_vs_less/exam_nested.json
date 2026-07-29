@@ -7,32 +7,22 @@
         "question_id": "Q1",
         "question_text": "Consider the following scenario: You are browsing the web for a very specific and important piece of information. However, you are not quite sure how to find it and adopt an iterative process of refining your query after every search, depending on the shown results and a skim of the first few websites. Is it better to use a connection-oriented or connectionless service for your communication in this scenario? Explain your answer in 1-4 sentences.",
         "reference_answer": "Connectionless, because you will communicate with various partners (websites) for short periods of time. If you would initiate a connection with every website you skim, that would incur a lot of overhead in the connecting and disconnecting phase, just to have very short data transfers.",
-        "rubric": "Total 5 marks:\n1) Chooses connectionless (1 mark)\n2) Many / changing partners (websites) (1.5 marks)\n3) Short / brief interactions per site (1 mark)\n4) Connection-oriented setup/teardown overhead argument (1.5 marks)",
+        "rubric": "Total 5 marks:\n1) Chooses connectionless (1 mark)\n2) Reasoning for the choice (many partners / short interactions / overhead) (4 marks)",
         "total_marks": 5,
         "rubric_items": [
           {
             "rubric_item_id": "R1",
             "label": "Chooses connectionless",
             "marks": 1.0,
-            "atomic": true
+            "atomic": true,
+            "description": "Do not subdivide — the choice itself."
           },
           {
             "rubric_item_id": "R2",
-            "label": "Many/changing partners",
-            "marks": 1.5,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R3",
-            "label": "Short interactions / skim",
-            "marks": 1.0,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R4",
-            "label": "Connection overhead argument",
-            "marks": 1.5,
-            "atomic": true
+            "label": "Reasoning for the choice",
+            "marks": 4.0,
+            "atomic": false,
+            "description": "MAY SPLIT into partners / short interactions / overhead arguments."
           }
         ],
         "student_answers": [

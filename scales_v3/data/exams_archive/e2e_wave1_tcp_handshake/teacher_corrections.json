@@ -1,0 +1,61 @@
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "corrections": [
+    {
+      "correction_id": "cae59871-7f0e-4358-86f3-965a9016f120",
+      "cbte_result_id": "28eb03e7-349d-4a2a-b96c-771a5df2e07a",
+      "review_item_id": "bdfb311a-f973-4db9-af8b-8d461097dd65",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C3",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "FULL",
+      "teacher_marks": 1.0,
+      "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-23T16:20:23.207352Z"
+    },
+    {
+      "correction_id": "e3d59602-467b-45c2-a673-02a6377b8ad5",
+      "cbte_result_id": "1e71d03f-6e7c-46e4-9f7a-8532234bf868",
+      "review_item_id": "63ee56b3-4bcf-4feb-ae10-08fb1f0df9e1",
+      "student_id": "STU_GOOD",
+      "concept_id": "Q1_C4",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "FULL",
+      "teacher_marks": 1.0,
+      "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-23T16:20:23.207352Z"
+    },
+    {
+      "correction_id": "9486806c-c2d1-41aa-9837-20d50c905da7",
+      "cbte_result_id": "eed6d424-47d5-40e5-93f8-e8a44c89b467",
+      "review_item_id": "d141f7e3-9413-4829-bb24-f08a92e8e849",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C1",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "teacher_verdict": "INCORRECT",
+      "teacher_marks": 0.0,
+      "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-23T16:20:23.207352Z"
+    },
+    {
+      "correction_id": "78200a74-cc22-405a-a9c8-27c520fb3627",
+      "cbte_result_id": "6f97888d-02fb-4da8-a177-5ec2cc07a62f",
+      "review_item_id": "7a8cfd55-e56a-45dd-ba71-e6427dd3c912",
+      "student_id": "STU_WRONG",
+      "concept_id": "Q1_C3",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "teacher_verdict": "INCORRECT",
+      "teacher_marks": 0.0,
+      "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-23T16:20:23.207352Z"
+    }
+  ]
+}

@@ -1,35 +1,21 @@
 {
   "exam": {
     "exam_id": "e2e_wave6_dll3_n20_nested",
-    "subject": "SAF Wave6 coarse \u2014 Q-DLL3 (nested)",
+    "subject": "SAF Wave6 coarse — Q-DLL3 (nested)",
     "questions": [
       {
         "question_id": "Q1",
         "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
-        "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead\u2192 duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
-        "rubric": "Total 3 marks:\n1) Unconfirmed connectionless (1 mark)\n2) Confirmed connectionless (1 mark)\n3) Connection-oriented (1 mark)",
+        "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+        "rubric": "Total 3 marks:\n1) Three DLL service classes named and distinguished (3 marks)",
         "total_marks": 3,
         "rubric_items": [
           {
             "rubric_item_id": "R1",
-            "label": "Unconfirmed connectionless",
-            "marks": 1.0,
-            "atomic": true,
-            "description": ""
-          },
-          {
-            "rubric_item_id": "R2",
-            "label": "Confirmed connectionless",
-            "marks": 1.0,
-            "atomic": true,
-            "description": ""
-          },
-          {
-            "rubric_item_id": "R3",
-            "label": "Connection-oriented",
-            "marks": 1.0,
-            "atomic": true,
-            "description": ""
+            "label": "Three DLL service classes named and distinguished",
+            "marks": 3.0,
+            "atomic": false,
+            "description": "MAY SPLIT into the three service classes."
           }
         ],
         "student_answers": [
@@ -59,7 +45,7 @@
           },
           {
             "student_id": "QDLL3_06",
-            "answer_text": "1.Unconfirmed Conn.less Service \n Features\n   No flow control\n   No connect or disconnect \n 2.Confirmed Conn.less Service\n Features\n   No flow control\n   No connect or disconnect\n   Duplicates and sequence errors may happen due to \u201cretransmit\u201d\n 3.Connection-Oriented Service\nConnection over error free channel\n  No loss, no duplication, no sequencing error\n   Flow control\n3-phased communication\nThey are different in features."
+            "answer_text": "1.Unconfirmed Conn.less Service \n Features\n   No flow control\n   No connect or disconnect \n 2.Confirmed Conn.less Service\n Features\n   No flow control\n   No connect or disconnect\n   Duplicates and sequence errors may happen due to “retransmit”\n 3.Connection-Oriented Service\nConnection over error free channel\n  No loss, no duplication, no sequencing error\n   Flow control\n3-phased communication\nThey are different in features."
           },
           {
             "student_id": "QDLL3_07",
@@ -79,7 +65,7 @@
           },
           {
             "student_id": "QDLL3_11",
-            "answer_text": "Unconfirmed connectionless service (UCS), confirmed connectionless service (CCS) and connection-oriented service (COS). UCS doesn\u2019t have correction mechanism and flow control. The data probably gets lost. CCS reply ACK when receiving the correct data and it has timeout-and-retransmit mechanism. It is more reliable than CCS but probably incurs some sequence errors. COS has connection and disconnection mechanism. It can achieve flow control, no loss and no sequencing error."
+            "answer_text": "Unconfirmed connectionless service (UCS), confirmed connectionless service (CCS) and connection-oriented service (COS). UCS doesn’t have correction mechanism and flow control. The data probably gets lost. CCS reply ACK when receiving the correct data and it has timeout-and-retransmit mechanism. It is more reliable than CCS but probably incurs some sequence errors. COS has connection and disconnection mechanism. It can achieve flow control, no loss and no sequencing error."
           },
           {
             "student_id": "QDLL3_12",

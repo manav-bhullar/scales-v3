@@ -1,0 +1,468 @@
+{
+  "question_id": "CE05",
+  "total_marks": 4.0,
+  "n_students": 10,
+  "mae": 0.5,
+  "students": [
+    {
+      "student_id": "CE05_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "Some of the objectives are: support billion of end-systems, reduce routing tables, simplify protocol processing, increase security, support real ti,e data traffic, provide multicas",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "support billion of end-systems, reduce routing tables"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "simplify protocol processing, increase security"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "support real ti,e data traffic, provide multicasting, support mobility"
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "be open for change, coexistence with existing protocols"
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "Longer addresses (16 bytes) should be supported in order to increase the address space such that more destinations can be specified than via IPv4 addresses.  Security means should ",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Longer addresses (16 bytes) should be supported in order to increase the address space such that more destinations can be specified than via IPv4 addresses."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Security means should be integrated into the protocol to increase security when using it"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Real time data traffic with tracked quality of service should be supported by introducing flow labels and traffic classes."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "The objective of IPv6 is to support assigning IP to new systems, and simplify the header.  1. Supporting billions of end systems by providing longer address. 2. Simplifying protoco",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "1. Supporting billions of end systems by providing longer address."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "2. Simplifying protocol processing by providing simplified header."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "3. Supporting real time data traffic by creating flow label and differentiating traffic class.\n4. Support multicasting and mobility or roaming."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "5. Open for change in future."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "The objectives of IPv6: Firstly, to support billions of end-systems. Secondly, to reduce routing tables.  Thirdly, to simplify protocol processing. Fourthly, to increase security a",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Firstly, to support billions of end-systems."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Thirdly, to simplify protocol processing.\nFourthly, to increase security"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Fifthly, to support real time data traffic (quality of service) such as flow label, traffic class."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Eighthly, to be open for change (future). "
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "To support billions of end-systems To reduce routing tables To simplify protocol processing To increase security",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support billions of end-systems"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To simplify protocol processing\nTo increase security"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "The first main objective for the introduction of IPv6 was the support of more addresses in the network. While IPv4 with 4 byte addresses only allowed roughly about 4 billion partic",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The second objective was to simplify the process of forwarding and building routing tables by simplifying the header of IPv6-addresses"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The second objective was to simplify the process of forwarding and building routing tables by simplifying the header of IPv6-addresses"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "IPv6 allows better guarantees for Quality of Service, especially for real time traffic."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "make it adaptive to future developments: So the IPv6 protocol allows introduction of extension headers for future functionalities."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "1.\tSupporting billions of end-systems: With its longer addresses IPv6 can support more end-systems. 2.\tSupporting real time data traffic: The flow label field („traffic class“) all",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "1.\tSupporting billions of end-systems: With its longer addresses IPv6 can support more end-systems."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "3. Simplifying protocol processing: The header in IPv4 is much more complex than the header of IPv6, so with IPv6 the processing of protocols is simpler."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "2. Supporting real time data traffic: The flow label field („traffic class“) allows another quality of service."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "4. Openness for potential change in the future: With the option to use the extension headers, IPv6 provides something that can be useful in the future."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "To support billions of end systems To increase security To support real time data traffic To support mobility To reduce routing tables",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support billions of end systems"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To increase security"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support real time data traffic To support mobility"
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S09",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "- Support more end-systems by using much longer addresses than IPv4 - Simplify protocol processing by using a less complex header (especially no more checksum in header which must ",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "- Support more end-systems by using much longer addresses than IPv4"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Simplify protocol processing by using a less complex header"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "- Provide multicast and anycast"
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Usage of extension headers to be open for future changes/extensions"
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S10",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "- support more end-systems by using longer addresses - reduce the size of the routing tables - simplify the protocol, to allow routers to process packets faster. - integrate securi",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "- support more end-systems by using longer addresses\n- reduce the size of the routing tables"
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "- simplify the protocol, to allow routers to process packets faster.\n- integrate security"
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "- provide multicasting"
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    }
+  ]
+}

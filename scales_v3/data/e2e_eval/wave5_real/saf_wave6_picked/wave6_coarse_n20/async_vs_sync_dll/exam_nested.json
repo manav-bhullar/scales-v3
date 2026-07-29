@@ -7,32 +7,22 @@
         "question_id": "Q1",
         "question_text": "What is the difference between asynchronous and synchronous transmission mode in the Data Link Layer.",
         "reference_answer": "Asynchronous transmission: Every character a self-contained unit surrounded by a start bit and a stop bit, which is an easy and cheap pattern, but causes low transmission rates.\n\nSynchronous transmission: Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
-        "rubric": "Total 4 marks:\n1) Asynchronous framing (start/stop) (1 mark)\n2) Asynchronous trade-off (simple/cheap vs low rate) (1 mark)\n3) Synchronous framing (frames / SYN / flag) (1 mark)\n4) Synchronous trade-off (rate / sync / complexity) (1 mark)",
+        "rubric": "Total 4 marks:\n1) Framing difference (async start/stop + sync frames/SYN/flag) (2 marks)\n2) Trade-offs (rates / complexity / synchronization) (2 marks)",
         "total_marks": 4,
         "rubric_items": [
           {
             "rubric_item_id": "R1",
-            "label": "Async framing (start/stop)",
-            "marks": 1.0,
-            "atomic": true
+            "label": "Framing difference",
+            "marks": 2.0,
+            "atomic": false,
+            "description": "MAY SPLIT into async framing + sync framing."
           },
           {
             "rubric_item_id": "R2",
-            "label": "Async trade-off",
-            "marks": 1.0,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R3",
-            "label": "Sync framing (frames/SYN/flag)",
-            "marks": 1.0,
-            "atomic": true
-          },
-          {
-            "rubric_item_id": "R4",
-            "label": "Sync trade-off",
-            "marks": 1.0,
-            "atomic": true
+            "label": "Trade-offs",
+            "marks": 2.0,
+            "atomic": false,
+            "description": "MAY SPLIT into async trade-off + sync trade-off."
           }
         ],
         "student_answers": [

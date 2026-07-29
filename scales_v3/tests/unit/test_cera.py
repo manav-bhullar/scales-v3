@@ -24,7 +24,8 @@ def _item(**overrides) -> CQAExtractionItem:
         "target_criteria": "Mentions handshake",
         "marks": 1,
         "evidence_facets": ["three-way handshake"],
-        "evidence_mode": "ANY",
+        "evidence_role": "synonym_set",
+        "min_count": None,
         "expected_keywords": ["handshake", "three-way"],
         "acceptable_variants": ["3-step setup"],
         "partial_credit_rule": None,
@@ -239,10 +240,10 @@ def test_nested_atomic_one_to_one_ok(cera):
             rubric_item_id="R2",
             knowledge_point="trade",
             evidence_facets=["advantage", "disadvantage"],
-            evidence_mode="ALL",
+            evidence_role="checklist",
             expected_keywords=["advantage", "disadvantage"],
             partial_credit_rule="one side only → half",
-            target_criteria="both advantage and disadvantage",
+            target_criteria="FULL requires both advantage and disadvantage",
         ),
     ]
     assert cera._validate_cqa_list(items, q) == []
@@ -442,20 +443,20 @@ def test_evidence_facets_required(cera, question):
     assert any("evidence_facets must be non-empty" in e for e in errors)
 
 
-def test_evidence_mode_all_requires_partial(cera, question):
+def test_checklist_role_requires_partial(cera, question):
     items = [
         _item(
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["name", "explain"],
-            evidence_mode="ALL",
+            evidence_role="checklist",
             expected_keywords=["name", "explain"],
             partial_credit_rule=None,
-            target_criteria="name and explain",
+            target_criteria="FULL requires name and explain",
         ),
     ]
     errors = cera._validate_cqa_list(items, question)
-    assert any("evidence_mode=ALL requires" in e for e in errors)
+    assert any("evidence_role=checklist requires" in e for e in errors)
 
 
 def test_any_mode_rejects_and_chain_criteria(cera, question):
@@ -464,7 +465,7 @@ def test_any_mode_rejects_and_chain_criteria(cera, question):
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["waiting", "delay"],
-            evidence_mode="ANY",
+            evidence_role="synonym_set",
             expected_keywords=["waiting", "delay"],
             target_criteria="Must explain waiting leading to delay",
         ),
@@ -480,7 +481,7 @@ def test_any_mode_allows_because_in_or_explanation(cera, question):
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["more efficient", "no padding"],
-            evidence_mode="ANY",
+            evidence_role="synonym_set",
             expected_keywords=["efficient", "padding"],
             target_criteria="any of: more efficient (e.g. because no padding) / no padding",
         ),
@@ -495,7 +496,7 @@ def test_any_mode_or_set_ok(cera, question):
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["waiting", "delay"],
-            evidence_mode="ANY",
+            evidence_role="synonym_set",
             expected_keywords=["waiting", "delay"],
             target_criteria="any of: waiting / delay counts",
         ),
@@ -509,7 +510,7 @@ def test_any_mode_requires_any_of_phrase(cera, question):
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["waiting", "delay"],
-            evidence_mode="ANY",
+            evidence_role="synonym_set",
             expected_keywords=["waiting", "delay"],
             target_criteria="Student mentions waiting or delay somehow",
         ),
@@ -634,24 +635,127 @@ def test_may_split_rejects_fake_null_partial_string(cera):
     assert any("real partial_credit_rule" in e for e in errors)
 
 
-def test_all_mode_rejects_fake_null_partial(cera, question):
+def test_checklist_rejects_fake_null_partial(cera, question):
     items = [
         _item(
             concept_id="Q1_C1",
             marks=4,
             evidence_facets=["name", "explain"],
-            evidence_mode="ALL",
+            evidence_role="checklist",
             expected_keywords=["name", "explain"],
             partial_credit_rule="null",
-            target_criteria="name and explain",
+            target_criteria="FULL requires name and explain",
         ),
     ]
     errors = cera._validate_cqa_list(items, question)
-    assert any("evidence_mode=ALL requires a real partial_credit_rule" in e for e in errors)
+    assert any("evidence_role=checklist requires a real partial_credit_rule" in e for e in errors)
 
 
-def test_prompt_mentions_evidence_facets(cera, question):
+def test_prompt_mentions_evidence_roles(cera, question):
     prompt = cera._build_prompt(question)
     assert "evidence_facets" in prompt
-    assert 'evidence_mode' in prompt
-    assert "ANY" in prompt and "ALL" in prompt
+    assert "evidence_role" in prompt
+    assert "synonym_set" in prompt and "checklist" in prompt and "select_n" in prompt
+
+
+def test_select_n_requires_min_count_and_partial(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_facets=[
+                "Adaptation",
+                "Security",
+                "Medium Access Control",
+                "Quality of Service",
+                "Scalability",
+                "Power Consumption",
+            ],
+            evidence_role="select_n",
+            min_count=None,
+            expected_keywords=[
+                "Adaptation",
+                "Security",
+                "Medium Access Control",
+                "Quality of Service",
+                "Scalability",
+                "Power Consumption",
+            ],
+            target_criteria="FULL = at least 2 distinct valid challenges",
+            partial_credit_rule="exactly one → 0.5",
+        ),
+    ]
+    errors = cera._validate_cqa_list(items, question)
+    assert any("min_count" in e for e in errors)
+
+
+def test_select_n_name_two_of_six_ok(cera, question):
+    """CE08-style naming: select_n with min_count=2 validates cleanly."""
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            knowledge_point="Student must name two distinct mobile routing challenges",
+            evidence_facets=[
+                "Adaptation",
+                "Security",
+                "Medium Access Control",
+                "Quality of Service",
+                "Scalability",
+                "Power Consumption",
+            ],
+            evidence_role="select_n",
+            min_count=2,
+            expected_keywords=[
+                "Adaptation",
+                "Security",
+                "Medium Access Control",
+                "Quality of Service",
+                "Scalability",
+                "Power Consumption",
+            ],
+            target_criteria=(
+                "FULL = at least 2 distinct valid challenges from the catalog; "
+                "PARTIAL = exactly 1; ABSENT = 0"
+            ),
+            partial_credit_rule="exactly one valid challenge named → 0.5 marks",
+        ),
+    ]
+    assert cera._validate_cqa_list(items, question) == []
+
+
+def test_legacy_evidence_mode_all_maps_to_checklist():
+    item = CQAExtractionItem(
+        concept_id="Q1_C1",
+        knowledge_point="name and explain",
+        target_criteria="FULL requires both",
+        marks=1,
+        evidence_facets=["name", "explain"],
+        evidence_mode="ALL",
+        expected_keywords=["name", "explain"],
+        partial_credit_rule="name only → half",
+        source_rubric_span="x",
+        source_reference_span="y",
+    )
+    assert item.evidence_role == "checklist"
+    assert item.evidence_mode == "ALL"
+
+
+def test_to_cqa_preserves_select_n(cera, question):
+    items = [
+        _item(
+            concept_id="Q1_C1",
+            marks=4,
+            evidence_role="select_n",
+            min_count=2,
+            evidence_facets=["A", "B", "C"],
+            expected_keywords=["A", "B", "C"],
+            target_criteria="FULL = at least 2 distinct valid items from the catalog",
+            partial_credit_rule="one → half",
+        ),
+    ]
+    assert cera._validate_cqa_list(items, question) == []
+    cqas = cera._to_cqa_tuples(items, question)
+    assert cqas[0].evidence_role == "select_n"
+    assert cqas[0].min_count == 2
+    assert cqas[0].evidence_mode == "ANY"  # legacy derived

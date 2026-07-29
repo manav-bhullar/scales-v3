@@ -1,0 +1,378 @@
+{
+  "question_id": "CE10",
+  "total_marks": 5.0,
+  "n_students": 10,
+  "mae": 0.725,
+  "students": [
+    {
+      "student_id": "CE10_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 5.0,
+      "system_marks": 5.0,
+      "abs_err": 0.0,
+      "answer_preview": "Phase 1： Slow Start. Phase 2:  Congestion avoidance.  When cwnd < ss_thresh: cwnd increases rate exponentially.  When cwnd >=ss_thresh: TCP slows down the increase of cwnd. Cwnd in",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1： Slow Start.\nPhase 2:  Congestion avoidance."
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "When cwnd < ss_thresh: cwnd increases rate exponentially."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Cwnd increases additively(i.e. cwdn ++);"
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S02",
+      "human_norm": 0.75,
+      "human_est_marks": 3.75,
+      "system_marks": 3.0,
+      "abs_err": 0.75,
+      "answer_preview": "1. Slow start: Each time a segment is acknowledged cwnd is incremented by one. Continues until cwnd reaches ss_thresh or a packet gets lost. 2. Congestion Avoidance If congestions ",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "1. Slow start: Each time a segment is acknowledged cwnd is incremented by one. Continues until cwnd reaches ss_thresh or a packet gets lost. 2. Congestion Avoidance"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Each time a segment is acknowledged cwnd is incremented by one."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S03",
+      "human_norm": 0.88,
+      "human_est_marks": 4.4,
+      "system_marks": 3.0,
+      "abs_err": 1.4,
+      "answer_preview": "The phases are slow start and congestion avoidance. In the slow phase, the cwnd starts getting bigger in size, first slowly, then rapidly, until the ssthresh is reached. Once reach",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The phases are slow start and congestion avoidance."
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In the slow phase, the cwnd starts getting bigger in size, first slowly, then rapidly, until the ssthresh is reached."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Once reached, the congestion control phase begins, where the cwnd slowly grows in size until a congestion occurs (timeout)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S04",
+      "human_norm": 0.5,
+      "human_est_marks": 2.5,
+      "system_marks": 3.0,
+      "abs_err": 0.5,
+      "answer_preview": "Phase 1 (Slow Start):  cwnd++ for each acknowledged segmentPhase 2 (Congestion Avoidance):  ss_thresh = cwnd / 2  cwnd = 1",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1 (Slow Start):  cwnd++ for each acknowledged segmentPhase 2 (Congestion Avoidance):  ss_thresh = cwnd / 2  cwnd = 1"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "cwnd++ for each acknowledged segment"
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "Phase 2 (Congestion Avoidance):  ss_thresh = cwnd / 2  cwnd = 1"
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S05",
+      "human_norm": 0.88,
+      "human_est_marks": 4.4,
+      "system_marks": 5.0,
+      "abs_err": 0.6,
+      "answer_preview": "Phase 1 (Slow Start)Phase 2 (Congestion Avoidance)The congestion Window is increased exponentially. After the cwnd >= ss_resh, the phase 2 starts and the cwnd is increased linear o",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1 (Slow Start)Phase 2 (Congestion Avoidance)"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "The congestion Window is increased exponentially."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "the cwnd is increased linear over time"
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S06",
+      "human_norm": 0.75,
+      "human_est_marks": 3.75,
+      "system_marks": 5.0,
+      "abs_err": 1.25,
+      "answer_preview": "Phase 1: Slow start (getting to equilibrium) Phase 2: Congestion Avoidance Congestion Window (cwnd) Slow Start Treshold (ss_thresh) Phase 1: cwnd size grows very rapidy (doubles af",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1: Slow start (getting to equilibrium) Phase 2: Congestion Avoidance"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "cwnd size grows very rapidy (doubles after every RTT)"
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Phase 2: cwnd size grows no longer exponentially, but linearly from ss_tresh on to gain as much bandwith as possible."
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S07",
+      "human_norm": 0.88,
+      "human_est_marks": 4.4,
+      "system_marks": 5.0,
+      "abs_err": 0.6,
+      "answer_preview": "Phase 1: Slow start The sender sends as much segemnts as specified in cwnd and for each ACK received, cwnd is increased by one. This exponential growth continues until the ss_thres",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1: Slow start\n... \nPhase 2: Congestion avoidance"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "for each ACK received, cwnd is increased by one. This exponential growth continues until the ss_thresh is reached."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "In the congestion avoidance phase the cwnd is only increased by one per roundtrip time."
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S08",
+      "human_norm": 0.88,
+      "human_est_marks": 4.4,
+      "system_marks": 3.0,
+      "abs_err": 1.4,
+      "answer_preview": "Phase one is slow start and phase two is congestion avoidance, cwnd starts at 1, and will rapidly grow until the value reached ss_thresh, after that cwnd will grow slowly, when a t",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase one is slow start and phase two is congestion avoidance"
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "cwnd starts at 1, and will rapidly grow until the value reached ss_thresh"
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "after that cwnd will grow slowly"
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S09",
+      "human_norm": 0.75,
+      "human_est_marks": 3.75,
+      "system_marks": 3.0,
+      "abs_err": 0.75,
+      "answer_preview": "Phase 1 ist slow start. The initial value of cwnd is 1, ss_thresh is the advertised window size. Each time a segment is acknowledged cwnd is inreased by one, until cwnd >= ss_thres",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Phase 1 ist slow start. ... then Phase 2: Congestion Avoidance is entered."
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Each time a segment is acknowledged cwnd is inreased by one"
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE10_S10",
+      "human_norm": 1.0,
+      "human_est_marks": 5.0,
+      "system_marks": 5.0,
+      "abs_err": 0.0,
+      "answer_preview": "The first phase, slow start, will double cwnd every round-trip time by increasing it by 1 for each received ACK. When cwnd reaches ss_thresh, the congestion avoidance phase is ente",
+      "concepts": [
+        {
+          "concept_id": "CE10_C1",
+          "role": "checklist",
+          "min_count": null,
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The first phase, slow start, will double cwnd every round-trip time by increasing it by 1 for each received ACK. When cwnd reaches ss_thresh, the congestion avoidance phase is entered."
+        },
+        {
+          "concept_id": "CE10_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "The first phase, slow start, will double cwnd every round-trip time by increasing it by 1 for each received ACK."
+        },
+        {
+          "concept_id": "CE10_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "The congestion avoidance phase will additively increase cwnd by 1 every round-trip time."
+        }
+      ]
+    }
+  ]
+}

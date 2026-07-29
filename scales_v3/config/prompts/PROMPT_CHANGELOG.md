@@ -59,6 +59,28 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-016 — 2026-07-29 — `scales/models/cqa.py` — `cgr.criteria_first_roles` (restructure)
+
+**Kind:** code  
+**Direction:** restructure
+
+**Screw:** `cgr.criteria_first_roles`
+
+**What:** Add evidence_role (synonym_set|checklist|select_n) + min_count; derive legacy evidence_mode; criteria-first CGR; CERA validators for roles
+
+**Why:** Mechanical ANY/ALL cannot express name-N-of-M (CE08) and conflicted with synonym vs checklist cases from TC-014/PC-006
+
+**If reverted:** CE08 naming awards FULL for one challenge again; CGR returns to mechanical ANY=FULL
+
+**Tradeoff:** New role field + stricter CERA validation; old exams migrate ANY→synonym_set ALL→checklist
+
+**Evidence:** CE08_smoke_naming.json: one=PARTIAL0.5 two=FULL1.0 none=ABSENT0
+
+**Snapshot:** `snapshots/TC-016_cqa.py`
+
+**File hash (16):** `550b576d7dcbc4d7`
+
+
 ### TC-015 — 2026-07-26 — `scales/modules/calibration.py` — `cera.fake_partial_and_calibrate` (tighten)
 
 **Kind:** code  
@@ -409,6 +431,160 @@ python scripts/log_prompt_change.py add `
 **Snapshot:** `snapshots/TC-001_metrics_ledger.py`
 
 **File hash (16):** `c1a0c1af8ce04f23`
+
+
+### PC-012 — 2026-07-29 — `cera_extraction.txt` — `cera.multipart_definition_select_n` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cera.multipart_definition_select_n`
+
+**What:** Multi-part definitions use select_n (e.g. min_count=2 of 3), not synonym_set
+
+**Why:** CE04 frame-bursting definition: complementary parts wrongly treated as ANY synonyms so one phrase earned FULL
+
+**If reverted:** Definition concepts award FULL for a single partial phrase again
+
+**Tradeoff:** Stricter FULL bar on definitions; more PARTIAL awards
+
+**Evidence:** CE04_C1 manual fix to select_n min_count=2
+
+**Snapshot:** `snapshots/PC-012_cera_extraction.txt`
+
+**File hash (16):** `2f5a3d9c4f02d0af`
+
+
+### PC-011 — 2026-07-29 — `cgr_grading.txt` — `cgr.criteria_first_roles` (restructure)
+
+**Kind:** prompt  
+**Direction:** restructure
+
+**Screw:** `cgr.criteria_first_roles`
+
+**What:** Remove mechanical ANY=FULL override; criteria-first + role guidance including select_n count
+
+**Why:** One-facet FULL broke name-2 challenges; Target Criteria must be authoritative
+
+**If reverted:** CGR awards FULL when any single catalog facet appears
+
+**Tradeoff:** Relies more on LLM following criteria; watch over/under-partial
+
+**Evidence:** CE08_smoke_naming.json
+
+**Snapshot:** `snapshots/PC-011_cgr_grading.txt`
+
+**File hash (16):** `c3afca1863a78936`
+
+
+### PC-010 — 2026-07-29 — `cera_extraction.txt` — `cera.evidence_role_shapes` (restructure)
+
+**Kind:** prompt  
+**Direction:** restructure
+
+**Screw:** `cera.evidence_role_shapes`
+
+**What:** Question-shape step; emit evidence_role+min_count instead of mechanical ANY/ALL
+
+**Why:** CERA must classify synonym_set vs checklist vs select_n per concept
+
+**If reverted:** CERA emits wrong ANY/ALL for name-N-of-M and checklists
+
+**Tradeoff:** Longer prompt; more retries until LLM learns roles
+
+**Evidence:** CE08 extract role=select_n min_count=2
+
+**Snapshot:** `snapshots/PC-010_cera_extraction.txt`
+
+**File hash (16):** `e31e4052678890fc`
+
+
+### PC-009 — 2026-07-29 — `cgr_grading.txt` — `cgr.semantic_matching` (loosen)
+
+**Kind:** prompt  
+**Direction:** loosen
+
+**Screw:** `cgr.semantic_matching`
+
+**What:** Add meaning-check step and semantic matching block for paraphrase tolerance
+
+**Why:** Even good CERA facets fail when students reword with zero token overlap
+
+**If reverted:** CGR returns to literal phrase matching and under-scores paraphrases
+
+**Tradeoff:** May award FULL on loose paraphrases; watch over-leniency
+
+**Evidence:** paraphrase tolerance strategy plan
+
+**Snapshot:** `snapshots/PC-009_cgr_grading.txt`
+
+**File hash (16):** `74c1253cec4e4410`
+
+
+### PC-008 — 2026-07-29 — `cera_extraction.txt` — `cera.paraphrase_claim_shape` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cera.paraphrase_claim_shape`
+
+**What:** Claim-shaped KPs, semantic facets, 3-5 variants, ANY any-of format, name-any-N list handling
+
+**Why:** Batch review: KPs were topic labels; CE07/CE08 failed ANY OR-format; CE08 naming ALL-required all challenges
+
+**If reverted:** CERA returns quote-like labels and brittle facets; name-any-N becomes overstrict
+
+**Tradeoff:** Longer prompt; may over-split some short naming items
+
+**Evidence:** cera_eval_v1 QUALITY_REVIEW.md
+
+**Snapshot:** `snapshots/PC-008_cera_extraction.txt`
+
+**File hash (16):** `e8e4869d6a53a07e`
+
+
+### PC-007 — 2026-07-28 — `cera_extraction.txt` — `cera.cqa_quality_bar` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cera.cqa_quality_bar`
+
+**What:** General CERA CQA quality bar: gradable claims not topic labels; ANY only for synonym/one-idea facets; ALL for checklists/compare-contrast/name+explain; name-alone never FULL when ref lists properties; variants paraphrase properties; nested buckets may split independent ideas
+
+**Why:** Wave6 showed CERA emitting shallow ANY CQAs (one keyword = full class credit) and treating atomic rubric labels as concepts. Teacher feedback: concepts must check distinguishing properties (e.g. ACK/loss/flow/connect) in general, not only for DLL3.
+
+**If reverted:** CERA again collapses multi-property definitions and explain-differences questions into weak ANY CQAs; calibrate UI shows concept≈label again
+
+**Tradeoff:** Stricter extractions CQAs → more PARTIAL, fewer cheap FULL; may need teacher review of first packs after re-extract
+
+**Evidence:** wave6 Q-DLL3/ASYNC/CONN nested; teacher calibrate UI 2026-07-28; follows PC-006 with general quality bar
+
+**Snapshot:** `snapshots/PC-007_cera_extraction.txt`
+
+**File hash (16):** `2c4f577acb5a8991`
+
+
+### PC-006 — 2026-07-28 — `cera_extraction.txt` — `cera.multi_property_all_mode` (tighten)
+
+**Kind:** prompt  
+**Direction:** tighten
+
+**Screw:** `cera.multi_property_all_mode`
+
+**What:** When reference defines a class as a checklist of distinguishing properties (ACK/loss/flow/connect), use evidence_mode=ALL with per-property partial — not ANY
+
+**Why:** DLL3 Wave6 CQAs awarded FULL for naming one facet (e.g. no ACK alone); teacher expects comparison across ACK, data loss, flow control, connect/disconnect per class
+
+**If reverted:** Multi-property class definitions collapse back to ANY; one-phrase FULL returns
+
+**Tradeoff:** Stricter FULL bar; more PARTIAL awards; may need CGR re-run on DLL3
+
+**Evidence:** wave6 Q-DLL3 nested; teacher feedback 2026-07-28
+
+**Snapshot:** `snapshots/PC-006_cera_extraction.txt`
+
+**File hash (16):** `c49750e815a875f4`
 
 
 ### PC-005 — 2026-07-25 — `cera_extraction.txt` — `cera.rubric_constraint_fidelity` (tighten)

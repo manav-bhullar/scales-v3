@@ -1,0 +1,112 @@
+{
+  "exam_id": "e2e_wave6_dll3_n20_nested",
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "question_id": "Q1",
+      "knowledge_point": "Unconfirmed connectionless: ACK, data-loss, flow-control, and connect/disconnect properties",
+      "target_criteria": "FULL requires all four properties of unconfirmed connectionless: no ACK; data loss possible; no flow control; no connect/disconnect. Naming the class alone is not enough.",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "no ACK",
+        "loss of data possible",
+        "no flow control",
+        "no connect or disconnect"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "ACK",
+        "loss",
+        "flow",
+        "connect"
+      ],
+      "acceptable_variants": [
+        "unconfirmed connectionless",
+        "datagram without acknowledgement",
+        "no acknowledgement",
+        "data may be lost",
+        "no connection setup",
+        "no teardown"
+      ],
+      "partial_credit_rule": "0.25 marks per distinct property present (no ACK; loss possible; no flow control; no connect/disconnect). Name-only with no properties → 0.25. Cap at 1.0.",
+      "source_rubric_span": "Three DLL service classes named and distinguished (3 marks)",
+      "source_reference_span": "unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.",
+      "version": 2,
+      "created_at": "2026-07-26T21:42:17.465538Z",
+      "updated_at": "2026-07-28T16:45:00.000000Z"
+    },
+    {
+      "concept_id": "Q1_C2",
+      "question_id": "Q1",
+      "knowledge_point": "Confirmed connectionless: ACK, data-loss, flow-control, and connect/disconnect properties",
+      "target_criteria": "FULL requires all four properties of confirmed connectionless: with ACK; no data loss (timeout/retransmit — duplicates or sequence errors possible); no flow control; no connect/disconnect. Naming the class alone is not enough.",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "with ACK",
+        "no loss of data",
+        "no flow control",
+        "no connect or disconnect"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "ACK",
+        "loss",
+        "flow",
+        "connect"
+      ],
+      "acceptable_variants": [
+        "confirmed connectionless",
+        "acknowledged datagram",
+        "acknowledgement",
+        "timeout and retransmit",
+        "duplicates possible",
+        "sequence errors possible",
+        "no connection setup"
+      ],
+      "partial_credit_rule": "0.25 marks per distinct property present (with ACK; no data loss / retransmit; no flow control; no connect/disconnect). Mention of duplicates or sequence errors from retransmit counts toward the data-loss property. Name-only → 0.25. Cap at 1.0.",
+      "source_rubric_span": "Three DLL service classes named and distinguished (3 marks)",
+      "source_reference_span": "confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.",
+      "version": 2,
+      "created_at": "2026-07-26T21:42:17.465551Z",
+      "updated_at": "2026-07-28T16:45:00.000000Z"
+    },
+    {
+      "concept_id": "Q1_C3",
+      "question_id": "Q1",
+      "knowledge_point": "Connection-oriented: reliability, data-loss, flow-control, and connect/disconnect properties",
+      "target_criteria": "FULL requires all four properties of connection-oriented service: no data loss (and no duplication/sequencing errors); flow control; connect and disconnect (3-phased communication); reliable/ordered delivery relative to the other classes. Naming the class alone is not enough.",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "no data loss",
+        "no duplication or sequencing errors",
+        "flow control",
+        "connect and disconnect"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "loss",
+        "sequencing",
+        "flow",
+        "connect"
+      ],
+      "acceptable_variants": [
+        "connection-oriented",
+        "connection oriented",
+        "3 phased communication",
+        "three-phase communication",
+        "connection setup and teardown",
+        "no duplication",
+        "ordered delivery"
+      ],
+      "partial_credit_rule": "0.25 marks per distinct property present (no data loss; no duplication/sequencing errors; flow control; connect/disconnect or 3-phased). Name-only → 0.25. Cap at 1.0.",
+      "source_rubric_span": "Three DLL service classes named and distinguished (3 marks)",
+      "source_reference_span": "connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+      "version": 2,
+      "created_at": "2026-07-26T21:42:17.465562Z",
+      "updated_at": "2026-07-28T16:45:00.000000Z"
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "exam_id": "e2e_wave2_tcp_handshake_groq",
+  "final_results": [
+    {
+      "student_id": "STU_GOOD",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.0,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.",
+          "reasoning": "The student correctly identifies the SYN flag and the client's initial sequence number in the first TCP segment. The evidence span is a direct quote from the student's answer, and the reasoning explains how the evidence supports the concept. There are no counterarguments as the student's answer is accurate and complete.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.",
+          "reasoning": "The student correctly describes the second TCP segment, including the SYN-ACK flags, server's ISN, and acknowledgement number. This demonstrates a clear understanding of the three-way handshake.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server\u2019s SYN.",
+          "reasoning": "The student correctly identifies the control information carried in the third TCP segment, specifically the ACK flag with acknowledgement number, as part of the three-way handshake. This demonstrates a clear understanding of the concept.",
+          "trust_score": 0.0,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.",
+          "reasoning": "The student provides a clear and accurate description of the three-way handshake process, including the purpose of each segment. The evidence supports the concept by explaining the role of the SYN segment in initiating the connection. The student also correctly identifies the sequence numbers and acknowledgments exchanged during the handshake. The only minor inaccuracy is the student's statement that the server sets its own initial sequence number in the SYN-ACK segment, but this does not detract from the overall accuracy of the explanation. Therefore, the verdict is FULL.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The client starts with SYN and the server answers, then the client confirms.",
+          "reasoning": "The student correctly identifies the SYN flag and the client's initial sequence number in the first TCP segment, as they mention the client starts with SYN.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention SYN-ACK flags, server's ISN, or acknowledgement number in the second TCP segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the ACK flag or acknowledgement number, which are key components of the knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the three-way handshake or its purpose, so it does not demonstrate the knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.44999999999999996,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the SYN flag and client's initial sequence number in the first TCP segment. Instead, it provides information about HTTP and TLS, which is unrelated to the concept.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about SYN-ACK flags, server's ISN, and acknowledgement number in the second TCP segment. It instead discusses HTTP and TLS.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the concept of the three-way handshake in TCP, and therefore does not provide any relevant evidence.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the purpose of the three-way handshake in TCP. It mentions HTTP and TLS instead.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    },
+    {
+      "student_id": "STU_GOOD_ALT",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.0,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Client \u2192 server: SYN with starting sequence number (ISN) to request a connection.",
+          "reasoning": "The student answer correctly identifies the SYN flag and client's initial sequence number in the first TCP segment of the three-way handshake. The evidence provided directly addresses the knowledge point and is accurate.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "2) Server \u2192 client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1.",
+          "reasoning": "The student answer correctly describes the second TCP segment of the three-way handshake, including the SYN-ACK flags, server's ISN, and acknowledgement number. This demonstrates a clear understanding of the concept.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "3) Client \u2192 server: ACK with ack = server ISN + 1 confirming the server SYN.",
+          "reasoning": "The student answer correctly describes the third TCP segment of the three-way handshake, which carries the ACK flag with the acknowledgement number.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Client \u2192 server: SYN with starting sequence number (ISN) to request a connection. Server \u2192 client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1. Client \u2192 server: ACK with ack = server ISN + 1 confirming the server SYN.",
+          "reasoning": "The student answer accurately describes the three-way handshake process, including the purpose of each segment. The evidence provided directly supports the concept of the three-way handshake in TCP. No counterarguments exist.",
+          "trust_score": 0.0,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    },
+    {
+      "student_id": "STU_PURPOSE_FOCUS",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.44999999999999996,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the SYN flag and client's initial sequence number in the first TCP segment, which is the focus of this knowledge point.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the specific knowledge point of SYN-ACK flags, server's ISN, and acknowledgement number in the second TCP segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the ACK flag with acknowledgement number in the third TCP segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The purpose of the three-way handshake is to synchronize sequence numbers on both ends and establish a reliable connection before data transfer.",
+          "reasoning": "The student correctly identifies the purpose of the three-way handshake as synchronizing sequence numbers and establishing a reliable connection. This matches the expected evidence keyword 'purpose' and acceptable variant 'goal of 3-step connection setup'.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    },
+    {
+      "student_id": "STU_MID_DETAIL",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.30022108496632427,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN flag and client's initial sequence number in first TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the SYN flag and client's initial sequence number in the first TCP segment.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK flags, server's ISN, and acknowledgement number in second TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the specific knowledge point of SYN-ACK flags, server's ISN, and acknowledgement number in the second TCP segment. It only describes the three-way handshake process without providing relevant details.",
+          "trust_score": 0.39999999999999997,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "ACK flag with acknowledgement number in third TCP segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the ACK flag with acknowledgement number in the third TCP segment.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of three-way handshake in TCP",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "This handshake makes both ends ready and synchronizes them so data can be transferred reliably.",
+          "reasoning": "The student correctly identifies the purpose of the three-way handshake as making both ends ready and synchronizing them for reliable data transfer. This matches the expected evidence keyword 'purpose'.",
+          "trust_score": 0.30022108496632427,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE \u2014 Wave2 analysis"
+        }
+      ],
+      "created_at": "2026-07-23T17:20:04.920731Z"
+    }
+  ]
+}

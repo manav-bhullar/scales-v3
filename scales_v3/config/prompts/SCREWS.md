@@ -8,13 +8,20 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | Screw | Last id | Direction | Kind | What (latest) | If reverted |
 |-------|---------|-----------|------|---------------|-------------|
 | `cbte.keyword_variant_matching` | TC-007 | loosen | code | acceptable_variants now match by token containment (>=0.7... | False DEFER on paraphrased-but-correct answers ... |
+| `cera.cqa_quality_bar` | PC-007 | tighten | prompt | General CERA CQA quality bar: gradable claims not topic l... | CERA again collapses multi-property definitions... |
 | `cera.evidence_facets_mode` | TC-014 | restructure | code | Add evidence_facets + evidence_mode (ANY/ALL); validators... | Advantage/disadvantage leaves become over-stric... |
+| `cera.evidence_role_shapes` | PC-010 | restructure | prompt | Question-shape step; emit evidence_role+min_count instead... | CERA emits wrong ANY/ALL for name-N-of-M and ch... |
 | `cera.fake_partial_and_calibrate` | TC-015 | tighten | code | Reject fake partial_credit_rule strings (null/No partial…... | Fake partials pass validation again; no pre-bat... |
+| `cera.multi_property_all_mode` | PC-006 | tighten | prompt | When reference defines a class as a checklist of distingu... | Multi-property class definitions collapse back ... |
+| `cera.multipart_definition_select_n` | PC-012 | tighten | prompt | Multi-part definitions use select_n (e.g. min_count=2 of ... | Definition concepts award FULL for a single par... |
+| `cera.paraphrase_claim_shape` | PC-008 | tighten | prompt | Claim-shaped KPs, semantic facets, 3-5 variants, ANY any-... | CERA returns quote-like labels and brittle face... |
 | `cera.rubric_constraint_fidelity` | PC-005 | tighten | prompt | Require CERA to preserve 0.5 rules on 1-mark concepts and... | CERA can simplify away teacher rubric exclusion... |
 | `cera.rubric_item_nesting` | TC-013 | restructure | code | Optional RubricItem buckets above CQAs; hybrid 1:1 atomic... | Lose bucket blast-radius control; CERA free to ... |
+| `cgr.criteria_first_roles` | PC-011 | restructure | prompt | Remove mechanical ANY=FULL override; criteria-first + rol... | CGR awards FULL when any single catalog facet a... |
 | `cgr.exact_evidence_quotes` | PC-002 | tighten | prompt | Require exact contiguous evidence quotes; forbid paraphra... | Signal-1 false DEFERs return on GOOD (Wave2 STU... |
 | `cgr.partial_over_absent` | PC-003 | loosen | prompt | Partial-credit policy: prefer PARTIAL over ABSENT; accept... | Mid/purpose answers harsh ABSENT again; Wave3 m... |
 | `cgr.partial_rule_precedence` | PC-004 | tighten | prompt | Made concept-specific partial-credit rules override the g... | Generic prefer-PARTIAL wording can override exp... |
+| `cgr.semantic_matching` | PC-009 | loosen | prompt | Add meaning-check step and semantic matching block for pa... | CGR returns to literal phrase matching and unde... |
 | `cgr.structured_verdicts` | PC-001 | restructure | prompt | Initial v3 CGR prompt: mandatory evidence_span, discrete ... | Lose structured evidence for CBTE; fall back to... |
 | `cgr.target_criteria_wiring` | TC-005 | restructure | code | Pass CQA target_criteria into every CGR prompt as the aut... | CGR grades from a lossy knowledge-point summary... |
 | `dataset.cn2.human_gold` | TC-008 | tighten | dataset | Human CN2 review: clarified GOOD_01 sender wording; demot... | GOOD_02 wrongly treated as high-band full credi... |
@@ -33,15 +40,40 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 - **TC-007** (2026-07-25, loosen): acceptable_variants now match by token containment (>=0.75 of variant content tokens in answer) as fallback to exact normalized substring; stopword-only variants never hit
   - if reverted: False DEFER on paraphrased-but-correct answers returns (OS1 defer 10%->12.5%, wave3 27->28); Tier-2 NLI runs on items Tier 1 could clear
 
+### `cera.cqa_quality_bar`
+
+- **PC-007** (2026-07-28, tighten): General CERA CQA quality bar: gradable claims not topic labels; ANY only for synonym/one-idea facets; ALL for checklists/compare-contrast/name+explain; name-alone never FULL when ref lists properties; variants paraphrase properties; nested buckets may split independent ideas
+  - if reverted: CERA again collapses multi-property definitions and explain-differences questions into weak ANY CQAs; calibrate UI shows concept≈label again
+
 ### `cera.evidence_facets_mode`
 
 - **TC-014** (2026-07-26, restructure): Add evidence_facets + evidence_mode (ANY/ALL); validators for ALL-requires-partial, ANY AND-lint, keyword facet coverage, MAY-SPLIT child partial; CGR mechanical ANY/ALL; calibrate_cqas.py
   - if reverted: Advantage/disadvantage leaves become over-strict again; silent wrong zeros return
 
+### `cera.evidence_role_shapes`
+
+- **PC-010** (2026-07-29, restructure): Question-shape step; emit evidence_role+min_count instead of mechanical ANY/ALL
+  - if reverted: CERA emits wrong ANY/ALL for name-N-of-M and checklists
+
 ### `cera.fake_partial_and_calibrate`
 
 - **TC-015** (2026-07-26, tighten): Reject fake partial_credit_rule strings (null/No partial…) when required; warn-only pre-grade calibration in pipeline (skip on resume; --calibrate-strict opt-in)
   - if reverted: Fake partials pass validation again; no pre-batch smoke warnings
+
+### `cera.multi_property_all_mode`
+
+- **PC-006** (2026-07-28, tighten): When reference defines a class as a checklist of distinguishing properties (ACK/loss/flow/connect), use evidence_mode=ALL with per-property partial — not ANY
+  - if reverted: Multi-property class definitions collapse back to ANY; one-phrase FULL returns
+
+### `cera.multipart_definition_select_n`
+
+- **PC-012** (2026-07-29, tighten): Multi-part definitions use select_n (e.g. min_count=2 of 3), not synonym_set
+  - if reverted: Definition concepts award FULL for a single partial phrase again
+
+### `cera.paraphrase_claim_shape`
+
+- **PC-008** (2026-07-29, tighten): Claim-shaped KPs, semantic facets, 3-5 variants, ANY any-of format, name-any-N list handling
+  - if reverted: CERA returns quote-like labels and brittle facets; name-any-N becomes overstrict
 
 ### `cera.rubric_constraint_fidelity`
 
@@ -52,6 +84,13 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **TC-013** (2026-07-26, restructure): Optional RubricItem buckets above CQAs; hybrid 1:1 atomic or 1:N may-split; additive child sums; CERA prompt + validators
   - if reverted: Lose bucket blast-radius control; CERA free to invent global splits again
+
+### `cgr.criteria_first_roles`
+
+- **TC-016** (2026-07-29, restructure): Add evidence_role (synonym_set|checklist|select_n) + min_count; derive legacy evidence_mode; criteria-first CGR; CERA validators for roles
+  - if reverted: CE08 naming awards FULL for one challenge again; CGR returns to mechanical ANY=FULL
+- **PC-011** (2026-07-29, restructure): Remove mechanical ANY=FULL override; criteria-first + role guidance including select_n count
+  - if reverted: CGR awards FULL when any single catalog facet appears
 
 ### `cgr.exact_evidence_quotes`
 
@@ -67,6 +106,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **PC-004** (2026-07-25, tighten): Made concept-specific partial-credit rules override the general PARTIAL preference; forbid inferring a concept from related subparts
   - if reverted: Generic prefer-PARTIAL wording can override explicit rubric exclusions and award inferred credit for omitted concepts
+
+### `cgr.semantic_matching`
+
+- **PC-009** (2026-07-29, loosen): Add meaning-check step and semantic matching block for paraphrase tolerance
+  - if reverted: CGR returns to literal phrase matching and under-scores paraphrases
 
 ### `cgr.structured_verdicts`
 

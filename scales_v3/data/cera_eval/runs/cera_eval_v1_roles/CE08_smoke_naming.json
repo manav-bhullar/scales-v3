@@ -1,0 +1,74 @@
+{
+  "naming_concept": {
+    "concept_id": "CE08_C1",
+    "question_id": "CE08",
+    "knowledge_point": "The student names at least two distinct mobile routing challenges from the provided catalog.",
+    "target_criteria": "FULL = at least 2 distinct valid challenges named; PARTIAL = exactly 1 valid challenge named; ABSENT = 0.",
+    "marks": 1.0,
+    "rubric_item_id": "R1",
+    "evidence_facets": [
+      "Adaptation",
+      "Security",
+      "Medium Access Control",
+      "Quality of Service",
+      "Scalability",
+      "Power Consumption"
+    ],
+    "evidence_role": "select_n",
+    "min_count": 2,
+    "evidence_mode": "ANY",
+    "expected_keywords": [
+      "Adaptation",
+      "Security",
+      "Medium Access Control",
+      "Quality of Service",
+      "Scalability",
+      "Power Consumption"
+    ],
+    "acceptable_variants": [
+      "node mobility",
+      "packet security",
+      "MAC issues",
+      "QoS constraints",
+      "network scaling",
+      "battery life"
+    ],
+    "partial_credit_rule": "Naming exactly one valid challenge earns 0.5 marks.",
+    "source_rubric_span": "Naming any 2 valid challenges (1 mark). Catalog: Adaptation, Security, MAC, QoS, Scalability, Power.",
+    "source_reference_span": "1.Adaptation 2.Security 3.Medium Access Control 4.Quality of Service 5.Scalability 6.Power Consumption",
+    "version": 1,
+    "created_at": "2026-07-29T12:22:30.439455Z",
+    "updated_at": "2026-07-29T12:22:30.439457Z"
+  },
+  "samples": [
+    {
+      "sample_id": "one_only",
+      "answer": "One challenge is Security.",
+      "verdict": "PARTIAL",
+      "marks_awarded": 0.5,
+      "evidence_span": "One challenge is Security.",
+      "reasoning": "The student correctly identified one valid mobile routing challenge ('Security') from the provided catalog. However, the prompt required naming and describing two distinct challenges, and the student only provided one."
+    },
+    {
+      "sample_id": "two_ok",
+      "answer": "Two challenges are Adaptation and Security.",
+      "verdict": "FULL",
+      "marks_awarded": 1.0,
+      "evidence_span": "Two challenges are Adaptation and Security.",
+      "reasoning": "The student explicitly names two distinct mobile routing challenges, 'Adaptation' and 'Security', which are both listed in the provided evidence facets."
+    },
+    {
+      "sample_id": "none",
+      "answer": "Mobile routing is hard.",
+      "verdict": "ABSENT",
+      "marks_awarded": 0.0,
+      "evidence_span": "",
+      "reasoning": "The student failed to name or describe any of the required mobile routing challenges (Adaptation, Security, Medium Access Control, Quality of Service, Scalability, or Power Consumption). The answer only provides a generic statement that mobile routing is difficult."
+    }
+  ],
+  "expected": {
+    "one_only": "PARTIAL ~0.5",
+    "two_ok": "FULL 1.0",
+    "none": "ABSENT 0"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "CE09",
+  "question_text": "What are the benefits and drawbacks of SDN compared to traditional networking, where each switch/router has to manage forwarding and routing on its own? Describe two benefits and two drawbacks in 1-2 sentences each.",
+  "reference_answer": "Benefits:\n- Reduced complexity of the switches: They only have to act according to their flow tables and do not have to make any local routing decisions.\n- Due to centralized routing, the routing can converge way faster to a global optimum than with decentralized routing because of a global view.\n- Increased flexibility: We can update the routing logic on the fly, routers/switches are not limited to hard-coded routing algorithms anymore.\n\nDrawbacks:\n- High complexity of the control servers: They have to make all the routing decisions for the (sub)network and can therefore be a bottleneck.\n- Centralized routing in distributed systems: The routing completely depends on the control server(s). To achieve better availability and fault tolerance, the number of control servers can be increased. However, this can lead to synchronization and consistency issues.",
+  "rubric": "Total 4 marks:\n1) Two benefits described (2 marks)\n2) Two drawbacks described (2 marks)",
+  "total_marks": 4,
+  "marks_sum": 4.0,
+  "concept_count": 2,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE09_C1",
+      "question_id": "CE09",
+      "knowledge_point": "Describe two benefits of SDN compared to traditional networking",
+      "target_criteria": "FULL = at least 2 distinct benefits from the catalog; PARTIAL = exactly 1; ABSENT = 0",
+      "marks": 2.0,
+      "rubric_item_id": "1",
+      "evidence_facets": [
+        "reduced switch complexity",
+        "faster routing convergence due to global view",
+        "increased flexibility via dynamic routing updates"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "complexity",
+        "convergence",
+        "global",
+        "flexibility",
+        "dynamic"
+      ],
+      "acceptable_variants": [
+        "switches are simpler because they don't make routing decisions",
+        "centralized control allows faster network convergence",
+        "routing logic can be changed on the fly",
+        "no need for hard-coded routing algorithms",
+        "global view leads to better routing optimization"
+      ],
+      "partial_credit_rule": "exactly 1 benefit → 1.0 mark",
+      "source_rubric_span": "Two benefits described (2 marks)",
+      "source_reference_span": "Reduced complexity of the switches; routing can converge way faster; Increased flexibility",
+      "version": 1,
+      "created_at": "2026-07-29T10:02:05.515906Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "select_n",
+      "min_count": 2
+    },
+    {
+      "concept_id": "CE09_C2",
+      "question_id": "CE09",
+      "knowledge_point": "Describe two drawbacks of SDN compared to traditional networking",
+      "target_criteria": "FULL = at least 2 distinct drawbacks from the catalog; PARTIAL = exactly 1; ABSENT = 0",
+      "marks": 2.0,
+      "rubric_item_id": "2",
+      "evidence_facets": [
+        "control server complexity and bottleneck risk",
+        "dependency on control server availability",
+        "synchronization and consistency issues in distributed control"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "complexity",
+        "bottleneck",
+        "dependency",
+        "availability",
+        "synchronization",
+        "consistency"
+      ],
+      "acceptable_variants": [
+        "control servers can become a bottleneck",
+        "the network relies entirely on the control server",
+        "managing multiple control servers causes consistency problems",
+        "high complexity in the control plane",
+        "fault tolerance is difficult to manage"
+      ],
+      "partial_credit_rule": "exactly 1 drawback → 1.0 mark",
+      "source_rubric_span": "Two drawbacks described (2 marks)",
+      "source_reference_span": "High complexity of the control servers; Centralized routing in distributed systems; synchronization and consistency issues",
+      "version": 1,
+      "created_at": "2026-07-29T10:02:05.515916Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "select_n",
+      "min_count": 2
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 1,
+    "tokens_used": 3945,
+    "concept_count": 2
+  },
+  "run_ts": "2026-07-29T10:02:05.516017Z",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

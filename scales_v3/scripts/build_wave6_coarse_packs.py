@@ -45,15 +45,23 @@ QUESTIONS = [
         "rubric": (
             "Total 5 marks:\n"
             "1) Chooses connectionless (1 mark)\n"
-            "2) Many / changing partners (websites) (1.5 marks)\n"
-            "3) Short / brief interactions per site (1 mark)\n"
-            "4) Connection-oriented setup/teardown overhead argument (1.5 marks)"
+            "2) Reasoning for the choice (many partners / short interactions / overhead) (4 marks)"
         ),
         "rubric_items": [
-            {"rubric_item_id": "R1", "label": "Chooses connectionless", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R2", "label": "Many/changing partners", "marks": 1.5, "atomic": True},
-            {"rubric_item_id": "R3", "label": "Short interactions / skim", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R4", "label": "Connection overhead argument", "marks": 1.5, "atomic": True},
+            {
+                "rubric_item_id": "R1",
+                "label": "Chooses connectionless",
+                "marks": 1.0,
+                "atomic": True,
+                "description": "Do not subdivide — the choice itself.",
+            },
+            {
+                "rubric_item_id": "R2",
+                "label": "Reasoning for the choice",
+                "marks": 4.0,
+                "atomic": False,
+                "description": "MAY SPLIT into partners / short interactions / overhead arguments.",
+            },
         ],
     },
     {
@@ -68,14 +76,16 @@ QUESTIONS = [
         ),
         "rubric": (
             "Total 3 marks:\n"
-            "1) Unconfirmed connectionless (1 mark)\n"
-            "2) Confirmed connectionless (1 mark)\n"
-            "3) Connection-oriented (1 mark)"
+            "1) Three DLL service classes named and distinguished (3 marks)"
         ),
         "rubric_items": [
-            {"rubric_item_id": "R1", "label": "Unconfirmed connectionless", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R2", "label": "Confirmed connectionless", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R3", "label": "Connection-oriented", "marks": 1.0, "atomic": True},
+            {
+                "rubric_item_id": "R1",
+                "label": "Three DLL service classes named and distinguished",
+                "marks": 3.0,
+                "atomic": False,
+                "description": "MAY SPLIT into the three service classes.",
+            },
         ],
     },
     {
@@ -90,16 +100,24 @@ QUESTIONS = [
         ),
         "rubric": (
             "Total 4 marks:\n"
-            "1) Asynchronous framing (start/stop) (1 mark)\n"
-            "2) Asynchronous trade-off (simple/cheap vs low rate) (1 mark)\n"
-            "3) Synchronous framing (frames / SYN / flag) (1 mark)\n"
-            "4) Synchronous trade-off (rate / sync / complexity) (1 mark)"
+            "1) Framing difference (async start/stop + sync frames/SYN/flag) (2 marks)\n"
+            "2) Trade-offs (rates / complexity / synchronization) (2 marks)"
         ),
         "rubric_items": [
-            {"rubric_item_id": "R1", "label": "Async framing (start/stop)", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R2", "label": "Async trade-off", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R3", "label": "Sync framing (frames/SYN/flag)", "marks": 1.0, "atomic": True},
-            {"rubric_item_id": "R4", "label": "Sync trade-off", "marks": 1.0, "atomic": True},
+            {
+                "rubric_item_id": "R1",
+                "label": "Framing difference",
+                "marks": 2.0,
+                "atomic": False,
+                "description": "MAY SPLIT into async framing + sync framing.",
+            },
+            {
+                "rubric_item_id": "R2",
+                "label": "Trade-offs",
+                "marks": 2.0,
+                "atomic": False,
+                "description": "MAY SPLIT into async trade-off + sync trade-off.",
+            },
         ],
     },
     {

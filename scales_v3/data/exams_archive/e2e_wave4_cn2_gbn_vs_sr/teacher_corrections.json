@@ -1,0 +1,103 @@
+{
+  "exam_id": "e2e_wave4_cn2_gbn_vs_sr",
+  "corrections": [
+    {
+      "correction_id": "465a8ec3-9570-4335-8925-c5246cccd176",
+      "cbte_result_id": "2dc579af-6568-49be-8fbb-516898d72dac",
+      "review_item_id": "12ab5ee8-20fc-4238-94ec-e2eda760df93",
+      "student_id": "CN2_GOOD_02",
+      "concept_id": "Q1_C4",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "FULL",
+      "teacher_marks": 1.0,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T04:02:01.720562Z"
+    },
+    {
+      "correction_id": "ead13787-688c-43c8-8e8a-2ecf85579e1a",
+      "cbte_result_id": "a7bdf8fb-cd29-494d-a3e2-6ef900d4f11a",
+      "review_item_id": "047cb54e-c189-4c85-980a-6b1a9b59036a",
+      "student_id": "CN2_MID_01",
+      "concept_id": "Q1_C4",
+      "system_verdict": "PARTIAL",
+      "system_marks": 0.5,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T04:02:21.049687Z"
+    },
+    {
+      "correction_id": "7e6a52f8-68f0-4712-8fbf-4d6deb6f83f7",
+      "cbte_result_id": "5aece836-46a3-41f2-a0cd-8f82e2ee8738",
+      "review_item_id": "2b0b8dda-e7fe-49b2-8183-aa48e48b13c7",
+      "student_id": "CN2_MID_02",
+      "concept_id": "Q1_C4",
+      "system_verdict": "PARTIAL",
+      "system_marks": 0.5,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T04:02:33.594158Z"
+    },
+    {
+      "correction_id": "fa6caa8b-d70f-4c86-8528-b352a5174559",
+      "cbte_result_id": "dc194313-09fc-4026-aec4-aad22ce6cc4f",
+      "review_item_id": "beef21c9-c290-4e06-9c14-d1dddb4d6523",
+      "student_id": "CN2_PARTIAL_A",
+      "concept_id": "Q1_C1",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "go back N receiver discards out-of-order packets, but it never discussed about the out-of-order packets, how many packets a window or, but else, that's why I'm giving partial marks.Even the full marks can be created here, but I will choose the partial.",
+      "correction_type": "DOWNGRADE",
+      "created_at": "2026-07-25T04:05:05.498674Z"
+    },
+    {
+      "correction_id": "10445df9-a416-474f-b89b-16040f92f2ea",
+      "cbte_result_id": "5d5a9efb-2804-4390-aa24-dab36683717f",
+      "review_item_id": "d110bec0-2a4d-40a6-9079-3c7bdee8cf06",
+      "student_id": "CN2_PARTIAL_B",
+      "concept_id": "Q1_C1",
+      "system_verdict": "ABSENT",
+      "system_marks": 0.0,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "I'm not sure about these active repeat buffers, out-of-order packets, but I'm sure that acknowledgments are individually. Check, check for technicality if it is correct. Acknowledgments are sent individually, I think so. So the lost package is resent. I think we can give partial, it's in the range of partial to zero, but I will give partial here. Because zero because it can't explain about the GVN. To be honest, we should create another marks that is 0.25 and 0.75.",
+      "correction_type": "UPGRADE",
+      "created_at": "2026-07-25T04:07:13.139769Z"
+    },
+    {
+      "correction_id": "d4a6e61d-f799-4050-a7a3-4e21cc7249bc",
+      "cbte_result_id": "cf6c64c3-40de-476d-99d0-ed35e22becc2",
+      "review_item_id": "609c4b56-2b18-4e58-bfa3-c8e86bef9609",
+      "student_id": "CN2_PARTIAL_B",
+      "concept_id": "Q1_C2",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "FULL",
+      "teacher_marks": 1.0,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T04:07:49.472212Z"
+    },
+    {
+      "correction_id": "7de6cd38-57f3-45e3-a0ec-015f9853c97c",
+      "cbte_result_id": "4eec8db1-e675-4052-b3ca-f59512c6df4a",
+      "review_item_id": "c372fbb8-9d32-4ca0-a87f-7f7d8e80ed97",
+      "student_id": "CN2_PARTIAL_B",
+      "concept_id": "Q1_C3",
+      "system_verdict": "PARTIAL",
+      "system_marks": 0.5,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T04:08:12.509560Z"
+    }
+  ]
+}

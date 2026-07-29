@@ -1,0 +1,185 @@
+{
+  "exam_id": "e2e_wave1_tcp_handshake",
+  "final_results": [
+    {
+      "student_id": "STU_GOOD",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.37512257490307094,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "First TCP segment control information and purpose",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.",
+          "reasoning": "The student correctly identifies the control information (SYN flag and initial sequence number) carried in the first segment and accurately explains its purpose (to initiate/request a connection).",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Second TCP segment control information and purpose",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.",
+          "reasoning": "The student correctly identifies the control information in the second TCP segment as a SYN-ACK containing the server's own initial sequence number and an acknowledgement of the client's SYN with ack = client_ISN + 1.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Third TCP segment control information and purpose",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server's SYN.",
+          "reasoning": "The student correctly states that the third TCP segment carries an ACK with an acknowledgement number of server_ISN + 1 to confirm the server's SYN segment, perfectly matching the required control information and purpose.",
+          "trust_score": 0.3753818396246061,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the TCP three-way handshake",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "This synchronizes both sides and sets up a reliable connection before data is sent.",
+          "reasoning": "The student correctly states that the handshake synchronizes both sides and establishes a reliable connection prior to data transfer, satisfying the key requirements of the concept.",
+          "trust_score": 0.37512257490307094,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation"
+        }
+      ],
+      "created_at": "2026-07-23T16:20:23.243444Z"
+    },
+    {
+      "student_id": "STU_PARTIAL",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.7922953963279724,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "First TCP segment control information and purpose",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The client starts with SYN and the server answers, then the client confirms.",
+          "reasoning": "The student correctly identifies that the client uses SYN in the first segment to initiate the connection.",
+          "trust_score": 0.7922953963279724,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Second TCP segment control information and purpose",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer mentions that the server answers after the client starts with SYN, but it does not specify the control information (SYN-ACK, server ISN, acknowledgment number) or purpose of the second TCP segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Third TCP segment control information and purpose",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student mentions that 'the client confirms', which vaguely relates to the third step of the handshake, but fails to mention the required control information and purpose such as the ACK flag and the server ISN+1 acknowledgement number.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the TCP three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student mentions that the handshake 'makes sure both computers are ready', but fails to state the purpose of the TCP three-way handshake in terms of synchronizing sequence numbers, establishing a reliable connection, or full-duplex communication before data transfer as required by the expected evidence keywords.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T16:20:23.243444Z"
+    },
+    {
+      "student_id": "STU_WRONG",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.3038613464683294,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "First TCP segment control information and purpose",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses TCP with HTTP and describes GET, POST, and PUT requests instead of the TCP SYN segment and initial sequence number.",
+          "trust_score": 0.30761896073818207,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Second TCP segment control information and purpose",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the second TCP segment, control information such as SYN-ACK, server ISN, or acknowledgment of the client's ISN.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Third TCP segment control information and purpose",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses the TCP three-way handshake with HTTP methods (GET, POST, PUT) and TLS, failing to mention the third TCP segment control information and purpose entirely.",
+          "trust_score": 0.3038613464683294,
+          "reviewed_by": "teacher",
+          "teacher_comment": "PROVISIONAL AGREE with CGR for Wave1 report \u2014 awaiting human validation"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the TCP three-way handshake",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "HTTP uses a three-way handshake with GET, POST and PUT requests so the browser can download a webpage securely over TLS.",
+          "reasoning": "The student confuses TCP with HTTP, and the three-way handshake with HTTP methods (GET, POST, PUT), failing to mention the purpose of the TCP three-way handshake.",
+          "trust_score": 0.8960310816764832,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T16:20:23.243444Z"
+    }
+  ]
+}

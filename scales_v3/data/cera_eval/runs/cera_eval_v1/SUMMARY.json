@@ -1,0 +1,52 @@
+[
+  {
+    "id": "CE01",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE02",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE03",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE04",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE05",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE06",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE07",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE08",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE09",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  },
+  {
+    "id": "CE10",
+    "status": "error",
+    "error": "LLM API failed after 5 retries: litellm.APIConnectionError: GeminiException - Cannot connect to host generativelanguage.googleapis.com:443 ssl:default [Name or service not known]"
+  }
+]

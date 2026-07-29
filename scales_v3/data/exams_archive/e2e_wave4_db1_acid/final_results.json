@@ -1,0 +1,485 @@
+{
+  "exam_id": "e2e_wave4_db1_acid",
+  "final_results": [
+    {
+      "student_id": "DB1_GOOD_01",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Atomicity means the transaction is all-or-nothing: either all changes commit or the DBMS rolls everything back on failure.",
+          "reasoning": "The student explicitly defines atomicity using the required 'all-or-nothing' terminology and correctly identifies the rollback mechanism upon failure.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Consistency means after commit the database still satisfies its integrity constraints \u2014 it moves from one valid state to another.",
+          "reasoning": "The student explicitly mentions both 'integrity constraints' and 'valid state', satisfying the criteria for the consistency property definition.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Isolation means concurrent transactions do not interfere; each behaves as if it ran alone (or at least does not see dirty intermediate states).",
+          "reasoning": "The student explicitly mentions that concurrent transactions do not interfere and that they behave as if they ran alone, which satisfies the requirement for describing non-interference and serializability.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Durability means once committed, the results survive a crash because they are written to stable storage / the log.",
+          "reasoning": "The student explicitly mentions that committed data survives a crash and identifies stable storage as the medium, satisfying all criteria for the durability property.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_GOOD_02",
+      "question_id": "Q1",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.319576720893383,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "A = all operations succeed or none (rollback).",
+          "reasoning": "The student correctly identifies the all-or-nothing nature of atomicity and explicitly mentions rollback, satisfying the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "C = constraints/rules still hold after the transaction.",
+          "reasoning": "The student correctly identifies that consistency ensures constraints and rules are maintained after a transaction, which aligns with the requirement to describe the preservation of integrity constraints.",
+          "trust_score": 0.33656723499298097,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "I = transactions appear not to step on each other while running together.",
+          "reasoning": "The student correctly identifies that concurrent transactions do not interfere with one another using the informal phrase 'not to step on each other while running together'. This satisfies the partial credit rule.",
+          "trust_score": 0.319576720893383,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "D = committed updates are permanent even after power loss.",
+          "reasoning": "The student correctly identifies that committed data persists after a failure (power loss), which satisfies the durability property definition.",
+          "trust_score": 0.9812871813774109,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_MID_01",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.41279805898666383,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Atomicity is about completing fully.",
+          "reasoning": "The student captures the essence of the 'all' part of the all-or-nothing requirement by stating it is about 'completing fully', which implies the transaction must finish as a whole.",
+          "trust_score": 0.41279805898666383,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student states 'Consistency keeps data correct', which is too vague and does not mention integrity constraints or valid state transitions as required by the criteria.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student mentions that isolation is about 'multiple users' but fails to describe the core requirement of non-interference or serializability. The student explicitly states they cannot provide a precise definition.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Durability means data is saved.",
+          "reasoning": "The student mentions that data is 'saved', which aligns with the partial credit rule of mentioning that data is stored permanently.",
+          "trust_score": 0.9360942244529724,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_MID_02",
+      "question_id": "Q1",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.3067253455519676,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "transaction commits completely or is undone",
+          "reasoning": "The student correctly identifies the all-or-nothing nature of atomicity by stating the transaction either commits completely or is undone (rollback).",
+          "trust_score": 0.31672965884208676,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "database stays valid",
+          "reasoning": "The student mentions that the database stays 'valid', which aligns with the partial credit rule for mentioning a 'valid state'.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Isolation: I think it relates to locking so users do not conflict",
+          "reasoning": "The student correctly identifies that isolation involves preventing conflicts between users (concurrent transactions), which aligns with the partial credit rule for mentioning that concurrent transactions do not interfere.",
+          "trust_score": 0.3067253455519676,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "data remains after commit even if the system fails.",
+          "reasoning": "The student correctly identifies that committed data persists even in the event of a system failure, which aligns with the core definition of the Durability property.",
+          "trust_score": 0.3085814081132412,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_PARTIAL_A",
+      "question_id": "Q1",
+      "final_score": 2.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Atomicity is all-or-nothing with rollback on failure.",
+          "reasoning": "The student explicitly mentions both 'all-or-nothing' and 'rollback on failure', which fully satisfies the definition of the atomicity property.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they do not remember the Consistency property, failing to provide any definition or description related to integrity constraints or valid state transitions.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they do not remember the Isolation property, and therefore provides no definition or explanation of the concept.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Durability means committed data survives crashes.",
+          "reasoning": "The student correctly identifies that committed data survives crashes, which aligns with the requirement to describe the persistence of committed data against failure.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_PARTIAL_B",
+      "question_id": "Q1",
+      "final_score": 1.5,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated 'Blank on Atomicity and Durability', indicating they did not provide an explanation for the atomicity property.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Consistency preserves integrity constraints.",
+          "reasoning": "The student explicitly mentions that consistency preserves integrity constraints, which directly matches the target criteria and the expected evidence keywords.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Isolation means concurrent transactions should not interfere.",
+          "reasoning": "The student explicitly mentions that concurrent transactions should not interfere, which directly satisfies the partial credit rule provided in the instructions.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated 'Blank on Atomicity and Durability', indicating they did not provide an explanation for the Durability property.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_LOW_01",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.30090363938361403,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Atomicity is the CPU atom.",
+          "reasoning": "The student provides an incorrect definition of atomicity, confusing the database transaction property with the concept of an atomic unit in computer architecture (CPU).",
+          "trust_score": 0.3028805600479245,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Consistency is eventual consistency in DNS.",
+          "reasoning": "The student identifies consistency as 'eventual consistency in DNS', which is a concept related to distributed systems and CAP theorem, not the ACID consistency property in database transactions.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Isolation means air-gapped networks.",
+          "reasoning": "The student provides a definition of isolation that is completely unrelated to database transaction properties, instead describing a physical security concept.",
+          "trust_score": 0.30090363938361403,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Durability is RAID only.",
+          "reasoning": "The student incorrectly defines durability as RAID, which is a hardware redundancy technique, rather than the database property ensuring committed data persists through failures.",
+          "trust_score": 0.3188123553991318,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    },
+    {
+      "student_id": "DB1_LOW_02",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Atomicity property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the atomicity property.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Consistency property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the consistency property or its definition.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Isolation property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the isolation property.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Durability property definition",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the durability property.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T13:13:06.034957Z"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+You are an expert examiner. Given a question, reference answer, rubric, and total marks,
+decompose the grading criteria into Concept-Question-Answer (CQA) tuples.
+
+Rules:
+- Each CQA tests exactly ONE knowledge point
+- CQAs must be mutually exclusive (no double-penalization)
+- Mark allocations must sum exactly to total_marks
+- Concept `marks` must be a multiple of 0.25 (e.g. 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2).
+  Follow the rubric: if it assigns 1.5 to a concept, use marks=1.5 — do not round to int.
+- Include expected keywords and 3-5 acceptable paraphrase variants
+- Include a partial_credit_rule whenever the rubric allows partial marks, even for
+  a 1-mark CQA (for example, 0.5 out of 1). Use null only when the rubric truly
+  defines no partial-credit condition for that concept.
+- Preserve explicit FULL/PARTIAL/ABSENT exclusions from the rubric literally in
+  target_criteria and partial_credit_rule. Never broaden an exclusion: if the
+  rubric says implied/related evidence earns ABSENT, retain that rule verbatim.
+- Every CQA must trace to a specific rubric clause AND reference answer section
+- concept_id must follow the pattern: "{question_id}_C{N}" starting at C1
+
+CQA quality bar (general — apply to every question, not one domain):
+- A good CQA is a *gradable claim*, not a topic label. Prefer knowledge_point text that
+  states what the student must show (properties / contrast / mechanism), not only a
+  class or section name.
+- Rewrite knowledge_point in your own words as a testable student claim. Do not copy
+  long literal spans from the reference answer when a concise claim can be written.
+- knowledge_point MUST be claim-shaped: include a verb and state what the student must
+  demonstrate. Reject noun-phrase labels.
+  * Bad: "Mechanism of asynchronous transmission"
+  * Good: "Async transmission frames each character with start and stop bits"
+- Ask this check before finalizing each CQA: "Can two different student phrasings both
+  satisfy this claim?" If not, rewrite to be meaning-based rather than quote-based.
+- Facets must be *checkable evidence* from the reference answer. Prefer distinguishing
+  properties the student can write in their own words over loose synonym lists of the
+  same single idea.
+- Naming alone is never FULL when the reference also defines properties unless the
+  rubric explicitly awards a separate name-only mark. Put name-only in
+  partial_credit_rule (e.g. "name-only → 0.25").
+- acceptable_variants should cover common paraphrases of the *properties*, not only
+  alternate names of the class.
+- acceptable_variants are illustrative, not exhaustive. Include plain-language and
+  student-style variants (informal wording is allowed when meaning is correct).
+- Do not invent properties absent from both the reference and the rubric.
+
+Question-shape step (REQUIRED before each CQA — choose evidence_role from shape, not habit):
+  1. Ask: is this concept testing ONE idea said many ways, a REQUIRED checklist of
+     independent properties, or SELECTING N items from a larger valid catalog?
+  2. Set evidence_role accordingly:
+     * synonym_set — one claim; facets are alternate phrasings / cause-effect of that claim.
+       One clear paraphrase → FULL. Write target_criteria as an OR-set ("any of: …").
+       Do NOT set min_count.
+     * checklist — every listed property/part is required for FULL; some → PARTIAL.
+       Always set a real partial_credit_rule. Write "FULL requires: …".
+     * select_n — student must name/hit at least min_count DISTINCT valid catalog items.
+       Put the full catalog in evidence_facets. Set min_count (e.g. 2).
+       target_criteria MUST say: FULL = at least N distinct valid items; PARTIAL = fewer;
+       ABSENT = none. NEVER use synonym_set (one name would become FULL) and NEVER use
+       checklist on the whole catalog (that would require naming every item).
+  3. target_criteria is AUTHORITATIVE for FULL/PARTIAL/ABSENT. Write it explicitly.
+  4. evidence_mode is legacy only (synonym_set/select_n → ANY, checklist → ALL). Prefer
+     emitting evidence_role + min_count; evidence_mode may be omitted.
+
+Evidence facets and role (required on every CQA):
+  * evidence_facets: short list of observable evidence phrases from the REFERENCE ANSWER.
+    Phrase each facet as the *idea/property/option being tested*; avoid brittle quotes.
+    Example synonym_set: ["waiting for frames", "buffering", "increased delay"].
+    Example checklist: ["no ACK", "loss of data possible", "no flow control",
+    "no connect or disconnect"].
+    Example select_n (name any 2 of 6): ["Adaptation", "Security", "Medium Access Control",
+    "Quality of Service", "Scalability", "Power Consumption"] with min_count=2.
+  * Never require a mechanism/explanation ("must explain why") unless the teacher rubric
+    or question asks for it.
+  * expected_keywords must cover the facet set: at least one keyword per facet
+    (keyword appears in that facet text, case-insensitive).
+  * acceptable_variants should provide 3-5 diverse phrasings across facets, including
+    one plain-language variant that preserves meaning without technical wording.
+
+Hybrid nesting (when Structured Rubric Items are listed below):
+  * Rubric items are teacher mark *buckets*; concepts are finer checkable claims under
+    a bucket. Do not treat "1 bucket label = 1 shallow concept" when the reference
+    under that bucket clearly packs multiple independent ideas and the item is
+    MAY SPLIT.
+  * Prefer 1 rubric item → 1 concept when the item is ATOMIC or is already a
+    single idea (typical for short answers).
+  * Only split a rubric item into multiple concepts when it is marked MAY SPLIT
+    and clearly contains independent ideas. Child concept marks must sum exactly
+    to that item's marks. Set rubric_item_id on every CQA to the parent item id.
+  * Every concept under a MAY-SPLIT parent must include a partial_credit_rule.
+  * Do not invent unearnable sub-concepts the student cannot demonstrate from
+    the question stem and reference answer.
+- When no structured rubric items are provided, keep 1 rubric line ≈ 1 concept
+  unless a single line clearly packs multiple independent ideas.
+
+Question ID: {question_id}
+Question: {question_text}
+Reference Answer: {reference_answer}
+Rubric: {rubric}
+Total Marks: {total_marks}
+Structured Rubric Items:
+{rubric_items}
+
+Output as structured JSON with this schema:
+{
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "knowledge_point": "...",
+      "target_criteria": "...",
+      "marks": 1,
+      "rubric_item_id": "R1",
+      "evidence_facets": ["..."],
+      "evidence_role": "synonym_set",
+      "min_count": null,
+      "expected_keywords": ["..."],
+      "acceptable_variants": ["..."],
+      "partial_credit_rule": null,
+      "source_rubric_span": "...",
+      "source_reference_span": "..."
+    }
+  ]
+}
+
+Few-shot example (illustrative):
+Question: Explain the three-way handshake in TCP. [4 marks]
+Reference: TCP uses a three-way handshake (SYN → SYN-ACK → ACK) to establish a reliable connection.
+Rubric: 1 mark naming handshake; 1 mark SYN; 1 mark SYN-ACK; 1 mark purpose.
+Example CQA: concept_id=Q1_C1, knowledge_point="TCP uses three-way handshake", marks=1,
+evidence_facets=["three-way handshake"], evidence_role="synonym_set", min_count=null,
+expected_keywords=["three-way","handshake"], acceptable_variants=["3-step connection setup"].
+
+Few-shot example (half marks):
+Question: Name TCP congestion phases and explain cwnd growth. [5 marks]
+Rubric: 1 + 1.5 + 1.5 + 1.
+Example: marks may be 1, 1.5, 1.5, 1 (sum 5). Do not rewrite 1.5 as 1 or 2.
+
+Few-shot example (synonym_set, cause-effect in reference):
+Reference disadvantage: "need frames waiting for transmission or buffering and delay"
+→ evidence_facets=["waiting for frames","buffering","increased delay"],
+evidence_role="synonym_set", min_count=null,
+target_criteria="any of: waiting / buffering / delay counts as the disadvantage",
+expected_keywords=["waiting","buffering","delay"].
+
+Few-shot example (checklist, teacher demands both):
+Rubric: "names the class AND explains … PARTIAL: name only"
+→ evidence_facets=["class name","explanation"], evidence_role="checklist",
+target_criteria="FULL requires name AND explanation",
+partial_credit_rule="name only OR explanation only → half marks".
+
+Few-shot example (checklist, multi-property class from reference):
+Reference: "unconfirmed connectionless - no ACK, loss of data possible, no flow
+control, no connect or disconnect."
+→ evidence_role="checklist",
+evidence_facets=["no ACK","loss of data possible","no flow control","no connect or disconnect"],
+target_criteria="FULL requires all four properties; naming the class alone is not enough",
+partial_credit_rule="0.25 marks per property present; name-only → 0.25".
+Wrong: evidence_role="synonym_set" with the same facets (one property would award FULL).
+
+Few-shot example (select_n, name any 2 from a catalog):
+Question: "NAME and DESCRIBE two challenges" with 6 valid challenges in the reference.
+Naming concept:
+→ evidence_role="select_n", min_count=2,
+evidence_facets=[all 6 challenge names],
+target_criteria="FULL = at least 2 distinct valid challenges from the catalog; PARTIAL = exactly 1; ABSENT = 0",
+partial_credit_rule="exactly one valid challenge named → 0.5 marks".
+Wrong: synonym_set (one name = FULL) or checklist of all 6 (requires naming every challenge).
+
+Few-shot example (compare/contrast question):
+Question asks "difference between A and B" and the reference gives framing + trade-offs
+for each side.
+→ Put independent claims as separate concepts (or checklist facets if one rubric bucket packs
+them). Do not make a single synonym_set concept where "mentions A" alone earns the whole bucket.
+
+Few-shot example (nested bucket, MAY SPLIT):
+Rubric item R1 "Definition of frame bursting" marks=1.5 MAY SPLIT → may become
+Q1_C1 (concatenates frames / one transmission, 0.75) + Q1_C2 (does not release
+channel, 0.75), both with rubric_item_id="R1" and a partial_credit_rule each.

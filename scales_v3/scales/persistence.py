@@ -63,6 +63,10 @@ class ExamStore:
     def calibration_path(self) -> Path:
         return self.root / "calibration_report.json"
 
+    @property
+    def teacher_calibration_path(self) -> Path:
+        return self.root / "teacher_calibration.json"
+
     # ─── Generic I/O ──────────────────────────────────────────────────────
 
     def _write_json(self, path: Path, payload: dict[str, Any]) -> None:
@@ -97,6 +101,18 @@ class ExamStore:
 
     def save_calibration_report(self, report: dict[str, Any]) -> None:
         self._write_json(self.calibration_path, {"exam_id": self.exam_id, **report})
+
+    def save_teacher_calibration(self, payload: dict[str, Any]) -> None:
+        self._write_json(
+            self.teacher_calibration_path,
+            {"exam_id": self.exam_id, **payload},
+        )
+
+    def load_teacher_calibration(self) -> dict[str, Any] | None:
+        raw = self._read_json(self.teacher_calibration_path)
+        if not raw:
+            return None
+        return raw
 
     def save_student_answers(self, answers: list[StudentAnswer], question_id: str) -> None:
         self._write_json(

@@ -1,0 +1,87 @@
+{
+  "batch_id": "cera_eval_v1",
+  "description": "10 diverse SAF questions for CERA concept extraction evaluation",
+  "rubric_style": "coarse type-level (definition/reasoning/example), NOT concept-level",
+  "questions": [
+    {
+      "id": "CE01",
+      "type": "name_and_explain_properties",
+      "question_text": "Name the 3 service classes the Data Link Layer offers and explain the differences between the classes.",
+      "reference_answer": "1.unconfirmed connectionless - no ACK, loss of data possible, no flow control, no connect or disconnect.\n2.confirmed connectionless - with ACK, no loss of data (timeout and retransmit instead→ duplicates and sequence errors possible), no flow control, no connect or disconnect.\n3.connection-oriented - no data loss, duplication or sequencing errors. Instead a 3 phased communication with connect and disconnect, and flow control",
+      "total_marks": 3,
+      "rubric": "Total 3 marks:\n1) Naming the 3 classes (1.5 marks)\n2) Explaining distinguishing properties of each class (1.5 marks)"
+    },
+    {
+      "id": "CE02",
+      "type": "identify_and_reason",
+      "question_text": "Consider the following scenario: You are browsing the web for a very specific and important piece of information. However, you are not quite sure how to find it and adopt an iterative process of refining your query after every search, depending on the shown results and a skim of the first few websites. Is it better to use a connection-oriented or connectionless service for your communication in this scenario? Explain your answer in 1-4 sentences.",
+      "reference_answer": "Connectionless, because you will communicate with various partners (websites) for short periods of time. If you would initiate a connection with every website you skim, that would incur a lot of overhead in the connecting and disconnecting phase, just to have very short data transfers.",
+      "total_marks": 3,
+      "rubric": "Total 3 marks:\n1) Correct identification of service type (1 mark)\n2) Reasoning / justification for the choice (2 marks)"
+    },
+    {
+      "id": "CE03",
+      "type": "compare_contrast",
+      "question_text": "What is the difference between asynchronous and synchronous transmission mode in the Data Link Layer.",
+      "reference_answer": "Asynchronous transmission: Every character a self-contained unit surrounded by a start bit and a stop bit, which is an easy and cheap pattern, but causes low transmission rates.\n\nSynchronous transmission: Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) Description of each mode's mechanism (2 marks)\n2) Trade-offs / characteristics of each mode (2 marks)"
+    },
+    {
+      "id": "CE04",
+      "type": "definition_and_tradeoff",
+      "question_text": "What is \"frame bursting\"? Also, give 1 advantage and disadvantage compared to the carrier extension.",
+      "reference_answer": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.\nAdvantage: it is more efficient than carrier extension as single frames not filled up with garbage.\nDisadvantage: need frames waiting for transmission or buffering and delay of frames",
+      "total_marks": 3,
+      "rubric": "Total 3 marks:\n1) Definition of frame bursting (1 mark)\n2) One advantage compared to carrier extension (1 mark)\n3) One disadvantage compared to carrier extension (1 mark)"
+    },
+    {
+      "id": "CE05",
+      "type": "list_items",
+      "question_text": "What are the objectives of IPv6? Please state at least 4 objectives.",
+      "reference_answer": "To support billions of end-systems.\nTo reduce routing tables.\nTo simplify protocol processing with Simplified header.\nTo increase security.\nTo support real time data traffic (quality of service).\nFlow label, traffic class.\nTo provide multicasting.\nTo support mobility (roaming).\nTo be open for change (future): extension headers for additional change incorporation.\nTo coexistence with existing protocols.",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) At least 4 valid IPv6 objectives stated (4 marks, 1 per objective)"
+    },
+    {
+      "id": "CE06",
+      "type": "define_and_purpose",
+      "question_text": "What is the \"Dynamic Host Configuration Protocol (DHCP)\"? What is it used for?",
+      "reference_answer": "The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used in Internet Protocol (IP) networks, whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on the network. Further, DHCP has largely replaced RARP (and BOOTP)\n Uses of DHCP are: Simplifies installation and configuration of end systems. Allows for manual and automatic IP address assignment. May provide additional configuration information (DNS server, netmask, default router, etc.)",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) Definition of DHCP (2 marks)\n2) Uses / purpose of DHCP (2 marks)"
+    },
+    {
+      "id": "CE07",
+      "type": "multi_part_factual",
+      "question_text": "What are extension headers in IPv6 and where are they located in a packet? What is the main advantage of extension headers compared to IPv4?",
+      "reference_answer": "Extension headers are used to extend the fixed IPv6 header with additional, optional network layer information. If present, they are located between the fixed header/main header and payload/upper-layer header/transport-layer header.\n\nMain advantage: One of the following advantages are considered fully correct:\n1. It allows the appending of new options without changing the header.\n2. IPv6 packets with optional headers are typically processed faster/simpler by intermediate devices as most of the options are ignored (except \"Hop-by-Hop Extension\") while they are processed by all routers in IPv4 unless ordered otherwise.",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) What extension headers are (1.5 marks)\n2) Where they are located (1 mark)\n3) Main advantage over IPv4 (1.5 marks)"
+    },
+    {
+      "id": "CE08",
+      "type": "name_and_describe",
+      "question_text": "WHAT are the challenges of Mobile Routing compared to routing in fixed and wired networks? Please NAME and DESCRIBE two challenges.",
+      "reference_answer": "Possible Challenges:\n1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. Additionally, nodes can leave or join the network anywhere (within signal range) at any time.\n2.Security: Interception of packets or injection of faulty packages is easily possible in wireless networks. This may necessitate encryption and authentication.\n3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions of the transmitted signals.\n4.Quality of Service (QoS): Due to the rapidly changing network topology, imprecise network information, and resource constraints of participating nodes, it is challenging to provide the desired QoS.\n5.Scalability: Since it is not possible to know the number of participating nodes beforehand, it is vital that routing protocols are capable of dealing with increasing network sizes.\n6.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor.",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) Naming any 4 valid challenges (1 mark)\n2) Describing / explaining each of two named challenges (3 marks)"
+    },
+    {
+      "id": "CE09",
+      "type": "benefits_drawbacks",
+      "question_text": "What are the benefits and drawbacks of SDN compared to traditional networking, where each switch/router has to manage forwarding and routing on its own? Describe two benefits and two drawbacks in 1-2 sentences each.",
+      "reference_answer": "Benefits:\n- Reduced complexity of the switches: They only have to act according to their flow tables and do not have to make any local routing decisions.\n- Due to centralized routing, the routing can converge way faster to a global optimum than with decentralized routing because of a global view.\n- Increased flexibility: We can update the routing logic on the fly, routers/switches are not limited to hard-coded routing algorithms anymore.\n\nDrawbacks:\n- High complexity of the control servers: They have to make all the routing decisions for the (sub)network and can therefore be a bottleneck.\n- Centralized routing in distributed systems: The routing completely depends on the control server(s). To achieve better availability and fault tolerance, the number of control servers can be increased. However, this can lead to synchronization and consistency issues.",
+      "total_marks": 4,
+      "rubric": "Total 4 marks:\n1) Two benefits described (2 marks)\n2) Two drawbacks described (2 marks)"
+    },
+    {
+      "id": "CE10",
+      "type": "name_and_explain_mechanism",
+      "question_text": "In the lecture you have learned about congestion control with TCP. Name the 2 phases of congestion control and explain how the Congestion Window (cwnd) and the Slow Start Threshold (ss_thresh) change in each phase (after initialization, where cwnd = 1 and ss_thresh = advertised window size) in 1-4 sentences total.",
+      "reference_answer": "Slow start (cwnd less than ss_thresh):\nIn the slow start phase, cwnd is incremented by one every time a segment is acknowledged. This results in an exponential growth as cwnd is essentially doubled after each Round Trip Time (RTT). This is done until either a packet is lost or ss_thresh is reached. When cwnd >= ss_thresh, the congestion avoidance phase is entered.\nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.\n\nCongestion Avoidance (cwnd >= ss_thresh):\nIn the congestion avoidance phase, cwnd is incremented more slowly. There are different incrementation strategies, but they usually grow linearly, e.g. only increment cwnd by 1 after all sent segments have been acknowledged. This is done until a packet is lost. Typically, this means that cwnd less than ss_thresh and the slow start phase is entered again.\nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.",
+      "total_marks": 5,
+      "rubric": "Total 5 marks:\n1) Naming the 2 phases (1 mark)\n2) Explaining cwnd and ss_thresh behavior in each phase (4 marks)"
+    }
+  ]
+}

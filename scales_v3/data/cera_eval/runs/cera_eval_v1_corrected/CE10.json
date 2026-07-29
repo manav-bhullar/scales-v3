@@ -1,0 +1,116 @@
+{
+  "id": "CE10",
+  "question_text": "In the lecture you have learned about congestion control with TCP. Name the 2 phases of congestion control and explain how the Congestion Window (cwnd) and the Slow Start Threshold (ss_thresh) change in each phase (after initialization, where cwnd = 1 and ss_thresh = advertised window size) in 1-4 sentences total.",
+  "reference_answer": "Slow start (cwnd less than ss_thresh):\nIn the slow start phase, cwnd is incremented by one every time a segment is acknowledged. This results in an exponential growth as cwnd is essentially doubled after each Round Trip Time (RTT). This is done until either a packet is lost or ss_thresh is reached. When cwnd >= ss_thresh, the congestion avoidance phase is entered.\nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.\n\nCongestion Avoidance (cwnd >= ss_thresh):\nIn the congestion avoidance phase, cwnd is incremented more slowly. There are different incrementation strategies, but they usually grow linearly, e.g. only increment cwnd by 1 after all sent segments have been acknowledged. This is done until a packet is lost. Typically, this means that cwnd less than ss_thresh and the slow start phase is entered again.\nAfter a packet is lost / congestion the following adaption is made in both phases: ss_thresh = cwnd / 2. Then cwnd is reset to 1.",
+  "rubric": "Total 5 marks:\n1) Naming the 2 phases (1 mark)\n2) Explaining cwnd/ss_thresh in Slow Start (2 marks)\n3) Explaining cwnd/ss_thresh in Congestion Avoidance (2 marks)",
+  "total_marks": 5,
+  "marks_sum": 5.0,
+  "concept_count": 3,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE10_C1",
+      "question_id": "CE10",
+      "knowledge_point": "The student identifies the two phases of TCP congestion control as Slow Start and Congestion Avoidance.",
+      "target_criteria": "FULL requires naming both Slow Start and Congestion Avoidance",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "Slow Start",
+        "Congestion Avoidance"
+      ],
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "Slow Start",
+        "Congestion Avoidance"
+      ],
+      "acceptable_variants": [
+        "Slow-start and congestion avoidance",
+        "Slow start phase and congestion avoidance phase",
+        "The two phases are slow start and congestion avoidance"
+      ],
+      "partial_credit_rule": "naming only one phase → 0.5 marks",
+      "source_rubric_span": "Naming the 2 phases (1 mark)",
+      "source_reference_span": "Slow start (cwnd less than ss_thresh)... Congestion Avoidance (cwnd >= ss_thresh)",
+      "version": 1,
+      "created_at": "2026-07-29T11:36:42.457931Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "checklist",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE10_C2",
+      "question_id": "CE10",
+      "knowledge_point": "The student explains that in the Slow Start phase, the congestion window (cwnd) grows exponentially.",
+      "target_criteria": "any of: cwnd +1 per ACK / doubles each RTT / exponential growth",
+      "marks": 2.0,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "cwnd incremented by one per segment acknowledged",
+        "exponential growth",
+        "doubled after each RTT"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "increment",
+        "exponential",
+        "doubled",
+        "RTT"
+      ],
+      "acceptable_variants": [
+        "cwnd grows exponentially in slow start",
+        "cwnd doubles every round trip time",
+        "cwnd increases by one for every segment acknowledged",
+        "slow start causes rapid exponential window growth"
+      ],
+      "partial_credit_rule": "vague growth without mechanism → 1.0 mark",
+      "source_rubric_span": "Explaining Slow Start (2 marks)",
+      "source_reference_span": "In the slow start phase, cwnd is incremented by one every time a segment is acknowledged. This results in an exponential growth as cwnd is essentially doubled after each Round Trip Time (RTT).",
+      "version": 1,
+      "created_at": "2026-07-29T11:36:42.457945Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE10_C3",
+      "question_id": "CE10",
+      "knowledge_point": "The student explains that in the Congestion Avoidance phase, the congestion window (cwnd) grows linearly.",
+      "target_criteria": "any of: linear growth of cwnd / +1 after all segments ACKed",
+      "marks": 2.0,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "cwnd grows linearly",
+        "increment cwnd by 1 after all sent segments acknowledged"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "linear",
+        "increment",
+        "slowly"
+      ],
+      "acceptable_variants": [
+        "cwnd increases linearly in congestion avoidance",
+        "window grows slowly by one per window of segments",
+        "linear growth of cwnd",
+        "cwnd increases by one after all segments are acknowledged"
+      ],
+      "partial_credit_rule": "vague growth without mechanism → 1.0 mark",
+      "source_rubric_span": "Explaining Congestion Avoidance (2 marks)",
+      "source_reference_span": "In the congestion avoidance phase, cwnd is incremented more slowly... they usually grow linearly, e.g. only increment cwnd by 1 after all sent segments have been acknowledged.",
+      "version": 1,
+      "created_at": "2026-07-29T11:36:42.457954Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 9545,
+    "concept_count": 3
+  },
+  "run_ts": "2026-07-29T11:36:42.458104+00:00",
+  "iteration": "v1_iter_after_quality_review",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

@@ -1,0 +1,1445 @@
+{
+  "exam_id": "e2e_wave3_tcp_handshake_expanded",
+  "final_results": [
+    {
+      "student_id": "W3_GOOD_01",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.3000771359947976,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "First the client sends a SYN segment with its initial sequence number so the server knows the client wants to connect and which seq to expect.",
+          "reasoning": "The student clearly addresses the knowledge point by mentioning the SYN segment and the client's initial sequence number. This is a crucial part of the three-way handshake. The student also provides a clear explanation of why this information is important. The evidence is exact and relevant to the concept. There are no significant gaps or inaccuracies in the student's answer. The student's wording is informal, but the idea is clear. The purpose of the handshake is also implied, which is to set up a reliable connection. Therefore, the student demonstrates a full understanding of the concept.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The server replies with SYN-ACK: it sets its own initial sequence number and acknowledges the client's SYN with ack = client_ISN + 1.",
+          "reasoning": "The student provides a clear and accurate description of the second segment of the three-way handshake, including the SYN-ACK flag and the acknowledgement number. This demonstrates a thorough understanding of the concept.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Finally the client sends an ACK with ack = server_ISN + 1 to confirm the server\u2019s SYN.",
+          "reasoning": "The student clearly demonstrates the knowledge point by quoting the exact phrase from the protocol description. The evidence supports the concept by showing the client sending an ACK with the correct acknowledgement number. There are no arguments against awarding marks as the student provides a clear and accurate description of the protocol.",
+          "trust_score": 0.3000771359947976,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "This synchronizes both sides and sets up a reliable connection before data is sent.",
+          "reasoning": "The student clearly states that the three-way handshake synchronizes both sides and sets up a reliable connection, which matches the expected evidence keywords. The evidence is exact and relevant to the concept.",
+          "trust_score": 0.3005635568872094,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_GOOD_02",
+      "question_id": "Q1",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.30387579537928106,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "1) Client \u2192 server: SYN with starting sequence number (ISN) to request a connection.",
+          "reasoning": "The student clearly addresses the knowledge point by mentioning the SYN flag and the client's initial sequence number in the first segment. The evidence supports the concept by providing a detailed explanation of the three-way handshake. There are no significant gaps or inaccuracies in the student's answer.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "2) Server \u2192 client: SYN-ACK carrying the server ISN and acknowledging the client with ack = client ISN + 1.",
+          "reasoning": "The student correctly identifies the SYN-ACK packet and its purpose, but does not explicitly mention the SYN flag or the server ISN. However, the student does mention the client ISN, which is a crucial part of the sequence number synchronization. Additionally, the student's description of the SYN-ACK packet is accurate, but could be more detailed. Overall, the student demonstrates a partial understanding of the concept.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "3) Client \u2192 server: ACK with ack = server ISN + 1 confirming the server SYN.",
+          "reasoning": "The student provides the exact sequence number used in the third segment, which is a key aspect of the knowledge point. The student also correctly identifies the purpose of the handshake as synchronizing sequence numbers and establishing a reliable full-duplex session. The only minor issue is the use of 'ISN' instead of 'sequence number', but this does not detract from the overall accuracy of the response.",
+          "trust_score": 0.30387579537928106,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Goal: synchronize sequence numbers and establish a reliable full-duplex session before sending data.",
+          "reasoning": "The student clearly states the purpose of the three-way handshake as synchronizing sequence numbers and establishing a reliable connection, which matches the expected evidence keywords. The evidence span is a direct quote from the student answer, and there are no counterarguments.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_GOOD_03",
+      "question_id": "Q1",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.30005949803162363,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Client sends SYN plus its ISN so the server learns the starting sequence and that a connection is requested.",
+          "reasoning": "The student correctly identifies the control information carried in the first TCP segment of the three-way handshake as the SYN flag and the client's initial sequence number (ISN). This demonstrates a clear understanding of the knowledge point. The evidence is exact and relevant, and there are no arguments against awarding marks. The purpose of the handshake is also correctly stated, which further supports the student's understanding.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "(b) Server returns SYN-ACK with its ISN and ack=client_ISN+1 to acknowledge the client SYN.",
+          "reasoning": "The student correctly identifies the control information carried in the second TCP segment, including the SYN-ACK flag, server's ISN, and an acknowledgement number equal to client_ISN+1. However, the student does not explicitly mention the SYN-ACK flag in the first part of the sentence, and the phrase 'to acknowledge the client SYN' is not entirely accurate. Nevertheless, the student demonstrates a clear understanding of the second segment's purpose and control information.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Client finishes with ACK and ack=server_ISN+1.",
+          "reasoning": "The student correctly identifies the control information carried in the third TCP segment, specifically the ACK flag with acknowledgement number equal to server_ISN+1. This demonstrates a clear understanding of the final ACK in the three-way handshake.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "The handshake synchronizes sequence numbers and establishes a reliable connection before transfer.",
+          "reasoning": "The student clearly addresses the knowledge point of the three-way handshake, but is incomplete as they only mention the purpose of the handshake in general terms without specifying the exact purpose of synchronizing sequence numbers and establishing a reliable connection. The evidence provided is a paraphrased version of the expected evidence keywords. However, the student does provide some relevant information about the handshake process, which suggests that they have some understanding of the concept. Therefore, a partial credit of 0.5 marks is awarded.",
+          "trust_score": 0.30005949803162363,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_GOOD_04",
+      "question_id": "Q1",
+      "final_score": 2.5,
+      "total_marks": 4,
+      "overall_trust": 0.3001063740812242,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Step1: SYN + client initial sequence number (propose connection).",
+          "reasoning": "The student correctly identifies the SYN flag and client's initial sequence number in the first TCP segment of the three-way handshake. However, the student does not explicitly mention the purpose of the handshake, which is to sync both ends and make a reliable full-duplex TCP connection. Additionally, the student's explanation is brief and lacks detail. Nevertheless, the student addresses the knowledge point and provides some relevant information, which warrants partial credit.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Step2: SYN-ACK + server ISN + acknowledgement = client_ISN+1.",
+          "reasoning": "The student correctly identifies the control information carried in the second TCP segment, specifically the SYN-ACK flag, server ISN, and an acknowledgement number equal to client_ISN+1. However, the student does not explicitly mention the SYN-ACK flag in the first segment, which is a crucial detail. Additionally, the student's explanation for the third segment is incomplete, as they only mention the acknowledgement number without specifying the ACK flag. Nevertheless, the student's answer demonstrates a clear understanding of the three-way handshake and its purpose, which is to sync both ends and make a reliable full-duplex TCP connection.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Step3: ACK + acknowledgement = server_ISN+1.",
+          "reasoning": "The student correctly identifies the control information in the third TCP segment as the ACK with an acknowledgement number equal to server_ISN+1. However, the student does not explicitly mention the Final ACK, which is a crucial aspect of this knowledge point. Additionally, the student's explanation is brief and lacks detail. Nevertheless, the student does address this knowledge point, albeit incompletely. Therefore, a partial credit is awarded.",
+          "trust_score": 0.3040083710104227,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Purpose is to sync both ends and make a reliable full-duplex TCP connection.",
+          "reasoning": "The student clearly states the purpose of the three-way handshake as synchronizing both ends and establishing a reliable connection, which matches the expected evidence keywords. The student also provides a concise and accurate description of the handshake process in the previous steps, which supports their understanding of the concept.",
+          "trust_score": 0.3001063740812242,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_GOOD_05",
+      "question_id": "Q1",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The first segment carries the SYN flag and the client's initial sequence number because the client is requesting a connection and advertising where numbering starts.",
+          "reasoning": "The student clearly addresses the knowledge point and provides accurate information about the first segment of the three-way handshake. The evidence span is a direct quote from the student answer, and the reasoning explains why the student deserves full marks. There are no counterarguments as the student's answer is accurate and complete.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "The second carries SYN and ACK, the server's ISN, and ack equal to client ISN plus one.",
+          "reasoning": "The student correctly identifies the control information carried in the second TCP segment, including the SYN and ACK flags, the server's ISN, and the acknowledgement number equal to client ISN plus one. However, the student does not explicitly mention the SYN-ACK flag, which is a crucial aspect of this knowledge point. Additionally, the student's explanation is somewhat informal and lacks precision.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The third carries ACK with ack equal to server ISN plus one.",
+          "reasoning": "The student provides the exact information required for the third segment of the three-way handshake, demonstrating a clear understanding of the concept. The evidence span is a direct quote from the student answer, and the reasoning explains why the student's answer is correct.",
+          "trust_score": 0.8878908157348633,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "The overall purpose: synchronize sequence numbers and establish reliable bidirectional communication.",
+          "reasoning": "The student clearly addresses the knowledge point and provides a correct purpose of the three-way handshake. The evidence span is a direct quote from the student answer, and the reasoning explains why the student deserves full marks.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_01",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.30389269962906834,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "The client starts with SYN and the server answers, then the client confirms.",
+          "reasoning": "The student mentions the SYN flag, which is a key part of the three-way handshake. However, they do not explicitly mention the client initial sequence number. Additionally, their description of the handshake is incomplete and informal. Despite these gaps, the student does demonstrate some understanding of the handshake process.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention SYN-ACK or server ISN, which are crucial components of the knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "It makes sure both computers are ready.",
+          "reasoning": "The student mentions that the handshake makes sure both computers are ready, which implies a purpose of establishing a reliable connection. However, the student does not explicitly mention synchronizing sequence numbers. Additionally, the student's explanation is incomplete and lacks detail.",
+          "trust_score": 0.30389269962906834,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_02",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "The client sends SYN, the server replies, then the client ACKs. I do not remember the sequence-number details. The purpose of the three-way handshake is to synchronize sequence numbers on both ends and establish a reliable connection before data transfer.",
+          "reasoning": "The student mentions the SYN flag, which is a key part of the first segment. However, they do not provide any information about the client initial sequence number. They do mention the purpose of the three-way handshake, which is to synchronize sequence numbers, but this is not enough to award full marks. The student also mentions that they do not remember the sequence-number details, which suggests that they may not have fully understood the concept.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the sequence-number details, which is the key aspect of the knowledge point. The relevant sentence is: \"I do not remember the sequence-number details.\"",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "The purpose of the three-way handshake is to synchronize sequence numbers on both ends and establish a reliable connection before data transfer.",
+          "reasoning": "The student clearly addresses the purpose of the three-way handshake, but is incomplete as they do not mention the sequence-number details. The evidence supports the concept of establishing a reliable connection, but lacks the synchronization of sequence numbers. The student uses informal wording, but the idea is stated.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_03",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.3010551858693361,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "In TCP the client first sends a SYN. The server responds with SYN-ACK. Then the client sends the final ACK.",
+          "reasoning": "The student mentions the SYN flag, which is relevant to the knowledge point. However, the student does not explicitly mention the client initial sequence number. The student also does not provide a clear explanation of the purpose of the three-way handshake.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention SYN-ACK or server ISN, which are crucial components of the knowledge point.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the final ACK or ack=server_ISN+1 on the third segment.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "This handshake makes both ends ready and synchronizes them so data can be transferred reliably.",
+          "reasoning": "The student mentions that the handshake synchronizes both ends, which is a key aspect of the three-way handshake. However, they do not explicitly mention establishing a reliable connection. Additionally, they do not provide a clear explanation of the control information carried in each segment of the handshake. Despite these gaps, the student does provide some relevant information, so a partial credit is awarded.",
+          "trust_score": 0.3010551858693361,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_04",
+      "question_id": "Q1",
+      "final_score": 1.5,
+      "total_marks": 4,
+      "overall_trust": 0.31380256712436677,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "First packet has SYN. Second has SYN-ACK. Third has ACK.",
+          "reasoning": "The student correctly identifies the control information carried in the first, second, and third TCP segments of the three-way handshake. However, they are unsure about the ISN details, which is a crucial aspect of the knowledge point. Additionally, they do not mention the purpose of the handshake, which is an important part of the concept. Despite these gaps, the student demonstrates a clear understanding of the three-way handshake process.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Second has SYN-ACK.",
+          "reasoning": "The student correctly identifies the control information carried in the second TCP segment, which is SYN-ACK. However, they do not provide any information about the server ISN or the acknowledgement number. Additionally, they are unsure about the ISN details, which indicates a lack of understanding of the concept. Despite this, they do provide some relevant information, so partial credit is awarded.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "It is used so both sides agree before sending data.",
+          "reasoning": "The student mentions that the handshake is used for both sides to agree before sending data, which aligns with the purpose of the three-way handshake. However, the student does not provide specific details about the handshake process, such as the flags used or the sequence numbers involved. Additionally, the student's statement is somewhat vague and does not explicitly state the purpose of the handshake.",
+          "trust_score": 0.31380256712436677,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_05",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 4,
+      "overall_trust": 0.3022752763703465,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client sends SYN.",
+          "reasoning": "The student correctly identifies the control information carried in the first TCP segment of the three-way handshake, which is the SYN flag. However, they do not mention the client initial sequence number, which is also an important control information carried in the first segment. Additionally, the student does not provide a clear explanation of why the SYN flag is sent. Despite these gaps, the student does address the knowledge point, so a partial credit is awarded.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the second TCP segment of the three-way handshake, which is crucial for demonstrating the knowledge point.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "To open a reliable TCP session.",
+          "reasoning": "The student partially demonstrates the purpose of the three-way handshake by stating that it is to open a reliable TCP session, which aligns with the expected evidence keyword 'establish reliable connection'. However, the student does not explicitly mention 'synchronize sequence numbers' or any other relevant detail. Additionally, the student's answer is brief and lacks specific information about the handshake process. Counterarguments include the lack of detail about the handshake process and the absence of any mention of sequence number synchronization.",
+          "trust_score": 0.3022752763703465,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_06",
+      "question_id": "Q1",
+      "final_score": 1.5,
+      "total_marks": 4,
+      "overall_trust": 0.30005116446409374,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client chooses an initial sequence number; server chooses its own.",
+          "reasoning": "The student mentions the client and server choosing their initial sequence numbers, which is relevant to the knowledge point. However, they do not explicitly mention the SYN flag or the first segment of the three-way handshake. The purpose of the handshake is also mentioned, but it is not directly related to the knowledge point. Counterarguments: The student does not mention the SYN flag or the first segment of the three-way handshake, which is a crucial part of the knowledge point.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client chooses an initial sequence number; server chooses its own.",
+          "reasoning": "The student mentions the client and server choosing their own sequence numbers, which is relevant to the knowledge point. However, they do not explicitly mention the SYN-ACK packet or the server ISN + ack = client_ISN + 1. The student also does not provide a clear explanation of the purpose of the three-way handshake. The evidence is incomplete and lacks detail, but it does address the concept. Counterarguments: The student does not mention the SYN-ACK packet or the server ISN + ack = client_ISN + 1, which is a crucial part of the knowledge point. The student also does not provide a clear explanation of the purpose of the three-way handshake.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Purpose is connection establishment and sequence synchronization.",
+          "reasoning": "The student mentions the purpose of the handshake as connection establishment and sequence synchronization, which aligns with the expected evidence keywords. However, the student does not explicitly mention synchronizing sequence numbers or establishing a reliable connection. The student also uses informal wording, such as \"sequence synchronization\", which is not a direct match to the expected evidence keywords. Nevertheless, the student does address the knowledge point, albeit incompletely and vaguely. Therefore, a partial credit is awarded.",
+          "trust_score": 0.30005116446409374,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_07",
+      "question_id": "Q1",
+      "final_score": 1.5,
+      "total_marks": 4,
+      "overall_trust": 0.30015995387220756,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client SYN with ISN. Server answers with its ISN and ACKs the client. Client ACKs the server.",
+          "reasoning": "The student mentions the SYN flag and client's initial sequence number, which is relevant to the knowledge point. However, the student's explanation is incomplete and lacks detail. The student also uses informal wording, such as 'sync sequence numbers'. Despite these issues, the student clearly addresses the knowledge point, so a partial credit is awarded.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client SYN with ISN. Server answers with its ISN and ACKs the client. Client ACKs the server.",
+          "reasoning": "The student mentions the server ISN and the client ISN, but incorrectly states the acknowledgement number as +1. However, they do demonstrate the SYN-ACK and server ISN in the second segment. The purpose of the handshake is also mentioned, but not explicitly stated as a three-way handshake.",
+          "trust_score": 0.30015995387220756,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is the focus of this knowledge point.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "sync sequence numbers.",
+          "reasoning": "The student mentions the purpose of the handshake as syncing sequence numbers, which aligns with the expected evidence keywords. However, the student does not provide a clear explanation of the three-way handshake process, and the mention of ISN and ACKs is incomplete. Additionally, the student forgets the exact +1 acknowledgement arithmetic, which is an important detail. Despite these gaps, the student does address the concept of syncing sequence numbers, which is a key aspect of the three-way handshake.",
+          "trust_score": 0.3002647221786901,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_MID_08",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.30169351827353236,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about SYN and client initial sequence number on the first segment.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about SYN-ACK and server ISN + ack=client_ISN+1 on the second segment. The relevant part of the answer is about the purpose of the handshake, but it does not mention the specific details about the second segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the third segment of the three-way handshake.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "the handshake lets both ends synchronize and become ready for reliable data transfer.",
+          "reasoning": "The student partially demonstrates the concept by stating that the three-way handshake lets both ends synchronize, which is a key aspect of establishing a reliable connection. However, the student is incomplete and vague about the details of the handshake, specifically the flags and sequence numbers involved. Additionally, the student uses informal wording, such as \"become ready for reliable data transfer\", which is not precise enough. Nevertheless, the student clearly addresses the knowledge point, so a partial credit is awarded.",
+          "trust_score": 0.30169351827353236,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_LOW_01",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the three-way handshake in TCP. The relevant keywords 'SYN' and 'client initial sequence number' are not present in the answer.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the three-way handshake in TCP. The relevant keywords 'SYN-ACK' and 'server ISN' are not present in the answer.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point of the three-way handshake in TCP. The relevant keywords 'Final ACK' and 'ack=server_ISN+1' are not present in the student answer.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the purpose of the three-way handshake, and instead discusses HTTP and TLS.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_LOW_02",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the three-way handshake in TCP. The provided text is unrelated to the topic and does not mention SYN or client initial sequence number.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point about the three-way handshake in TCP. The provided text is unrelated to the topic and does not mention SYN-ACK or server ISN.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point of the third segment in the TCP three-way handshake.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the purpose of the three-way handshake, instead providing a comparison to DNS resolution.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_LOW_03",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point at all, and the provided sentence is unrelated to the concept of SYN and client initial sequence number on the first segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point at all. The relevant sentence does not contain any information about SYN-ACK and server ISN + ack=client_ISN+1 on the second segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point at all, so it is ABSENT.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the purpose of the three-way handshake, instead mentioning a different protocol (UDP).",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_LOW_04",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the knowledge point of SYN and client initial sequence number on the first segment. The relevant text does not mention SYN or sequence numbers.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of SYN-ACK and server ISN + ack=client_ISN+1 on the second segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the knowledge point of the third segment carrying the final ACK with ack=server_ISN+1.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the purpose of the three-way handshake. The relevant text is about congestion control, not synchronization or establishing a reliable connection.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_LOW_05",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student does not address the knowledge point at all, so it is ABSENT.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student does not address the knowledge point at all.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student does not address the knowledge point at all.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student does not address the purpose of the three-way handshake, so there are no arguments for or against awarding marks.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_A",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Client sends SYN with initial sequence number.",
+          "reasoning": "The student's answer partially demonstrates the knowledge point by mentioning the SYN flag and the client's initial sequence number. However, it lacks detail about the purpose of the three-way handshake.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of SYN-ACK and server ISN + ack=client_ISN+1 on the second segment. The relevant text is incomplete and does not mention the server ISN or the acknowledgement number.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the knowledge point of the final ACK/ack=server_ISN+1 on the third segment. The relevant sentence does not mention the third segment or the final ACK.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the purpose of the three-way handshake. The relevant sentence is: 'Purpose might be reliability somehow.' This sentence does not clearly state the purpose of the handshake, and the student does not provide any evidence to support their claim.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_B",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.44999999999999996,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of SYN and client initial sequence number on the first segment. The relevant text is about the second segment, not the first.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not provide a clear and accurate description of the second segment of the three-way handshake.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of the final ACK/ack=server_ISN+1 on the third segment. The relevant sentence/phrase is: 'Server replies with SYN-ACK and acknowledges client_ISN+1 and gives its own ISN.' This sentence does not mention the final ACK or the acknowledgement number equal to server_ISN+1.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the purpose of the three-way handshake. The relevant sentence is: 'Purpose: synchronize ends.' This sentence does not mention establishing a reliable connection, which is a key aspect of the three-way handshake.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_C",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.3004895256832242,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the knowledge point of SYN and client initial sequence number on the first segment. The relevant sentence/phrase is: \"Third segment is ACK with server_ISN+1.\" This shows that the student understands the sequence number in the third segment but does not address the first segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Third segment is ACK with server_ISN+1.",
+          "reasoning": "The student's answer partially demonstrates the knowledge point. They correctly identify the control information carried in the third TCP segment, which is an ACK with server_ISN+1. However, they fail to describe the first two steps of the three-way handshake.",
+          "trust_score": 0.3004895256832242,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer partially demonstrates the knowledge point. The relevant sentence is: 'Third segment is ACK with server_ISN+1.' This shows that the student understands the final ACK is sent in the third segment with an acknowledgement number equal to server_ISN+1. However, the student does not provide any information about the first two segments, which is a significant gap in their answer.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer partially demonstrates the purpose of the three-way handshake. The relevant sentence is: 'Handshake makes connection reliable.' This sentence implies that the handshake is used to establish a reliable connection, which aligns with the expected evidence keywords. However, the student fails to provide a clear explanation of the handshake process, which is a significant gap in their answer.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_D",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.44999999999999996,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the SYN flag or client initial sequence number, which are crucial for this knowledge point.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention sequence numbers or ISN, which are crucial for demonstrating the knowledge point.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention the third segment of the three-way handshake, which is crucial for demonstrating the knowledge point. Although the student mentions the purpose of the handshake, they do not address the specific control information carried in the third segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the purpose of the three-way handshake. The relevant sentence/phrase is: 'Purpose: establish connection before data.' This sentence does not mention synchronizing sequence numbers or establishing a reliable connection, which are the expected evidence keywords.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_E",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.44999999999999996,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer partially demonstrates the knowledge point. The relevant sentence is: \"(a) SYN and client ISN \u2014 to start numbering and ask to connect.\" This sentence includes the correct keywords 'SYN' and 'client initial sequence number'. However, the student's answer is incomplete and does not fully address the concept. The student's answer for part (b) is incorrect and unrelated to the concept.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not demonstrate the knowledge point about SYN-ACK and server ISN + ack=client_ISN+1 on the second segment. The relevant sentence/phrase is 'I confuse this with FIN handshake.' which indicates that the student is unsure about the second segment of the three-way handshake, but does not provide any relevant information about SYN-ACK and server ISN.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Final ACK somehow.",
+          "reasoning": "The student's answer partially addresses the knowledge point, but it is incomplete and vague. The phrase 'Final ACK somehow' does not provide enough information to demonstrate the concept of the third segment carrying the final ACK with ack=server_ISN+1.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer partially demonstrates the purpose of the three-way handshake. The relevant sentence is: 'Synchronize sequence numbers.' This sentence implies that the handshake is used to synchronize sequence numbers, which is a key aspect of establishing a reliable connection. However, the student does not explicitly mention the establishment of a reliable connection, which is another important aspect of the handshake.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    },
+    {
+      "student_id": "W3_PARTIAL_F",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.30244134832173586,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "SYN and client initial sequence number on first segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of SYN and client initial sequence number on the first segment. The relevant text does not mention the client initial sequence number.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SYN-ACK and server ISN + ack=client_ISN+1 on second segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of SYN-ACK and server ISN + ack=client_ISN+1 on the second segment. The relevant sentence/phrase is: 'Acknowledgement numbers equal previous ISN plus one on both sides.' This statement is incomplete and does not mention SYN-ACK or server ISN.",
+          "trust_score": 0.44999999999999996,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Final ACK / ack=server_ISN+1 on third segment",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not address the specific knowledge point of the final ACK/ack=server_ISN+1 on the third segment. The relevant text is about acknowledgement numbers equal to previous ISN plus one on both sides, but it does not specify that this happens on the third segment.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Purpose of the three-way handshake",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Everything is about flags: SYN, SYN-ACK, ACK. Acknowledgement numbers equal previous ISN plus one on both sides.",
+          "reasoning": "The student mentions the flags involved in the three-way handshake (SYN, SYN-ACK, ACK), which is a key aspect of the handshake. However, they do not explicitly state the purpose of the handshake, which is to synchronize sequence numbers and establish a reliable connection. The mention of acknowledgement numbers equaling the previous ISN plus one on both sides is a relevant detail, but it is not directly related to the purpose of the handshake.",
+          "trust_score": 0.30244134832173586,
+          "reviewed_by": "teacher",
+          "teacher_comment": "auto-agree smoke"
+        }
+      ],
+      "created_at": "2026-07-23T21:00:59.500193Z"
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "question_id": "CE08",
+  "total_marks": 4.0,
+  "n_students": 10,
+  "mae": 0.8,
+  "students": [
+    {
+      "student_id": "CE08_S01",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks": 3.0,
+      "abs_err": 0.0,
+      "answer_preview": "Heterogeneity: In wireless network, capabilities, responsibilities, and constraints of nodes might be different. For instance, the battery life of mobile devices, the transmission ",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "For instance, the battery life of mobile devices, the transmission range, the radios may be different."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "the drastic change in mobile network topology leads to difficulty in maintaining fairness."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S02",
+      "human_norm": 0.875,
+      "human_est_marks": 3.5,
+      "system_marks": 3.5,
+      "abs_err": 0.0,
+      "answer_preview": "The network no longer has an ether to which all nodes are connected. Instead each node has its own radius, where it can send and receive communication.  The differences and overlap",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "the hidden terminal or exposed terminal.  Also, due to the node’s mobility, the networks topology can change rapidly."
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "due to the node’s mobility, the networks topology can change rapidly."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Also, due to the node’s mobility, the networks topology can change rapidly."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "A first challenge is called Hidden Terminals. This means, that there might are nodes existing who can not hear each other. As a consequence like the example in the lecture collisio",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "As a consequence like the example in the lecture collisions can be caused because two nodes who can not hear each other, might are communicating with one in between them, because one sends to the one in the middle."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "A second challenge is \"near and far terminals\". Here the distance between nodes influences the strength of the signal. As a consequence the one who is closer to the communication partner drowns out the weaker one."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S04",
+      "human_norm": 0.5,
+      "human_est_marks": 2.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "Two challenges are hidden terminals, which occurs when two nodes can communicate over the same AP but not directly to each other, and exposed terminals, which occurs when two devic",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "exposed terminals, which occurs when two devices want to transmit data at the same time, but encounter a channel interference."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "exposed terminals, which occurs when two devices want to transmit data at the same time, but encounter a channel interference."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "HIDDEN TERMINALS: Node A and Node C can not receive message from each other, and they send messages to Node B simultaneously. But the transmission can conllide at Node B and both m",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "But the transmission can conllide at Node B and both messages are lost"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "B sends to A currently and C wants to send to D. But C has to wait because it considers that it will has interference."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.5,
+      "abs_err": 0.5,
+      "answer_preview": "Two of the many challenges of mobile routing compared to fixed / wired networks are Hidden Terminals and security issues. Hidden Terminal can occur, when the nodes are quite far ap",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Two of the many challenges of mobile routing compared to fixed / wired networks are Hidden Terminals and security issues."
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Then the distant nodes are not able to detect collisions occuring in the „middle“ of the network at the centered nodes, because the signal is not transmitted over all network nodes."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "If the network is available outside of the building, then any node outside will be able to detect the network."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.5,
+      "abs_err": 0.5,
+      "answer_preview": "(Due to the question in the forum, i will relate to slide 3, not to Challenges in Mobile Communications, which are on slide 10ff).  One basic challenge in Mobile Networking is the ",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "One basic challenge in Mobile Networking is the Power control: mobile devices have only a limited amount of power which should be used wisely and as little as possible. In addition, the routing in Mobile Networking has to deal with a high amount of dynamic so it needs to find new routes as nodes move or conditions change."
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "mobile devices have only a limited amount of power which should be used wisely and as little as possible."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "the routing in Mobile Networking has to deal with a high amount of dynamic so it needs to find new routes as nodes move or conditions change."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "Services Discovery is a challenge in Mobile Routing, since devices move around, so it becomes difficult to know where services are placed and how to be aware of them. Power control",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Services Discovery is a challenge in Mobile Routing, since devices move around, so it becomes difficult to know where services are placed and how to be aware of them."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Power control is also a challenge. In order for a device to have a certain range and suffer less interference, it needs a certain signal strength, which depends on the power."
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S09",
+      "human_norm": 0.875,
+      "human_est_marks": 3.5,
+      "system_marks": 1.5,
+      "abs_err": 2.0,
+      "answer_preview": "One challenge is the hidden terminal problem. CSMA doesn't work in mobile networks because a node cant see the whole transmission medium. They can't detect if there is some other n",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "They can't detect if there is some other node sending,to the same destination, at the moment so the send to and cause a collision."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE08_S10",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "One challenge in mobile routing is the so-called hidden terminal problem. As nodes have an inherently limited transmission range, different nodes in the network may be located to f",
+      "concepts": [
+        {
+          "concept_id": "CE08_C1",
+          "role": "select_n",
+          "min_count": 4,
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        },
+        {
+          "concept_id": "CE08_C2",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "However, there can be other nodes in the intersection range of these nodes that can send and receive to/ from both sides, increasing the risk of transmission collisions from the hidden nodes."
+        },
+        {
+          "concept_id": "CE08_C3",
+          "role": "synonym_set",
+          "min_count": null,
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "However, there can be other nodes in the intersection range of these nodes that can send and receive to/ from both sides, increasing the risk of transmission collisions from the hidden nodes."
+        }
+      ]
+    }
+  ]
+}

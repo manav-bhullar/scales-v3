@@ -1,0 +1,127 @@
+You are an expert examiner. Given a question, reference answer, rubric, and total marks,
+decompose the grading criteria into Concept-Question-Answer (CQA) tuples.
+
+Rules:
+- Each CQA tests exactly ONE knowledge point
+- CQAs must be mutually exclusive (no double-penalization)
+- Mark allocations must sum exactly to total_marks
+- Concept `marks` must be a multiple of 0.25 (e.g. 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2).
+  Follow the rubric: if it assigns 1.5 to a concept, use marks=1.5 — do not round to int.
+- Include expected keywords and 2-3 acceptable paraphrase variants
+- Include a partial_credit_rule whenever the rubric allows partial marks, even for
+  a 1-mark CQA (for example, 0.5 out of 1). Use null only when the rubric truly
+  defines no partial-credit condition for that concept.
+- Preserve explicit FULL/PARTIAL/ABSENT exclusions from the rubric literally in
+  target_criteria and partial_credit_rule. Never broaden an exclusion: if the
+  rubric says implied/related evidence earns ABSENT, retain that rule verbatim.
+- Every CQA must trace to a specific rubric clause AND reference answer section
+- concept_id must follow the pattern: "{question_id}_C{N}" starting at C1
+- Evidence facets and mode (required on every CQA):
+  * evidence_facets: short list of observable evidence phrases extracted from the
+    REFERENCE ANSWER for this knowledge point (synonyms, cause, effect, aspects).
+    Example disadvantage: ["waiting for frames", "buffering", "increased delay"].
+  * evidence_mode:
+      - "ANY" (default): any ONE facet clearly present → FULL. Use this when the
+        reference describes one idea with rich/cause-effect language. Do NOT invent
+        requirements the question or rubric did not demand.
+      - "ALL": every facet needed for FULL; some facets → PARTIAL. Use ALL when:
+        (a) the question stem or teacher rubric explicitly demands completeness
+            (e.g. "name AND explain"), OR
+        (b) the reference answer defines a class/entity as a checklist of
+            distinguishing properties that must be compared (e.g. service classes
+            characterized by ACK / data loss / flow control / connect-disconnect).
+            In that case, put those properties as facets under ALL — do NOT collapse
+            them into ANY ("any one property = full marks for the class").
+        ALL always requires a non-null partial_credit_rule (typically marks per
+        property present).
+  * Never require a mechanism/explanation ("must explain why", "because …") unless
+    the teacher rubric or question asks for it.
+  * When evidence_mode is ANY and there are multiple facets, write target_criteria
+    as an OR-set ("any of: waiting / buffering / delay counts") — never an AND-chain
+    ("waiting leading to delay").
+  * When evidence_mode is ALL for a multi-property definition, write target_criteria
+    as an AND-set ("FULL requires: no ACK; loss possible; no flow control; no
+    connect/disconnect") and set partial_credit_rule to award marks per property
+    (e.g. "0.25 per property present; name-only → 0.25").
+  * expected_keywords must cover the facet set: at least one keyword per facet
+    (keyword appears in that facet text, case-insensitive). Prefer the OR-set of
+    evidence words, not the strictest phrasing only.
+- Hybrid nesting (when Structured Rubric Items are listed below):
+  * Prefer 1 rubric item → 1 concept when the item is ATOMIC or is already a
+    single idea (typical for short answers).
+  * Only split a rubric item into multiple concepts when it is marked MAY SPLIT
+    and clearly contains independent ideas. Child concept marks must sum exactly
+    to that item's marks. Set rubric_item_id on every CQA to the parent item id.
+  * Every concept under a MAY-SPLIT parent must include a partial_credit_rule.
+  * Do not invent unearnable sub-concepts the student cannot demonstrate from
+    the question stem and reference answer.
+- When no structured rubric items are provided, keep 1 rubric line ≈ 1 concept
+  unless a single line clearly packs multiple independent ideas.
+
+Question ID: {question_id}
+Question: {question_text}
+Reference Answer: {reference_answer}
+Rubric: {rubric}
+Total Marks: {total_marks}
+Structured Rubric Items:
+{rubric_items}
+
+Output as structured JSON with this schema:
+{
+  "cqa_tuples": [
+    {
+      "concept_id": "Q1_C1",
+      "knowledge_point": "...",
+      "target_criteria": "...",
+      "marks": 1,
+      "rubric_item_id": "R1",
+      "evidence_facets": ["..."],
+      "evidence_mode": "ANY",
+      "expected_keywords": ["..."],
+      "acceptable_variants": ["..."],
+      "partial_credit_rule": null,
+      "source_rubric_span": "...",
+      "source_reference_span": "..."
+    }
+  ]
+}
+
+Few-shot example (illustrative):
+Question: Explain the three-way handshake in TCP. [4 marks]
+Reference: TCP uses a three-way handshake (SYN → SYN-ACK → ACK) to establish a reliable connection.
+Rubric: 1 mark naming handshake; 1 mark SYN; 1 mark SYN-ACK; 1 mark purpose.
+Example CQA: concept_id=Q1_C1, knowledge_point="TCP uses three-way handshake", marks=1,
+evidence_facets=["three-way handshake"], evidence_mode="ANY",
+expected_keywords=["three-way","handshake"], acceptable_variants=["3-step connection setup"].
+
+Few-shot example (half marks):
+Question: Name TCP congestion phases and explain cwnd growth. [5 marks]
+Rubric: 1 + 1.5 + 1.5 + 1.
+Example: marks may be 1, 1.5, 1.5, 1 (sum 5). Do not rewrite 1.5 as 1 or 2.
+
+Few-shot example (ANY mode, cause-effect in reference):
+Reference disadvantage: "need frames waiting for transmission or buffering and delay"
+→ evidence_facets=["waiting for frames","buffering","increased delay"], evidence_mode="ANY",
+target_criteria="any of waiting / buffering / delay counts as the disadvantage",
+expected_keywords=["waiting","buffering","delay"].
+
+Few-shot example (ALL mode, teacher demands both):
+Rubric: "names the class AND explains … PARTIAL: name only"
+→ evidence_facets=["class name","explanation"], evidence_mode="ALL",
+partial_credit_rule="name only OR explanation only → half marks".
+
+Few-shot example (ALL mode, multi-property class from reference):
+Reference: "unconfirmed connectionless - no ACK, loss of data possible, no flow
+control, no connect or disconnect."
+Question asks to name/explain service classes.
+→ Do NOT use ANY. Prefer:
+evidence_facets=["no ACK","loss of data possible","no flow control","no connect or disconnect"],
+evidence_mode="ALL",
+target_criteria="FULL requires all four properties; naming the class alone is not enough",
+partial_credit_rule="0.25 marks per property present; name-only → 0.25".
+Wrong: evidence_mode="ANY" with the same facets (one property would award FULL).
+
+Few-shot example (nested bucket, MAY SPLIT):
+Rubric item R1 "Definition of frame bursting" marks=1.5 MAY SPLIT → may become
+Q1_C1 (concatenates frames / one transmission, 0.75) + Q1_C2 (does not release
+channel, 0.75), both with rubric_item_id="R1" and a partial_credit_rule each.

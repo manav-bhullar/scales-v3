@@ -1,0 +1,485 @@
+{
+  "exam_id": "e2e_wave4_cn2_gbn_vs_sr",
+  "final_results": [
+    {
+      "student_id": "CN2_GOOD_01",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "In Go-Back-N the receiver drops out-of-order packets and only sends cumulative ACKs for the last correctly received in-order packet",
+          "reasoning": "The student explicitly mentions that the receiver drops out-of-order packets and uses cumulative ACKs for the last in-order packet, satisfying both requirements of the knowledge point.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Selective Repeat buffers correctly received out-of-order packets and ACKs them individually",
+          "reasoning": "The student explicitly mentions that the receiver buffers out-of-order packets and uses individual ACKs, satisfying both requirements of the knowledge point.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "After a loss, GBN retransmits the lost packet and every packet already sent after it that is still in the current window. SR retransmits only the missing packet.",
+          "reasoning": "The student correctly identifies that GBN retransmits the lost packet and all subsequent packets in the window, and that SR retransmits only the missing packet, satisfying both parts of the criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Prefer SR on lossy or bandwidth-limited links because it avoids useless retransmissions, even though the receiver needs more buffer and bookkeeping.",
+          "reasoning": "The student correctly identifies that SR is preferred for lossy/bandwidth-limited links (efficiency) and acknowledges the cost in terms of buffer and bookkeeping (complexity).",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_GOOD_02",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.305070311576128,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "GBN receiver: discard anything not next-expected; cumulative ACK only.",
+          "reasoning": "The student explicitly mentions both required behaviors: discarding out-of-order packets ('discard anything not next-expected') and using cumulative ACKs ('cumulative ACK only').",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "SR receiver: store out-of-order OK frames and ACK each",
+          "reasoning": "The student explicitly mentions that the SR receiver stores (buffers) out-of-order frames and acknowledges each one individually, satisfying both requirements of the knowledge point.",
+          "trust_score": 0.9768111705780029,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "GBN goes back and resends a whole suffix of the window; SR resends solely the unacked frame.",
+          "reasoning": "The student correctly identifies that GBN retransmits a 'whole suffix' (all subsequent packets) and that SR retransmits 'solely the unacked frame' (only the missing packet), satisfying both parts of the requirement.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "choose SR when retransmitting extras is expensive (wireless/loss), accepting more complex receiver state.",
+          "reasoning": "The student correctly identifies that SR is preferred for lossy links (wireless/loss) to avoid retransmitting extras (bandwidth efficiency) and explicitly acknowledges the cost of complexity (complex receiver state).",
+          "trust_score": 0.305070311576128,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_MID_01",
+      "question_id": "Q1",
+      "final_score": 1.5,
+      "total_marks": 4,
+      "overall_trust": 0.3013675156980753,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "In GBN if something is lost the receiver somehow rejects later packets.",
+          "reasoning": "The student correctly identifies that the GBN receiver rejects (discards) out-of-order packets. This satisfies the first half of the partial credit rule.",
+          "trust_score": 0.9832020401954651,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student mentions that SR is 'more selective' but fails to describe the specific receiver mechanisms required by the knowledge point, namely the buffering of out-of-order packets and the use of individual ACKs or NAKs.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "GBN retransmits more packets than SR.",
+          "reasoning": "The student correctly identifies that GBN retransmits more packets than SR, which implies the difference in retransmission behavior. However, the student fails to explicitly state that GBN retransmits the entire window or that SR retransmits only the missing packet, which is required for full credit.",
+          "trust_score": 0.9084585309028625,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "SR is better when the network loses packets often.",
+          "reasoning": "The student correctly identifies that SR is preferred for lossy links, which satisfies the benefit portion of the trade-off criteria.",
+          "trust_score": 0.3013675156980753,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_MID_02",
+      "question_id": "Q1",
+      "final_score": 2.5,
+      "total_marks": 4,
+      "overall_trust": 0.3767589328810573,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "GBN receiver waits for in-order delivery and uses cumulative acknowledgements.",
+          "reasoning": "The student correctly identifies the use of cumulative acknowledgements, which satisfies half of the criteria according to the partial credit rule.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "SR can accept packets out of order.",
+          "reasoning": "The student correctly identifies that the SR receiver buffers out-of-order packets, which satisfies one of the two required components of the knowledge point.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "I think GBN retransmits multiple packets and SR only one",
+          "reasoning": "The student correctly identifies the core difference in retransmission behavior: GBN retransmits multiple packets (implying the window) while SR retransmits only the specific missing packet.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "SR preferred on noisy links to save bandwidth.",
+          "reasoning": "The student correctly identifies the benefit of Selective Repeat (SR) in terms of bandwidth efficiency on noisy (lossy) links, satisfying the first part of the partial credit rule.",
+          "trust_score": 0.3767589328810573,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_PARTIAL_A",
+      "question_id": "Q1",
+      "final_score": 0.5,
+      "total_marks": 4,
+      "overall_trust": 0.44543282985687255,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Go-Back-N receiver discards out-of-order packets and ACKs the last in-order one.",
+          "reasoning": "The student correctly identifies both key behaviors required by the knowledge point: the discarding of out-of-order packets and the use of cumulative ACKs for the last in-order packet.",
+          "trust_score": 0.44543282985687255,
+          "reviewed_by": "teacher",
+          "teacher_comment": "go back N receiver discards out-of-order packets, but it never discussed about the out-of-order packets, how many packets a window or, but else, that's why I'm giving partial marks.Even the full marks can be created here, but I will choose the partial."
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they were not sure about Selective Repeat and did not provide any information regarding its receiver behavior.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states they are not sure about the sender retransmission difference between GBN and SR, and provides no information regarding the retransmission behavior of either protocol.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states they are not sure about Selective Repeat and does not provide any information regarding the trade-off between GBN and SR.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_PARTIAL_B",
+      "question_id": "Q1",
+      "final_score": 2.0,
+      "total_marks": 4,
+      "overall_trust": 0.307988341152668,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states 'I cannot clearly explain GBN receiver behaviour', and the provided text only describes Selective Repeat.",
+          "trust_score": 0.39999999999999997,
+          "reviewed_by": "teacher",
+          "teacher_comment": "I'm not sure about these active repeat buffers, out-of-order packets, but I'm sure that acknowledgments are individually. Check, check for technicality if it is correct. Acknowledgments are sent individually, I think so. So the lost package is resent. I think we can give partial, it's in the range of partial to zero, but I will give partial here. Because zero because it can't explain about the GVN. To be honest, we should create another marks that is 0.25 and 0.75."
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Selective Repeat buffers out-of-order packets and ACKs individually",
+          "reasoning": "The student explicitly mentions that the receiver buffers out-of-order packets and uses individual ACKs, satisfying both requirements of the target criteria.",
+          "trust_score": 0.307988341152668,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "so only the lost packet is resent",
+          "reasoning": "The student correctly identifies the Selective Repeat retransmission behavior by stating that only the lost packet is resent. However, the student fails to describe the GBN retransmission behavior, which is required for full marks.",
+          "trust_score": 0.3193144991993904,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states 'I cannot clearly explain GBN receiver behaviour or the trade-off', failing to address the trade-off between GBN and SR as required by the prompt.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_LOW_01",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention GBN receiver behavior, discarding packets, or cumulative ACKs. It incorrectly identifies GBN and SR as TCP congestion-control algorithms.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student's answer does not mention Selective Repeat receiver behavior, buffering, or individual acknowledgments. The response incorrectly identifies the protocols as congestion control algorithms.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not mention retransmission behavior for either GBN or SR. It incorrectly identifies these protocols as congestion control algorithms.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer does not address the trade-off between GBN and SR. It incorrectly identifies these protocols as congestion control algorithms and discusses handshakes, failing to mention bandwidth, lossy links, complexity, or buffering.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    },
+    {
+      "student_id": "CN2_LOW_02",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 4,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "GBN receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding GBN receiver behavior.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "SR receiver behavior",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the SR receiver's behavior.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Sender retransmission behavior difference",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the retransmission behaviors of GBN or SR.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Trade-off between GBN and SR",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the trade-off between GBN and SR.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T04:08:14.348908Z"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "question_id": "CE09",
+  "total_marks": 4.0,
+  "n_students": 10,
+  "mae": 1.2,
+  "students": [
+    {
+      "student_id": "CE09_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 4.0,
+      "abs_err": 0.0,
+      "answer_preview": "Benefit 1: Software defined networking allows more flexibility, because a device's logic is not hardcoded in the hardware. Instead of designing and building a new piece of hardware",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Software defined networking allows more flexibility, because a device's logic is not hardcoded in the hardware. ... This also reduces the complexity of the switch itself, because the logic is handled by the server."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Drawback 1: The CAP problem occurs, meaning that with SDN we can only achieve two of the following attributes at a time: consistency, availability, partition tolerance. A prioritization has to be made for each network. Drawback 2: Because the controllers are now responsible for the control logic of the entire network, the controllers get very complex and, in case of a distributed network, even have to handle communication with each other."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "A benefit of SDN is that the complexity of switches is reduced as the control logic is hosted in the control plane while switches still support forwarding in hardware which ensures",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "A benefit of SDN is that the complexity of switches is reduced as the control logic is hosted in the control plane"
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "A drawback of SDN is that the logical centralization of the controller complicates its implementation as the controller ideally should support all CAP properties, i.e. consistency, availability, and partitioning tolerance."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "Benefits: •\tSwitch complexity can be reduced since the control logic is removed from switches. •\tWith SDN, modification of the network control gets easier, because before that it w",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Switch complexity can be reduced since the control logic is removed from switches."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The controller is very vulnerable. It manages the whole network so if something happens to it (failure, security issues, ...) it effects the entire network."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S04",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks": 2.0,
+      "abs_err": 1.0,
+      "answer_preview": "Compared to traditional networking, one of benefits of SDN is increased flexibility of the network architecture, it can easily modify the network control logic. The other one is re",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "one of benefits of SDN is increased flexibility of the network architecture, it can easily modify the network control logic. The other one is reduced switch complexity, because control logic is removed from switch and hosted on servers."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S05",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks": 4.0,
+      "abs_err": 1.0,
+      "answer_preview": "Benefits: 1. By separating control logic from the actual package forwarding, we can simplify switches and at the same time keep the forwarding performance of hardware-based forward",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "1. By separating control logic from the actual package forwarding, we can simplify switches and at the same time keep the forwarding performance of hardware-based forwarding in switches. 2. But not only is the switch simpler, this change of architecture also allows us to change the control logic later on, without having to replace or modify the many devices that previously each had their own logic."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "1. If we decide to use centralised controlling, the implementation of the controller is very hard. 2. However, if we choose to use distributed controlling, we run into the well known CAP problem, which states that it is impossible to guarantee the three properties “Consistency”, “Availability” and “Partition Tolerance” in any distributed system simultaneously."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S06",
+      "human_norm": 0.875,
+      "human_est_marks": 3.5,
+      "system_marks": 2.0,
+      "abs_err": 1.5,
+      "answer_preview": "One benefit of SDN is that it enables a global view and management of the system and its devices. A second benefit is that SDN supports high-level programming languages for its log",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "One benefit of SDN is that it enables a global view and management of the system and its devices."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "A second drawback is that there might be a single point of failure in SDN."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S07",
+      "human_norm": 0.875,
+      "human_est_marks": 3.5,
+      "system_marks": 3.0,
+      "abs_err": 0.5,
+      "answer_preview": "A benefit is that you can modify your network to your specific needs. You have an API to program the network and make use of high level Programming languages in that process.  It a",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "It also reduces switch complexity because you could outsource the logic part of the switch to a separate server."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "But on the controller side  the logic is more complicated than the logic in a single switch.\nThere also exists a CAP Problem where you always can only reach 2 of 3 CAP properties maximum: consistency, availability, partitioning tolerance."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 2.0,
+      "abs_err": 2.0,
+      "answer_preview": "Pros: -With Software defined networking, you reduce switch complexity compared to traditional networking by having the control logic hosted on a server and removing it from the swi",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-With Software defined networking, you reduce switch complexity compared to traditional networking by having the control logic hosted on a server and removing it from the switch."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "You also have the vulnerability of the controller. Having the controller manage the whole network you have a single point of failure"
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S09",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks": 3.0,
+      "abs_err": 1.0,
+      "answer_preview": "Benefits:  Flexibility: Changes in the network like new protocols can be customized by software and do not need to be changed in hardware (which would results in buying new hardwar",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Changes in the network like new protocols can be customized by software and do not need to be changed in hardware (which would results in buying new hardware) and can be done without the hardware manufacturer. The nodes can run on a lot less complex algorithm, while more functionalities can be considered."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Switches/Routers do not decide for themselves, what to do with a new packet destination, and need to get the new information from the sdn controller, what produces challenges."
+        }
+      ]
+    },
+    {
+      "student_id": "CE09_S10",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks": 2.0,
+      "abs_err": 1.0,
+      "answer_preview": "advantages SDN: + offers more flexibility than the traditional networking we learned so far because it is possible to modify the network control logic easily (move from \"hard-coded",
+      "concepts": [
+        {
+          "concept_id": "CE09_C1",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "+ offers more flexibility than the traditional networking we learned so far because it is possible to modify the network control logic easily (move from \"hard-coded\" logic to exchangeable software).\n+ Reduced switch complexity which leads to better performance."
+        },
+        {
+          "concept_id": "CE09_C2",
+          "role": "select_n",
+          "min_count": 2,
+          "max_marks": 2.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": ""
+        }
+      ]
+    }
+  ]
+}

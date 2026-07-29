@@ -1,0 +1,75 @@
+{
+  "exam_id": "e2e_wave4_os1_process_vs_thread",
+  "corrections": [
+    {
+      "correction_id": "ba89d656-049d-4d19-867f-a51f476a0bcb",
+      "cbte_result_id": "6617e647-ebf6-42b1-9196-a012f9eef64b",
+      "review_item_id": "f19d4097-96bf-438d-861b-18c98a2b00c3",
+      "student_id": "OS1_LOW_01",
+      "concept_id": "Q1_C1",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "teacher_verdict": "INCORRECT",
+      "teacher_marks": 0.0,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T02:46:16.090434Z"
+    },
+    {
+      "correction_id": "4dfc2e63-b092-4f96-a8a8-8f60a4fe00ba",
+      "cbte_result_id": "69f67997-b2ee-4e54-a4dc-293d1e1d881d",
+      "review_item_id": "13ffe412-3caa-4d17-8834-d2ef1810fbfd",
+      "student_id": "OS1_MID_01",
+      "concept_id": "Q1_C5",
+      "system_verdict": "PARTIAL",
+      "system_marks": 0.5,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T02:47:14.916415Z"
+    },
+    {
+      "correction_id": "e2b22f8f-5a27-4ea2-a903-b927c7c9d976",
+      "cbte_result_id": "107636f7-692d-4f2f-891e-62a7b5941008",
+      "review_item_id": "b4873f8a-542f-419c-882d-fc4db0b1fd6c",
+      "student_id": "OS1_MID_02",
+      "concept_id": "Q1_C5",
+      "system_verdict": "PARTIAL",
+      "system_marks": 0.5,
+      "teacher_verdict": "PARTIAL",
+      "teacher_marks": 0.5,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T02:47:48.171258Z"
+    },
+    {
+      "correction_id": "b61e6348-71fa-4163-9f53-90832ce6f7db",
+      "cbte_result_id": "2f51ef78-e816-4feb-ba37-dfa32a9e7418",
+      "review_item_id": "ed3a2f1a-7d00-4c39-b41a-3342fa04bda0",
+      "student_id": "OS1_LOW_01",
+      "concept_id": "Q1_C2",
+      "system_verdict": "INCORRECT",
+      "system_marks": 0.0,
+      "teacher_verdict": "INCORRECT",
+      "teacher_marks": 0.0,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T02:48:24.131780Z"
+    },
+    {
+      "correction_id": "c7df1e66-1532-4a27-b2d9-5c8d55835e2f",
+      "cbte_result_id": "a17e8096-fb6f-4b5c-aa71-5e242f95b568",
+      "review_item_id": "d0125a92-a388-4379-959b-0fb7f5758e06",
+      "student_id": "OS1_MID_01",
+      "concept_id": "Q1_C1",
+      "system_verdict": "FULL",
+      "system_marks": 1.0,
+      "teacher_verdict": "FULL",
+      "teacher_marks": 1.0,
+      "teacher_comment": "",
+      "correction_type": "AGREE",
+      "created_at": "2026-07-25T02:48:47.218533Z"
+    }
+  ]
+}

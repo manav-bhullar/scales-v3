@@ -1,0 +1,581 @@
+{
+  "exam_id": "e2e_wave4_os1_process_vs_thread",
+  "final_results": [
+    {
+      "student_id": "OS1_GOOD_01",
+      "question_id": "Q1",
+      "final_score": 4.0,
+      "total_marks": 5,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student answer addresses the sub-questions (a) through (d) regarding resource sharing and advantages/disadvantages, but it never provides a definition for what a process is or what a thread is, nor does it explicitly state their relationship as required by the prompt.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Threads of the same process share the process address space \u2014 code, heap/data, and usually open file descriptors.",
+          "reasoning": "The student explicitly identifies all the required shared resources: address space, code, heap, data, and open files.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Each thread keeps its own stack, registers, and program counter (its own execution context).",
+          "reasoning": "The student explicitly identifies all three required resources (stack, registers, and program counter) as being private to each thread.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Multithreading is lighter: creating a thread and sharing data in memory is cheaper than multiple processes plus IPC.",
+          "reasoning": "The student explicitly identifies that multithreading is 'lighter' and that sharing data is 'cheaper' than IPC, which directly satisfies the requirement to identify an advantage such as lighter weight or easier communication.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "a bad thread can overwrite shared memory and crash the whole process; you also need locks to avoid races.",
+          "reasoning": "The student identifies multiple risks associated with multithreading, specifically mentioning memory corruption ('overwrite shared memory') and the necessity of synchronization ('need locks to avoid races'). This directly satisfies the target criteria.",
+          "trust_score": 0.9838359951972961,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_GOOD_02",
+      "question_id": "Q1",
+      "final_score": 4.5,
+      "total_marks": 5,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Process owns the address space that sibling threads share (code + data).",
+          "reasoning": "The student explicitly defines the relationship between a process and its threads by stating that the process owns the address space that sibling threads share. This satisfies the requirement to define the within-process relationship. However, the student fails to provide a formal definition for what a 'process' is (e.g., an instance of a program) or what a 'thread' is (e.g., a unit of execution).",
+          "trust_score": 0.8890064358711243,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Process owns the address space that sibling threads share (code + data).",
+          "reasoning": "The student explicitly identifies the address space, code, and data as resources shared by threads of the same process, which meets the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Each thread has a private stack and register set.",
+          "reasoning": "The student correctly identifies two of the key private resources (stack and registers) that are unique to each thread, satisfying the criteria for the knowledge point.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "faster context switch and easy shared-memory cooperation",
+          "reasoning": "The student correctly identifies two advantages of multithreading: faster context switching and easy shared-memory communication, both of which align with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "no strong isolation \u2014 one thread fault can take down all threads in the process; synchronization required.",
+          "reasoning": "The student correctly identifies two major risks of multithreading: the lack of strong isolation (which can lead to process-wide failure) and the necessity of synchronization.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_MID_01",
+      "question_id": "Q1",
+      "final_score": 3.5,
+      "total_marks": 5,
+      "overall_trust": 0.3605017840862274,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "A process is a running program and threads are smaller units inside it.",
+          "reasoning": "The student explicitly defines a process as a 'running program' and a thread as a 'smaller unit' and correctly identifies the relationship by stating threads are 'inside it'. This satisfies all requirements of the knowledge point.",
+          "trust_score": 0.36656627655029295,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Threads share memory.",
+          "reasoning": "The student correctly identifies that threads share memory, which is a key shared resource within a process.",
+          "trust_score": 0.9518366456031799,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Each thread somehow has its own workspace.",
+          "reasoning": "The student identifies that threads possess private resources by using the term 'workspace', which serves as a vague synonym for thread-specific context or storage.",
+          "trust_score": 0.9701776504516602,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Threads are faster than processes.",
+          "reasoning": "The student explicitly identifies that threads are faster than processes, which is a recognized advantage of multithreading.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "But threads can interfere with each other.",
+          "reasoning": "The student identifies that threads can 'interfere with each other', which is a vague but accurate description of the risks associated with shared memory and lack of isolation in multithreading. This aligns with the partial credit rule for vague risks.",
+          "trust_score": 0.3605017840862274,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_MID_02",
+      "question_id": "Q1",
+      "final_score": 2.5,
+      "total_marks": 5,
+      "overall_trust": 0.37575245355255904,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student did not provide a definition for either a process or a thread, nor did they explicitly state the relationship between them. The answer only discusses resource sharing and isolation, which are secondary characteristics rather than the required definitions.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Threads share the same memory space of the process.",
+          "reasoning": "The student correctly identifies that threads share the memory space of the process, which is a key shared resource. This satisfies the partial credit rule of identifying at least one shared resource.",
+          "trust_score": 0.9872570633888245,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "Each thread has its own stack.",
+          "reasoning": "The student correctly identified one of the required private resources (stack) as per the partial credit rule.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Communicating between threads is easier than between processes.",
+          "reasoning": "The student correctly identifies that communication between threads is easier, which is a recognized advantage of multithreading due to shared memory space.",
+          "trust_score": 0.8781210780143738,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "I know there is some isolation problem but I cannot explain it clearly.",
+          "reasoning": "The student correctly identifies 'isolation' as a problem associated with multithreading, which is one of the key risks mentioned in the criteria.",
+          "trust_score": 0.37575245355255904,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_PARTIAL_A",
+      "question_id": "Q1",
+      "final_score": 1.0,
+      "total_marks": 5,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student mentions that threads share the process address space, which describes a resource relationship, but they fail to provide a definition for either a process or a thread as required by the criteria.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "Threads share the process address space (code and data).",
+          "reasoning": "The student correctly identifies the address space, code, and data as shared resources, which meets the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they do not know what each thread owns privately, failing to identify any of the required resources such as stack, registers, or program counter.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they are not sure about the advantages of multithreading.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they do not know the disadvantages or risks of multithreading.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_PARTIAL_B",
+      "question_id": "Q1",
+      "final_score": 2.5,
+      "total_marks": 5,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states they forgot the definitions of process and thread, and the answer does not provide any definition for either term or describe their relationship.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1,
+          "evidence_span": "threads are lighter and can share memory easily",
+          "reasoning": "The student correctly identifies that threads share memory, which is a key resource shared by threads of the same process.",
+          "trust_score": 0.9808465838432312,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly states that they do not know the answer to the question regarding what is private to a thread, saying 'I forgot what is shared vs private between process and thread.'",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "threads are lighter and can share memory easily",
+          "reasoning": "The student explicitly identifies two advantages of multithreading: that they are 'lighter' and allow for 'shared memory', both of which are explicitly listed in the target criteria.",
+          "trust_score": 0.9755319356918335,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1,
+          "evidence_span": "need synchronization because of races",
+          "reasoning": "The student correctly identifies the need for synchronization and mentions race conditions, which are key risks associated with multithreading.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_LOW_01",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 5,
+      "overall_trust": 0.3004958747886121,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "A process is a CPU core and a thread is a GPU core.",
+          "reasoning": "The student attempts to define both terms, but the definitions provided are factually incorrect and do not describe the relationship between processes and threads.",
+          "trust_score": 0.3005356596317142,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Processes share the stack while threads each have their own hard disk partition.",
+          "reasoning": "The student attempts to identify shared resources but provides factually incorrect information regarding what is shared (stack) and what is private (hard disk partition).",
+          "trust_score": 0.3004958747886121,
+          "reviewed_by": "teacher",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "Processes share the stack while threads each have their own hard disk partition.",
+          "reasoning": "The student attempts to identify resources but provides factually incorrect information regarding what is shared and what is private.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student did not provide any information regarding the advantages of multithreading. The provided answer contains incorrect definitions of processes and threads.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student does not mention any risks or disadvantages associated with multithreading, such as synchronization, isolation, or memory corruption.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    },
+    {
+      "student_id": "OS1_LOW_02",
+      "question_id": "Q1",
+      "final_score": 0.0,
+      "total_marks": 5,
+      "overall_trust": 0.9,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "Q1_C1",
+          "knowledge_point": "Definition of process and thread and their relationship",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no definitions or relationship descriptions for processes or threads.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C2",
+          "knowledge_point": "Resources shared by threads of the same process",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding shared resources between threads.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C3",
+          "knowledge_point": "Resources private to each thread",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding thread-private resources.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C4",
+          "knowledge_point": "Advantage of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the advantages of multithreading.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "Q1_C5",
+          "knowledge_point": "Disadvantage or risk of multithreading",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1,
+          "evidence_span": "",
+          "reasoning": "The student explicitly stated they do not know the topic and provided no information regarding the risks or disadvantages of multithreading.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-25T02:48:48.769828Z"
+    }
+  ]
+}

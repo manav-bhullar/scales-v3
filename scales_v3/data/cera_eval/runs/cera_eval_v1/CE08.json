@@ -1,0 +1,143 @@
+{
+  "id": "CE08",
+  "question_text": "WHAT are the challenges of Mobile Routing compared to routing in fixed and wired networks? Please NAME and DESCRIBE two challenges.",
+  "reference_answer": "Possible Challenges:\n1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. Additionally, nodes can leave or join the network anywhere (within signal range) at any time.\n2.Security: Interception of packets or injection of faulty packages is easily possible in wireless networks. This may necessitate encryption and authentication.\n3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions of the transmitted signals.\n4.Quality of Service (QoS): Due to the rapidly changing network topology, imprecise network information, and resource constraints of participating nodes, it is challenging to provide the desired QoS.\n5.Scalability: Since it is not possible to know the number of participating nodes beforehand, it is vital that routing protocols are capable of dealing with increasing network sizes.\n6.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor.",
+  "rubric": "Total 4 marks:\n1) Naming any 4 valid challenges (1 mark). Catalog: Adaptation, Security, MAC, QoS, Scalability, Power.\n2) Describing challenge A (1.5 marks)\n3) Describing challenge B (1.5 marks)",
+  "total_marks": 4,
+  "marks_sum": 4.0,
+  "concept_count": 3,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE08_C1",
+      "question_id": "CE08",
+      "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+      "target_criteria": "FULL = at least 4 distinct valid challenges named; PARTIAL = 1..3; ABSENT = 0",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "Adaptation",
+        "Security",
+        "Medium Access Control",
+        "Quality of Service",
+        "Scalability",
+        "Power Consumption"
+      ],
+      "evidence_role": "select_n",
+      "min_count": 4,
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "Adaptation",
+        "Security",
+        "Medium Access Control",
+        "Quality of Service",
+        "Scalability",
+        "Power Consumption"
+      ],
+      "acceptable_variants": [
+        "node mobility",
+        "packet security",
+        "MAC issues",
+        "QoS constraints",
+        "network scaling",
+        "battery life"
+      ],
+      "partial_credit_rule": "1–3 valid names → 0.5 marks",
+      "source_rubric_span": "Naming any 2 valid challenges (1 mark). Catalog: Adaptation, Security, MAC, QoS, Scalability, Power.",
+      "source_reference_span": "1.Adaptation 2.Security 3.Medium Access Control 4.Quality of Service 5.Scalability 6.Power Consumption",
+      "version": 1,
+      "created_at": "2026-07-29T12:22:30.439455Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00"
+    },
+    {
+      "concept_id": "CE08_C2",
+      "question_id": "CE08",
+      "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+      "target_criteria": "any of: dynamic topology/node movement for Adaptation; packet interception/injection for Security; signal interference/collisions for MAC; topology/resource constraints for QoS; increasing network size for Scalability; battery-powered optimization for Power Consumption.",
+      "marks": 1.5,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "Adaptation: dynamic positioning or node mobility",
+        "Security: packet interception or injection",
+        "Medium Access Control: signal interference or collisions",
+        "Quality of Service: topology changes or resource constraints",
+        "Scalability: increasing network size",
+        "Power Consumption: battery-powered optimization"
+      ],
+      "evidence_role": "synonym_set",
+      "min_count": null,
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "dynamic",
+        "interception",
+        "interference",
+        "topology",
+        "size",
+        "battery"
+      ],
+      "acceptable_variants": [
+        "nodes moving around",
+        "hackers stealing data",
+        "signals crashing into each other",
+        "hard to guarantee quality",
+        "network getting too big",
+        "saving energy for batteries"
+      ],
+      "partial_credit_rule": "Partial descriptions that capture the core mechanism earn 0.75 marks.",
+      "source_rubric_span": "Describing challenge A (1.5 marks)",
+      "source_reference_span": "1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. 2.Security: Interception of packets or injection of faulty packages is easily possible. 3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions. 4.Quality of Service: Due to the rapidly changing network topology, imprecise network information, and resource constraints. 5.Scalability: It is vital that routing protocols are capable of dealing with increasing network sizes. 6.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor.",
+      "version": 1,
+      "created_at": "2026-07-29T12:22:30.439474Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00"
+    },
+    {
+      "concept_id": "CE08_C3",
+      "question_id": "CE08",
+      "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+      "target_criteria": "any of: dynamic topology/node movement for Adaptation; packet interception/injection for Security; signal interference/collisions for MAC; topology/resource constraints for QoS; increasing network size for Scalability; battery-powered optimization for Power Consumption.",
+      "marks": 1.5,
+      "rubric_item_id": "R3",
+      "evidence_facets": [
+        "Adaptation: dynamic positioning or node mobility",
+        "Security: packet interception or injection",
+        "Medium Access Control: signal interference or collisions",
+        "Quality of Service: topology changes or resource constraints",
+        "Scalability: increasing network size",
+        "Power Consumption: battery-powered optimization"
+      ],
+      "evidence_role": "synonym_set",
+      "min_count": null,
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "dynamic",
+        "interception",
+        "interference",
+        "topology",
+        "size",
+        "battery"
+      ],
+      "acceptable_variants": [
+        "nodes moving around",
+        "hackers stealing data",
+        "signals crashing into each other",
+        "hard to guarantee quality",
+        "network getting too big",
+        "saving energy for batteries"
+      ],
+      "partial_credit_rule": "Partial descriptions that capture the core mechanism earn 0.75 marks.",
+      "source_rubric_span": "Describing challenge B (1.5 marks)",
+      "source_reference_span": "1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. 2.Security: Interception of packets or injection of faulty packages is easily possible. 3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions. 4.Quality of Service: Due to the rapidly changing network topology, imprecise network information, and resource constraints. 5.Scalability: It is vital that routing protocols are capable of dealing with increasing network sizes. 6.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor.",
+      "version": 1,
+      "created_at": "2026-07-29T12:22:30.439485Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00"
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 9865,
+    "concept_count": 3
+  },
+  "run_ts": "2026-07-29T12:22:30.439592+00:00",
+  "iteration": "evidence_role_select_n",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

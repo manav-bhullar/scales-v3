@@ -1,0 +1,122 @@
+{
+  "id": "CE07",
+  "question_text": "What are extension headers in IPv6 and where are they located in a packet? What is the main advantage of extension headers compared to IPv4?",
+  "reference_answer": "Extension headers are used to extend the fixed IPv6 header with additional, optional network layer information. If present, they are located between the fixed header/main header and payload/upper-layer header/transport-layer header.\n\nMain advantage: One of the following advantages are considered fully correct:\n1. It allows the appending of new options without changing the header.\n2. IPv6 packets with optional headers are typically processed faster/simpler by intermediate devices as most of the options are ignored (except \"Hop-by-Hop Extension\") while they are processed by all routers in IPv4 unless ordered otherwise.",
+  "rubric": "Total 4 marks:\n1) What extension headers are (1.5 marks)\n2) Where they are located (1 mark)\n3) Main advantage over IPv4 (1.5 marks)",
+  "total_marks": 4,
+  "marks_sum": 4.0,
+  "concept_count": 3,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE07_C1",
+      "question_id": "CE07",
+      "knowledge_point": "Define the purpose of IPv6 extension headers",
+      "target_criteria": "FULL = at least 2 parts (extend fixed header / optional network-layer info); PARTIAL = exactly 1; ABSENT = 0",
+      "marks": 1.5,
+      "rubric_item_id": "1",
+      "evidence_facets": [
+        "extend fixed IPv6 header",
+        "additional optional network layer information"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "extend",
+        "fixed",
+        "optional",
+        "network",
+        "layer"
+      ],
+      "acceptable_variants": [
+        "headers that add extra features to the base IPv6 header",
+        "optional fields for extra network layer data",
+        "used to add more information beyond the standard header",
+        "extra headers for optional network layer functions"
+      ],
+      "partial_credit_rule": "exactly 1 part → 0.75 marks",
+      "source_rubric_span": "What extension headers are",
+      "source_reference_span": "Extension headers are used to extend the fixed IPv6 header with additional, optional network layer information.",
+      "version": 1,
+      "created_at": "2026-07-29T10:04:08.908806Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "select_n",
+      "min_count": 2
+    },
+    {
+      "concept_id": "CE07_C2",
+      "question_id": "CE07",
+      "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+      "target_criteria": "any of: between fixed header and payload / between main header and upper-layer or transport header",
+      "marks": 1.0,
+      "rubric_item_id": "2",
+      "evidence_facets": [
+        "between fixed header and payload",
+        "between main header and transport-layer header"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "between",
+        "fixed",
+        "header",
+        "payload",
+        "transport"
+      ],
+      "acceptable_variants": [
+        "placed after the main header but before the data",
+        "located between the base header and the transport layer",
+        "inserted after the fixed header and before the upper-layer header"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Where they are located",
+      "source_reference_span": "If present, they are located between the fixed header/main header and payload/upper-layer header/transport-layer header.",
+      "version": 1,
+      "created_at": "2026-07-29T10:04:08.908825Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE07_C3",
+      "question_id": "CE07",
+      "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+      "target_criteria": "any of: appending new options without changing header / faster processing by intermediate devices (ONE advantage is FULL)",
+      "marks": 1.5,
+      "rubric_item_id": "3",
+      "evidence_facets": [
+        "appending new options without changing the header",
+        "faster processing by intermediate devices"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "appending",
+        "options",
+        "changing",
+        "header",
+        "faster",
+        "processing",
+        "intermediate"
+      ],
+      "acceptable_variants": [
+        "allows adding new options without modifying the base header",
+        "intermediate routers process packets faster because they ignore most options",
+        "more efficient processing compared to IPv4",
+        "easier to add new features without header changes"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "Main advantage over IPv4",
+      "source_reference_span": "It allows the appending of new options without changing the header. IPv6 packets with optional headers are typically processed faster/simpler by intermediate devices.",
+      "version": 1,
+      "created_at": "2026-07-29T10:04:08.908837Z",
+      "updated_at": "2026-07-29T16:43:58.559578+00:00",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 4,
+    "tokens_used": 17401,
+    "concept_count": 3
+  },
+  "run_ts": "2026-07-29T10:04:08.909028Z",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

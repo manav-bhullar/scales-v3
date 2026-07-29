@@ -1,8 +1,11 @@
 import type {
   BreakdownPayload,
+  CalibratePayload,
   ExamSummary,
   FinalResult,
+  PaperSummary,
   ReviewPayload,
+  TeacherCalibrationBody,
   Verdict,
 } from "./types";
 
@@ -27,6 +30,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const api = {
   listExams: () => request<ExamSummary[]>("/api/exams"),
+  listPapers: () => request<PaperSummary[]>("/api/papers"),
   getReview: (examId: string) =>
     request<ReviewPayload>(`/api/exams/${encodeURIComponent(examId)}/review`),
   submitCorrection: (
@@ -53,5 +57,14 @@ export const api = {
   getBreakdown: (examId: string) =>
     request<BreakdownPayload>(
       `/api/exams/${encodeURIComponent(examId)}/breakdown`,
+    ),
+  getCalibrate: (examId: string) =>
+    request<CalibratePayload>(
+      `/api/exams/${encodeURIComponent(examId)}/calibrate`,
+    ),
+  putCalibrate: (examId: string, body: TeacherCalibrationBody) =>
+    request<CalibratePayload>(
+      `/api/exams/${encodeURIComponent(examId)}/calibrate`,
+      { method: "PUT", body: JSON.stringify(body) },
     ),
 };

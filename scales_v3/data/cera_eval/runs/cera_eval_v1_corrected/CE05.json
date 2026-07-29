@@ -1,0 +1,145 @@
+{
+  "id": "CE05",
+  "question_text": "What are the objectives of IPv6? Please state at least 4 objectives.",
+  "reference_answer": "To support billions of end-systems.\nTo reduce routing tables.\nTo simplify protocol processing with Simplified header.\nTo increase security.\nTo support real time data traffic (quality of service).\nFlow label, traffic class.\nTo provide multicasting.\nTo support mobility (roaming).\nTo be open for change (future): extension headers for additional change incorporation.\nTo coexistence with existing protocols.",
+  "rubric": "Total 4 marks:\n1) At least 4 valid IPv6 objectives stated (4 marks, 1 per objective)",
+  "total_marks": 4,
+  "marks_sum": 4.0,
+  "concept_count": 4,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE05_C1",
+      "question_id": "CE05",
+      "knowledge_point": "State the first IPv6 objective",
+      "target_criteria": "any of: support billions of end-systems / reduce routing tables",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "support billions of end-systems",
+        "reduce routing tables"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "billions",
+        "routing"
+      ],
+      "acceptable_variants": [
+        "support massive number of devices",
+        "scale to billions of hosts",
+        "smaller routing tables",
+        "efficient routing table management"
+      ],
+      "partial_credit_rule": "0 marks if no valid objective is stated",
+      "source_rubric_span": "At least 4 valid IPv6 objectives stated",
+      "source_reference_span": "To support billions of end-systems. To reduce routing tables.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:13.323078Z",
+      "updated_at": "2026-07-29T10:01:13.323080Z",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE05_C2",
+      "question_id": "CE05",
+      "knowledge_point": "State the second IPv6 objective",
+      "target_criteria": "any of: simplify protocol processing / increase security",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "simplify protocol processing",
+        "increase security"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "simplify",
+        "security"
+      ],
+      "acceptable_variants": [
+        "simpler header processing",
+        "streamlined protocol",
+        "better security",
+        "enhanced security features"
+      ],
+      "partial_credit_rule": "0 marks if no valid objective is stated",
+      "source_rubric_span": "At least 4 valid IPv6 objectives stated",
+      "source_reference_span": "To simplify protocol processing with Simplified header. To increase security.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:13.323090Z",
+      "updated_at": "2026-07-29T10:01:13.323090Z",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE05_C3",
+      "question_id": "CE05",
+      "knowledge_point": "State the third IPv6 objective",
+      "target_criteria": "any of: support real time data traffic / provide multicasting / support mobility",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "support real time data traffic",
+        "provide multicasting",
+        "support mobility"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "real time",
+        "multicasting",
+        "mobility"
+      ],
+      "acceptable_variants": [
+        "quality of service for real time data",
+        "multicast support",
+        "roaming support",
+        "mobile device support"
+      ],
+      "partial_credit_rule": "0 marks if no valid objective is stated",
+      "source_rubric_span": "At least 4 valid IPv6 objectives stated",
+      "source_reference_span": "To support real time data traffic (quality of service). To provide multicasting. To support mobility (roaming).",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:13.323097Z",
+      "updated_at": "2026-07-29T10:01:13.323097Z",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE05_C4",
+      "question_id": "CE05",
+      "knowledge_point": "State the fourth IPv6 objective",
+      "target_criteria": "any of: open for change / coexistence with existing protocols",
+      "marks": 1.0,
+      "rubric_item_id": null,
+      "evidence_facets": [
+        "open for change",
+        "coexistence with existing protocols"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "change",
+        "coexistence"
+      ],
+      "acceptable_variants": [
+        "future proofing",
+        "extensibility",
+        "backward compatibility",
+        "interoperability with older protocols"
+      ],
+      "partial_credit_rule": "0 marks if no valid objective is stated",
+      "source_rubric_span": "At least 4 valid IPv6 objectives stated",
+      "source_reference_span": "To be open for change (future). To coexistence with existing protocols.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:13.323103Z",
+      "updated_at": "2026-07-29T10:01:13.323103Z",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 3,
+    "tokens_used": 13224,
+    "concept_count": 4
+  },
+  "run_ts": "2026-07-29T10:01:13.323215Z",
+  "corrected_ts": "2026-07-29T16:43:58.559578+00:00"
+}

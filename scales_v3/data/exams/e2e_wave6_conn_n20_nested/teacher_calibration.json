@@ -1,0 +1,42 @@
+{
+  "exam_id": "e2e_wave6_conn_n20_nested",
+  "updated_at": "2026-07-28T16:41:50.115263+00:00",
+  "rubrics": [
+    {
+      "rubric_item_id": "R1",
+      "required_for_full_marks": true,
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "needed_for_rubric": true,
+          "partial_credit_note": "",
+          "matching_note": ""
+        }
+      ]
+    },
+    {
+      "rubric_item_id": "R2",
+      "required_for_full_marks": true,
+      "concepts": [
+        {
+          "concept_id": "Q1_C2",
+          "needed_for_rubric": true,
+          "partial_credit_note": "",
+          "matching_note": ""
+        },
+        {
+          "concept_id": "Q1_C3",
+          "needed_for_rubric": true,
+          "partial_credit_note": "",
+          "matching_note": ""
+        },
+        {
+          "concept_id": "Q1_C4",
+          "needed_for_rubric": true,
+          "partial_credit_note": "",
+          "matching_note": ""
+        }
+      ]
+    }
+  ]
+}

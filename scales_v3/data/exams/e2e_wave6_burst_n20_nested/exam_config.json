@@ -1,7 +1,7 @@
 {
   "exam": {
     "exam_id": "e2e_wave6_burst_n20_nested",
-    "subject": "SAF Wave6 coarse \u2014 Q-BURST (nested)",
+    "subject": "SAF Wave6 coarse — Q-BURST (nested)",
     "questions": [
       {
         "question_id": "Q1",
@@ -76,7 +76,7 @@
           },
           {
             "student_id": "QBURST_12",
-            "answer_text": "\u201cFrame bursting\u201d means concatenated pakets are reserved in a buffer of sender and transmitted together to the receiver.\nAdvantage\uff1a more efficient than carrier extension\nDisadvantage: it needs a number of frames waiting for the transmission"
+            "answer_text": "“Frame bursting” means concatenated pakets are reserved in a buffer of sender and transmitted together to the receiver.\nAdvantage： more efficient than carrier extension\nDisadvantage: it needs a number of frames waiting for the transmission"
           },
           {
             "student_id": "QBURST_13",

@@ -1,0 +1,30 @@
+{
+  "exam_id": "e2e_wave6_dll3_n20_nested",
+  "updated_at": "2026-07-28T16:48:18.073101+00:00",
+  "rubrics": [
+    {
+      "rubric_item_id": "R1",
+      "required_for_full_marks": true,
+      "concepts": [
+        {
+          "concept_id": "Q1_C1",
+          "needed_for_rubric": true,
+          "partial_credit_note": "0.25 per property (ACK / data loss / flow / connect)",
+          "matching_note": ""
+        },
+        {
+          "concept_id": "Q1_C2",
+          "needed_for_rubric": true,
+          "partial_credit_note": "0.25 per property (ACK / data loss / flow / connect)",
+          "matching_note": ""
+        },
+        {
+          "concept_id": "Q1_C3",
+          "needed_for_rubric": true,
+          "partial_credit_note": "0.25 per property (ACK / data loss / flow / connect)",
+          "matching_note": ""
+        }
+      ]
+    }
+  ]
+}

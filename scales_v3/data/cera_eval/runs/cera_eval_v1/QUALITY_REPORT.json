@@ -1,0 +1,84 @@
+[
+  {
+    "id": "CE01",
+    "status": "ok",
+    "concepts": 4,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE02",
+    "status": "ok",
+    "concepts": 2,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 50.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 50.0
+  },
+  {
+    "id": "CE03",
+    "status": "ok",
+    "concepts": 4,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE04",
+    "status": "ok",
+    "concepts": 3,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE05",
+    "status": "ok",
+    "concepts": 4,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE06",
+    "status": "ok",
+    "concepts": 2,
+    "claim_shaped_pct": 50.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE07",
+    "status": "error",
+    "error": "CERA validation failed after 5 retries: CE07_C2: evidence_mode=ANY with multiple facets requires target_criteria to state an OR-set starting with 'any of: \u2026' (facets=['between fixed header and payload', 'between main header and upper-layer header']). Do not require a mechanism beyond one facet."
+  },
+  {
+    "id": "CE08",
+    "status": "error",
+    "error": "CERA validation failed after 5 retries: CE08_C2: evidence_mode=ANY with multiple facets requires target_criteria to state an OR-set starting with 'any of: \u2026' (facets=['dynamic positioning or topology changes', 'interception or injection of packets', 'inference or collisions of signals', 'imprecise network information or resource constraints', 'unknown node count beforehand', 'battery-powered optimization']). Do not require a mechanism beyond one facet.; CE08_C3: evidence_mode=ANY with multiple facets requires target_criteria to state an OR-set starting with 'any of: \u2026' (facets=['dynamic positioning or topology changes', 'interception or injection of packets', 'inference or collisions of signals', 'imprecise network information or resource constraints', 'unknown node count beforehand', 'battery-powered optimization']). Do not require a mechanism beyond one facet."
+  },
+  {
+    "id": "CE09",
+    "status": "ok",
+    "concepts": 2,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  },
+  {
+    "id": "CE10",
+    "status": "ok",
+    "concepts": 3,
+    "claim_shaped_pct": 0.0,
+    "semantic_facet_pct": 100.0,
+    "variants_3plus_pct": 100.0,
+    "any_or_criteria_pct": 100.0
+  }
+]

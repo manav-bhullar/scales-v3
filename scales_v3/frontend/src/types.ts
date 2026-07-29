@@ -4,6 +4,13 @@ export type PipelinePhase = "idle" | "grading" | "awaiting_review" | "complete";
 export interface ExamSummary {
   exam_id: string;
   subject: string;
+  paper_id: string;
+  paper_title: string;
+  question_key: string;
+  question_label: string;
+  question_preview: string;
+  total_marks: number;
+  calibrated: boolean;
   phase: PipelinePhase;
   total_students: number;
   graded_count: number;
@@ -13,6 +20,15 @@ export interface ExamSummary {
   final_results_count: number;
   defer_rate: number;
   message: string;
+}
+
+export interface PaperSummary {
+  paper_id: string;
+  paper_title: string;
+  questions: ExamSummary[];
+  deferred_count: number;
+  question_count: number;
+  calibrated_count: number;
 }
 
 export interface ReviewProgress {
@@ -143,4 +159,70 @@ export interface FinalResult {
   has_deferred_concepts: boolean;
   all_concepts_resolved: boolean;
   concept_results: ConceptFeedback[];
+}
+
+/** Concept under a rubric bucket on the calibrate page. */
+export interface CalibrateConcept {
+  concept_id: string;
+  knowledge_point: string;
+  target_criteria: string;
+  marks: number;
+  evidence_facets: string[];
+  evidence_role?: string;
+  min_count?: number | null;
+  evidence_mode: string;
+  partial_credit_rule: string | null;
+  needed_for_rubric: boolean;
+  partial_credit_note: string;
+  matching_note: string;
+}
+
+/** Rubric item with nested concepts + teacher required/optional choice. */
+export interface CalibrateRubric {
+  rubric_item_id: string;
+  label: string;
+  marks: number;
+  atomic: boolean;
+  description: string;
+  synthetic: boolean;
+  required_for_full_marks: boolean;
+  concepts: CalibrateConcept[];
+}
+
+export interface CalibratePayload {
+  exam_id: string;
+  paper_id?: string;
+  paper_title?: string;
+  question_key?: string;
+  question_label?: string;
+  question: {
+    question_id: string;
+    question_text: string;
+    reference_answer: string;
+    rubric: string;
+    total_marks: number;
+  };
+  rubrics: CalibrateRubric[];
+  saved: boolean;
+  updated_at: string | null;
+  siblings?: {
+    exam_id: string;
+    question_key: string;
+    question_label: string;
+    calibrated: boolean;
+    total_marks: number;
+  }[];
+}
+
+export interface TeacherCalibrationBody {
+  rubrics: {
+    rubric_item_id: string;
+    required_for_full_marks: boolean;
+    concepts: {
+      concept_id: string;
+      needed_for_rubric: boolean;
+      partial_credit_note: string;
+      matching_note: string;
+    }[];
+  }[];
 }
