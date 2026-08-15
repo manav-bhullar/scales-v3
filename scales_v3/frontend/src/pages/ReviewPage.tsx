@@ -111,7 +111,10 @@ export function ReviewPage() {
             ← Exams
           </Link>
           <h1 className="m3-headline-large m-0 mt-1">Resolve DEFERs</h1>
-          <p className="m3-body-small m-0 mt-1" style={{ wordBreak: "break-all" }}>
+          <p
+            className="m3-body-small m-0 mt-1"
+            style={{ wordBreak: "break-all" }}
+          >
             {examId}
           </p>
         </div>
@@ -143,7 +146,8 @@ export function ReviewPage() {
             background:
               "linear-gradient(90deg, var(--md-sys-color-primary), color-mix(in srgb, var(--md-sys-color-tertiary) 55%, var(--md-sys-color-primary)))",
             borderRadius: "inherit",
-            transition: "width var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive)",
+            transition:
+              "width var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive)",
           }}
         />
       </div>

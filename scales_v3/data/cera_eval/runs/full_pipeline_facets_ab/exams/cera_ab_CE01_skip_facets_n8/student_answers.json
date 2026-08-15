@@ -1,0 +1,38 @@
+{
+  "exam_id": "cera_ab_CE01_skip_facets_n8",
+  "question_id": "CE01",
+  "student_answers": [
+    {
+      "student_id": "CE01_S01",
+      "answer_text": "1. Unconfirmed connectionless service: transmission of isolated, idependent units without acknowledgement, possible loss of data / no flow control\n2. Confirmed connectionless service: transmission with acknowledgement with no loss, has timeouts and retransmission / no flow control\n3. Connection-oriented service:  connection over error free channel with a flow control"
+    },
+    {
+      "student_id": "CE01_S02",
+      "answer_text": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error"
+    },
+    {
+      "student_id": "CE01_S03",
+      "answer_text": "The three services are called Unconfirmed Connectionless Service, Confirmed Connectionless Service and Connection-Oriented Service. These differ in their characteristics and areas of application. The first two services differ in whether or not the receiver acknowledges a packet when it receives it. The Unconfirmed Connectionless service does not include confirmation and assumes that the sent packets have arrived correctly. By confirming in the Confirmed Connectionless  service, this service can ensure that all packets have arrived at the receiver. Lost packets cannot be confirmed and so the recipient sends the packet again after a specified timeout. Both mentioned services have no flow control and no explicit requests to establish or disconnect a connection. The Confirmed Connectionless service has an implicit confirmation if a connection can be established, exactly when its packets are confirmed by the receiver. The confirmation of the second service class can cause duplicates to appear at the receiver, when the confirmation of a packet does not arrive at the sender. The third service class executes a three-phase communication and tries to establish a connection first. If the connection is confirmed, packets are sent until a request for disconnection is sent and confirmed. If the communication takes place over an error-free channel, no losses, no duplicates and no sequence errors are to be expected. Flow control is guaranteed by the \"handshake\". The first service type is usually used for the transition of isolated single units in channels with very low error rate (e.g. LANs, voice communication). The second service type can be used for channels with a high error rate such as mobile communication. The last service type is preferred for long and persistent communication."
+    },
+    {
+      "student_id": "CE01_S04",
+      "answer_text": "L2 Service Class \u201cUnconfirmed Connectionless Service\u201d: Transmission of isolated, independent units (frames). The data may be lost.\nL2 Service Class \u201cConfirmed Connectionless Service\u201d: Each single frame is acknowledged so there is no loss. Timeout and retransmit if the sender does not receive an acknowledgement within a certain time frame. Duplicates and sequence errors may happen due to \u201cretransmit\u201d.\nL2 Service Class \u201cConnection-Oriented Service\u201d: Three-phased communication: 1. Connection 2. Data Transfer 3. Disconnection. Hence no loss, no duplication, no sequencing error."
+    },
+    {
+      "student_id": "CE01_S05",
+      "answer_text": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error"
+    },
+    {
+      "student_id": "CE01_S06",
+      "answer_text": "Unconfirmed connectionless service: Data is sent directly and no acknowledgements are returned\nConfirmed Connectionless service: Data is sent directly and acknowledgements are returned by the receiver when the data has arrived. If the sender does not receive an acknowledgement with a defined time interval, the data is retransmitted.\nConnectionoriented service: Three phases of communication: 1. The connection is initialized by exchanging parameters 2. data is transferred 3. Connection is closed due to that flow control is possible in this case."
+    },
+    {
+      "student_id": "CE01_S07",
+      "answer_text": "For the Data Link Layer there are 3 service classes: unconfirmed conn.less service, confirmed conn.less service and connection-oriented service. \nIn unconfirmed conn.less service a data is sent to receiver. In this case a sender does not know if the sent data has arrived at the receiver. In other words, we don't get any confirmation from the receiver about arrived data. In case of loss data the data will be not resend. If any Correct data arrives, there is no correcting mechanism implemented.\nConfirmed conn.less service is a bidirectional communication between sender and receiver. After a sender sends a frame, a receiver sends an acknowledgement as answer. In the case of loss data a frame will be retransmit (after timeout) as long as the sender gets an acknowledgement from the receiver. In confirmed conn.less service there is no flow control implemented. \nIn the last kind of service, connection-oriented service, a connection between parties has to be estabilished firstly before we can send any data. We speak of 3-phased communication: connection estabilishment (a sender sends a request to receiver, the receiver confirms it); data transfer (after the receiver gets a frame, sends an acknowledgement to the sender); disconnection (analog to connection estabilishment). In connection-oriented service there is flow control implemented."
+    },
+    {
+      "student_id": "CE01_S08",
+      "answer_text": "1.unconfirmed connection-less service 2.confirmed connection-less service 3.connection-oriented service.\n2. there is flow-control in connection-oriented service. But in other two there's no flow-control, no connect or disconnect.\nThere is no loss, no duplication, no sequencing error in connection-oriented service."
+    }
+  ]
+}

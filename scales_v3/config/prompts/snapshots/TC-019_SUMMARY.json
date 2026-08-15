@@ -1,0 +1,59 @@
+{
+  "run_ts": "2026-07-30T13:53:22.795050+00:00",
+  "n_per_question": 8,
+  "skip_facets": true,
+  "qids": [
+    "CE08",
+    "CE03",
+    "CE10",
+    "CE01",
+    "CE05",
+    "CE06",
+    "CE07"
+  ],
+  "note": "CGRModule(skip_facets=True) blanks facets/keywords/variants in prompt; forces synonym_set in prompt. CQAs themselves unchanged on disk.",
+  "per_question": [
+    {
+      "question_id": "CE08",
+      "n": 8,
+      "mae_nofacets": 0.562,
+      "mae_with_facets": 0.625
+    },
+    {
+      "question_id": "CE03",
+      "n": 8,
+      "mae_nofacets": 0.688,
+      "mae_with_facets": 0.875
+    },
+    {
+      "question_id": "CE10",
+      "n": 8,
+      "mae_nofacets": 1.047,
+      "mae_with_facets": 0.891
+    },
+    {
+      "question_id": "CE01",
+      "n": 8,
+      "mae_nofacets": 0.469,
+      "mae_with_facets": 0.5
+    },
+    {
+      "question_id": "CE05",
+      "n": 8,
+      "mae_nofacets": 0.562,
+      "mae_with_facets": 0.5
+    },
+    {
+      "question_id": "CE06",
+      "n": 8,
+      "mae_nofacets": 0.375,
+      "mae_with_facets": 0.375
+    },
+    {
+      "question_id": "CE07",
+      "n": 8,
+      "mae_nofacets": 0.25,
+      "mae_with_facets": 0.344
+    }
+  ]
+}

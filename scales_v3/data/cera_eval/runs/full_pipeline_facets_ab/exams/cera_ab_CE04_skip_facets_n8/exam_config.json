@@ -1,0 +1,51 @@
+{
+  "exam": {
+    "exam_id": "cera_ab_CE04_skip_facets_n8",
+    "subject": "CERA facets A/B \u2014 CE04 (skip_facets)",
+    "questions": [
+      {
+        "question_id": "CE04",
+        "question_text": "What is \"frame bursting\"? Also, give 1 advantage and disadvantage compared to the carrier extension.",
+        "reference_answer": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.\nAdvantage: it is more efficient than carrier extension as single frames not filled up with garbage.\nDisadvantage: need frames waiting for transmission or buffering and delay of frames",
+        "rubric": "Total 3 marks:\n1) Definition of frame bursting (1 mark)\n2) One advantage compared to carrier extension (1 mark)\n3) One disadvantage compared to carrier extension (1 mark)",
+        "total_marks": 3,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "CE04_S01",
+            "answer_text": "Frame bursting allow sender to transmit a Concatenated sequence of multiple frames in a single transmission. It has better efficiency however it needs frames waiting for transmission."
+          },
+          {
+            "student_id": "CE04_S02",
+            "answer_text": "Sending multiple different frames concatenated to each other is called frame bursting. Frame bursting might increase latency, as the sender has to buffer multiple frames until he can start sending a burst. However frame bursting increases the efficiency compared to carrier extension, as the amount of user data transferred is higher. Carrier extension extends the message with unused bits which lower the efficiency."
+          },
+          {
+            "student_id": "CE04_S03",
+            "answer_text": "Frame Bursting allows sender to transmit CONCATENATED SEQUENCE OF MULTIPLE FRAMES in a single transmission.\n\nAdvantage as compared to carrier extension is:\n-Better efficiency\n\nDisadvantage as compared to carrier extension is:\n-it needs frames waiting for transmission"
+          },
+          {
+            "student_id": "CE04_S04",
+            "answer_text": "Frame bursting is a way to increase the speeds of the ethernet protocol in the shared broadcast mode. To meet the minimum frame length requirements at the greater speeds multiple frames are concatenated to a single, larger frame. This allows to detect collisions with faster speeds at the cost of a delay when sending a larger frame. One advantage over the carrier extension is the improved throughput, at the cost of an increased latency (disadvantage)."
+          },
+          {
+            "student_id": "CE04_S05",
+            "answer_text": "In frame bursting, the sender can transmit multiple frames by concatenating them in single transmission.\nThe carrier extension provides really low efficiency with only 46byte  user data being transmitted using 512 byte.\nWhereas the frame bursting provides a much better performance."
+          },
+          {
+            "student_id": "CE04_S06",
+            "answer_text": "Sender collects and concatenates sequence of multiple frames to send it with single transmission.\n+ better efficiency\nDisadvantage: needs frames waiting for transmission"
+          },
+          {
+            "student_id": "CE04_S07",
+            "answer_text": "In frame bursting, instead of the sender sending one packet at a time, it sends ten packets at once. The sender waits for the packets until it has ten packets ready to send. Put them together and just then send them.\n\nAdvantage: better performance than carrier extension, since more data is sent at a time.\n\nDisadvantage: if there are only one or two packets to send, the sender will be waiting for the remain, to reach the 10 packets. If there are not 10 packets, after a timeout, the sender adds rubbish to the frame (so it has the needed size). So, the packets will be sent with a delay and with unnecessary data."
+          },
+          {
+            "student_id": "CE04_S08",
+            "answer_text": "To be able to transmit data over lager distances at higher speed and still avoiding collisions you send bigger sequences by collecting several packets and sending them all together.\n\nAdvantage: You have a higher efficiency compared to carrier extension. You have a minimum of 70 percent (frame size 64 byte and user data 46 byte) user data compared to a minimum 9 percent of.\n\nDisadvantage: You have a delay in time while waiting for other packets until you have collected enough to send."
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-30T17:38:44.841848Z"
+  }
+}

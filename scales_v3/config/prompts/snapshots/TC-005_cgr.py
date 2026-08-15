@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
-from typing import Iterable
+from collections.abc import Iterable
 
 from loguru import logger
 from pydantic import BaseModel, Field
@@ -120,9 +120,7 @@ class CGRModule:
         counter = raw.counter_arguments or ""
 
         if raw.concept_id != cqa.concept_id:
-            warnings.append(
-                f"concept_id mismatch: got {raw.concept_id}, expected {cqa.concept_id}"
-            )
+            warnings.append(f"concept_id mismatch: got {raw.concept_id}, expected {cqa.concept_id}")
             # Force correct id — recoverable
             concept_id = cqa.concept_id
         else:
@@ -231,9 +229,7 @@ class CGRModule:
         last_errors: list[str] = []
 
         for attempt in range(1, self.max_validation_retries + 1):
-            user_prompt = self._build_prompt(
-                student_answer, cqa, question_text, feedback=feedback
-            )
+            user_prompt = self._build_prompt(student_answer, cqa, question_text, feedback=feedback)
             prompt_hash = self._prompt_hash(user_prompt)
             try:
                 raw = await self.llm.call(

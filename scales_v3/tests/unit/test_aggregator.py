@@ -58,9 +58,7 @@ def test_all_full_sums_total(agg: AggregatorModule):
         _cgr("S1", "C2", Verdict.FULL, 1.0),
         _cgr("S1", "C3", Verdict.FULL, 1.0),
     ]
-    cbtes = [
-        _cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 0.9) for c in cgrs
-    ]
+    cbtes = [_cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 0.9) for c in cgrs]
     result = agg.compute_final_result(
         student_id="S1",
         question_id="Q1",
@@ -106,9 +104,7 @@ def test_all_absent_zero(agg: AggregatorModule):
         _cgr("S1", "C1", Verdict.ABSENT, 0.0),
         _cgr("S1", "C2", Verdict.ABSENT, 0.0),
     ]
-    cbtes = [
-        _cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 0.9) for c in cgrs
-    ]
+    cbtes = [_cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 0.9) for c in cgrs]
     result = agg.compute_final_result(
         student_id="S1",
         question_id="Q1",
@@ -176,9 +172,7 @@ def test_score_clamped_to_total(agg: AggregatorModule):
         _cgr("S1", "C1", Verdict.FULL, 2.0),
         _cgr("S1", "C2", Verdict.FULL, 2.0),
     ]
-    cbtes = [
-        _cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 1.0) for c in cgrs
-    ]
+    cbtes = [_cbte("S1", c.concept_id, c.result_id, TrustDecision.ACCEPT, 1.0) for c in cgrs]
     result = agg.compute_final_result(
         student_id="S1",
         question_id="Q1",

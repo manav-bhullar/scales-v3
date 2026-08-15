@@ -69,7 +69,6 @@ def normalize_partial_credit_rule(rule: str | None) -> str | None:
     return rule.strip() if is_real_partial_credit_rule(rule) else None
 
 
-
 class CQAExtractionItem(BaseModel):
     """LLM-facing CQA schema (question_id / version filled by CERA)."""
 
@@ -98,18 +97,14 @@ class CQAExtractionItem(BaseModel):
         mode = data.get("evidence_mode")
         if not role and mode:
             mode_u = str(mode).strip().upper()
-            data["evidence_role"] = derive_evidence_role(
-                "ALL" if mode_u == "ALL" else "ANY"
-            )
+            data["evidence_role"] = derive_evidence_role("ALL" if mode_u == "ALL" else "ANY")
             role = data["evidence_role"]
         if not role:
             data["evidence_role"] = "synonym_set"
             role = "synonym_set"
         role_s = str(role).strip().lower()
         if role_s not in ("synonym_set", "checklist", "select_n"):
-            raise ValueError(
-                "evidence_role must be synonym_set, checklist, or select_n"
-            )
+            raise ValueError("evidence_role must be synonym_set, checklist, or select_n")
         data["evidence_role"] = role_s
         data["evidence_mode"] = derive_evidence_mode(role_s)  # type: ignore[arg-type]
         return data
@@ -193,13 +188,14 @@ class CERAModule:
             )
         lines: list[str] = []
         for ri in items:
-            mode = "ATOMIC (exactly 1 concept, same marks)" if ri.atomic else (
-                "MAY SPLIT (1..N concepts whose marks sum to this bucket)"
+            mode = (
+                "ATOMIC (exactly 1 concept, same marks)"
+                if ri.atomic
+                else ("MAY SPLIT (1..N concepts whose marks sum to this bucket)")
             )
             desc = f" — {ri.description}" if ri.description.strip() else ""
             lines.append(
-                f"- {ri.rubric_item_id}: {ri.label} "
-                f"({format_marks(ri.marks)} marks) [{mode}]{desc}"
+                f"- {ri.rubric_item_id}: {ri.label} ({format_marks(ri.marks)} marks) [{mode}]{desc}"
             )
         return "\n".join(lines)
 
@@ -237,16 +233,14 @@ class CERAModule:
         bucket_sum = sum(float(ri.marks) for ri in items)
         if not marks_sum_matches(bucket_sum, question.total_marks):
             errors.append(
-                f"rubric_items marks sum {bucket_sum} != total_marks "
-                f"{question.total_marks}"
+                f"rubric_items marks sum {bucket_sum} != total_marks {question.total_marks}"
             )
         for ri in items:
             if not ri.label.strip():
                 errors.append(f"{ri.rubric_item_id}: label is empty")
             if not is_multiple_of_mark_step(ri.marks):
                 errors.append(
-                    f"{ri.rubric_item_id}: marks must be a multiple of 0.25 "
-                    f"(got {ri.marks})"
+                    f"{ri.rubric_item_id}: marks must be a multiple of 0.25 (got {ri.marks})"
                 )
         return errors
 
@@ -328,8 +322,7 @@ class CERAModule:
                 )
         else:
             errors.append(
-                f"{cid}: evidence_role must be synonym_set, checklist, or select_n "
-                f"(got {role!r})"
+                f"{cid}: evidence_role must be synonym_set, checklist, or select_n (got {role!r})"
             )
 
         uncovered = [
@@ -356,14 +349,11 @@ class CERAModule:
             rid = item.rubric_item_id
             if not rid:
                 errors.append(
-                    f"{item.concept_id}: rubric_item_id required when "
-                    "question has rubric_items"
+                    f"{item.concept_id}: rubric_item_id required when question has rubric_items"
                 )
                 continue
             if rid not in by_id:
-                errors.append(
-                    f"{item.concept_id}: unknown rubric_item_id '{rid}'"
-                )
+                errors.append(f"{item.concept_id}: unknown rubric_item_id '{rid}'")
                 continue
             children[rid].append(item)
 
@@ -375,20 +365,13 @@ class CERAModule:
             child_sum = sum(float(k.marks) for k in kids)
             if not marks_sum_matches(child_sum, ri.marks):
                 errors.append(
-                    f"{rid}: child concept marks sum {child_sum} != "
-                    f"bucket marks {ri.marks}"
+                    f"{rid}: child concept marks sum {child_sum} != bucket marks {ri.marks}"
                 )
             if ri.atomic and len(kids) != 1:
+                errors.append(f"{rid}: atomic=True requires exactly 1 concept (got {len(kids)})")
+            elif ri.atomic and kids and not marks_sum_matches(float(kids[0].marks), ri.marks):
                 errors.append(
-                    f"{rid}: atomic=True requires exactly 1 concept "
-                    f"(got {len(kids)})"
-                )
-            elif ri.atomic and kids and not marks_sum_matches(
-                float(kids[0].marks), ri.marks
-            ):
-                errors.append(
-                    f"{rid}: atomic concept marks {kids[0].marks} != "
-                    f"bucket marks {ri.marks}"
+                    f"{rid}: atomic concept marks {kids[0].marks} != bucket marks {ri.marks}"
                 )
             # Split children must keep partial-credit semantics.
             if (not ri.atomic) and len(kids) > 1:
@@ -413,9 +396,7 @@ class CERAModule:
 
         marks_sum = sum(float(item.marks) for item in items)
         if not marks_sum_matches(marks_sum, question.total_marks):
-            errors.append(
-                f"marks sum {marks_sum} != total_marks {question.total_marks}"
-            )
+            errors.append(f"marks sum {marks_sum} != total_marks {question.total_marks}")
 
         ids = [item.concept_id for item in items]
         if len(ids) != len(set(ids)):
@@ -428,8 +409,7 @@ class CERAModule:
                 errors.append(f"{item.concept_id}: marks must be > 0")
             elif not is_multiple_of_mark_step(item.marks):
                 errors.append(
-                    f"{item.concept_id}: marks must be a multiple of 0.25 "
-                    f"(got {item.marks})"
+                    f"{item.concept_id}: marks must be a multiple of 0.25 (got {item.marks})"
                 )
             if not item.expected_keywords:
                 errors.append(f"{item.concept_id}: expected_keywords must be non-empty")
@@ -440,9 +420,7 @@ class CERAModule:
                     f"(pattern {{question_id}}_C{{N}})"
                 )
             elif not _CONCEPT_ID_RE.match(item.concept_id):
-                errors.append(
-                    f"{item.concept_id}: must match pattern '{{question_id}}_C{{N}}'"
-                )
+                errors.append(f"{item.concept_id}: must match pattern '{{question_id}}_C{{N}}'")
             errors.extend(self._validate_evidence_fields(item))
 
         if question.rubric_items:
@@ -485,9 +463,7 @@ class CERAModule:
 
         ri_errors = self._validate_rubric_items(question)
         if ri_errors:
-            raise CERAValidationError(
-                "Invalid rubric_items: " + "; ".join(ri_errors)
-            )
+            raise CERAValidationError("Invalid rubric_items: " + "; ".join(ri_errors))
 
         if not question.rubric.strip():
             logger.warning(

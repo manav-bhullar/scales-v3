@@ -11,7 +11,9 @@ export function TrustDetail({
   trustScore?: number;
 }) {
   if (!signals) {
-    return <p className="m3-body-large">No CBTE signals available for this item.</p>;
+    return (
+      <p className="m3-body-large">No CBTE signals available for this item.</p>
+    );
   }
 
   const tiers = [
@@ -83,7 +85,8 @@ export function TrustDetail({
                   ? "2px solid var(--md-sys-color-primary)"
                   : "none",
                 transform: active ? "scale(1.02)" : undefined,
-                transition: "transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring)",
+                transition:
+                  "transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring)",
               }}
             >
               <p className="m3-label-small m-0">Tier {t.n}</p>
@@ -92,7 +95,10 @@ export function TrustDetail({
               </p>
               <p className="m3-body-small m-0 mt-1">{t.hint}</p>
               {active && (
-                <p className="m3-label-small m-0 mt-3" style={{ color: "var(--md-sys-color-primary)" }}>
+                <p
+                  className="m3-label-small m-0 mt-3"
+                  style={{ color: "var(--md-sys-color-primary)" }}
+                >
                   Resolved here
                 </p>
               )}

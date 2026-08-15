@@ -1,0 +1,394 @@
+{
+  "question_id": "CE05",
+  "mode": "skip_facets=True (CGR prompt omits facets/keywords/variants)",
+  "n_students": 8,
+  "total_marks": 4.0,
+  "mae_nofacets": 0.562,
+  "mae_with_facets_same_students": 0.5,
+  "students": [
+    {
+      "student_id": "CE05_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Some of the objectives are: support billion of end-systems, reduce routing tables, simplify protocol processing, increase security, support real ti,e data traffic, provide multicasting, support mobility, be open for change, coexistence with existing protocols",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "support billion of end-systems, reduce routing tables",
+          "reasoning": "The student correctly identified two of the primary objectives of IPv6, which satisfies the target criteria of stating at least one of the required objectives."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "simplify protocol processing, increase security",
+          "reasoning": "The student explicitly lists both 'simplify protocol processing' and 'increase security' as objectives of IPv6, which directly satisfies the target criteria."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "support real ti,e data traffic, provide multicasting, support mobility",
+          "reasoning": "The student correctly identified all three acceptable objectives listed in the target criteria (support real-time data traffic, provide multicasting, and support mobility)."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "be open for change, coexistence with existing protocols",
+          "reasoning": "The student explicitly lists 'be open for change' and 'coexistence with existing protocols', both of which are identified as valid objectives for the fourth IPv6 objective in the target criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 1.0,
+      "answer": "Longer addresses (16 bytes) should be supported in order to increase the address space such that more destinations can be specified than via IPv4 addresses.\n\nSecurity means should be integrated into the protocol to increase security when using it (Implementation of IPsec within the IPv6 standard which enables encryption and verification of the authenticity of IP packets).\n\nThe protocol processing should be simplified by simplifying the header data.\n\nReal time data traffic with tracked quality of service should be supported by introducing flow labels and traffic classes.",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Longer addresses (16 bytes) should be supported in order to increase the address space such that more destinations can be specified than via IPv4 addresses.",
+          "reasoning": "The student correctly identifies the objective of supporting a significantly larger address space, which is functionally equivalent to the objective of supporting billions of end-systems."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Security means should be integrated into the protocol to increase security when using it",
+          "reasoning": "The student explicitly states that security should be integrated to increase security, which directly satisfies the target criteria of increasing security."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Real time data traffic with tracked quality of service should be supported by introducing flow labels and traffic classes.",
+          "reasoning": "The student explicitly states that 'Real time data traffic' should be supported, which directly matches one of the target criteria."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student lists four objectives: longer addresses, security integration, simplified header processing, and support for real-time data traffic. None of these correspond to the fourth IPv6 objective, which is 'open for change' or 'coexistence with existing protocols'."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "The objective of IPv6 is to support assigning IP to new systems, and simplify the header.\n\n1. Supporting billions of end systems by providing longer address.\n2. Simplifying protocol processing by providing simplified header.\n3. Supporting real time data traffic by creating flow label and differentiating traffic class.\n4. Support multicasting and mobility or roaming.\n5. Open for change in future. like extension header,",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "1. Supporting billions of end systems by providing longer address.",
+          "reasoning": "The student explicitly states 'Supporting billions of end systems', which directly matches one of the two acceptable objectives defined in the target criteria."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "2. Simplifying protocol processing by providing simplified header.",
+          "reasoning": "The student explicitly states 'Simplifying protocol processing' as one of the objectives, which matches the target criteria exactly."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "3. Supporting real time data traffic by creating flow label and differentiating traffic class.\n4. Support multicasting and mobility or roaming.",
+          "reasoning": "The student explicitly mentions supporting real-time data traffic, multicasting, and mobility, all of which satisfy the target criteria for the third IPv6 objective."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "5. Open for change in future. like extension header,",
+          "reasoning": "The student explicitly lists 'Open for change in future' as one of the objectives, which directly matches the target criteria of 'open for change'."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "The objectives of IPv6:\nFirstly, to support billions of end-systems.\nSecondly, to reduce routing tables. \nThirdly, to simplify protocol processing.\nFourthly, to increase security and this security means integrated.\nFifthly, to support real time data traffic (quality of service) such as flow label, traffic class.\nSixthly, to provide multicasting.\nSeventhly, to support mobility (roaming).\nEighthly, to be open for change (future). \nNinthly, to coexistence with existing protocols.",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Firstly, to support billions of end-systems.",
+          "reasoning": "The student explicitly states 'to support billions of end-systems', which is one of the two primary objectives defined in the target criteria."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Thirdly, to simplify protocol processing.",
+          "reasoning": "The student explicitly lists 'simplify protocol processing' as one of the objectives of IPv6, which directly matches one of the two acceptable criteria provided."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Fifthly, to support real time data traffic (quality of service) such as flow label, traffic class.",
+          "reasoning": "The student explicitly lists 'support real time data traffic' as one of the objectives, which directly matches one of the target criteria."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Eighthly, to be open for change (future). Ninthly, to coexistence with existing protocols.",
+          "reasoning": "The student correctly identifies both acceptable objectives for the fourth IPv6 objective: being open for change and coexistence with existing protocols."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 2.0,
+      "system_marks_with_facets": 2.0,
+      "abs_err_nofacets": 2.0,
+      "abs_err_with_facets": 2.0,
+      "answer": "To support billions of end-systems\nTo reduce routing tables\nTo simplify protocol processing\nTo increase security",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support billions of end-systems",
+          "reasoning": "The student correctly identified one of the primary objectives of IPv6, which is to support a significantly larger number of end-systems compared to IPv4."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To simplify protocol processing",
+          "reasoning": "The student correctly identified 'To simplify protocol processing' as an objective of IPv6, which matches one of the two acceptable criteria provided."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student provided four objectives for IPv6 (billions of end-systems, reduce routing tables, simplify protocol processing, and increase security), but none of these match the required objective of supporting real-time data traffic, providing multicasting, or supporting mobility."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student provided four objectives for IPv6, but none of them match the required fourth objective, which is 'open for change' or 'coexistence with existing protocols'."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.5,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.5,
+      "abs_err_with_facets": 0.0,
+      "answer": "The first main objective for the introduction of IPv6 was the support of more addresses in the network. While IPv4 with 4 byte addresses only allowed roughly about 4 billion participants, IPv6 enables up to 2^128 addresses, what should be enough for the next centuries. This enlargement of the address room became important with the introduction of mobile computing, smart home and internet of things. \nThe second objective was to simplify the process of forwarding and building routing tables by simplifying the header of IPv6-addresses, which are now easier and faster to decode for routers. \nFurthermore, the way IPv6 addresses are handled in a network allowed a higher level of security in comparison to IPv4.\nIPv6 allows better guarantees for Quality of Service, especially for real time traffic. This is also due to changes of the header of such an IP-packet. \nAnother important lesson learnd from the development history of IPv4 and therefore a main objective for IPv6 was to make it adaptive to future developments: So the IPv6 protocol allows introduction of extension headers for future functionalities.",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "The second objective was to simplify the process of forwarding and building routing tables by simplifying the header of IPv6-addresses",
+          "reasoning": "The student explicitly mentions the objective to 'simplify the process of forwarding and building routing tables', which directly aligns with the target criteria of reducing routing tables."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The second objective was to simplify the process of forwarding and building routing tables by simplifying the header of IPv6-addresses, which are now easier and faster to decode for routers.",
+          "reasoning": "The student explicitly identifies the simplification of protocol processing (specifically header simplification for faster routing) as the second objective of IPv6, which matches the target criteria."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "IPv6 allows better guarantees for Quality of Service, especially for real time traffic.",
+          "reasoning": "The student explicitly mentions that IPv6 allows better guarantees for real time traffic, which directly satisfies the target criterion of supporting real time data traffic."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "make it adaptive to future developments: So the IPv6 protocol allows introduction of extension headers for future functionalities.",
+          "reasoning": "The student identifies that the protocol was designed to be adaptive to future developments, which is a direct paraphrase of the 'open for change' objective."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "1.\tSupporting billions of end-systems: With its longer addresses IPv6 can support more end-systems.\n2.\tSupporting real time data traffic: The flow label field („traffic class“) allows another quality of service.\n3.\tSimplifying protocol processing: The header in IPv4 is much more complex than the header of IPv6, so with IPv6 the processing of protocols is simpler. \n4.\tOpenness for potential change in the future: With the option to use the extension headers, IPv6 provides something that can be useful in the future.",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "1.\tSupporting billions of end-systems: With its longer addresses IPv6 can support more end-systems.",
+          "reasoning": "The student explicitly lists 'Supporting billions of end-systems' as the first objective, which matches the target criteria exactly."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "3. Simplifying protocol processing: The header in IPv4 is much more complex than the header of IPv6, so with IPv6 the processing of protocols is simpler.",
+          "reasoning": "The student explicitly identifies 'Simplifying protocol processing' as an objective of IPv6, which matches one of the two target criteria provided."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "2. Supporting real time data traffic: The flow label field („traffic class“) allows another quality of service.",
+          "reasoning": "The student explicitly lists 'Supporting real time data traffic' as one of the objectives, which directly matches one of the target criteria."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "4.\tOpenness for potential change in the future: With the option to use the extension headers, IPv6 provides something that can be useful in the future.",
+          "reasoning": "The student explicitly identifies 'Openness for potential change in the future' as the fourth objective, which directly matches the target criterion 'open for change'."
+        }
+      ]
+    },
+    {
+      "student_id": "CE05_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 1.0,
+      "answer": "To support billions of end systems To increase security To support real time data traffic To support mobility To reduce routing tables",
+      "concepts": [
+        {
+          "concept_id": "CE05_C1",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support billions of end systems",
+          "reasoning": "The student explicitly states 'To support billions of end systems', which matches one of the two acceptable objectives defined in the target criteria."
+        },
+        {
+          "concept_id": "CE05_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To increase security",
+          "reasoning": "The student explicitly lists 'To increase security' as one of the objectives of IPv6, which directly matches one of the two acceptable objectives defined in the target criteria."
+        },
+        {
+          "concept_id": "CE05_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "To support real time data traffic",
+          "reasoning": "The student explicitly lists 'To support real time data traffic' as one of the objectives, which directly matches one of the target criteria."
+        },
+        {
+          "concept_id": "CE05_C4",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student listed five objectives for IPv6, but none of them correspond to the fourth objective of 'open for change' or 'coexistence with existing protocols'."
+        }
+      ]
+    }
+  ]
+}

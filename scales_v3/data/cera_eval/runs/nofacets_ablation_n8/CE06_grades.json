@@ -1,0 +1,250 @@
+{
+  "question_id": "CE06",
+  "mode": "skip_facets=True (CGR prompt omits facets/keywords/variants)",
+  "n_students": 8,
+  "total_marks": 4.0,
+  "mae_nofacets": 0.375,
+  "mae_with_facets_same_students": 0.375,
+  "students": [
+    {
+      "student_id": "CE06_S01",
+      "human_norm": 0.5,
+      "human_est_marks": 2.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 1.0,
+      "answer": "The dhcp protocol is a protocol to configure systems that join a network.\nIt is used to assign ip addresses to systems within the network. \nIf a system joins the network it can ask the dhcp server for network configuration and an ip address that it should use in the future.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "It is used to assign ip addresses to systems within the network. If a system joins the network it can ask the dhcp server for network configuration and an ip address",
+          "reasoning": "The student correctly identifies that DHCP is used to assign IP addresses and provides network configuration, satisfying two of the three definition parts (dynamically assigns IP and configures parameters)."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "It is used to assign ip addresses to systems within the network.",
+          "reasoning": "The student correctly identifies one primary use of DHCP, which is the assignment of IP addresses to systems. This satisfies the criteria for partial credit as defined by the rule (exactly 1 use = 1 mark)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "DHCP is a network management protocol which extends the functionality of RARP and BOOTP. DHCP simplifies installation and cofiguration of end systems. It also allows for manual and automatic IP address assignment.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "DHCP is a network management protocol... It also allows for manual and automatic IP address assignment.",
+          "reasoning": "The student correctly identifies DHCP as a 'network management protocol' and notes that it allows for 'automatic IP address assignment', satisfying two of the three required definition parts."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "DHCP simplifies installation and cofiguration of end systems. It also allows for manual and automatic IP address assignment.",
+          "reasoning": "The student identifies two distinct uses of DHCP: simplifying the installation and configuration of end systems, and providing for IP address assignment (manual and automatic). This meets the criteria for FULL credit."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "DHCP is a network management protocol in which it simplifies installation and configuration of end systems, allows for manual and automatic IP address assignment, and may provide additional configuration information. DHCP server is used for assignments in which the address is assigned for a limited time only before it expires.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "DHCP is a network management protocol in which it simplifies installation and configuration of end systems, allows for manual and automatic IP address assignment, and may provide additional configuration information.",
+          "reasoning": "The student correctly identifies DHCP as a 'network management protocol', mentions it 'allows for... automatic IP address assignment', and notes it 'may provide additional configuration information'. This satisfies all three parts of the definition criteria."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "simplifies installation and configuration of end systems, allows for manual and automatic IP address assignment, and may provide additional configuration information.",
+          "reasoning": "The student identifies multiple distinct uses of DHCP: simplifying installation/configuration, IP address assignment (manual and automatic), and providing additional configuration information. This satisfies the requirement for at least 2 distinct uses."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "DHCP is used to assign IP addresses and other configuration to (new) hosts in a network. After an initial DHCP DISCOVER packet of a client the server sends the assigned IP address back with additional information, like DNS server or netmask.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "DHCP is used to assign IP addresses and other configuration to (new) hosts in a network.",
+          "reasoning": "The student correctly identifies that DHCP is used to assign IP addresses and other configuration parameters to hosts in a network, satisfying two of the three definition parts (dynamically assigns IP and configures parameters)."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "DHCP is used to assign IP addresses and other configuration to (new) hosts in a network.",
+          "reasoning": "The student correctly identifies the primary use of DHCP as assigning IP addresses to hosts. While they mention 'other configuration' and provide examples like DNS and netmask, these are generally considered part of the same primary function (IP configuration/provisioning) rather than distinct, separate uses of the protocol in network administration (such as address management, lease management, or automated network bootstrapping). Therefore, it meets the criteria for exactly one distinct use."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S05",
+      "human_norm": 0.25,
+      "human_est_marks": 1.0,
+      "system_marks_nofacets": 2.0,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 2.0,
+      "answer": "DHCP is a newer version of RARP. \nSystems use this protocol to resolve their own IP address in a network from their hardware/MAC address. \nA specific DHCP server assigns the IP addresses and is contacted to resolve them.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "A specific DHCP server assigns the IP addresses",
+          "reasoning": "The student correctly identifies that DHCP is used to assign IP addresses, which satisfies one of the three definition parts (dynamically assigns IP)."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "A specific DHCP server assigns the IP addresses and is contacted to resolve them.",
+          "reasoning": "The student identifies one primary use of DHCP, which is the assignment of IP addresses to clients."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "The Dynamic Host Configuration Protocol (DHCP) is Internet Protocol based on the special server that uses for manually or automatically IP addresses assignment and other network configuration parameters, such as subnet masks and default gateways, to each device on a network so they can communicate with other IP networks.\nThis server need not be on the same LAN as the requesting host. Since the DHCP server may not be reachable by broadcasting, a DHCP relay agent is needed on each LAN.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "The Dynamic Host Configuration Protocol (DHCP) is Internet Protocol based on the special server that uses for manually or automatically IP addresses assignment and other network configuration parameters, such as subnet masks and default gateways",
+          "reasoning": "The student identifies DHCP as a protocol and correctly states that it performs IP address assignment and provides other network configuration parameters (subnet masks, gateways). This satisfies two of the three required definition parts (dynamically assigns IP and configures parameters)."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "uses for manually or automatically IP addresses assignment and other network configuration parameters, such as subnet masks and default gateways",
+          "reasoning": "The student identifies two distinct uses of DHCP: the assignment of IP addresses and the distribution of other network configuration parameters (specifically mentioning subnet masks and default gateways). This satisfies the requirement for at least two distinct uses."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Dynamic Host Configuration Protocol (DHCP) is a protocol for managing IP addresses in a TCP / IP network and distributing them to the requesting hosts. With DHCP, every network participant is able to configure itself automatically. \nTo set up a network via TCP/IP, it is necessary to carry out an IP configuration on each host. For a TCP/IP network, the following settings must be made on each host:\n- Allocation of a unique IP address\n- Assign a subnet mask\n- Assign the responsible default or standard gateway\n- Assign the responsible DNS server",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "Dynamic Host Configuration Protocol (DHCP) is a protocol for managing IP addresses in a TCP / IP network and distributing them to the requesting hosts. With DHCP, every network participant is able to configure itself automatically.",
+          "reasoning": "The student identifies DHCP as a protocol for managing IP addresses (network management protocol), describes the distribution of these addresses (dynamically assigns IP), and notes that hosts configure themselves automatically (configures parameters). This satisfies all three parts of the definition."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "FULL",
+          "marks_awarded": 2.0,
+          "evidence_span": "managing IP addresses in a TCP / IP network and distributing them to the requesting hosts. With DHCP, every network participant is able to configure itself automatically.",
+          "reasoning": "The student identifies two distinct uses of DHCP: managing/distributing IP addresses and enabling automatic network configuration for hosts."
+        }
+      ]
+    },
+    {
+      "student_id": "CE06_S08",
+      "human_norm": 0.5,
+      "human_est_marks": 2.0,
+      "system_marks_nofacets": 2.0,
+      "system_marks_with_facets": 2.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "DHCP is a protocol for automatic or manual allocation of IP addresses to devices, which is usually done by a DHCP server.",
+      "concepts": [
+        {
+          "concept_id": "CE06_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "DHCP is a protocol for automatic or manual allocation of IP addresses to devices",
+          "reasoning": "The student correctly identifies DHCP as a protocol and notes its function in the allocation (assignment) of IP addresses, satisfying one of the three required definition parts."
+        },
+        {
+          "concept_id": "CE06_C2",
+          "role_in_cqa": "select_n",
+          "max_marks": 2.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 1.0,
+          "evidence_span": "automatic or manual allocation of IP addresses to devices",
+          "reasoning": "The student identifies one primary use of DHCP, which is the allocation of IP addresses to devices. This satisfies the criteria for partial credit (exactly 1 use)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "exam": {
+    "exam_id": "cera_ab_CE03_facets_n8",
+    "subject": "CERA facets A/B \u2014 CE03 (facets)",
+    "questions": [
+      {
+        "question_id": "CE03",
+        "question_text": "What is the difference between asynchronous and synchronous transmission mode in the Data Link Layer.",
+        "reference_answer": "Asynchronous transmission: Every character a self-contained unit surrounded by a start bit and a stop bit, which is an easy and cheap pattern, but causes low transmission rates.\n\nSynchronous transmission: Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, higher complexity, but higher transmission rates. Requires synchronization between sender and receiver.",
+        "rubric": "Total 4 marks:\n1) Description of each mode's mechanism (2 marks)\n2) Trade-offs / characteristics of each mode (2 marks)",
+        "total_marks": 4,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "CE03_S01",
+            "answer_text": "In asynchronous transmission each character is bounded by a start and a stop bit. This is simple and inexpensive but has a low transmission. \nSynchronous transmission, sveral characters are put together to frames. This is more complex but has a higher transmission rate."
+          },
+          {
+            "student_id": "CE03_S02",
+            "answer_text": "Asynchronous transmission:\n-Each character is bounded by a start bit and a stop bit\n-Simple + inexpensive, but low transmission rates, often up to 200 bit/sec\n\nSynchronous transmission:\n-Several characters pooled to frames\n-Frames defined by SYN or flag \n-More complex, but higher transmission rates"
+          },
+          {
+            "student_id": "CE03_S03",
+            "answer_text": "Asynchronous transmission \n-Each character is bounded by a start bit and a stop bit \n-Simple + inexpensive, but low transmission rates, often up to 200 bit/sec \n\nSynchronous transmission \n-Several characters pooled to frames \n-Frames defined by SYN or flag \n-More complex, but higher transmission rates"
+          },
+          {
+            "student_id": "CE03_S04",
+            "answer_text": "While in asynchronous transmission every character is bounded by a start and a end bit, in synchronous transmission several character are bound to frames, these frames are bound by SYN or flag. The asynchronous transmission is simple and inexpensive, but has a low transmission rate, up to 200 bit/sec, while the synchronous transmission has a higher transmission rate, but is more complex."
+          },
+          {
+            "student_id": "CE03_S05",
+            "answer_text": "asynchronous transmission:\n-works character by character\n-each character who should transmission has a start and stop bit\n\nsynchronous transmission:\n-several characters pooled to frames\n-the frames where defined by SYN or flag\n-different data formats (bit-synchronization, character-synchronization)"
+          },
+          {
+            "student_id": "CE03_S06",
+            "answer_text": "In an asynchronous transmission each byte is sent separately and has a start and an end bit.\nIn a synchronous transmission data is sent in frames which can lead to higher transmission rates but becomes more complex."
+          },
+          {
+            "student_id": "CE03_S07",
+            "answer_text": "Synchronous Data transmission means that many characters/symbols are transferred within a frame while asynchronous transmission transfers the data byte wise /character wise each, so the data is not collected into a frame. Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed especially in fast transmission."
+          },
+          {
+            "student_id": "CE03_S08",
+            "answer_text": "Asynchronous mode:\nEach character is bounded by a start bit and a stop bit.\n\nSynchronous mode:\nSeveral characters are pooled to one frame which is defined by a SYN or a flag."
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-30T17:40:54.027845Z"
+  }
+}

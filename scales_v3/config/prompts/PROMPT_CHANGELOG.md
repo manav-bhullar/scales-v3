@@ -59,6 +59,88 @@ python scripts/log_prompt_change.py add `
 ## History
 
 
+### TC-020 — 2026-07-30 — `data/cera_eval/runs/ce04_factorial_2x2/SUMMARY.json` — `eval.nofacets_vs_facets` (measure)
+
+**Kind:** metric  
+**Direction:** measure
+
+**Screw:** `eval.nofacets_vs_facets`
+
+**What:** CE04 2x2 factorial n=8: A1 mae0.50 A2 0.188 A3 0.125 A4 0.125; criteria rewrite dominates; A3=A4 so empty facets fine once holistic
+
+**Why:** Isolate facet-blank vs criteria-rewrite confound from Exp A
+
+**If reverted:** Lose factorial isolation of CE04 MAE drivers
+
+**Evidence:** ce04_factorial_2x2/SUMMARY.json contrasts
+
+**Snapshot:** `snapshots/TC-020_SUMMARY.json`
+
+**File hash (16):** `4c459892f8a4e708`
+
+
+### TC-019 — 2026-07-30 — `data/cera_eval/runs/nofacets_ablation_n8/SUMMARY.json` — `eval.nofacets_vs_facets` (measure)
+
+**Kind:** metric  
+**Direction:** measure
+
+**Screw:** `eval.nofacets_vs_facets`
+
+**What:** skip_facets ablation n=8 on CE01/03/05/06/07/08/10 vs facet smoke: CE03/07/08 slightly better without facets; CE10 worse (+0.156 MAE); CE06 tie; CE04 separate run still largest win
+
+**Why:** Quantify whether omitting facet catalog from CGR prompt helps beyond CE04
+
+**If reverted:** Lose multi-question no-facets vs facets MAE table
+
+**Evidence:** nofacets_ablation_n8/SUMMARY.json; NOFACETS_STATE.md
+
+**Snapshot:** `snapshots/TC-019_SUMMARY.json`
+
+**File hash (16):** `0df4cc17a36ec9ab`
+
+
+### TC-018 — 2026-07-30 — `data/cera_eval/runs/NOFACETS_STATE.md` — `eval.nofacets_vs_facets` (measure)
+
+**Kind:** metric  
+**Direction:** measure
+
+**Screw:** `eval.nofacets_vs_facets`
+
+**What:** Document CE04 no-facets vs facets MAE and policy: facets for enumerate/count only; criteria-only for single-claim concepts
+
+**Why:** Need research trail of current state before multi-question skip_facets ablation
+
+**If reverted:** Lose CE04 ablation numbers and facet-usage policy note
+
+**Evidence:** ce04_nofacets_n8/grades.json mae_nofacets=0.125 mae_with_facets=0.5
+
+**Snapshot:** `snapshots/TC-018_NOFACETS_STATE.md`
+
+**File hash (16):** `d43d47e0720ee0ad`
+
+
+### TC-017 — 2026-07-30 — `scales/modules/cgr.py` — `cgr.skip_facets_ablation` (measure)
+
+**Kind:** code  
+**Direction:** measure
+
+**Screw:** `cgr.skip_facets_ablation`
+
+**What:** Add CGRModule(skip_facets=True): blank facets/keywords/variants in prompt; force synonym_set in prompt for criteria-only ablation tests
+
+**Why:** CE04 with facets MAE 0.50 vs no-facets+holistic C1 MAE 0.125 on same 8 students; need a clean module flag to A/B other questions without rewriting CQA JSON
+
+**If reverted:** Cannot run no-facets ablation without manually emptying every CQA; CE04-style false PARTIAL tax returns when facets over-split one claim
+
+**Tradeoff:** skip_facets is test/ablation only — production default remains facets on; select_n concepts lose catalog counting when flag is on
+
+**Evidence:** ce04_nofacets_n8: MAE 0.125 vs 0.500; NOFACETS_STATE.md
+
+**Snapshot:** `snapshots/TC-017_cgr.py`
+
+**File hash (16):** `5f4522ac07388500`
+
+
 ### TC-016 — 2026-07-29 — `scales/models/cqa.py` — `cgr.criteria_first_roles` (restructure)
 
 **Kind:** code  
@@ -431,6 +513,28 @@ python scripts/log_prompt_change.py add `
 **Snapshot:** `snapshots/TC-001_metrics_ledger.py`
 
 **File hash (16):** `c1a0c1af8ce04f23`
+
+
+### PC-013 — 2026-07-30 — `cera_extraction.txt` — `cera.hybrid_facet_policy` (restructure)
+
+**Kind:** prompt  
+**Direction:** restructure
+
+**Screw:** `cera.hybrid_facet_policy`
+
+**What:** Hybrid facet policy: single-claim synonym_set prefers empty facets; select_n/checklist only for true enumerate/algorithm; forbid over-splitting one definition (frame bursting) into select_n of 3; replace few-shot that taught select_n on concat/transmission/channel-hold
+
+**Why:** CE04 2x2: A3/A4 MAE 0.125 vs A1 0.500; criteria rewrite dominates (A1→A3 −0.375); blanking facets alone under strict also helps (A1→A2 −0.312) because over-split select_n was wrong for one claim
+
+**If reverted:** CERA again emits select_n min=2 of 3 for frame-bursting-style defs → systematic −0.5 PARTIAL tax
+
+**Tradeoff:** More empty-facet CQAs; teachers/extractors must still emit full catalogs for name-N-of-M
+
+**Evidence:** ce04_factorial_2x2/SUMMARY.json winning A3/A4 mae=0.125
+
+**Snapshot:** `snapshots/PC-013_cera_extraction.txt`
+
+**File hash (16):** `fd9ba172b21ea19e`
 
 
 ### PC-012 — 2026-07-29 — `cera_extraction.txt` — `cera.multipart_definition_select_n` (tighten)

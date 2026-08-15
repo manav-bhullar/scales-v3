@@ -2,7 +2,7 @@
   "question_id": "CE04",
   "total_marks": 3.0,
   "n_students": 10,
-  "mae": 0.85,
+  "mae": 0.5,
   "students": [
     {
       "student_id": "CE04_S01",
@@ -119,9 +119,9 @@
       "student_id": "CE04_S04",
       "human_norm": 1.0,
       "human_est_marks": 3.0,
-      "system_marks": 1.5,
-      "abs_err": 1.5,
-      "answer_preview": "Frame bursting is a way to increase the speeds of the ethernet protocol in the shared broadcast mode. To meet the minimum frame length requirements at the greater speeds multiple f",
+      "system_marks": 2.5,
+      "abs_err": 0.5,
+      "answer_preview": "Frame bursting is a way to increase the speeds of the ethernet protocol in the shared broadcast mode. To meet the minimum frame length requirements at the great",
       "concepts": [
         {
           "concept_id": "CE04_C1",
@@ -137,9 +137,9 @@
           "role": "synonym_set",
           "min_count": null,
           "max_marks": 1.0,
-          "verdict": "ABSENT",
-          "marks_awarded": 0.0,
-          "evidence_span": ""
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "One advantage over the carrier extension is the improved throughput"
         },
         {
           "concept_id": "CE04_C3",
@@ -156,9 +156,9 @@
       "student_id": "CE04_S05",
       "human_norm": 0.75,
       "human_est_marks": 2.25,
-      "system_marks": 0.5,
-      "abs_err": 1.75,
-      "answer_preview": "In frame bursting, the sender can transmit multiple frames by concatenating them in single transmission. The carrier extension provides really low efficiency with only 46byte  user",
+      "system_marks": 1.5,
+      "abs_err": 0.75,
+      "answer_preview": "In frame bursting, the sender can transmit multiple frames by concatenating them in single transmission.\nThe carrier extension provides really low efficiency wi",
       "concepts": [
         {
           "concept_id": "CE04_C1",
@@ -174,9 +174,9 @@
           "role": "synonym_set",
           "min_count": null,
           "max_marks": 1.0,
-          "verdict": "ABSENT",
-          "marks_awarded": 0.0,
-          "evidence_span": ""
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Whereas the frame bursting provides a much better performance."
         },
         {
           "concept_id": "CE04_C3",
@@ -230,9 +230,9 @@
       "student_id": "CE04_S07",
       "human_norm": 0.75,
       "human_est_marks": 2.25,
-      "system_marks": 1.5,
-      "abs_err": 0.75,
-      "answer_preview": "In frame bursting, instead of the sender sending one packet at a time, it sends ten packets at once. The sender waits for the packets until it has ten packets ready to send. Put th",
+      "system_marks": 2.5,
+      "abs_err": 0.25,
+      "answer_preview": "In frame bursting, instead of the sender sending one packet at a time, it sends ten packets at once. The sender waits for the packets until it has ten packets r",
       "concepts": [
         {
           "concept_id": "CE04_C1",
@@ -248,9 +248,9 @@
           "role": "synonym_set",
           "min_count": null,
           "max_marks": 1.0,
-          "verdict": "ABSENT",
-          "marks_awarded": 0.0,
-          "evidence_span": ""
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "better performance than carrier extension, since more data is sent at a time."
         },
         {
           "concept_id": "CE04_C3",
@@ -341,9 +341,9 @@
       "student_id": "CE04_S10",
       "human_norm": 1.0,
       "human_est_marks": 3.0,
-      "system_marks": 1.5,
-      "abs_err": 1.5,
-      "answer_preview": "Frame Bursting is a procedure in which many frames are buffered until a specific amount is reached. Then, they are concatenated and sent altogether. This is done to increase the ov",
+      "system_marks": 2.5,
+      "abs_err": 0.5,
+      "answer_preview": "Frame Bursting is a procedure in which many frames are buffered until a specific amount is reached. Then, they are concatenated and sent altogether. This is don",
       "concepts": [
         {
           "concept_id": "CE04_C1",
@@ -359,9 +359,9 @@
           "role": "synonym_set",
           "min_count": null,
           "max_marks": 1.0,
-          "verdict": "ABSENT",
-          "marks_awarded": 0.0,
-          "evidence_span": ""
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "An advantage is a higher transmission rate with a high efficency."
         },
         {
           "concept_id": "CE04_C3",

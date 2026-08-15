@@ -1,0 +1,51 @@
+{
+  "exam": {
+    "exam_id": "cera_ab_CE08_facets_n8",
+    "subject": "CERA facets A/B \u2014 CE08 (facets)",
+    "questions": [
+      {
+        "question_id": "CE08",
+        "question_text": "WHAT are the challenges of Mobile Routing compared to routing in fixed and wired networks? Please NAME and DESCRIBE two challenges.",
+        "reference_answer": "Possible Challenges:\n1.Adaptation: The network has to handle the dynamic positioning of the nodes/topology changes. Additionally, nodes can leave or join the network anywhere (within signal range) at any time.\n2.Security: Interception of packets or injection of faulty packages is easily possible in wireless networks. This may necessitate encryption and authentication.\n3.Medium Access Control: Wireless networks feature new possibilities for inference and collisions of the transmitted signals.\n4.Quality of Service (QoS): Due to the rapidly changing network topology, imprecise network information, and resource constraints of participating nodes, it is challenging to provide the desired QoS.\n5.Scalability: Since it is not possible to know the number of participating nodes beforehand, it is vital that routing protocols are capable of dealing with increasing network sizes.\n6.Power Consumption: As most mobile devices are battery-powered, power consumption becomes an important optimization factor.",
+        "rubric": "Total 4 marks:\n1) Naming any 4 valid challenges (1 mark). Catalog: Adaptation, Security, MAC, QoS, Scalability, Power.\n2) Describing challenge A (1.5 marks)\n3) Describing challenge B (1.5 marks)",
+        "total_marks": 4,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "CE08_S01",
+            "answer_text": "Heterogeneity: In wireless network, capabilities, responsibilities, and constraints of nodes might be different. For instance, the battery life of mobile devices, the transmission range, the radios may be different. Thus, putting those conditions into consideration is important.   Fairness: Fairness might be an issue in fixed and wired networks. However, the drastic change in mobile network topology leads to difficulty in maintaining fairness."
+          },
+          {
+            "student_id": "CE08_S02",
+            "answer_text": "The network no longer has an ether to which all nodes are connected. Instead each node has its own radius, where it can send and receive communication.  The differences and overlaps of various radius cause problems like the hidden terminal or exposed terminal.  Also, due to the node\u2019s mobility, the networks topology can change rapidly. Which routes are optimal, or even possible, changes with that."
+          },
+          {
+            "student_id": "CE08_S03",
+            "answer_text": "A first challenge is called Hidden Terminals. This means, that there might are nodes existing who can not hear each other. As a consequence like the example in the lecture collisions can be caused because two nodes who can not hear each other, might are communicating with one in between them, because one sends to the one in the middle. The other one doesn't know. Collision detection fails as well  A second challenge is \"near and far terminals\". Here the distance between nodes influences the strength of the signal. As a consequence the one who is closer to the communication partner drowns out the weaker one. This can cause further problems because the communication between two nodes is not working."
+          },
+          {
+            "student_id": "CE08_S04",
+            "answer_text": "Two challenges are hidden terminals, which occurs when two nodes can communicate over the same AP but not directly to each other, and exposed terminals, which occurs when two devices want to transmit data at the same time, but encounter a channel interference."
+          },
+          {
+            "student_id": "CE08_S05",
+            "answer_text": "HIDDEN TERMINALS: Node A and Node C can not receive message from each other, and they send messages to Node B simultaneously. But the transmission can conllide at Node B and both messages are lost, then Node A and Node C are hidden from each other. EXPOSED TERMINALS: Node A, D are outside of range of each other and in the miiddle Node B, C are inside of the range of each other. B sends to A currently and C wants to send to D. But C has to wait because it considers that it will has interference. However the transmission can take place as A is out of range of C. C is exposed to B."
+          },
+          {
+            "student_id": "CE08_S06",
+            "answer_text": "Two of the many challenges of mobile routing compared to fixed / wired networks are Hidden Terminals and security issues. Hidden Terminal can occur, when the nodes are quite far apart, while some nodes are not able to detect nodes anymore, while more centered nodes are able to detect messages from both the distant nodes. Then the distant nodes are not able to detect collisions occuring in the \u201emiddle\u201c of the network at the centered nodes, because the signal is not transmitted over all network nodes. One of the security issues can be, that wifi is set up inside of a building. A normal ethernet network over cable would connect all the nodes inside, and then can be configured to discard all the internal packages at the outgoing router to the internet. A wifi network cannot be configured, to only nodes inside of the building are able to receive the packages. If the network is available outside of the building, then any node outside will be able to detect the network."
+          },
+          {
+            "student_id": "CE08_S07",
+            "answer_text": "(Due to the question in the forum, i will relate to slide 3, not to Challenges in Mobile Communications, which are on slide 10ff).\n\nOne basic challenge in Mobile Networking is the Power control: mobile devices have only a limited amount of power which should be used wisely and as little as possible.\n\nIn addition, the routing in Mobile Networking has to deal with a high amount of dynamic so it needs to find new routes as nodes move or conditions change."
+          },
+          {
+            "student_id": "CE08_S08",
+            "answer_text": "Services Discovery is a challenge in Mobile Routing, since devices move around, so it becomes difficult to know where services are placed and how to be aware of them. Power control is also a challenge. In order for a device to have a certain range and suffer less interference, it needs a certain signal strength, which depends on the power."
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-30T17:39:23.775277Z"
+  }
+}

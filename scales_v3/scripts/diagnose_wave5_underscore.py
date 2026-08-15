@@ -52,18 +52,22 @@ for sid in sorted(by_stu):
             else:
                 absent_deferred += 1
 
-    a_all = sum(marks.values())                      # all 4, raw CGR
-    core = marks.get("Q1_C2", 0) + marks.get("Q1_C3", 0)   # 3 marks max
-    b_core = core * 5.0 / 3.0                        # rescaled to 5
+    a_all = sum(marks.values())  # all 4, raw CGR
+    core = marks.get("Q1_C2", 0) + marks.get("Q1_C3", 0)  # 3 marks max
+    b_core = core * 5.0 / 3.0  # rescaled to 5
     gl = gold_by[sid]
     rows.append((sid, a_all, b_core, mid(gl["expected_score_range"]), gl))
+
 
 def report(name: str, idx: int) -> None:
     err = [abs(r[idx] - r[3]) for r in rows]
     inband = sum(
-        1 for r in rows if r[4]["expected_score_range"][0] <= r[idx] <= r[4]["expected_score_range"][1]
+        1
+        for r in rows
+        if r[4]["expected_score_range"][0] <= r[idx] <= r[4]["expected_score_range"][1]
     )
-    print(f"{name}: MAE vs UNT mid = {sum(err)/len(err):.2f} | in-band {inband}/{len(rows)}")
+    print(f"{name}: MAE vs UNT mid = {sum(err) / len(err):.2f} | in-band {inband}/{len(rows)}")
+
 
 print("=== Scoring variants vs real UNT gold (28 students) ===")
 report("A) all 4 concepts (raw CGR) ", 1)
@@ -79,4 +83,6 @@ for cid in sorted(absent_by_concept):
 
 print("\n=== Worst A-vs-gold gaps (per student) ===")
 for sid, a, b, m, gl in sorted(rows, key=lambda r: r[3] - r[1], reverse=True)[:6]:
-    print(f"{sid}: ours(all4)={a:.1f} ours(core)={b:.1f} UNT_mid={m:.2f} band={gl['expected_band']}")
+    print(
+        f"{sid}: ours(all4)={a:.1f} ours(core)={b:.1f} UNT_mid={m:.2f} band={gl['expected_band']}"
+    )

@@ -124,9 +124,7 @@ class LLMClient:
         for attempt in range(max_retries + 1):
             started = time.perf_counter()
             try:
-                raw_text, usage = await self._invoke(
-                    model, messages, response_schema, temperature
-                )
+                raw_text, usage = await self._invoke(model, messages, response_schema, temperature)
                 duration_ms = (time.perf_counter() - started) * 1000
                 self._record_usage(usage)
                 self._log_call(
@@ -160,7 +158,7 @@ class LLMClient:
                     continue
             except LLMValidationError:
                 raise
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:
                 last_error = exc
                 if self._is_auth_error(exc):
                     # Auth on one Gemini key: try next key before giving up.
@@ -186,10 +184,9 @@ class LLMClient:
         raise LLMAPIError(f"LLM API failed after {max_retries} retries: {last_error}")
 
     def get_usage(self) -> dict[str, Any]:
-        cost = (
-            (self._total_input_tokens / 1_000_000) * _COST_PER_M_INPUT
-            + (self._total_output_tokens / 1_000_000) * _COST_PER_M_OUTPUT
-        )
+        cost = (self._total_input_tokens / 1_000_000) * _COST_PER_M_INPUT + (
+            self._total_output_tokens / 1_000_000
+        ) * _COST_PER_M_OUTPUT
         return {
             "total_calls": self._total_calls,
             "total_input_tokens": self._total_input_tokens,
@@ -219,9 +216,9 @@ class LLMClient:
         lower = model.lower()
         if lower.startswith("zai/") or lower.startswith("zhipu/"):
             bare = model.split("/", 1)[1]
-            api_base = (
-                os.environ.get("ZAI_API_BASE") or "https://api.z.ai/api/paas/v4"
-            ).rstrip("/")
+            api_base = (os.environ.get("ZAI_API_BASE") or "https://api.z.ai/api/paas/v4").rstrip(
+                "/"
+            )
             return {
                 "model": f"openai/{bare}",
                 "api_base": api_base,
@@ -253,9 +250,8 @@ class LLMClient:
             "max_tokens": 2048,
             "response_format": self._enforce_structured_output(model, schema),
         }
-        schema_hint = (
-            "\n\nReturn ONLY valid JSON matching this schema:\n"
-            + json.dumps(schema.model_json_schema())
+        schema_hint = "\n\nReturn ONLY valid JSON matching this schema:\n" + json.dumps(
+            schema.model_json_schema()
         )
         keyed_messages = list(messages)
         keyed_messages[-1] = {
@@ -347,6 +343,5 @@ class LLMClient:
     def _is_auth_error(exc: Exception) -> bool:
         text = str(exc).lower()
         return any(
-            token in text
-            for token in ("api key", "unauthorized", "authentication", "401", "403")
+            token in text for token in ("api key", "unauthorized", "authentication", "401", "403")
         )

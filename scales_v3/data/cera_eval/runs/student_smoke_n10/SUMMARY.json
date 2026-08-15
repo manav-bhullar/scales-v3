@@ -1,5 +1,5 @@
 {
-  "run_ts": "2026-07-29T17:14:17.912841+00:00",
+  "run_ts": "2026-07-29T17:27:07.931396+00:00",
   "n_students_per_q": 10,
   "seed": 42,
   "summary": [
@@ -27,7 +27,7 @@
     {
       "question_id": "CE04",
       "status": "ok",
-      "mae": 0.85,
+      "mae": 0.5,
       "total_marks": 3.0,
       "n_students": 10
     },
@@ -40,7 +40,10 @@
     },
     {
       "question_id": "CE06",
-      "status": "no_students"
+      "status": "ok",
+      "mae": 0.5,
+      "total_marks": 4.0,
+      "n_students": 10
     },
     {
       "question_id": "CE07",
@@ -71,5 +74,6 @@
       "n_students": 10
     }
   ],
-  "overall_mae": 0.797
+  "overall_mae": 0.733,
+  "overall_mae_excl_ce02_ce09": 0.578
 }

@@ -41,7 +41,7 @@ import hashlib
 import json
 import shutil
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -57,7 +57,7 @@ DIRECTIONS = ("tighten", "loosen", "restructure", "measure")
 
 
 def _utc_now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _iso(dt: datetime) -> str:
@@ -143,9 +143,7 @@ def cmd_add(args: argparse.Namespace) -> int:
 
     src = _resolve_artifact(kind, args.prompt, args.artifact)
     prompt_file = (
-        src.name
-        if kind == "prompt" and src.parent.resolve() == PROMPTS_DIR.resolve()
-        else None
+        src.name if kind == "prompt" and src.parent.resolve() == PROMPTS_DIR.resolve() else None
     )
     artifact_rel = (
         str(src.relative_to(PROJECT)).replace("\\", "/")
@@ -158,9 +156,7 @@ def cmd_add(args: argparse.Namespace) -> int:
     if args.direction not in DIRECTIONS:
         raise SystemExit(f"--direction must be one of {DIRECTIONS}")
     if not (args.if_reverted or "").strip():
-        raise SystemExit(
-            "--if-reverted is required: what happens if we undo this screw turn"
-        )
+        raise SystemExit("--if-reverted is required: what happens if we undo this screw turn")
 
     entries = _load()
     prefix = "PC" if kind == "prompt" else "TC"
@@ -181,9 +177,7 @@ def cmd_add(args: argparse.Namespace) -> int:
         "tradeoff": (args.tradeoff or "").strip() or None,
         "evidence": (args.evidence or "").strip() or None,
         "result": (args.result or "").strip() or None,
-        "related_prompts": [
-            p.strip() for p in (args.related or "").split(",") if p.strip()
-        ],
+        "related_prompts": [p.strip() for p in (args.related or "").split(",") if p.strip()],
         "sha256_16": _file_sha(src),
         "snapshot": snap,
     }
@@ -300,10 +294,7 @@ def _rebuild_screws(entries: list[dict[str, Any]]) -> None:
         lines.append("")
         for e in sorted(by_screw[screw], key=lambda x: x.get("ts", "")):
             day = str(e.get("ts", ""))[:10]
-            lines.append(
-                f"- **{e.get('id')}** ({day}, {e.get('direction', '?')}): "
-                f"{e.get('what')}"
-            )
+            lines.append(f"- **{e.get('id')}** ({day}, {e.get('direction', '?')}): {e.get('what')}")
             if e.get("if_reverted"):
                 lines.append(f"  - if reverted: {e['if_reverted']}")
         lines.append("")
@@ -425,9 +416,7 @@ def cmd_screws(_args: argparse.Namespace) -> int:
         return 0
     for screw in sorted(latest):
         e = latest[screw]
-        _safe_print(
-            f"{screw}  last={e.get('id')}  {e.get('direction')}  {e.get('kind', 'prompt')}"
-        )
+        _safe_print(f"{screw}  last={e.get('id')}  {e.get('direction')}  {e.get('kind', 'prompt')}")
         _safe_print(f"  what: {e.get('what')}")
         if e.get("if_reverted"):
             _safe_print(f"  if_reverted: {e['if_reverted']}")

@@ -135,10 +135,15 @@ export function QueueCard({
       </section>
 
       <details className="mb-6">
-        <summary className="cursor-pointer m3-body-small" style={{ fontWeight: 600 }}>
+        <summary
+          className="cursor-pointer m3-body-small"
+          style={{ fontWeight: 600 }}
+        >
           System reasoning
         </summary>
-        <p className="m3-body-small mt-2 whitespace-pre-wrap mb-0">{item.reasoning}</p>
+        <p className="m3-body-small mt-2 whitespace-pre-wrap mb-0">
+          {item.reasoning}
+        </p>
       </details>
 
       {!editing ? (

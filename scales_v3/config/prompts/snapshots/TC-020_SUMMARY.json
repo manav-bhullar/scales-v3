@@ -1,0 +1,56 @@
+{
+  "run_ts": "2026-07-30T18:02:25.685069+00:00",
+  "n_students": 8,
+  "design": "2x2 facets×criteria on CE04",
+  "arms": [
+    {
+      "arm_id": "A1",
+      "description": "facets present + strict select_n criteria",
+      "skip_facets": false,
+      "mae": 0.5,
+      "mean_bias": -0.438,
+      "n_exact": 0,
+      "n_over": 1,
+      "n_under": 7
+    },
+    {
+      "arm_id": "A2",
+      "description": "facets absent + strict criteria",
+      "skip_facets": true,
+      "mae": 0.188,
+      "mean_bias": -0.125,
+      "n_exact": 4,
+      "n_over": 1,
+      "n_under": 3
+    },
+    {
+      "arm_id": "A3",
+      "description": "facets present + holistic criteria",
+      "skip_facets": false,
+      "mae": 0.125,
+      "mean_bias": 0.062,
+      "n_exact": 6,
+      "n_over": 1,
+      "n_under": 1
+    },
+    {
+      "arm_id": "A4",
+      "description": "facets absent + holistic criteria",
+      "skip_facets": true,
+      "mae": 0.125,
+      "mean_bias": 0.062,
+      "n_exact": 6,
+      "n_over": 1,
+      "n_under": 1
+    }
+  ],
+  "contrasts": {
+    "A1_vs_A2_facet_blank_under_strict": -0.312,
+    "A1_vs_A3_criteria_rewrite_with_facets": -0.375,
+    "A2_vs_A4_criteria_rewrite_without_facets": -0.063,
+    "A3_vs_A4_facet_blank_under_holistic": 0.0
+  },
+  "interpretation_hint": "Negative contrast = second arm better (lower MAE). If |A1_vs_A3| >> |A1_vs_A2|, criteria rewrite dominates.",
+  "winning_arm": "A3",
+  "winning_mae": 0.125
+}

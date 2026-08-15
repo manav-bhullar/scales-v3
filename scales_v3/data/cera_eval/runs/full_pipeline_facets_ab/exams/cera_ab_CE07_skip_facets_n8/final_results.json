@@ -1,0 +1,389 @@
+{
+  "exam_id": "cera_ab_CE07_skip_facets_n8",
+  "final_results": [
+    {
+      "student_id": "CE07_S01",
+      "question_id": "CE07",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.30004794788255823,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Extension Headers enable you to add additional header information to the already existing header if you really need them. ... The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size.",
+          "reasoning": "The student correctly identifies that extension headers are used to add additional information (extending the fixed header) and explains the advantage of doing so without modifying the base header structure (optional network-layer info/flexibility). This satisfies both parts of the criteria.",
+          "trust_score": 0.30004794788255823,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "They are placed between the header and the payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which satisfies the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size.",
+          "reasoning": "The student correctly identifies that the main advantage of IPv6 extension headers is the ability to add new options or information without modifying the base header structure, which aligns with the target criteria.",
+          "trust_score": 0.3874801917799881,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497768Z"
+    },
+    {
+      "student_id": "CE07_S02",
+      "question_id": "CE07",
+      "final_score": 2.5,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Any additional information is stored in extension headers. They carry optional information and can be found in between the fixed header and the playload.",
+          "reasoning": "The student correctly identifies that extension headers are used to store additional information (extending the fixed header) and that they carry optional information (optional network-layer info). This satisfies both parts of the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "They carry optional information and can be found in between the fixed header and the playload.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the fixed header and the payload, which aligns with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.5,
+          "evidence_span": "",
+          "reasoning": "The student identifies that extension headers are optional, but they do not explain the advantage in terms of header processing or the ability to append options without changing the base header structure. The student incorrectly claims the advantage is to 'overcome size limitation', which is not the primary architectural advantage defined in the criteria.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497786Z"
+    },
+    {
+      "student_id": "CE07_S03",
+      "question_id": "CE07",
+      "final_score": 1.75,
+      "total_marks": 4,
+      "overall_trust": 0.3001778258709237,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.75,
+          "max_marks": 1.5,
+          "evidence_span": "Extension Headers are extensions for the normal header. You can support multiple addresses or specify more options for your header and packet",
+          "reasoning": "The student correctly identifies that extension headers serve to extend the normal header and provide additional options for the packet, satisfying one of the two required parts of the definition.",
+          "trust_score": 0.3001778258709237,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "The Extension Headers are located between the normal header and the payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main (normal) header and the payload, which satisfies the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.5,
+          "evidence_span": "",
+          "reasoning": "The student identifies the advantage as 'the possibility to use broadcasting', which is incorrect. IPv6 does not use broadcasting, and this is not the advantage of extension headers over IPv4.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497800Z"
+    },
+    {
+      "student_id": "CE07_S04",
+      "question_id": "CE07",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.34494390985263246,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "they can expand the header informations upon need without expanding the fixed header structure.",
+          "reasoning": "The student correctly identifies that extension headers allow for the expansion of header information (optional network-layer info) without modifying the fixed header structure (extend fixed header). This satisfies both parts of the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "They are placed between the actual header and the payload.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main (actual) header and the payload, which aligns with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "The main advantage is that they can expand the header informations upon need without expanding the fixed header structure.",
+          "reasoning": "The student correctly identifies that extension headers allow for the addition of new options/information without modifying the fixed header structure, which directly aligns with the target criteria of appending new options without changing the header.",
+          "trust_score": 0.34494390985263246,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497814Z"
+    },
+    {
+      "student_id": "CE07_S05",
+      "question_id": "CE07",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.3602919734222814,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Extension headers are header that can be added to a packet for a new functionality. They allow appending new options without changing fixed header",
+          "reasoning": "The student correctly identifies that extension headers provide additional functionality (optional network-layer info) and that they allow for appending options without modifying the fixed header (extending the fixed header). This satisfies both parts of the target criteria.",
+          "trust_score": 0.3602919734222814,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "Extension headers are present between fixed header and payload.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the fixed header and the payload, which matches the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "They allow appending new options without changing fixed header",
+          "reasoning": "The student correctly identifies that extension headers allow for the addition of new options without requiring modifications to the fixed header, which is one of the primary advantages of the IPv6 extension header mechanism.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497828Z"
+    },
+    {
+      "student_id": "CE07_S06",
+      "question_id": "CE07",
+      "final_score": 1.75,
+      "total_marks": 4,
+      "overall_trust": 0.34287602197499445,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.75,
+          "max_marks": 1.5,
+          "evidence_span": "extension headers allow for extra information to be headed",
+          "reasoning": "The student identifies that extension headers allow for extra information to be included, which satisfies one of the two required parts of the definition (optional network-layer info).",
+          "trust_score": 0.36018614648142827,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "placed between the header and the playload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which aligns with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.5,
+          "evidence_span": "The main advantage compared to IPv4 is that extension headers allow for extra information to be headed, overcaming the address size limitation",
+          "reasoning": "The student identifies the advantage as overcoming address size limitations, which is incorrect. The advantage of extension headers is related to header flexibility and processing efficiency, not the address size of the protocol.",
+          "trust_score": 0.34287602197499445,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497841Z"
+    },
+    {
+      "student_id": "CE07_S07",
+      "question_id": "CE07",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Extension headers are optional information/options that can be append without changing the fixed header.",
+          "reasoning": "The student correctly identifies that extension headers provide optional information (optional network-layer info) and that they allow for expansion without modifying the fixed header (extend fixed header). This satisfies both parts of the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "the extension headers are located between the header and payload of a packet.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which aligns with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Extension headers are optional information/options that can be append without changing the fixed header.",
+          "reasoning": "The student correctly identifies that extension headers allow for adding options without modifying the fixed header, which is one of the two acceptable criteria for the main advantage of IPv6 extension headers over IPv4.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497855Z"
+    },
+    {
+      "student_id": "CE07_S08",
+      "question_id": "CE07",
+      "final_score": 4.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE07_C1",
+          "knowledge_point": "Define the purpose of IPv6 extension headers",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Extension headers are optional headers placed between fixed header and payload. The advantages are the help to overcome size limitation and the possibility to append new options without changing the fixed header.",
+          "reasoning": "The student correctly identifies that extension headers extend the fixed header (by allowing new options without changing the fixed header) and provides optional network-layer information (by being placed between the fixed header and payload).",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C2",
+          "knowledge_point": "Identify the location of extension headers in an IPv6 packet",
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "max_marks": 1.0,
+          "evidence_span": "placed between fixed header and payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the fixed header and the payload, which directly satisfies the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE07_C3",
+          "knowledge_point": "Explain the main advantage of extension headers over IPv4",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "the possibility to append new options without changing the fixed header.",
+          "reasoning": "The student correctly identifies the main advantage of IPv6 extension headers as the ability to add new options without modifying the fixed header, which directly aligns with the target criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:44:53.497868Z"
+    }
+  ]
+}

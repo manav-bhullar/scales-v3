@@ -33,7 +33,9 @@ def main() -> int:
     missing = []
     for package in ("pydantic", "yaml", "dotenv"):
         try:
-            __import__("yaml" if package == "yaml" else package if package != "dotenv" else "dotenv")
+            __import__(
+                "yaml" if package == "yaml" else package if package != "dotenv" else "dotenv"
+            )
         except ImportError:
             missing.append(package)
     if missing:
@@ -90,7 +92,11 @@ def main() -> int:
             failures += 1
 
     # 7. Optional heavy deps (informational for Sprint 1)
-    for package, label in (("litellm", "LiteLLM"), ("transformers", "transformers"), ("torch", "torch")):
+    for package, label in (
+        ("litellm", "LiteLLM"),
+        ("transformers", "transformers"),
+        ("torch", "torch"),
+    ):
         try:
             __import__(package)
             _ok(f"{label} installed")
@@ -105,7 +111,7 @@ def main() -> int:
         if cached:
             _ok(f"NLI model appears cached: {settings.nli.model_name}")
         else:
-            print(f"• NLI model not cached yet — run: python scripts/download_models.py")
+            print("• NLI model not cached yet — run: python scripts/download_models.py")
     except Exception:
         print("• Could not check HuggingFace cache (optional for Sprint 1)")
 

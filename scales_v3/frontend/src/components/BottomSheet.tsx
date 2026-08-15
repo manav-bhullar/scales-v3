@@ -30,7 +30,10 @@ export function BottomSheet({
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center"
-      style={{ background: "color-mix(in srgb, var(--md-sys-color-inverse-surface) 45%, transparent)" }}
+      style={{
+        background:
+          "color-mix(in srgb, var(--md-sys-color-inverse-surface) 45%, transparent)",
+      }}
       onClick={onClose}
       role="presentation"
     >
@@ -45,8 +48,10 @@ export function BottomSheet({
           borderTopRightRadius: "var(--md-sys-shape-corner-extra-large)",
           maxHeight: "85vh",
           overflow: "auto",
-          animation: "sheet-up var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring)",
-          boxShadow: "0 -8px 40px color-mix(in srgb, var(--md-sys-color-on-surface) 18%, transparent)",
+          animation:
+            "sheet-up var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring)",
+          boxShadow:
+            "0 -8px 40px color-mix(in srgb, var(--md-sys-color-on-surface) 18%, transparent)",
         }}
         onClick={(e) => e.stopPropagation()}
       >

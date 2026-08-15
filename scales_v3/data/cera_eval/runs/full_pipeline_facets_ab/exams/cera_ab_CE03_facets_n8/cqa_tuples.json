@@ -1,0 +1,134 @@
+{
+  "exam_id": "cera_ab_CE03_facets_n8",
+  "cqa_tuples": [
+    {
+      "concept_id": "CE03_C1",
+      "question_id": "CE03",
+      "knowledge_point": "Mechanism of asynchronous transmission",
+      "target_criteria": "FULL requires identifying the use of start and stop bits for individual characters",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "character as self-contained unit",
+        "surrounded by start and stop bits"
+      ],
+      "evidence_role": "checklist",
+      "min_count": null,
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "start",
+        "stop",
+        "bit",
+        "character"
+      ],
+      "acceptable_variants": [
+        "uses start/stop bits per byte",
+        "individual characters framed by start and stop bits",
+        "each character is independent with start and stop bits"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning start/stop bits without explaining the character-level unit",
+      "source_rubric_span": "Description of each mode's mechanism",
+      "source_reference_span": "Every character a self-contained unit surrounded by a start bit and a stop bit",
+      "version": 1,
+      "created_at": "2026-07-29T10:00:53.003831Z",
+      "updated_at": "2026-07-29T10:00:53.003832Z"
+    },
+    {
+      "concept_id": "CE03_C2",
+      "question_id": "CE03",
+      "knowledge_point": "Mechanism of synchronous transmission",
+      "target_criteria": "FULL requires identifying the use of frames or continuous streams defined by synchronization markers",
+      "marks": 1.0,
+      "rubric_item_id": "R1",
+      "evidence_facets": [
+        "pooled into continuous stream of data",
+        "frames defined by SYN or flag",
+        "requires synchronization between sender and receiver"
+      ],
+      "evidence_role": "checklist",
+      "min_count": null,
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "stream",
+        "frame",
+        "SYN",
+        "flag",
+        "synchronization"
+      ],
+      "acceptable_variants": [
+        "data sent in continuous frames",
+        "uses SYN/flag markers to define frames",
+        "requires clock synchronization between nodes"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning frames or synchronization only",
+      "source_rubric_span": "Description of each mode's mechanism",
+      "source_reference_span": "Several characters pooled to a continuous stream of data (frames), Frames defined by SYN or flag, Requires synchronization between sender and receiver",
+      "version": 1,
+      "created_at": "2026-07-29T10:00:53.003841Z",
+      "updated_at": "2026-07-29T10:00:53.003841Z"
+    },
+    {
+      "concept_id": "CE03_C3",
+      "question_id": "CE03",
+      "knowledge_point": "Trade-offs of asynchronous transmission",
+      "target_criteria": "FULL requires identifying the simplicity/low cost and the resulting low transmission rate",
+      "marks": 1.0,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "easy and cheap pattern",
+        "low transmission rates"
+      ],
+      "evidence_role": "checklist",
+      "min_count": null,
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "easy",
+        "cheap",
+        "low",
+        "rate"
+      ],
+      "acceptable_variants": [
+        "simple and inexpensive but slow",
+        "low overhead but low speed",
+        "easy to implement but limited throughput"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning either the simplicity or the low rate",
+      "source_rubric_span": "Trade-offs / characteristics of each mode",
+      "source_reference_span": "easy and cheap pattern, but causes low transmission rates",
+      "version": 1,
+      "created_at": "2026-07-29T10:00:53.003847Z",
+      "updated_at": "2026-07-29T10:00:53.003847Z"
+    },
+    {
+      "concept_id": "CE03_C4",
+      "question_id": "CE03",
+      "knowledge_point": "Trade-offs of synchronous transmission",
+      "target_criteria": "FULL requires identifying the higher complexity and the resulting higher transmission rate",
+      "marks": 1.0,
+      "rubric_item_id": "R2",
+      "evidence_facets": [
+        "higher complexity",
+        "higher transmission rates"
+      ],
+      "evidence_role": "checklist",
+      "min_count": null,
+      "evidence_mode": "ALL",
+      "expected_keywords": [
+        "complexity",
+        "higher",
+        "rate"
+      ],
+      "acceptable_variants": [
+        "more complex but faster",
+        "high overhead but high throughput",
+        "complex implementation for better speed"
+      ],
+      "partial_credit_rule": "0.5 marks for mentioning either the complexity or the high rate",
+      "source_rubric_span": "Trade-offs / characteristics of each mode",
+      "source_reference_span": "higher complexity, but higher transmission rates",
+      "version": 1,
+      "created_at": "2026-07-29T10:00:53.003853Z",
+      "updated_at": "2026-07-29T10:00:53.003853Z"
+    }
+  ]
+}

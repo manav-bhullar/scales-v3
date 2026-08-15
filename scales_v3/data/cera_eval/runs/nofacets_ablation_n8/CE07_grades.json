@@ -1,0 +1,322 @@
+{
+  "question_id": "CE07",
+  "mode": "skip_facets=True (CGR prompt omits facets/keywords/variants)",
+  "n_students": 8,
+  "total_marks": 4.0,
+  "mae_nofacets": 0.25,
+  "mae_with_facets_same_students": 0.344,
+  "students": [
+    {
+      "student_id": "CE07_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Extension Headers enable you to add additional header information to the already existing header if you really need them. They are placed between the header and the payload, by reducing the payload size if they get appended. The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Extension Headers enable you to add additional header information to the already existing header if you really need them. ... The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size.",
+          "reasoning": "The student correctly identifies that extension headers are used to add additional information (extending the fixed header) and explains the advantage of doing so without modifying the base header structure (optional network-layer info/flexibility). This satisfies both parts of the criteria."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "They are placed between the header and the payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which aligns with the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size.",
+          "reasoning": "The student correctly identifies that the main advantage of extension headers is the ability to add new options/information without modifying the base header structure, which aligns with the target criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S02",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.5,
+      "system_marks_with_facets": 2.5,
+      "abs_err_nofacets": 0.5,
+      "abs_err_with_facets": 0.5,
+      "answer": "The header in IPv6 has a fixed length and is designed to be used for easy processing, it only contains information needed for routing. Any additional information is stored in extension headers. They carry optional information and can be found in between the fixed header and the playload. Since the whole IPv6 packet is only allowed a certain size, these additional extension headers take up space of the payload. The main advantage of extension headers is that they can be added optionally and help to overcome size limitation.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Any additional information is stored in extension headers. They carry optional information and can be found in between the fixed header and the playload.",
+          "reasoning": "The student correctly identifies that extension headers are used to store additional information (extending the fixed header) and that they carry optional information (optional network-layer info). This satisfies both parts of the target criteria."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "They carry optional information and can be found in between the fixed header and the playload.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the fixed header and the payload, which aligns with the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student identifies that extension headers are optional, but they do not explain the advantage in terms of header processing efficiency or the ability to append new options without modifying the base header structure. The student's claim that they 'help to overcome size limitation' is incorrect, as extension headers actually consume space within the packet."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S03",
+      "human_norm": 0.5,
+      "human_est_marks": 2.0,
+      "system_marks_nofacets": 1.75,
+      "system_marks_with_facets": 1.75,
+      "abs_err_nofacets": 0.25,
+      "abs_err_with_facets": 0.25,
+      "answer": "Extension Headers are extensions for the normal header. You can support multiple addresses or specify more options for your header and packet, like e.g. authentication.\n\nThe Extension Headers are located between the normal header and the payload, they will be attached to the normal header. \n\nThe biggest advantage of Extension Headers is the possibility to use broadcasting.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.75,
+          "evidence_span": "Extension Headers are extensions for the normal header. You can support multiple addresses or specify more options for your header and packet",
+          "reasoning": "The student correctly identifies that extension headers serve to extend the normal header and provide additional options for the packet, which satisfies one of the two required parts of the definition."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The Extension Headers are located between the normal header and the payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main (normal) header and the payload, which satisfies the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student identifies the advantage as 'the possibility to use broadcasting', which is incorrect. IPv6 does not use broadcasting, and this is not the advantage of extension headers over IPv4 headers."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "The extension headers replace the \"option-field\" in IPv4 and include optional more informations. They are placed between the actual header and the payload. The main advantage is that they can expand the header informations upon need without expanding the fixed header structure.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "they can expand the header informations upon need without expanding the fixed header structure.",
+          "reasoning": "The student correctly identifies that extension headers allow for the expansion of header information (optional network-layer info) without modifying the fixed header structure (extend fixed header). This satisfies both parts of the target criteria."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "They are placed between the actual header and the payload.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main (actual) header and the payload, which aligns with the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "The main advantage is that they can expand the header informations upon need without expanding the fixed header structure.",
+          "reasoning": "The student correctly identifies that extension headers allow for the addition of new options/information without modifying the fixed header structure, which directly aligns with the target criteria of appending new options without changing the header."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Extension headers are header that can be added to a packet for a new functionality. Extension headers are present between fixed header and payload. \nAdvantages:\n1. They allow appending new options without changing fixed header\n2. They help in overcoming size limitation on packets.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Extension headers are header that can be added to a packet for a new functionality. They allow appending new options without changing fixed header",
+          "reasoning": "The student correctly identifies that extension headers provide new functionality (optional network-layer info) and that they allow adding options without modifying the fixed header (extending the fixed header). This satisfies both parts of the target criteria."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Extension headers are present between fixed header and payload.",
+          "reasoning": "The student explicitly identifies the location of the extension headers as being between the fixed header and the payload, which directly matches the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "They allow appending new options without changing fixed header",
+          "reasoning": "The student correctly identifies that extension headers allow for the addition of new options without requiring modifications to the fixed header, which is one of the primary advantages of the IPv6 extension header design."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S06",
+      "human_norm": 0.75,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 1.75,
+      "system_marks_with_facets": 1.75,
+      "abs_err_nofacets": 1.25,
+      "abs_err_with_facets": 1.25,
+      "answer": "Extension headers are optional fields in IPv6 address, placed between the header and the playload. The main advantage compared to IPv4 is that extension headers allow for extra information to be headed, overcaming the address size limitation",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.75,
+          "evidence_span": "extension headers allow for extra information to be headed",
+          "reasoning": "The student identifies that extension headers allow for extra information to be included, which satisfies one of the two required parts of the definition (optional network-layer info)."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "placed between the header and the playload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which aligns with the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "INCORRECT",
+          "marks_awarded": 0.0,
+          "evidence_span": "The main advantage compared to IPv4 is that extension headers allow for extra information to be headed, overcaming the address size limitation",
+          "reasoning": "The student identifies the advantage as overcoming address size limitations, which is incorrect. The advantage of extension headers is related to header flexibility and processing efficiency, not the address size of the protocol."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 3.25,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.75,
+      "answer": "Extension headers are optional information/options that can be append without changing the fixed header.\nthe extension headers are located between the header and payload of a packet. \nthanks to the extension headers it is easier to overcome the size limitation",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Extension headers are optional information/options that can be append without changing the fixed header.",
+          "reasoning": "The student correctly identifies that extension headers provide optional information and that they allow for extending the protocol without modifying the fixed header, satisfying both parts of the criteria."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "the extension headers are located between the header and payload of a packet.",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the main header and the payload, which aligns with the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Extension headers are optional information/options that can be append without changing the fixed header.",
+          "reasoning": "The student explicitly identifies that extension headers allow for options to be appended without modifying the fixed header, which directly matches the target criteria for the main advantage of IPv6 extension headers."
+        }
+      ]
+    },
+    {
+      "student_id": "CE07_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Extension headers are optional headers placed between fixed header and payload.\nThe advantages are the help to overcome size limitation and the possibility to append new options without changing the fixed header.",
+      "concepts": [
+        {
+          "concept_id": "CE07_C1",
+          "role_in_cqa": "select_n",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Extension headers are optional headers placed between fixed header and payload. The advantages are the help to overcome size limitation and the possibility to append new options without changing the fixed header.",
+          "reasoning": "The student correctly identifies that extension headers extend the fixed header (by allowing new options without changing the fixed header) and provides optional network-layer information (by being optional headers placed between the fixed header and payload)."
+        },
+        {
+          "concept_id": "CE07_C2",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "placed between fixed header and payload",
+          "reasoning": "The student correctly identifies the location of the extension headers as being between the fixed header and the payload, which directly satisfies the target criteria."
+        },
+        {
+          "concept_id": "CE07_C3",
+          "role_in_cqa": "synonym_set",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "the possibility to append new options without changing the fixed header.",
+          "reasoning": "The student correctly identifies that the main advantage of IPv6 extension headers is the ability to add new options without modifying the fixed header, which directly aligns with the target criteria."
+        }
+      ]
+    }
+  ]
+}

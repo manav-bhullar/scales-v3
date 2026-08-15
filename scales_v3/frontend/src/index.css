@@ -71,9 +71,33 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 8% -10%, color-mix(in srgb, var(--md-sys-color-primary-container) 55%, transparent), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--md-sys-color-tertiary-container) 45%, transparent), transparent 50%),
-    radial-gradient(700px 400px at 50% 110%, color-mix(in srgb, var(--md-sys-color-secondary-container) 40%, transparent), transparent 55%),
+    radial-gradient(
+      1200px 600px at 8% -10%,
+      color-mix(
+        in srgb,
+        var(--md-sys-color-primary-container) 55%,
+        transparent
+      ),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      color-mix(
+        in srgb,
+        var(--md-sys-color-tertiary-container) 45%,
+        transparent
+      ),
+      transparent 50%
+    ),
+    radial-gradient(
+      700px 400px at 50% 110%,
+      color-mix(
+        in srgb,
+        var(--md-sys-color-secondary-container) 40%,
+        transparent
+      ),
+      transparent 55%
+    ),
     var(--md-sys-color-surface);
   background-attachment: fixed;
 }
@@ -105,7 +129,9 @@ kbd {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  font-variation-settings: "opsz" 144, "GRAD" 0;
+  font-variation-settings:
+    "opsz" 144,
+    "GRAD" 0;
 }
 
 .m3-headline-large {
@@ -162,11 +188,13 @@ kbd {
 }
 
 .m3-card-exit {
-  animation: card-exit var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive) forwards;
+  animation: card-exit var(--md-sys-motion-duration-medium)
+    var(--md-sys-motion-easing-expressive) forwards;
 }
 
 .m3-card-enter {
-  animation: card-enter var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-spring);
+  animation: card-enter var(--md-sys-motion-duration-long)
+    var(--md-sys-motion-easing-spring);
 }
 
 @keyframes card-exit {
@@ -221,8 +249,10 @@ kbd {
     0 2px 6px color-mix(in srgb, var(--md-sys-color-primary) 28%, transparent),
     0 8px 24px color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent);
   transition:
-    transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring),
-    box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-expressive);
+    transform var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-spring),
+    box-shadow var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-expressive);
 }
 
 .m3-fab:hover:not(:disabled) {
@@ -252,7 +282,8 @@ kbd {
   background: var(--md-sys-color-secondary-container);
   color: var(--md-sys-color-on-secondary-container);
   text-decoration: none;
-  transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring);
+  transition: transform var(--md-sys-motion-duration-short)
+    var(--md-sys-motion-easing-spring);
 }
 
 .m3-btn-tonal:hover {

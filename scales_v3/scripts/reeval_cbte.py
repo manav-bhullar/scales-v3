@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from scales.config import get_settings
@@ -83,9 +83,7 @@ def main() -> None:
         )
 
     # Compare old vs new decisions
-    old_by_key = {
-        (r["student_id"], r["concept_id"]): r for r in grading["cbte_results"]
-    }
+    old_by_key = {(r["student_id"], r["concept_id"]): r for r in grading["cbte_results"]}
     flips: list[dict] = []
     defer_before = 0
     defer_after = 0
@@ -129,7 +127,7 @@ def main() -> None:
 
     out_dir = Path(args.out_dir) if args.out_dir else PROJECT / "data" / "e2e_eval" / "wave2"
     out_dir.mkdir(parents=True, exist_ok=True)
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
     payload = {
         "exam_id": args.exam_id,
         "reeval_at": stamp,
@@ -144,7 +142,7 @@ def main() -> None:
     out_json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     lines = [
-        f"# Wave 2 CBTE re-eval (Signal-1 fix)",
+        "# Wave 2 CBTE re-eval (Signal-1 fix)",
         "",
         f"- Exam: `{args.exam_id}`",
         f"- NLI: {'on' if not args.no_nli else 'off'}",
@@ -171,10 +169,7 @@ def main() -> None:
     report.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {out_json}")
     print(f"Wrote {report}")
-    print(
-        f"DEFER {defer_before}->{defer_after}; "
-        f"false_defer_good_c3_c4={len(false_defer_good)}"
-    )
+    print(f"DEFER {defer_before}->{defer_after}; false_defer_good_c3_c4={len(false_defer_good)}")
 
 
 if __name__ == "__main__":

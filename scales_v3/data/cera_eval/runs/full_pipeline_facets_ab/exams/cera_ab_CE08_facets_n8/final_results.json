@@ -1,0 +1,389 @@
+{
+  "exam_id": "cera_ab_CE08_facets_n8",
+  "final_results": [
+    {
+      "student_id": "CE08_S01",
+      "question_id": "CE08",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.85,
+      "has_deferred_concepts": false,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.0,
+          "evidence_span": "",
+          "reasoning": "The student identified only two challenges (Heterogeneity and Fairness), neither of which are among the required catalog of mobile routing challenges (Adaptation, Security, Medium Access Control, Quality of Service, Scalability, Power Consumption). As the student failed to name at least one valid challenge from the list, the verdict is ABSENT.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "For instance, the battery life of mobile devices, the transmission range, the radios may be different.",
+          "reasoning": "The student identifies battery life as a constraint in mobile networks, which directly maps to the 'Power Consumption: battery-powered optimization' facet and the 'battery' keyword requirement.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "the drastic change in mobile network topology leads to difficulty in maintaining fairness.",
+          "reasoning": "The student identifies 'topology' changes as a challenge in mobile networks, which directly maps to the 'Quality of Service: topology changes or resource constraints' facet provided in the criteria.",
+          "trust_score": 0.85,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585612Z"
+    },
+    {
+      "student_id": "CE08_S02",
+      "question_id": "CE08",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.35003322633565404,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1.0,
+          "evidence_span": "the hidden terminal or exposed terminal.  Also, due to the node\u2019s mobility, the networks topology can change rapidly.",
+          "reasoning": "The student identifies two distinct challenges: Medium Access Control issues (hidden/exposed terminal) and topology changes due to mobility (which relates to scalability/adaptation). This satisfies the partial credit rule of naming 1-3 challenges.",
+          "trust_score": 0.35003322633565404,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "due to the node\u2019s mobility, the networks topology can change rapidly.",
+          "reasoning": "The student correctly identifies dynamic topology/node mobility as a challenge for mobile routing, which aligns with the 'Adaptation' criteria provided in the knowledge point.",
+          "trust_score": 0.3524204134941101,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Also, due to the node\u2019s mobility, the networks topology can change rapidly.",
+          "reasoning": "The student correctly identifies 'dynamic topology' (or node mobility) as a challenge for mobile routing, which aligns with the 'Adaptation' challenge category defined in the criteria.",
+          "trust_score": 0.3544895093888044,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585632Z"
+    },
+    {
+      "student_id": "CE08_S03",
+      "question_id": "CE08",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.30004843582282775,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.0,
+          "evidence_span": "",
+          "reasoning": "The student identified 'Hidden Terminals' and 'near and far terminals', which are challenges related to Medium Access Control (MAC). However, the student only provided two challenges, failing to meet the minimum requirement of four distinct challenges specified in the target criteria.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "As a consequence like the example in the lecture collisions can be caused because two nodes who can not hear each other, might are communicating with one in between them, because one sends to the one in the middle.",
+          "reasoning": "The student correctly identifies the 'Hidden Terminal' problem, which is a classic challenge related to signal interference and collisions in Medium Access Control (MAC). The description explains the mechanism of nodes being unable to hear each other leading to collisions, which satisfies the MAC criteria.",
+          "trust_score": 0.30004843582282775,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "A second challenge is \"near and far terminals\". Here the distance between nodes influences the strength of the signal. As a consequence the one who is closer to the communication partner drowns out the weaker one.",
+          "reasoning": "The student identifies the 'near and far terminals' challenge, which is a classic MAC layer issue related to signal interference and capture effects. The description accurately explains how distance-based signal strength differences lead to one node drowning out another, which directly maps to the 'signal interference or collisions' facet of the MAC challenge.",
+          "trust_score": 0.30263019893318416,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585644Z"
+    },
+    {
+      "student_id": "CE08_S04",
+      "question_id": "CE08",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.3502579182619229,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.0,
+          "evidence_span": "",
+          "reasoning": "The student identified 'hidden terminals' and 'exposed terminals', which are specific MAC layer issues, but they did not name four distinct mobile routing challenges as required by the criteria. The student only provided two examples, and these are specific to medium access control rather than the broader mobile routing challenges cataloged.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "exposed terminals, which occurs when two devices want to transmit data at the same time, but encounter a channel interference.",
+          "reasoning": "The student correctly identifies the challenge of signal interference/collisions (specifically the exposed terminal problem) which is a core MAC layer challenge in mobile routing environments.",
+          "trust_score": 0.3502579182619229,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "exposed terminals, which occurs when two devices want to transmit data at the same time, but encounter a channel interference.",
+          "reasoning": "The student correctly identifies the exposed terminal problem as a challenge involving channel interference, which maps directly to the 'signal interference or collisions' facet for Medium Access Control (MAC) challenges in mobile/wireless networks.",
+          "trust_score": 0.3503707363968715,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585656Z"
+    },
+    {
+      "student_id": "CE08_S05",
+      "question_id": "CE08",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.3500342904037097,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.0,
+          "evidence_span": "",
+          "reasoning": "The student discusses 'Hidden Terminals' and 'Exposed Terminals', which are challenges related to Medium Access Control (MAC) in wireless networks. However, the student only identifies two challenges, whereas the knowledge point requires naming at least four distinct mobile routing challenges from the provided catalog (Adaptation, Security, Medium Access Control, Quality of Service, Scalability, Power Consumption). Since the student provided fewer than four challenges, they do not meet the criteria for partial or full credit.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "But the transmission can conllide at Node B and both messages are lost",
+          "reasoning": "The student correctly identifies signal interference and collisions as a challenge in mobile routing, which maps directly to the 'Medium Access Control' challenge category defined in the criteria.",
+          "trust_score": 0.3500342904037097,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "B sends to A currently and C wants to send to D. But C has to wait because it considers that it will has interference.",
+          "reasoning": "The student correctly identifies the exposed terminal problem, which is a classic challenge related to signal interference and collisions in Medium Access Control (MAC). The description explains the mechanism of unnecessary waiting due to perceived interference, which aligns with the MAC challenge criteria.",
+          "trust_score": 0.3515838541090488,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585667Z"
+    },
+    {
+      "student_id": "CE08_S06",
+      "question_id": "CE08",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.30155492387712,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1.0,
+          "evidence_span": "Two of the many challenges of mobile routing compared to fixed / wired networks are Hidden Terminals and security issues.",
+          "reasoning": "The student identifies two challenges: 'Hidden Terminals' (which relates to Medium Access Control) and 'security issues' (which relates to Security). This satisfies the Partial Credit Rule of naming 1-3 valid challenges.",
+          "trust_score": 0.350080735940719,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Then the distant nodes are not able to detect collisions occuring in the \u201emiddle\u201c of the network at the centered nodes, because the signal is not transmitted over all network nodes.",
+          "reasoning": "The student correctly identifies signal collisions as a challenge in mobile/wireless routing, which maps to the 'Medium Access Control' challenge category. The explanation of the hidden terminal problem accurately describes how signal interference and collisions occur due to the nature of wireless transmission.",
+          "trust_score": 0.30155492387712,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "If the network is available outside of the building, then any node outside will be able to detect the network.",
+          "reasoning": "The student identifies security as a challenge and describes the vulnerability of wireless networks to unauthorized interception or access compared to wired networks. This aligns with the 'packet interception' facet of the Security challenge.",
+          "trust_score": 0.30901551246643066,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585680Z"
+    },
+    {
+      "student_id": "CE08_S07",
+      "question_id": "CE08",
+      "final_score": 3.5,
+      "total_marks": 4,
+      "overall_trust": 0.3000314778095344,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "max_marks": 1.0,
+          "evidence_span": "One basic challenge in Mobile Networking is the Power control: mobile devices have only a limited amount of power which should be used wisely and as little as possible. In addition, the routing in Mobile Networking has to deal with a high amount of dynamic so it needs to find new routes as nodes move or conditions change.",
+          "reasoning": "The student identifies two distinct challenges: Power Consumption (via 'Power control') and Adaptation (via 'high amount of dynamic' and 'nodes move'). Since the requirement is to name at least four distinct challenges, and the student only provided two, this qualifies for partial credit under the 1-3 valid names rule.",
+          "trust_score": 0.3000314778095344,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "mobile devices have only a limited amount of power which should be used wisely and as little as possible.",
+          "reasoning": "The student correctly identifies 'Power control' as a challenge and provides a valid description regarding the limited battery capacity of mobile devices, which aligns with the 'battery-powered optimization' facet.",
+          "trust_score": 0.9750679731369019,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "the routing in Mobile Networking has to deal with a high amount of dynamic so it needs to find new routes as nodes move or conditions change.",
+          "reasoning": "The student correctly identifies the challenge of dynamic topology and node mobility in mobile routing. The description explicitly mentions that the network must adapt as nodes move, which aligns perfectly with the 'Adaptation' challenge criteria.",
+          "trust_score": 0.7630336880683899,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585692Z"
+    },
+    {
+      "student_id": "CE08_S08",
+      "question_id": "CE08",
+      "final_score": 3.0,
+      "total_marks": 4,
+      "overall_trust": 0.350122977187857,
+      "has_deferred_concepts": true,
+      "all_concepts_resolved": true,
+      "concept_results": [
+        {
+          "concept_id": "CE08_C1",
+          "knowledge_point": "The student names at least four distinct mobile routing challenges from the catalog.",
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "max_marks": 1.0,
+          "evidence_span": "",
+          "reasoning": "The student identified only two challenges (Service Discovery and Power control), which is below the minimum requirement of four distinct challenges specified in the target criteria.",
+          "trust_score": 0.9,
+          "reviewed_by": "auto",
+          "teacher_comment": null
+        },
+        {
+          "concept_id": "CE08_C2",
+          "knowledge_point": "The student provides a valid description for the first chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Services Discovery is a challenge in Mobile Routing, since devices move around, so it becomes difficult to know where services are placed and how to be aware of them.",
+          "reasoning": "The student correctly identifies dynamic topology/node movement as a challenge for mobile routing, which maps to the 'Adaptation' criteria. The explanation clearly links the movement of devices to the difficulty of maintaining service awareness, satisfying the requirement for a valid description.",
+          "trust_score": 0.350122977187857,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        },
+        {
+          "concept_id": "CE08_C3",
+          "knowledge_point": "The student provides a valid description for the second chosen challenge.",
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "max_marks": 1.5,
+          "evidence_span": "Power control is also a challenge. In order for a device to have a certain range and suffer less interference, it needs a certain signal strength, which depends on the power.",
+          "reasoning": "The student identifies power control as a challenge and explains the trade-off between signal strength, interference, and power consumption, which aligns with the 'battery-powered optimization' facet for Power Consumption.",
+          "trust_score": 0.35056845587678254,
+          "reviewed_by": "teacher",
+          "teacher_comment": "A/B provisional: CGR marks (deferred, no human review)"
+        }
+      ],
+      "created_at": "2026-07-30T17:40:09.585704Z"
+    }
+  ]
+}

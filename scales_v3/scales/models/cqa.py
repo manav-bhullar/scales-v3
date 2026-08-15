@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator, model_validator
@@ -14,7 +14,7 @@ EvidenceRole = Literal["synonym_set", "checklist", "select_n"]
 
 
 def _utc_now() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def derive_evidence_mode(role: EvidenceRole) -> EvidenceMode:
@@ -68,18 +68,14 @@ class CQATuple(BaseModel):
         mode = data.get("evidence_mode")
         if not role and mode:
             mode_u = str(mode).strip().upper()
-            data["evidence_role"] = derive_evidence_role(
-                "ALL" if mode_u == "ALL" else "ANY"
-            )
+            data["evidence_role"] = derive_evidence_role("ALL" if mode_u == "ALL" else "ANY")
             role = data["evidence_role"]
         if not role:
             data["evidence_role"] = "synonym_set"
             role = "synonym_set"
         role_s = str(role).strip().lower()
         if role_s not in ("synonym_set", "checklist", "select_n"):
-            raise ValueError(
-                "evidence_role must be synonym_set, checklist, or select_n"
-            )
+            raise ValueError("evidence_role must be synonym_set, checklist, or select_n")
         data["evidence_role"] = role_s
         data["evidence_mode"] = derive_evidence_mode(role_s)  # type: ignore[arg-type]
         return data
@@ -102,9 +98,7 @@ class CQATuple(BaseModel):
     def evidence_role_lower(cls, value: str) -> str:
         role = value.strip().lower()
         if role not in ("synonym_set", "checklist", "select_n"):
-            raise ValueError(
-                "evidence_role must be synonym_set, checklist, or select_n"
-            )
+            raise ValueError("evidence_role must be synonym_set, checklist, or select_n")
         return role
 
     @field_validator("min_count")

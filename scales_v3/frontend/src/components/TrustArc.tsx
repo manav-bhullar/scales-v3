@@ -43,7 +43,8 @@ export function TrustArc({
         strokeDasharray={`${dash} ${c - dash}`}
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
         style={{
-          transition: "stroke-dasharray var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-expressive)",
+          transition:
+            "stroke-dasharray var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-expressive)",
         }}
       />
       <text

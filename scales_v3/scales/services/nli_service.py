@@ -48,7 +48,7 @@ class NLIService:
             logger.bind(module="nli").info(
                 "Loaded NLI model {} on {}", self.model_name, self.device
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             raise RuntimeError(
                 f"Failed to load NLI model '{self.model_name}'. "
                 "Run scripts/download_models.py or check network/HuggingFace access. "

@@ -83,8 +83,12 @@ def main() -> None:
 
     print(f"n = {len(sids)} students\n")
     print("Does SCALES ORDER students like the humans did?")
-    print(f"  all 4 concepts : Spearman {spearman(ours, human):+.2f} | Kendall {kendall_tau(ours, human):+.2f}")
-    print(f"  C2+C3 only     : Spearman {spearman(core, human):+.2f} | Kendall {kendall_tau(core, human):+.2f}")
+    print(
+        f"  all 4 concepts : Spearman {spearman(ours, human):+.2f} | Kendall {kendall_tau(ours, human):+.2f}"
+    )
+    print(
+        f"  C2+C3 only     : Spearman {spearman(core, human):+.2f} | Kendall {kendall_tau(core, human):+.2f}"
+    )
 
     print("\nFor scale, absolute-score agreement (what we measured before):")
     mae = sum(abs(o - h) for o, h in zip(ours, human)) / len(ours)

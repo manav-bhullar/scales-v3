@@ -40,6 +40,7 @@ def test_normalize_text_collapses_whitespace():
 
 # ─── Unicode punctuation drift (bugfix: false "hallucinated quote" DEFER) ───
 
+
 def test_curly_apostrophe_folds_to_straight():
     # LLM re-quotes with a curly apostrophe; student wrote a straight one.
     assert normalize_text("server\u2019s SYN") == "server's syn"
@@ -59,6 +60,7 @@ def test_verify_evidence_arrow_and_dash_folded():
 
 
 # ─── Reformatting / paraphrase fallback ───
+
 
 def test_verify_evidence_reformatted_list_markers():
     # Real STU_GOOD_ALT/C4 case: evidence concatenates the student's own

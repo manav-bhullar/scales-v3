@@ -49,7 +49,10 @@ export function ResultsPage() {
       </p>
 
       {error && (
-        <p className="m3-body-large" style={{ color: "var(--md-sys-color-error)" }}>
+        <p
+          className="m3-body-large"
+          style={{ color: "var(--md-sys-color-error)" }}
+        >
           {error}
         </p>
       )}
@@ -128,7 +131,9 @@ export function ResultsPage() {
                       }}
                       onClick={() => setSelected(r.student_id)}
                     >
-                      <span className="m3-title-large block">{r.student_id}</span>
+                      <span className="m3-title-large block">
+                        {r.student_id}
+                      </span>
                       <span className="m3-body-small">
                         {r.final_score}/{r.total_marks}
                         {" · trust "}
@@ -151,7 +156,9 @@ export function ResultsPage() {
               </p>
               <p className="m3-body-small mt-2">
                 Overall trust {detail.overall_trust.toFixed(2)} ·{" "}
-                {detail.all_concepts_resolved ? "All concepts resolved" : "Unresolved remain"}
+                {detail.all_concepts_resolved
+                  ? "All concepts resolved"
+                  : "Unresolved remain"}
               </p>
               <ul className="list-none p-0 m-0 mt-6 flex flex-col gap-3">
                 {detail.concept_results.map((c) => (
@@ -185,9 +192,12 @@ export function ResultsPage() {
                         </span>
                       </div>
                     </div>
-                    <p className="m3-body-small m-0 mt-2">{c.knowledge_point}</p>
+                    <p className="m3-body-small m-0 mt-2">
+                      {c.knowledge_point}
+                    </p>
                     <p className="m3-body-small m-0">
-                      {c.marks_awarded}/{c.max_marks} · trust {c.trust_score.toFixed(2)}
+                      {c.marks_awarded}/{c.max_marks} · trust{" "}
+                      {c.trust_score.toFixed(2)}
                     </p>
                     {c.teacher_comment && (
                       <p className="m3-body-small m-0 mt-2">

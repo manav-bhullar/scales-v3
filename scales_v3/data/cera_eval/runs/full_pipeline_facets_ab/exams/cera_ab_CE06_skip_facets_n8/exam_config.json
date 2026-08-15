@@ -1,0 +1,51 @@
+{
+  "exam": {
+    "exam_id": "cera_ab_CE06_skip_facets_n8",
+    "subject": "CERA facets A/B \u2014 CE06 (skip_facets)",
+    "questions": [
+      {
+        "question_id": "CE06",
+        "question_text": "What is the \"Dynamic Host Configuration Protocol (DHCP)\"? What is it used for?",
+        "reference_answer": "The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used in Internet Protocol (IP) networks, whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on the network. Further, DHCP has largely replaced RARP (and BOOTP)\n Uses of DHCP are: Simplifies installation and configuration of end systems. Allows for manual and automatic IP address assignment. May provide additional configuration information (DNS server, netmask, default router, etc.)",
+        "rubric": "Total 4 marks:\n1) Definition of DHCP (2 marks)\n2) Uses / purpose of DHCP (2 marks)",
+        "total_marks": 4,
+        "rubric_items": [],
+        "student_answers": [
+          {
+            "student_id": "CE06_S01",
+            "answer_text": "The dhcp protocol is a protocol to configure systems that join a network.\nIt is used to assign ip addresses to systems within the network. \nIf a system joins the network it can ask the dhcp server for network configuration and an ip address that it should use in the future."
+          },
+          {
+            "student_id": "CE06_S02",
+            "answer_text": "DHCP is a network management protocol which extends the functionality of RARP and BOOTP. DHCP simplifies installation and cofiguration of end systems. It also allows for manual and automatic IP address assignment."
+          },
+          {
+            "student_id": "CE06_S03",
+            "answer_text": "DHCP is a network management protocol in which it simplifies installation and configuration of end systems, allows for manual and automatic IP address assignment, and may provide additional configuration information. DHCP server is used for assignments in which the address is assigned for a limited time only before it expires."
+          },
+          {
+            "student_id": "CE06_S04",
+            "answer_text": "DHCP is used to assign IP addresses and other configuration to (new) hosts in a network. After an initial DHCP DISCOVER packet of a client the server sends the assigned IP address back with additional information, like DNS server or netmask."
+          },
+          {
+            "student_id": "CE06_S05",
+            "answer_text": "DHCP is a newer version of RARP. \nSystems use this protocol to resolve their own IP address in a network from their hardware/MAC address. \nA specific DHCP server assigns the IP addresses and is contacted to resolve them."
+          },
+          {
+            "student_id": "CE06_S06",
+            "answer_text": "The Dynamic Host Configuration Protocol (DHCP) is Internet Protocol based on the special server that uses for manually or automatically IP addresses assignment and other network configuration parameters, such as subnet masks and default gateways, to each device on a network so they can communicate with other IP networks.\nThis server need not be on the same LAN as the requesting host. Since the DHCP server may not be reachable by broadcasting, a DHCP relay agent is needed on each LAN."
+          },
+          {
+            "student_id": "CE06_S07",
+            "answer_text": "Dynamic Host Configuration Protocol (DHCP) is a protocol for managing IP addresses in a TCP / IP network and distributing them to the requesting hosts. With DHCP, every network participant is able to configure itself automatically. \nTo set up a network via TCP/IP, it is necessary to carry out an IP configuration on each host. For a TCP/IP network, the following settings must be made on each host:\n- Allocation of a unique IP address\n- Assign a subnet mask\n- Assign the responsible default or standard gateway\n- Assign the responsible DNS server"
+          },
+          {
+            "student_id": "CE06_S08",
+            "answer_text": "DHCP is a protocol for automatic or manual allocation of IP addresses to devices, which is usually done by a DHCP server."
+          }
+        ]
+      }
+    ],
+    "created_at": "2026-07-30T17:49:07.115871Z"
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "question_id": "CE03",
+  "mode": "skip_facets=True (CGR prompt omits facets/keywords/variants)",
+  "n_students": 8,
+  "total_marks": 4.0,
+  "mae_nofacets": 0.688,
+  "mae_with_facets_same_students": 0.875,
+  "students": [
+    {
+      "student_id": "CE03_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 3.5,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.5,
+      "answer": "In asynchronous transmission each character is bounded by a start and a stop bit. This is simple and inexpensive but has a low transmission. \nSynchronous transmission, sveral characters are put together to frames. This is more complex but has a higher transmission rate.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In asynchronous transmission each character is bounded by a start and a stop bit.",
+          "reasoning": "The student explicitly identifies that asynchronous transmission uses start and stop bits and correctly specifies that this mechanism applies to each character."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "sveral characters are put together to frames.",
+          "reasoning": "The student correctly identifies that synchronous transmission involves grouping characters into frames, which satisfies the requirement for identifying the use of frames as the mechanism for synchronization."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "This is simple and inexpensive but has a low transmission.",
+          "reasoning": "The student explicitly identifies both the simplicity/low cost ('simple and inexpensive') and the low transmission rate ('low transmission') associated with asynchronous transmission."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "This is more complex but has a higher transmission rate.",
+          "reasoning": "The student explicitly identifies both the higher complexity and the higher transmission rate associated with synchronous transmission, satisfying the full criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Asynchronous transmission:\n-Each character is bounded by a start bit and a stop bit\n-Simple + inexpensive, but low transmission rates, often up to 200 bit/sec\n\nSynchronous transmission:\n-Several characters pooled to frames\n-Frames defined by SYN or flag \n-More complex, but higher transmission rates",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Each character is bounded by a start bit and a stop bit",
+          "reasoning": "The student explicitly identifies that each character is bounded by a start bit and a stop bit, which satisfies the requirement for explaining the mechanism of asynchronous transmission at the character level."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Several characters pooled to frames\n-Frames defined by SYN or flag",
+          "reasoning": "The student correctly identifies that synchronous transmission uses frames and specifies that these frames are defined by synchronization markers (SYN or flag), which fully satisfies the target criteria."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Simple + inexpensive, but low transmission rates",
+          "reasoning": "The student explicitly identifies both the simplicity/low cost ('Simple + inexpensive') and the low transmission rate ('low transmission rates') associated with asynchronous transmission, satisfying the full criteria."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "More complex, but higher transmission rates",
+          "reasoning": "The student explicitly identifies both the higher complexity and the higher transmission rate associated with synchronous transmission, satisfying the full criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "Asynchronous transmission \n-Each character is bounded by a start bit and a stop bit \n-Simple + inexpensive, but low transmission rates, often up to 200 bit/sec \n\nSynchronous transmission \n-Several characters pooled to frames \n-Frames defined by SYN or flag \n-More complex, but higher transmission rates",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Each character is bounded by a start bit and a stop bit",
+          "reasoning": "The student explicitly identifies that each character is bounded by a start bit and a stop bit, which satisfies the requirement for the mechanism of asynchronous transmission."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-Several characters pooled to frames \n-Frames defined by SYN or flag",
+          "reasoning": "The student correctly identifies that synchronous transmission uses frames and specifies that these frames are defined by synchronization markers (SYN or flag), which fully satisfies the criteria."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Simple + inexpensive, but low transmission rates",
+          "reasoning": "The student explicitly identifies both the simplicity/low cost and the low transmission rate associated with asynchronous transmission, satisfying the full criteria."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "More complex, but higher transmission rates",
+          "reasoning": "The student explicitly identifies both the higher complexity and the higher transmission rates associated with synchronous transmission, satisfying the full criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 4.0,
+      "system_marks_with_facets": 4.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "While in asynchronous transmission every character is bounded by a start and a end bit, in synchronous transmission several character are bound to frames, these frames are bound by SYN or flag. The asynchronous transmission is simple and inexpensive, but has a low transmission rate, up to 200 bit/sec, while the synchronous transmission has a higher transmission rate, but is more complex.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "in asynchronous transmission every character is bounded by a start and a end bit",
+          "reasoning": "The student correctly identifies that asynchronous transmission uses start and stop bits to frame individual characters, which satisfies the full criteria for the knowledge point."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "in synchronous transmission several character are bound to frames, these frames are bound by SYN or flag.",
+          "reasoning": "The student correctly identifies that synchronous transmission uses frames and specifies the use of synchronization markers (SYN or flag) to define these frames, which satisfies the full criteria for the mechanism of synchronous transmission."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "The asynchronous transmission is simple and inexpensive, but has a low transmission rate",
+          "reasoning": "The student explicitly identifies both the simplicity/low cost and the low transmission rate of asynchronous transmission, satisfying the full criteria."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "the synchronous transmission has a higher transmission rate, but is more complex.",
+          "reasoning": "The student explicitly identifies both the higher complexity and the higher transmission rate associated with synchronous transmission, satisfying the criteria for full marks."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 2.0,
+      "system_marks_with_facets": 2.0,
+      "abs_err_nofacets": 2.0,
+      "abs_err_with_facets": 2.0,
+      "answer": "asynchronous transmission:\n-works character by character\n-each character who should transmission has a start and stop bit\n\nsynchronous transmission:\n-several characters pooled to frames\n-the frames where defined by SYN or flag\n-different data formats (bit-synchronization, character-synchronization)",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-works character by character\n-each character who should transmission has a start and stop bit",
+          "reasoning": "The student correctly identifies that asynchronous transmission operates on a character-by-character basis and explicitly mentions the use of start and stop bits for each character, which satisfies the full criteria."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "-several characters pooled to frames\n-the frames where defined by SYN or flag",
+          "reasoning": "The student correctly identifies that synchronous transmission involves pooling characters into frames and defines these frames using synchronization markers (SYN or flag), which satisfies the target criteria for full marks."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student describes the mechanism of asynchronous transmission (character-by-character transmission with start and stop bits) but does not discuss the trade-offs, specifically the simplicity/low cost or the resulting low transmission rate."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student describes the structural differences between asynchronous and synchronous transmission (character-by-character vs. frames) but does not mention the trade-offs of synchronous transmission, specifically the higher complexity or the resulting higher transmission rate."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 2.5,
+      "abs_err_nofacets": 1.0,
+      "abs_err_with_facets": 1.5,
+      "answer": "In an asynchronous transmission each byte is sent separately and has a start and an end bit.\nIn a synchronous transmission data is sent in frames which can lead to higher transmission rates but becomes more complex.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In an asynchronous transmission each byte is sent separately and has a start and an end bit.",
+          "reasoning": "The student correctly identifies that asynchronous transmission involves sending data in individual units (bytes) and explicitly mentions the use of start and stop bits, which satisfies the full criteria for the mechanism of asynchronous transmission."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In a synchronous transmission data is sent in frames",
+          "reasoning": "The student correctly identifies that synchronous transmission involves sending data in frames, which satisfies the requirement for identifying the use of frames as the mechanism for synchronization."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student describes the mechanism of asynchronous transmission (start/end bits) but does not discuss the trade-offs of simplicity/low cost or the resulting low transmission rate."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "In a synchronous transmission data is sent in frames which can lead to higher transmission rates but becomes more complex.",
+          "reasoning": "The student explicitly identifies both the higher transmission rate and the increased complexity associated with synchronous transmission, satisfying the full criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 3.5,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 0.5,
+      "abs_err_with_facets": 1.0,
+      "answer": "Synchronous Data transmission means that many characters/symbols are transferred within a frame while asynchronous transmission transfers the data byte wise /character wise each, so the data is not collected into a frame. Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed especially in fast transmission.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed especially in fast transmission.",
+          "reasoning": "The student explicitly identifies the use of start and stop bits as a mechanism for asynchronous transmission and correctly associates this with the character-level (byte-wise) nature of the transmission mentioned in the previous sentence."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Synchronous Data transmission means that many characters/symbols are transferred within a frame",
+          "reasoning": "The student correctly identifies that synchronous transmission involves transferring data within frames, which satisfies the target criteria for the mechanism of synchronous transmission."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Asynchronous is definitely simpler but the permanent needed start, stop and time gap in between a stop and the next start is slowing down the speed especially in fast transmission.",
+          "reasoning": "The student explicitly identifies that asynchronous transmission is 'simpler' and explains that the overhead of start/stop bits and gaps results in 'slowing down the speed', which satisfies both components of the trade-off criteria."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Asynchronous is definitely simpler",
+          "reasoning": "The student correctly identifies that asynchronous transmission is simpler, which implies the higher complexity of synchronous transmission. However, the student does not explicitly state that synchronous transmission results in a higher transmission rate; they only discuss the speed limitations of asynchronous transmission."
+        }
+      ]
+    },
+    {
+      "student_id": "CE03_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 4.0,
+      "system_marks_nofacets": 2.0,
+      "system_marks_with_facets": 2.0,
+      "abs_err_nofacets": 2.0,
+      "abs_err_with_facets": 2.0,
+      "answer": "Asynchronous mode:\nEach character is bounded by a start bit and a stop bit.\n\nSynchronous mode:\nSeveral characters are pooled to one frame which is defined by a SYN or a flag.",
+      "concepts": [
+        {
+          "concept_id": "CE03_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Each character is bounded by a start bit and a stop bit.",
+          "reasoning": "The student explicitly identifies that asynchronous transmission uses start and stop bits to bound individual characters, which satisfies the full criteria for this knowledge point."
+        },
+        {
+          "concept_id": "CE03_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "FULL",
+          "marks_awarded": 1.0,
+          "evidence_span": "Several characters are pooled to one frame which is defined by a SYN or a flag.",
+          "reasoning": "The student correctly identifies that synchronous transmission involves pooling characters into frames and specifies that these frames are defined by synchronization markers (SYN or a flag), which fully satisfies the target criteria."
+        },
+        {
+          "concept_id": "CE03_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student describes the structural differences between asynchronous and synchronous transmission (start/stop bits vs. frames/flags) but does not discuss the trade-offs of asynchronous transmission, specifically its simplicity/low cost or its low transmission rate."
+        },
+        {
+          "concept_id": "CE03_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.0,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student describes the structural difference between asynchronous and synchronous transmission (start/stop bits vs. frames/flags) but does not mention the trade-offs of synchronous transmission, specifically the higher complexity or the resulting higher transmission rate."
+        }
+      ]
+    }
+  ]
+}

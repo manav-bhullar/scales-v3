@@ -135,7 +135,8 @@ export function ConceptExplainCard({
               bg="var(--md-sys-color-primary-container)"
               fg="var(--md-sys-color-on-primary-container)"
             >
-              Teacher decided{c.correction_type ? ` · ${c.correction_type}` : ""}
+              Teacher decided
+              {c.correction_type ? ` · ${c.correction_type}` : ""}
             </Pill>
           ) : c.decision === "DEFER" ? (
             <Pill
@@ -167,7 +168,10 @@ export function ConceptExplainCard({
       {expanded && (
         <div
           className="px-4 md:px-5 pb-5 flex flex-col gap-4"
-          style={{ animation: "card-enter var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive)" }}
+          style={{
+            animation:
+              "card-enter var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-expressive)",
+          }}
         >
           <Section label="What this concept required">
             <p className="m3-body-large m-0">
@@ -189,9 +193,13 @@ export function ConceptExplainCard({
               <p className="m3-body-large m-0">
                 {evidence ? (
                   <>
-                    <span style={{ opacity: 0.5 }}>…{evidence.before.slice(-60)}</span>
+                    <span style={{ opacity: 0.5 }}>
+                      …{evidence.before.slice(-60)}
+                    </span>
                     <mark className="evidence-mark">{evidence.match}</mark>
-                    <span style={{ opacity: 0.5 }}>{evidence.after.slice(0, 60)}…</span>
+                    <span style={{ opacity: 0.5 }}>
+                      {evidence.after.slice(0, 60)}…
+                    </span>
                   </>
                 ) : (
                   <>
@@ -234,7 +242,9 @@ export function ConceptExplainCard({
                 </Pill>
               ))}
               {c.expected_keywords.length === 0 && (
-                <span className="m3-body-small">No keywords on this concept.</span>
+                <span className="m3-body-small">
+                  No keywords on this concept.
+                </span>
               )}
             </div>
           </Section>
@@ -247,7 +257,8 @@ export function ConceptExplainCard({
                 bg="var(--md-sys-color-surface-container-highest)"
                 title="Was the quoted evidence actually found in the student's answer?"
               >
-                Evidence {c.signal_1_evidence_verified ? "verified" : "unverified"}
+                Evidence{" "}
+                {c.signal_1_evidence_verified ? "verified" : "unverified"}
               </Pill>
               <Pill
                 bg="var(--md-sys-color-surface-container-highest)"
@@ -281,7 +292,8 @@ export function ConceptExplainCard({
             <Section label="Teacher override">
               <p className="m3-body-large m-0">
                 Machine said {c.verdict} ({c.marks_awarded}/{c.max_marks});
-                teacher set {c.teacher_verdict} ({c.teacher_marks}/{c.max_marks}).
+                teacher set {c.teacher_verdict} ({c.teacher_marks}/{c.max_marks}
+                ).
               </p>
               {c.teacher_comment && (
                 <p className="m3-body-small m-0 mt-1">“{c.teacher_comment}”</p>

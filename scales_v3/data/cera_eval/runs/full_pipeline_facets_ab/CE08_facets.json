@@ -1,0 +1,83 @@
+{
+  "question_id": "CE08",
+  "arm": "facets",
+  "skip_facets": false,
+  "exam_id": "cera_ab_CE08_facets_n8",
+  "n_students": 8,
+  "total_marks": 4,
+  "mae": 0.625,
+  "mean_bias": -0.375,
+  "qwk": 0.153,
+  "exact": 2,
+  "over": 1,
+  "under": 5,
+  "deferred_concept_rows": 15,
+  "accepted_concept_rows": 9,
+  "deferred_count_status": 15,
+  "students": [
+    {
+      "student_id": "CE08_S01",
+      "human": 3.0,
+      "system": 3.0,
+      "abs_err": 0.0,
+      "bias": 0.0,
+      "trust": 0.85
+    },
+    {
+      "student_id": "CE08_S02",
+      "human": 3.5,
+      "system": 3.5,
+      "abs_err": 0.0,
+      "bias": 0.0,
+      "trust": 0.35003322633565404
+    },
+    {
+      "student_id": "CE08_S03",
+      "human": 4.0,
+      "system": 3.0,
+      "abs_err": 1.0,
+      "bias": -1.0,
+      "trust": 0.30004843582282775
+    },
+    {
+      "student_id": "CE08_S04",
+      "human": 2.0,
+      "system": 3.0,
+      "abs_err": 1.0,
+      "bias": 1.0,
+      "trust": 0.3502579182619229
+    },
+    {
+      "student_id": "CE08_S05",
+      "human": 4.0,
+      "system": 3.0,
+      "abs_err": 1.0,
+      "bias": -1.0,
+      "trust": 0.3500342904037097
+    },
+    {
+      "student_id": "CE08_S06",
+      "human": 4.0,
+      "system": 3.5,
+      "abs_err": 0.5,
+      "bias": -0.5,
+      "trust": 0.30155492387712
+    },
+    {
+      "student_id": "CE08_S07",
+      "human": 4.0,
+      "system": 3.5,
+      "abs_err": 0.5,
+      "bias": -0.5,
+      "trust": 0.3000314778095344
+    },
+    {
+      "student_id": "CE08_S08",
+      "human": 4.0,
+      "system": 3.0,
+      "abs_err": 1.0,
+      "bias": -1.0,
+      "trust": 0.350122977187857
+    }
+  ]
+}

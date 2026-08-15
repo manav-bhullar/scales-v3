@@ -59,7 +59,9 @@ async def main() -> None:
         out_path = PROJECT / out_path
     out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {out_path}")
-    print(f"Concepts: {len(out.cqa_tuples)} | marks sum={payload['marks_sum']} / {question.total_marks}")
+    print(
+        f"Concepts: {len(out.cqa_tuples)} | marks sum={payload['marks_sum']} / {question.total_marks}"
+    )
     for c in out.cqa_tuples:
         print(f"  {c.concept_id} ({c.marks}): {c.knowledge_point}")
 

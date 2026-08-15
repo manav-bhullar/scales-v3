@@ -43,6 +43,8 @@ def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> N
             )
     except Exception:
         pass
+
+
 # endregion agent log
 
 
@@ -305,7 +307,10 @@ class CBTEModule:
                     tau=threshold,
                 )
 
-        return [r if r is not None else self._impossible_fallback(items[i][0]) for i, r in enumerate(results)]
+        return [
+            r if r is not None else self._impossible_fallback(items[i][0])
+            for i, r in enumerate(results)
+        ]
 
     # ─── Tier logic ───────────────────────────────────────────────────────
 
@@ -329,10 +334,7 @@ class CBTEModule:
                 keywords_found=keywords_found,
                 nli_score=None,
                 stability=None,
-                reason=(
-                    "LLM quoted evidence not found in student answer "
-                    "(hallucinated quote)"
-                ),
+                reason=("LLM quoted evidence not found in student answer (hallucinated quote)"),
             )
 
         kw_threshold = self.config.tier1_keyword_threshold
@@ -486,9 +488,7 @@ class CBTEModule:
         if self.config.enable_tier3 and self.llm is not None:
             # Future: re-prompt with perturbed knowledge point
             stability = 1.0
-            logger.warning(
-                "enable_tier3=true but synonym swap not implemented; stability=1.0"
-            )
+            logger.warning("enable_tier3=true but synonym swap not implemented; stability=1.0")
         else:
             stability = 1.0
 

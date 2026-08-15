@@ -1,0 +1,394 @@
+{
+  "question_id": "CE01",
+  "mode": "skip_facets=True (CGR prompt omits facets/keywords/variants)",
+  "n_students": 8,
+  "total_marks": 3.0,
+  "mae_nofacets": 0.469,
+  "mae_with_facets_same_students": 0.5,
+  "students": [
+    {
+      "student_id": "CE01_S01",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.5,
+      "system_marks_with_facets": 2.25,
+      "abs_err_nofacets": 0.5,
+      "abs_err_with_facets": 0.75,
+      "answer": "1. Unconfirmed connectionless service: transmission of isolated, idependent units without acknowledgement, possible loss of data / no flow control\n2. Confirmed connectionless service: transmission with acknowledgement with no loss, has timeouts and retransmission / no flow control\n3. Connection-oriented service:  connection over error free channel with a flow control",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "1. Unconfirmed connectionless service: transmission of isolated, idependent units without acknowledgement, possible loss of data / no flow control\n2. Confirmed connectionless service: transmission with acknowledgement with no loss, has timeouts and retransmission / no flow control\n3. Connection-oriented service:  connection over error free channel with a flow control",
+          "reasoning": "The student correctly identified all three required service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "transmission of isolated, idependent units without acknowledgement, possible loss of data / no flow control",
+          "reasoning": "The student correctly identified all three required properties: lack of acknowledgement ('without acknowledgement'), potential for data loss ('possible loss of data'), and absence of flow control ('no flow control')."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "2. Confirmed connectionless service: transmission with acknowledgement with no loss, has timeouts and retransmission / no flow control",
+          "reasoning": "The student correctly identifies the use of acknowledgements (ACK) and the absence of flow control. This satisfies two of the three required properties (0.1 marks each)."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "3. Connection-oriented service:  connection over error free channel with a flow control",
+          "reasoning": "The student identifies the use of a connection and flow control, which satisfies two of the required properties for connection-oriented service. According to the partial credit rule (0.125 per property), this earns 0.25 marks."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S02",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.75,
+      "system_marks_with_facets": 2.25,
+      "abs_err_nofacets": 0.25,
+      "abs_err_with_facets": 0.75,
+      "answer": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+          "reasoning": "The student correctly identified all three required service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error",
+          "reasoning": "The student correctly identified the three required properties: lack of flow control ('no flow control'), potential data loss ('loss of data happens'), and the absence of connection control (implied by 'connection less' and the lack of mention of connection establishment/acknowledgment mechanisms)."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible ,has sequencing error",
+          "reasoning": "The student correctly identifies the absence of flow control and connection control. They also correctly identify the potential for duplicates and sequencing errors. However, they incorrectly state 'no loss of data' for a confirmed connectionless service, which contradicts the nature of the service (which typically uses ACKs but does not guarantee delivery like connection-oriented services)."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+          "reasoning": "The student correctly identifies the key properties of connection-oriented service: flow control, the connection-oriented nature, and reliable delivery (implied by no loss, no duplicates, and no sequencing errors)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S03",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 3.0,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 0.0,
+      "abs_err_with_facets": 0.0,
+      "answer": "The three services are called Unconfirmed Connectionless Service, Confirmed Connectionless Service and Connection-Oriented Service. These differ in their characteristics and areas of application. The first two services differ in whether or not the receiver acknowledges a packet when it receives it. The Unconfirmed Connectionless service does not include confirmation and assumes that the sent packets have arrived correctly. By confirming in the Confirmed Connectionless  service, this service can ensure that all packets have arrived at the receiver. Lost packets cannot be confirmed and so the recipient sends the packet again after a specified timeout. Both mentioned services have no flow control and no explicit requests to establish or disconnect a connection. The Confirmed Connectionless service has an implicit confirmation if a connection can be established, exactly when its packets are confirmed by the receiver. The confirmation of the second service class can cause duplicates to appear at the receiver, when the confirmation of a packet does not arrive at the sender. The third service class executes a three-phase communication and tries to establish a connection first. If the connection is confirmed, packets are sent until a request for disconnection is sent and confirmed. If the communication takes place over an error-free channel, no losses, no duplicates and no sequence errors are to be expected. Flow control is guaranteed by the \"handshake\". The first service type is usually used for the transition of isolated single units in channels with very low error rate (e.g. LANs, voice communication). The second service type can be used for channels with a high error rate such as mobile communication. The last service type is preferred for long and persistent communication.",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "The three services are called Unconfirmed Connectionless Service, Confirmed Connectionless Service and Connection-Oriented Service.",
+          "reasoning": "The student correctly identifies all three required service classes of the Data Link Layer by name."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "The Unconfirmed Connectionless service does not include confirmation and assumes that the sent packets have arrived correctly. ... Both mentioned services have no flow control and no explicit requests to establish or disconnect a connection.",
+          "reasoning": "The student correctly identifies the lack of acknowledgment (confirmation), the assumption of successful delivery (implying potential data loss/lack of reliability), and the absence of flow control and connection establishment/disconnection."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "By confirming in the Confirmed Connectionless  service, this service can ensure that all packets have arrived at the receiver. ... Both mentioned services have no flow control and no explicit requests to establish or disconnect a connection. ... The confirmation of the second service class can cause duplicates to appear at the receiver",
+          "reasoning": "The student correctly identifies the use of acknowledgments (confirmations), the lack of flow control, the lack of connection establishment/disconnection, and the potential for duplicates due to the confirmation mechanism."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "If the communication takes place over an error-free channel, no losses, no duplicates and no sequence errors are to be expected. Flow control is guaranteed by the \"handshake\".",
+          "reasoning": "The student identifies that the service provides reliable delivery (no losses, no duplicates, no sequence errors) and explicitly mentions flow control via the handshake mechanism, satisfying the target criteria."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S04",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.5,
+      "system_marks_with_facets": 2.25,
+      "abs_err_nofacets": 0.5,
+      "abs_err_with_facets": 0.75,
+      "answer": "L2 Service Class “Unconfirmed Connectionless Service”: Transmission of isolated, independent units (frames). The data may be lost.\nL2 Service Class “Confirmed Connectionless Service”: Each single frame is acknowledged so there is no loss. Timeout and retransmit if the sender does not receive an acknowledgement within a certain time frame. Duplicates and sequence errors may happen due to “retransmit”.\nL2 Service Class “Connection-Oriented Service”: Three-phased communication: 1. Connection 2. Data Transfer 3. Disconnection. Hence no loss, no duplication, no sequencing error.",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "L2 Service Class “Unconfirmed Connectionless Service”: Transmission of isolated, independent units (frames). The data may be lost.\nL2 Service Class “Confirmed Connectionless Service”: Each single frame is acknowledged so there is no loss. Timeout and retransmit if the sender does not receive an acknowledgement within a certain time frame. Duplicates and sequence errors may happen due to “retransmit”.\nL2 Service Class “Connection-Oriented Service”: Three-phased communication: 1. Connection 2. Data Transfer 3. Disconnection. Hence no loss, no duplication, no sequencing error.",
+          "reasoning": "The student correctly identified and named all three required service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "The data may be lost.",
+          "reasoning": "The student correctly identifies that data loss is a potential outcome of unconfirmed connectionless service. This satisfies one of the three required properties (potential data loss)."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "Each single frame is acknowledged so there is no loss. Timeout and retransmit if the sender does not receive an acknowledgement within a certain time frame. Duplicates and sequence errors may happen due to “retransmit”.",
+          "reasoning": "The student correctly identifies the use of acknowledgments (ACK), the potential for duplicates and sequence errors resulting from retransmissions, and implicitly addresses the absence of flow/connection control by defining it as a connectionless service that relies on individual frame acknowledgments rather than a formal connection state."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "Three-phased communication: 1. Connection 2. Data Transfer 3. Disconnection. Hence no loss, no duplication, no sequencing error.",
+          "reasoning": "The student correctly identifies the three-phase connection process and the resulting reliable delivery (no loss, no duplication, no sequencing error). This satisfies the reliable delivery property."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S05",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.75,
+      "system_marks_with_facets": 3.0,
+      "abs_err_nofacets": 0.25,
+      "abs_err_with_facets": 0.0,
+      "answer": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "three service classes are:\n1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error\n\n2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible\n,has sequencing error\n3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+          "reasoning": "The student correctly identified all three required service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "1.Unconfirmed Connection less Service :no flow control,connection less,loss of data happens,no duplicates,no sequencing error",
+          "reasoning": "The student correctly identified the three required properties: lack of flow control ('no flow control'), potential for data loss ('loss of data happens'), and the absence of connection control (implied by 'connection less')."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "2.Confirmed Connection less Service :no flow control,connection less,no loss of data,duplicates possible ,has sequencing error",
+          "reasoning": "The student correctly identifies the absence of flow control and connection control (connection less). They also correctly identify the potential for duplicates and sequencing errors. However, they incorrectly state 'no loss of data' for a confirmed connectionless service, which typically implies an acknowledgment mechanism but does not guarantee reliability in the same way as connection-oriented services."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "3.Connection-Oriented Service -flow control -connection oriented -no loss of data -no duplicates -no sequencing error",
+          "reasoning": "The student correctly identifies the key properties of connection-oriented service: flow control, the connection-oriented nature, and reliable delivery (implied by no loss, no duplicates, and no sequencing errors)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S06",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.25,
+      "system_marks_with_facets": 2.25,
+      "abs_err_nofacets": 0.75,
+      "abs_err_with_facets": 0.75,
+      "answer": "Unconfirmed connectionless service: Data is sent directly and no acknowledgements are returned\nConfirmed Connectionless service: Data is sent directly and acknowledgements are returned by the receiver when the data has arrived. If the sender does not receive an acknowledgement with a defined time interval, the data is retransmitted.\nConnectionoriented service: Three phases of communication: 1. The connection is initialized by exchanging parameters 2. data is transferred 3. Connection is closed due to that flow control is possible in this case.",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "Unconfirmed connectionless service: Data is sent directly and no acknowledgements are returned\nConfirmed Connectionless service: Data is sent directly and acknowledgements are returned by the receiver when the data has arrived. If the sender does not receive an acknowledgement with a defined time interval, the data is retransmitted.\nConnectionoriented service: Three phases of communication: 1. The connection is initialized by exchanging parameters 2. data is transferred 3. Connection is closed due to that flow control is possible in this case.",
+          "reasoning": "The student correctly identified and named all three service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "Unconfirmed connectionless service: Data is sent directly and no acknowledgements are returned",
+          "reasoning": "The student correctly identifies the lack of acknowledgements, which is one of the three required properties. This satisfies the partial credit rule of 0.125 per property (0.125 * 2 = 0.25)."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "Confirmed Connectionless service: Data is sent directly and acknowledgements are returned by the receiver when the data has arrived. If the sender does not receive an acknowledgement with a defined time interval, the data is retransmitted.",
+          "reasoning": "The student correctly identifies the use of acknowledgements and retransmission (ACK). However, they fail to mention the potential for duplicates/sequence errors or the absence of flow/connection control, which are required for a FULL grade."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "Connectionoriented service: Three phases of communication: 1. The connection is initialized by exchanging parameters 2. data is transferred 3. Connection is closed due to that flow control is possible in this case.",
+          "reasoning": "The student correctly identifies the connection-oriented nature by describing the three phases (initialization, transfer, closure) and explicitly mentions flow control. This satisfies two of the required properties (connection establishment and flow control)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S07",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.25,
+      "system_marks_with_facets": 2.5,
+      "abs_err_nofacets": 0.75,
+      "abs_err_with_facets": 0.5,
+      "answer": "For the Data Link Layer there are 3 service classes: unconfirmed conn.less service, confirmed conn.less service and connection-oriented service. \nIn unconfirmed conn.less service a data is sent to receiver. In this case a sender does not know if the sent data has arrived at the receiver. In other words, we don't get any confirmation from the receiver about arrived data. In case of loss data the data will be not resend. If any Correct data arrives, there is no correcting mechanism implemented.\nConfirmed conn.less service is a bidirectional communication between sender and receiver. After a sender sends a frame, a receiver sends an acknowledgement as answer. In the case of loss data a frame will be retransmit (after timeout) as long as the sender gets an acknowledgement from the receiver. In confirmed conn.less service there is no flow control implemented. \nIn the last kind of service, connection-oriented service, a connection between parties has to be estabilished firstly before we can send any data. We speak of 3-phased communication: connection estabilishment (a sender sends a request to receiver, the receiver confirms it); data transfer (after the receiver gets a frame, sends an acknowledgement to the sender); disconnection (analog to connection estabilishment). In connection-oriented service there is flow control implemented.",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "For the Data Link Layer there are 3 service classes: unconfirmed conn.less service, confirmed conn.less service and connection-oriented service.",
+          "reasoning": "The student correctly identifies all three required service classes: unconfirmed connectionless, confirmed connectionless, and connection-oriented."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "In this case a sender does not know if the sent data has arrived at the receiver. In other words, we don't get any confirmation from the receiver about arrived data. In case of loss data the data will be not resend.",
+          "reasoning": "The student correctly identifies the lack of acknowledgement (ACK) and the lack of retransmission (data loss). This covers two of the three required properties (lack of ACK and potential data loss)."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "After a sender sends a frame, a receiver sends an acknowledgement as answer. In the case of loss data a frame will be retransmit (after timeout) as long as the sender gets an acknowledgement from the receiver. In confirmed conn.less service there is no flow control implemented.",
+          "reasoning": "The student correctly identifies the use of acknowledgements (ACK), the retransmission mechanism for lost data, and the explicit absence of flow control. This covers three of the required properties (0.1 marks each)."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "a connection between parties has to be estabilished firstly before we can send any data. We speak of 3-phased communication: connection estabilishment (a sender sends a request to receiver, the receiver confirms it); data transfer (after the receiver gets a frame, sends an acknowledgement to the sender); disconnection (analog to connection estabilishment). In connection-oriented service there is flow control implemented.",
+          "reasoning": "The student correctly identifies the need for connection establishment (3-phase communication) and explicitly mentions flow control. This satisfies two of the required properties (connection establishment and flow control)."
+        }
+      ]
+    },
+    {
+      "student_id": "CE01_S08",
+      "human_norm": 1.0,
+      "human_est_marks": 3.0,
+      "system_marks_nofacets": 2.25,
+      "system_marks_with_facets": 2.5,
+      "abs_err_nofacets": 0.75,
+      "abs_err_with_facets": 0.5,
+      "answer": "1.unconfirmed connection-less service 2.confirmed connection-less service 3.connection-oriented service.\n2. there is flow-control in connection-oriented service. But in other two there's no flow-control, no connect or disconnect.\nThere is no loss, no duplication, no sequencing error in connection-oriented service.",
+      "concepts": [
+        {
+          "concept_id": "CE01_C1",
+          "role_in_cqa": "checklist",
+          "max_marks": 1.5,
+          "verdict": "FULL",
+          "marks_awarded": 1.5,
+          "evidence_span": "1.unconfirmed connection-less service 2.confirmed connection-less service 3.connection-oriented service.",
+          "reasoning": "The student correctly identified all three service classes required by the target criteria."
+        },
+        {
+          "concept_id": "CE01_C2",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "PARTIAL",
+          "marks_awarded": 0.25,
+          "evidence_span": "But in other two there's no flow-control, no connect or disconnect.",
+          "reasoning": "The student correctly identifies the absence of flow control and the absence of connection establishment/teardown (connection control). This satisfies two of the three required properties (0.125 + 0.125 = 0.25 marks)."
+        },
+        {
+          "concept_id": "CE01_C3",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "ABSENT",
+          "marks_awarded": 0.0,
+          "evidence_span": "",
+          "reasoning": "The student identifies the service class by name but fails to describe any of the distinguishing properties required by the target criteria (ACK, potential for duplicates/sequence errors, and absence of flow/connection control)."
+        },
+        {
+          "concept_id": "CE01_C4",
+          "role_in_cqa": "checklist",
+          "max_marks": 0.5,
+          "verdict": "FULL",
+          "marks_awarded": 0.5,
+          "evidence_span": "there is flow-control in connection-oriented service. ... There is no loss, no duplication, no sequencing error in connection-oriented service.",
+          "reasoning": "The student correctly identifies flow control as a property of connection-oriented service and describes reliable delivery (no loss, no duplication, no sequencing error), which satisfies the criteria for reliable delivery and flow control."
+        }
+      ]
+    }
+  ]
+}

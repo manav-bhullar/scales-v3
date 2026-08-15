@@ -1,0 +1,38 @@
+{
+  "exam_id": "cera_ab_CE07_facets_n8",
+  "question_id": "CE07",
+  "student_answers": [
+    {
+      "student_id": "CE07_S01",
+      "answer_text": "Extension Headers enable you to add additional header information to the already existing header if you really need them. They are placed between the header and the payload, by reducing the payload size if they get appended. The main advantage is, that you can overcome the size problem of the header and add additional information without changing the original header size."
+    },
+    {
+      "student_id": "CE07_S02",
+      "answer_text": "The header in IPv6 has a fixed length and is designed to be used for easy processing, it only contains information needed for routing. Any additional information is stored in extension headers. They carry optional information and can be found in between the fixed header and the playload. Since the whole IPv6 packet is only allowed a certain size, these additional extension headers take up space of the payload. The main advantage of extension headers is that they can be added optionally and help to overcome size limitation."
+    },
+    {
+      "student_id": "CE07_S03",
+      "answer_text": "Extension Headers are extensions for the normal header. You can support multiple addresses or specify more options for your header and packet, like e.g. authentication.\n\nThe Extension Headers are located between the normal header and the payload, they will be attached to the normal header. \n\nThe biggest advantage of Extension Headers is the possibility to use broadcasting."
+    },
+    {
+      "student_id": "CE07_S04",
+      "answer_text": "The extension headers replace the \"option-field\" in IPv4 and include optional more informations. They are placed between the actual header and the payload. The main advantage is that they can expand the header informations upon need without expanding the fixed header structure."
+    },
+    {
+      "student_id": "CE07_S05",
+      "answer_text": "Extension headers are header that can be added to a packet for a new functionality. Extension headers are present between fixed header and payload. \nAdvantages:\n1. They allow appending new options without changing fixed header\n2. They help in overcoming size limitation on packets."
+    },
+    {
+      "student_id": "CE07_S06",
+      "answer_text": "Extension headers are optional fields in IPv6 address, placed between the header and the playload. The main advantage compared to IPv4 is that extension headers allow for extra information to be headed, overcaming the address size limitation"
+    },
+    {
+      "student_id": "CE07_S07",
+      "answer_text": "Extension headers are optional information/options that can be append without changing the fixed header.\nthe extension headers are located between the header and payload of a packet. \nthanks to the extension headers it is easier to overcome the size limitation"
+    },
+    {
+      "student_id": "CE07_S08",
+      "answer_text": "Extension headers are optional headers placed between fixed header and payload.\nThe advantages are the help to overcome size limitation and the possibility to append new options without changing the fixed header."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "CE04",
+  "question_text": "What is \"frame bursting\"? Also, give 1 advantage and disadvantage compared to the carrier extension.",
+  "reference_answer": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.\nAdvantage: it is more efficient than carrier extension as single frames not filled up with garbage.\nDisadvantage: need frames waiting for transmission or buffering and delay of frames",
+  "rubric": "Total 3 marks:\n1) Definition of frame bursting (1 mark)\n2) One advantage compared to carrier extension (1 mark)\n3) One disadvantage compared to carrier extension (1 mark)",
+  "total_marks": 3,
+  "marks_sum": 3.0,
+  "concept_count": 3,
+  "cqa_tuples": [
+    {
+      "concept_id": "CE04_C1",
+      "question_id": "CE04",
+      "knowledge_point": "Define frame bursting as concatenating multiple frames into one transmission without releasing the channel.",
+      "target_criteria": "FULL = at least 2 of the 3 definition parts present (concatenate multiple frames / one transmission / without releasing channel); PARTIAL = exactly 1 part; ABSENT = 0",
+      "marks": 1.0,
+      "rubric_item_id": "1",
+      "evidence_facets": [
+        "concatenating a sequence of multiple frames",
+        "one single transmission",
+        "without ever releasing control of the channel"
+      ],
+      "evidence_role": "select_n",
+      "min_count": 2,
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "concatenating",
+        "multiple",
+        "frames",
+        "transmission",
+        "releasing",
+        "control"
+      ],
+      "acceptable_variants": [
+        "sending several frames at once without giving up the channel",
+        "grouping frames into one transmission to save overhead",
+        "keeping the channel busy to send multiple frames together",
+        "combining frames into a single burst transmission"
+      ],
+      "partial_credit_rule": "exactly 1 definition part → 0.5 marks",
+      "source_rubric_span": "Definition of frame bursting (1 mark)",
+      "source_reference_span": "Frame bursting reduces the overhead for transmitting small frames by concatenating a sequence of multiple frames in one single transmission, without ever releasing control of the channel.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:00.522914Z",
+      "updated_at": "2026-07-29T15:15:00.000000Z"
+    },
+    {
+      "concept_id": "CE04_C2",
+      "question_id": "CE04",
+      "knowledge_point": "Identify the advantage of frame bursting over carrier extension regarding efficiency.",
+      "target_criteria": "FULL if student states an efficiency/throughput advantage of frame bursting (vs carrier extension or in general). Accept paraphrases: more efficient, higher efficiency, better performance, higher transmission rate, improved throughput, more user data / less padding/garbage. Typos of efficiency count. Do NOT require the exact phrase 'than carrier extension' if efficiency/throughput is clear.",
+      "marks": 1.0,
+      "rubric_item_id": "2",
+      "evidence_facets": [
+        "more efficient / higher efficiency than carrier extension",
+        "higher transmission rate or improved throughput",
+        "more user data / not filled with garbage or padding"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "efficient",
+        "efficiency",
+        "throughput",
+        "transmission rate",
+        "performance",
+        "garbage",
+        "padding",
+        "user data"
+      ],
+      "acceptable_variants": [
+        "it avoids wasting space with padding",
+        "it is more efficient because it doesn't use garbage bits",
+        "it performs better than carrier extension by avoiding filler data",
+        "it saves bandwidth by not filling frames with useless data",
+        "higher transmission rate with high efficiency",
+        "improved throughput compared to carrier extension",
+        "better efficiency / higher efficiency",
+        "carrier extension has low efficiency; bursting is better"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "One advantage compared to carrier extension (1 mark)",
+      "source_reference_span": "Advantage: it is more efficient than carrier extension as single frames not filled up with garbage.",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:00.522924Z",
+      "updated_at": "2026-07-30T12:40:41.905171+00:00",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    },
+    {
+      "concept_id": "CE04_C3",
+      "question_id": "CE04",
+      "knowledge_point": "Identify the disadvantage of frame bursting regarding transmission requirements or delay.",
+      "target_criteria": "any of: need frames waiting / buffering / delay of frames counts as the disadvantage",
+      "marks": 1.0,
+      "rubric_item_id": "3",
+      "evidence_facets": [
+        "need frames waiting for transmission",
+        "buffering",
+        "delay of frames"
+      ],
+      "evidence_mode": "ANY",
+      "expected_keywords": [
+        "waiting",
+        "buffering",
+        "delay"
+      ],
+      "acceptable_variants": [
+        "it requires frames to be buffered before sending",
+        "it introduces latency while waiting for enough frames",
+        "it causes a delay because it needs to wait for more data",
+        "it relies on having frames ready to transmit"
+      ],
+      "partial_credit_rule": null,
+      "source_rubric_span": "One disadvantage compared to carrier extension (1 mark)",
+      "source_reference_span": "Disadvantage: need frames waiting for transmission or buffering and delay of frames",
+      "version": 1,
+      "created_at": "2026-07-29T10:01:00.522931Z",
+      "updated_at": "2026-07-29T10:01:00.522931Z",
+      "evidence_role": "synonym_set",
+      "min_count": null
+    }
+  ],
+  "extraction_metadata": {
+    "model_used": "gemini/gemini-3.1-flash-lite",
+    "attempts": 2,
+    "tokens_used": 8430,
+    "concept_count": 3
+  },
+  "run_ts": "2026-07-29T10:01:00.523024Z",
+  "corrected_ts": "2026-07-30T12:40:41.905171+00:00"
+}

@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pytest
 
 from scales.config import PROJECT_ROOT, get_settings, load_yaml_settings, prompt_path
@@ -12,7 +10,6 @@ from scales.models import (
     ConceptFeedback,
     CorrectionType,
     CQATuple,
-    CGRResult,
     ExamInput,
     FinalResult,
     QuestionInput,

@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock, patch
 
-import pytest
 import torch
 
 from scales.services.nli_service import NLIPrediction, NLIService
 
 
 def _build_service_with_mock():
-    with patch("transformers.AutoTokenizer.from_pretrained") as tok_cls, patch(
-        "transformers.AutoModelForSequenceClassification.from_pretrained"
-    ) as model_cls:
+    with (
+        patch("transformers.AutoTokenizer.from_pretrained") as tok_cls,
+        patch("transformers.AutoModelForSequenceClassification.from_pretrained") as model_cls,
+    ):
         tokenizer = MagicMock()
         model = MagicMock()
         model.config.id2label = {0: "contradiction", 1: "entailment", 2: "neutral"}
@@ -65,9 +65,7 @@ def test_predict_entailment_path():
 
 def test_predict_batch_length():
     service, model = _build_service_with_mock()
-    model.return_value = MagicMock(
-        logits=torch.tensor([[0.1, 3.0, 0.2], [3.0, 0.1, 0.2]])
-    )
+    model.return_value = MagicMock(logits=torch.tensor([[0.1, 3.0, 0.2], [3.0, 0.1, 0.2]]))
     preds = service.predict_batch(
         [
             ("A cat is an animal", "There is an animal"),

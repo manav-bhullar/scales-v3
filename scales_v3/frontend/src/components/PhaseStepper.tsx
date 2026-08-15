@@ -7,7 +7,12 @@ const STEPS: { id: PipelinePhase; label: string }[] = [
   { id: "complete", label: "Complete" },
 ];
 
-const ORDER: PipelinePhase[] = ["idle", "grading", "awaiting_review", "complete"];
+const ORDER: PipelinePhase[] = [
+  "idle",
+  "grading",
+  "awaiting_review",
+  "complete",
+];
 
 export function PhaseStepper({ phase }: { phase: PipelinePhase }) {
   const current = ORDER.indexOf(phase);
@@ -39,7 +44,8 @@ export function PhaseStepper({ phase }: { phase: PipelinePhase }) {
                   : done
                     ? "var(--md-sys-color-on-primary-container)"
                     : "var(--md-sys-color-on-surface)",
-                transition: "transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring)",
+                transition:
+                  "transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring)",
                 transform: active ? "scale(1.08)" : undefined,
               }}
               aria-current={active ? "step" : undefined}

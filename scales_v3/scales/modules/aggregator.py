@@ -124,9 +124,7 @@ class AggregatorModule:
         for sid in students:
             cgr_map = {r.concept_id: r for r in cgr_results if r.student_id == sid}
             cbte_map = {r.concept_id: r for r in cbte_results if r.student_id == sid}
-            corr_map = {
-                c.concept_id: c for c in corrections if c.student_id == sid
-            }
+            corr_map = {c.concept_id: c for c in corrections if c.student_id == sid}
             results.append(
                 self.compute_final_result(
                     student_id=sid,

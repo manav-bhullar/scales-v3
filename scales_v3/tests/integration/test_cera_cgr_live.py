@@ -23,7 +23,9 @@ def run_live(request):
 
 @pytest.mark.live
 @pytest.mark.asyncio
-async def test_cera_then_cgr_on_sample_answers(run_live, sample_question_data, sample_student_answers_data):
+async def test_cera_then_cgr_on_sample_answers(
+    run_live, sample_question_data, sample_student_answers_data
+):
     if not run_live:
         pytest.skip("Pass --run-live to execute live CERA→CGR smoke test")
 

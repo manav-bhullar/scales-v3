@@ -147,9 +147,7 @@ def test_decision_surface_suspicious_absent_escalates():
 def test_frozen_wave3_metrics_invariants():
     """Pin safety + known harshness on the committed Wave3 run."""
     ml = _load_metrics()
-    grading = json.loads(
-        (WAVE3_EXAM / "grading_results.json").read_text(encoding="utf-8")
-    )
+    grading = json.loads((WAVE3_EXAM / "grading_results.json").read_text(encoding="utf-8"))
     gold = json.loads(WAVE3_GOLD.read_text(encoding="utf-8"))
     m = ml.compute_metrics(grading, gold)
 

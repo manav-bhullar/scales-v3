@@ -28,9 +28,7 @@ def pytest_addoption(parser):
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "live: tests that call real external services")
-    config.addinivalue_line(
-        "markers", "contracts: eval dataset integrity gates (roadmap Step 0)"
-    )
+    config.addinivalue_line("markers", "contracts: eval dataset integrity gates (roadmap Step 0)")
     config.addinivalue_line(
         "markers", "harness: CLI/tooling the roadmap depends on (Steps 2 and 4)"
     )

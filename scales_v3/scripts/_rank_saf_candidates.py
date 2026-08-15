@@ -69,7 +69,7 @@ def main() -> None:
         out.append(
             {
                 "fit": score,
-                "n": int(len(g)),
+                "n": len(g),
                 "high": high,
                 "mid": mid,
                 "low": low,

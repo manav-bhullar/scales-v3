@@ -1,4 +1,10 @@
-export function DeferRateRing({ rate, size = 80 }: { rate: number; size?: number }) {
+export function DeferRateRing({
+  rate,
+  size = 80,
+}: {
+  rate: number;
+  size?: number;
+}) {
   const clamped = Math.max(0, Math.min(1, rate));
   const r = (size - 12) / 2;
   const c = 2 * Math.PI * r;

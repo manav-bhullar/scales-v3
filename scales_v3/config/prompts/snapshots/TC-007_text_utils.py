@@ -23,8 +23,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
-from typing import Iterable
-
+from collections.abc import Iterable
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
@@ -44,20 +43,20 @@ VARIANT_FUZZY_THRESHOLD = 0.75
 # Unicode punctuation the LLM commonly substitutes when re-quoting. Mapped to
 # ASCII so cosmetic drift never looks like a hallucinated quote.
 _PUNCT_MAP = {
-    "\u2018": "'",   # left single quote
-    "\u2019": "'",   # right single quote / apostrophe
-    "\u201a": "'",   # single low-9 quote
-    "\u201b": "'",   # single high-reversed-9 quote
-    "\u201c": '"',   # left double quote
-    "\u201d": '"',   # right double quote
-    "\u201e": '"',   # double low-9 quote
-    "\u2013": "-",   # en dash
-    "\u2014": "-",   # em dash
-    "\u2212": "-",   # minus sign
+    "\u2018": "'",  # left single quote
+    "\u2019": "'",  # right single quote / apostrophe
+    "\u201a": "'",  # single low-9 quote
+    "\u201b": "'",  # single high-reversed-9 quote
+    "\u201c": '"',  # left double quote
+    "\u201d": '"',  # right double quote
+    "\u201e": '"',  # double low-9 quote
+    "\u2013": "-",  # en dash
+    "\u2014": "-",  # em dash
+    "\u2212": "-",  # minus sign
     "\u2192": "->",  # rightwards arrow
     "\u21d2": "->",  # rightwards double arrow
     "\u2026": "...",  # ellipsis
-    "\u00a0": " ",   # non-breaking space
+    "\u00a0": " ",  # non-breaking space
 }
 _PUNCT_TABLE = {ord(k): v for k, v in _PUNCT_MAP.items()}
 
@@ -65,9 +64,35 @@ _PUNCT_TABLE = {ord(k): v for k, v in _PUNCT_MAP.items()}
 # not inflate the fuzzy score toward a false accept.
 _STOPWORDS = frozenset(
     {
-        "a", "an", "the", "of", "to", "and", "or", "with", "its", "it", "is",
-        "are", "in", "on", "for", "so", "that", "this", "then", "as", "by",
-        "be", "was", "were", "at", "from", "into", "can", "will",
+        "a",
+        "an",
+        "the",
+        "of",
+        "to",
+        "and",
+        "or",
+        "with",
+        "its",
+        "it",
+        "is",
+        "are",
+        "in",
+        "on",
+        "for",
+        "so",
+        "that",
+        "this",
+        "then",
+        "as",
+        "by",
+        "be",
+        "was",
+        "were",
+        "at",
+        "from",
+        "into",
+        "can",
+        "will",
     }
 )
 

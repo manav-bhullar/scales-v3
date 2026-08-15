@@ -12,6 +12,7 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | `cera.evidence_facets_mode` | TC-014 | restructure | code | Add evidence_facets + evidence_mode (ANY/ALL); validators... | Advantage/disadvantage leaves become over-stric... |
 | `cera.evidence_role_shapes` | PC-010 | restructure | prompt | Question-shape step; emit evidence_role+min_count instead... | CERA emits wrong ANY/ALL for name-N-of-M and ch... |
 | `cera.fake_partial_and_calibrate` | TC-015 | tighten | code | Reject fake partial_credit_rule strings (null/No partial…... | Fake partials pass validation again; no pre-bat... |
+| `cera.hybrid_facet_policy` | PC-013 | restructure | prompt | Hybrid facet policy: single-claim synonym_set prefers emp... | CERA again emits select_n min=2 of 3 for frame-... |
 | `cera.multi_property_all_mode` | PC-006 | tighten | prompt | When reference defines a class as a checklist of distingu... | Multi-property class definitions collapse back ... |
 | `cera.multipart_definition_select_n` | PC-012 | tighten | prompt | Multi-part definitions use select_n (e.g. min_count=2 of ... | Definition concepts award FULL for a single par... |
 | `cera.paraphrase_claim_shape` | PC-008 | tighten | prompt | Claim-shaped KPs, semantic facets, 3-5 variants, ANY any-... | CERA returns quote-like labels and brittle face... |
@@ -22,11 +23,13 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 | `cgr.partial_over_absent` | PC-003 | loosen | prompt | Partial-credit policy: prefer PARTIAL over ABSENT; accept... | Mid/purpose answers harsh ABSENT again; Wave3 m... |
 | `cgr.partial_rule_precedence` | PC-004 | tighten | prompt | Made concept-specific partial-credit rules override the g... | Generic prefer-PARTIAL wording can override exp... |
 | `cgr.semantic_matching` | PC-009 | loosen | prompt | Add meaning-check step and semantic matching block for pa... | CGR returns to literal phrase matching and unde... |
+| `cgr.skip_facets_ablation` | TC-017 | measure | code | Add CGRModule(skip_facets=True): blank facets/keywords/va... | Cannot run no-facets ablation without manually ... |
 | `cgr.structured_verdicts` | PC-001 | restructure | prompt | Initial v3 CGR prompt: mandatory evidence_span, discrete ... | Lose structured evidence for CBTE; fall back to... |
 | `cgr.target_criteria_wiring` | TC-005 | restructure | code | Pass CQA target_criteria into every CGR prompt as the aut... | CGR grades from a lossy knowledge-point summary... |
 | `dataset.cn2.human_gold` | TC-008 | tighten | dataset | Human CN2 review: clarified GOOD_01 sender wording; demot... | GOOD_02 wrongly treated as high-band full credi... |
 | `dataset.os1.definition_required` | TC-004 | tighten | dataset | Clarified definition mark: FULL requires both explicit de... | CGR may again infer the missing definitions fro... |
 | `dataset.real_data_wave5` | TC-010 | measure | dataset | Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST no... | Evaluation evidence stays purely synthetic; FYP... |
+| `eval.nofacets_vs_facets` | TC-020 | measure | metric | CE04 2x2 factorial n=8: A1 mae0.50 A2 0.188 A3 0.125 A4 0... | Lose factorial isolation of CE04 MAE drivers |
 | `grading.concept_mark_quarters` | TC-012 | restructure | code | Allow CQA concept marks as float multiples of 0.25 (e.g. ... | Concept weights snap back to integers; half-mar... |
 | `grading.mark_granularity` | TC-009 | restructure | metric | CANDIDATE (not yet applied): add 0.25 and 0.75 to allowed... | Stays at 0/0.5/1.0; teacher keeps rounding bord... |
 | `metrics.pass_bar` | TC-002 | measure | metric | Executable Wave4 pass bar (false ACCEPT, silent zeros, de... | Must manually interpret metrics; easy to miss h... |
@@ -59,6 +62,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **TC-015** (2026-07-26, tighten): Reject fake partial_credit_rule strings (null/No partial…) when required; warn-only pre-grade calibration in pipeline (skip on resume; --calibrate-strict opt-in)
   - if reverted: Fake partials pass validation again; no pre-batch smoke warnings
+
+### `cera.hybrid_facet_policy`
+
+- **PC-013** (2026-07-30, restructure): Hybrid facet policy: single-claim synonym_set prefers empty facets; select_n/checklist only for true enumerate/algorithm; forbid over-splitting one definition (frame bursting) into select_n of 3; replace few-shot that taught select_n on concat/transmission/channel-hold
+  - if reverted: CERA again emits select_n min=2 of 3 for frame-bursting-style defs → systematic −0.5 PARTIAL tax
 
 ### `cera.multi_property_all_mode`
 
@@ -112,6 +120,11 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 - **PC-009** (2026-07-29, loosen): Add meaning-check step and semantic matching block for paraphrase tolerance
   - if reverted: CGR returns to literal phrase matching and under-scores paraphrases
 
+### `cgr.skip_facets_ablation`
+
+- **TC-017** (2026-07-30, measure): Add CGRModule(skip_facets=True): blank facets/keywords/variants in prompt; force synonym_set in prompt for criteria-only ablation tests
+  - if reverted: Cannot run no-facets ablation without manually emptying every CQA; CE04-style false PARTIAL tax returns when facets over-split one claim
+
 ### `cgr.structured_verdicts`
 
 - **PC-001** (2026-07-20, restructure): Initial v3 CGR prompt: mandatory evidence_span, discrete FULL/PARTIAL/ABSENT/INCORRECT marks
@@ -138,6 +151,15 @@ Full history: `PROMPT_CHANGELOG.md` / `changes.jsonl`.
 
 - **TC-010** (2026-07-25, measure): Added first REAL-answer pack: Mohler ASAG E12.Q09 (BST node deletion), 28 UNT student answers, gold bands derived from two human graders (0-10 normalized to 0-5); 5-mark rubric authored by us
   - if reverted: Evaluation evidence stays purely synthetic; FYP claim 'works on real answers' unsupported
+
+### `eval.nofacets_vs_facets`
+
+- **TC-018** (2026-07-30, measure): Document CE04 no-facets vs facets MAE and policy: facets for enumerate/count only; criteria-only for single-claim concepts
+  - if reverted: Lose CE04 ablation numbers and facet-usage policy note
+- **TC-019** (2026-07-30, measure): skip_facets ablation n=8 on CE01/03/05/06/07/08/10 vs facet smoke: CE03/07/08 slightly better without facets; CE10 worse (+0.156 MAE); CE06 tie; CE04 separate run still largest win
+  - if reverted: Lose multi-question no-facets vs facets MAE table
+- **TC-020** (2026-07-30, measure): CE04 2x2 factorial n=8: A1 mae0.50 A2 0.188 A3 0.125 A4 0.125; criteria rewrite dominates; A3=A4 so empty facets fine once holistic
+  - if reverted: Lose factorial isolation of CE04 MAE drivers
 
 ### `grading.concept_mark_quarters`
 

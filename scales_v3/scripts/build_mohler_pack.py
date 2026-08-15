@@ -80,9 +80,7 @@ def main() -> None:
                 "student_id": sid,
                 "expected_band": band,
                 "expected_score_range": [round(lo, 2), round(hi, 2)],
-                "watch": (
-                    f"Real UNT grades: g1={g1}/10 g2={g2}/10 avg={avg}/5"
-                ),
+                "watch": (f"Real UNT grades: g1={g1}/10 g2={g2}/10 avg={avg}/5"),
             }
         )
 
@@ -120,9 +118,7 @@ def main() -> None:
     }
 
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "exam.json").write_text(
-        json.dumps(exam, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
+    (OUT / "exam.json").write_text(json.dumps(exam, indent=2, ensure_ascii=False), encoding="utf-8")
     (OUT / "gold_labels.json").write_text(
         json.dumps(
             {

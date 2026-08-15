@@ -20,9 +20,7 @@ def validate_concept_marks(value: float) -> float:
     if marks <= 0:
         raise ValueError("cqa.marks must be > 0")
     if not is_multiple_of_mark_step(marks):
-        raise ValueError(
-            f"cqa.marks must be a multiple of {MARK_STEP} (got {marks})"
-        )
+        raise ValueError(f"cqa.marks must be a multiple of {MARK_STEP} (got {marks})")
     # Snap to nearest step so 0.7500000002 stores cleanly.
     snapped = round(round(marks / MARK_STEP) * MARK_STEP, 10)
     return snapped

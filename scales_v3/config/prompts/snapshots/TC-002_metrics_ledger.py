@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -40,9 +40,7 @@ def _provisional_totals(
         else:
             dec = decision  # already str from json
         if dec == "ACCEPT":
-            totals[c["student_id"]] = totals.get(c["student_id"], 0.0) + float(
-                c["marks_awarded"]
-            )
+            totals[c["student_id"]] = totals.get(c["student_id"], 0.0) + float(c["marks_awarded"])
         else:
             totals.setdefault(c["student_id"], totals.get(c["student_id"], 0.0))
     # Ensure every student appears
@@ -76,11 +74,7 @@ def compute_metrics(
     false_defer_rate = false_defer / n if n else 0.0
 
     # False ACCEPT: ACCEPT with marks>0 on students gold-labeled low band
-    low_students = {
-        g["student_id"]
-        for g in gold["gold_labels"]
-        if g.get("expected_band") == "low"
-    }
+    low_students = {g["student_id"] for g in gold["gold_labels"] if g.get("expected_band") == "low"}
     false_accept = 0
     for r in cbte:
         if r["decision"] != "ACCEPT" or r["student_id"] not in low_students:
@@ -96,9 +90,7 @@ def compute_metrics(
     # collapsing a strong answer to ABSENT (e.g. empty evidence) and CBTE
     # auto-accepting it so a teacher never sees it (Wave4 OS1 GOOD_01).
     high_students = {
-        g["student_id"]
-        for g in gold["gold_labels"]
-        if g.get("expected_band") == "high"
+        g["student_id"] for g in gold["gold_labels"] if g.get("expected_band") == "high"
     }
     silent_zero = 0
     silent_zero_by_verdict: dict[str, int] = {}
@@ -406,19 +398,15 @@ def main() -> None:
         cbte_override = payload["cbte_results"]
 
     if args.post_review:
-        finals = json.loads(
-            (exam_dir / "final_results.json").read_text(encoding="utf-8")
-        )
+        finals = json.loads((exam_dir / "final_results.json").read_text(encoding="utf-8"))
         corr_path = exam_dir / "teacher_corrections.json"
         corrections = (
-            json.loads(corr_path.read_text(encoding="utf-8"))
-            if corr_path.exists()
-            else {}
+            json.loads(corr_path.read_text(encoding="utf-8")) if corr_path.exists() else {}
         )
         metrics = compute_post_review_metrics(grading, finals, corrections, gold)
         row = {
             "run_id": args.run_id,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(UTC).isoformat(),
             "exam_id": grading.get("exam_id") or gold.get("exam_id"),
             "phase": "post_review",
             "notes": args.notes,
@@ -429,7 +417,7 @@ def main() -> None:
         metrics = compute_metrics(grading, gold, cbte_results=cbte_override)
         row = {
             "run_id": args.run_id,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "timestamp": datetime.now(UTC).isoformat(),
             "exam_id": grading.get("exam_id") or gold.get("exam_id"),
             "phase": "pre_review",
             "notes": args.notes,

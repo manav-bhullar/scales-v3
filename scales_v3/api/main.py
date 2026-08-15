@@ -17,15 +17,17 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scales.config import get_settings, resolve_path  # noqa: E402
-from scales.models.grading import Verdict  # noqa: E402
-from scales.modules.exceptions import (  # noqa: E402
+from datetime import UTC
+
+from scales.config import get_settings, resolve_path
+from scales.models.grading import Verdict
+from scales.modules.exceptions import (
     AggregatorValidationError,
     SHRRValidationError,
 )
-from scales.persistence import ExamStore  # noqa: E402
-from scales.pipeline import GradingPipeline  # noqa: E402
-from scales.services.llm_client import LLMClient  # noqa: E402
+from scales.persistence import ExamStore
+from scales.pipeline import GradingPipeline
+from scales.services.llm_client import LLMClient
 
 app = FastAPI(title="SCALES v3 API", version="0.6.0")
 
@@ -242,9 +244,7 @@ def list_papers() -> list[dict[str, Any]]:
         paper["calibrated_count"] += int(bool(e.get("calibrated")))
     papers = list(by_paper.values())
     for p in papers:
-        p["questions"].sort(
-            key=lambda q: (q.get("question_key") or "", q.get("exam_id") or "")
-        )
+        p["questions"].sort(key=lambda q: (q.get("question_key") or "", q.get("exam_id") or ""))
     papers.sort(key=lambda p: p["paper_title"].lower())
     return papers
 
@@ -351,9 +351,7 @@ def exam_breakdown(exam_id: str) -> dict[str, Any]:
             is_deferred = bool(cbte and cbte.decision.value == "DEFER")
 
             auto_score += float(cgr.marks_awarded)
-            current_score += float(
-                corr.teacher_marks if corr else cgr.marks_awarded
-            )
+            current_score += float(corr.teacher_marks if corr else cgr.marks_awarded)
             deferred += int(is_deferred and corr is None)
             corrected += int(corr is not None)
 
@@ -377,14 +375,10 @@ def exam_breakdown(exam_id: str) -> dict[str, Any]:
                     ),
                     "signal_2_nli_score": cbte.signal_2_nli_score if cbte else None,
                     "signal_3_stability": cbte.signal_3_stability if cbte else None,
-                    "signal_4_keyword_score": (
-                        float(cbte.signal_4_keyword_score) if cbte else 0.0
-                    ),
+                    "signal_4_keyword_score": (float(cbte.signal_4_keyword_score) if cbte else 0.0),
                     "expected_keywords": expected,
                     "keywords_found": found,
-                    "keywords_missing": [
-                        k for k in expected if k.lower() not in found_norm
-                    ],
+                    "keywords_missing": [k for k in expected if k.lower() not in found_norm],
                     "source": "teacher" if corr else "auto",
                     "teacher_verdict": corr.teacher_verdict.value if corr else None,
                     "teacher_marks": float(corr.teacher_marks) if corr else None,
@@ -473,18 +467,10 @@ def _build_calibrate_payload(pipe: GradingPipeline, exam_id: str) -> dict[str, A
             }
             for ri in rubric_items
         ]
-        groups = {
-            ri.rubric_item_id: by_rubric.get(ri.rubric_item_id, [])
-            for ri in rubric_items
-        }
+        groups = {ri.rubric_item_id: by_rubric.get(ri.rubric_item_id, []) for ri in rubric_items}
         # Orphans (CQA with missing/unknown rubric_item_id)
         known = {ri.rubric_item_id for ri in rubric_items}
-        orphans = [
-            c
-            for rid, cs in by_rubric.items()
-            for c in cs
-            if rid not in known
-        ]
+        orphans = [c for rid, cs in by_rubric.items() for c in cs if rid not in known]
         if orphans:
             rubric_rows.append(
                 {
@@ -503,9 +489,7 @@ def _build_calibrate_payload(pipe: GradingPipeline, exam_id: str) -> dict[str, A
         rid = row["rubric_item_id"]
         saved_r = saved_rubrics.get(rid, {})
         saved_concepts = {
-            c["concept_id"]: c
-            for c in saved_r.get("concepts", [])
-            if "concept_id" in c
+            c["concept_id"]: c for c in saved_r.get("concepts", []) if "concept_id" in c
         }
         concepts_out: list[dict[str, Any]] = []
         for cqa in groups.get(rid, []):
@@ -529,9 +513,7 @@ def _build_calibrate_payload(pipe: GradingPipeline, exam_id: str) -> dict[str, A
         rubrics_out.append(
             {
                 **row,
-                "required_for_full_marks": bool(
-                    saved_r.get("required_for_full_marks", True)
-                ),
+                "required_for_full_marks": bool(saved_r.get("required_for_full_marks", True)),
                 "concepts": concepts_out,
             }
         )
@@ -581,12 +563,12 @@ def get_calibrate(exam_id: str) -> dict[str, Any]:
 @app.put("/api/exams/{exam_id}/calibrate")
 def put_calibrate(exam_id: str, body: TeacherCalibrationBody) -> dict[str, Any]:
     """Persist teacher required/optional policy. Does not re-grade."""
-    from datetime import datetime, timezone
+    from datetime import datetime
 
     pipe = _pipeline_for(exam_id)
     store = pipe.store or ExamStore(exam_id)
     payload = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "updated_at": datetime.now(UTC).isoformat(),
         "rubrics": [r.model_dump() for r in body.rubrics],
     }
     store.save_teacher_calibration(payload)
@@ -596,7 +578,5 @@ def put_calibrate(exam_id: str, body: TeacherCalibrationBody) -> dict[str, Any]:
 @app.get("/api/exams/{exam_id}/results")
 def exam_results(exam_id: str) -> list[dict[str, Any]]:
     pipe = _pipeline_for(exam_id)
-    finals = pipe._final_results or (
-        pipe.store.load_final_results() if pipe.store else []
-    )
+    finals = pipe._final_results or (pipe.store.load_final_results() if pipe.store else [])
     return [r.model_dump(mode="json") for r in finals]

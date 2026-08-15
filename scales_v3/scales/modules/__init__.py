@@ -13,16 +13,16 @@ from scales.modules.exceptions import (
 from scales.modules.shrr import SHRRModule, derive_correction_type
 
 __all__ = [
+    "AggregatorModule",
+    "AggregatorValidationError",
+    "CBTEModule",
     "CERAModule",
     "CERAOutput",
-    "CGRModule",
-    "CBTEModule",
-    "build_verdict_hypothesis",
-    "SHRRModule",
-    "derive_correction_type",
-    "AggregatorModule",
     "CERAValidationError",
+    "CGRModule",
     "CGRValidationError",
+    "SHRRModule",
     "SHRRValidationError",
-    "AggregatorValidationError",
+    "build_verdict_hypothesis",
+    "derive_correction_type",
 ]

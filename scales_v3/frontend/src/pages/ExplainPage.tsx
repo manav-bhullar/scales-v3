@@ -66,8 +66,7 @@ export function ExplainPage() {
 
   const visible = useMemo(() => {
     const copy = [...students];
-    if (filter === "deferred")
-      return copy.filter((s) => s.deferred_count > 0);
+    if (filter === "deferred") return copy.filter((s) => s.deferred_count > 0);
     if (filter === "silent_zero")
       return copy
         .filter((s) => silentZeros(s) > 0)
@@ -100,7 +99,10 @@ export function ExplainPage() {
 
       {loading && <p className="m3-body-large">Loading breakdown…</p>}
       {error && (
-        <p className="m3-body-large" style={{ color: "var(--md-sys-color-error)" }}>
+        <p
+          className="m3-body-large"
+          style={{ color: "var(--md-sys-color-error)" }}
+        >
           {error}
           <span className="m3-body-small block mt-1">
             Is the API running on port 8000, and has this exam been graded?
@@ -126,17 +128,24 @@ export function ExplainPage() {
               {rubricHealth.map((rc) => {
                 const dead = rc.zeroRate >= 0.8;
                 return (
-                  <li key={rc.concept_id} className="flex items-center gap-3 flex-wrap">
+                  <li
+                    key={rc.concept_id}
+                    className="flex items-center gap-3 flex-wrap"
+                  >
                     <span
                       className="m3-body-small"
-                      style={{ minWidth: 70, color: "var(--md-sys-color-on-surface)" }}
+                      style={{
+                        minWidth: 70,
+                        color: "var(--md-sys-color-on-surface)",
+                      }}
                     >
                       {rc.concept_id}
                     </span>
                     <div
                       className="flex-1 min-w-[140px] h-2.5 overflow-hidden"
                       style={{
-                        background: "var(--md-sys-color-surface-container-highest)",
+                        background:
+                          "var(--md-sys-color-surface-container-highest)",
                         borderRadius: "var(--md-sys-shape-corner-full)",
                       }}
                     >
@@ -152,8 +161,8 @@ export function ExplainPage() {
                       />
                     </div>
                     <span className="m3-body-small" style={{ minWidth: 150 }}>
-                      {students.length - rc.zeroCount}/{students.length} earned ·{" "}
-                      {rc.marks} mark{rc.marks === 1 ? "" : "s"}
+                      {students.length - rc.zeroCount}/{students.length} earned
+                      · {rc.marks} mark{rc.marks === 1 ? "" : "s"}
                     </span>
                     {dead && (
                       <span
@@ -170,7 +179,10 @@ export function ExplainPage() {
                         Check this concept
                       </span>
                     )}
-                    <span className="m3-body-small w-full" style={{ paddingLeft: 82 }}>
+                    <span
+                      className="m3-body-small w-full"
+                      style={{ paddingLeft: 82 }}
+                    >
                       {rc.knowledge_point}
                     </span>
                   </li>
@@ -208,7 +220,9 @@ export function ExplainPage() {
               </div>
 
               {visible.length === 0 && (
-                <p className="m3-body-small m-0">Nothing matches this filter.</p>
+                <p className="m3-body-small m-0">
+                  Nothing matches this filter.
+                </p>
               )}
 
               <ul className="list-none m-0 p-0 flex flex-col gap-2">
@@ -236,8 +250,10 @@ export function ExplainPage() {
                         </span>
                         <span className="m3-body-small">
                           {s.current_score}/{s.total_marks}
-                          {s.deferred_count > 0 && ` · ${s.deferred_count} waiting`}
-                          {sz > 0 && ` · ${sz} unchecked zero${sz === 1 ? "" : "s"}`}
+                          {s.deferred_count > 0 &&
+                            ` · ${s.deferred_count} waiting`}
+                          {sz > 0 &&
+                            ` · ${sz} unchecked zero${sz === 1 ? "" : "s"}`}
                         </span>
                       </button>
                     </li>
@@ -251,7 +267,10 @@ export function ExplainPage() {
                 <p className="m3-label-small m-0">{detail.student_id}</p>
                 <p className="m3-display-large m-0 mt-1">
                   {detail.current_score}
-                  <span className="m3-title-large"> / {detail.total_marks}</span>
+                  <span className="m3-title-large">
+                    {" "}
+                    / {detail.total_marks}
+                  </span>
                 </p>
                 <p className="m3-body-small mt-1">
                   {detail.corrected_count > 0
@@ -266,7 +285,9 @@ export function ExplainPage() {
                     borderRadius: "var(--md-sys-shape-corner-large)",
                   }}
                 >
-                  <p className="m3-label-small m-0 mb-2">Student&apos;s answer</p>
+                  <p className="m3-label-small m-0 mb-2">
+                    Student&apos;s answer
+                  </p>
                   <p
                     className="m3-body-large m-0"
                     style={{ whiteSpace: "pre-wrap" }}

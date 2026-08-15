@@ -9,7 +9,6 @@ from __future__ import annotations
 from loguru import logger
 
 from scales.config import AppSettings, get_settings
-from scales.models.correction import TeacherCorrection
 from scales.models.cqa import CQATuple
 from scales.models.exam import ExamInput, QuestionInput, StudentAnswer
 from scales.models.grading import CGRResult, Verdict
@@ -45,12 +44,14 @@ class GradingPipeline:
         exam_store: ExamStore | None = None,
         exam_id: str | None = None,
         exams_dir: str | None = None,
+        skip_facets: bool = False,
     ) -> None:
         self.settings = settings or get_settings()
         self.llm = llm_client
         self.nli = nli_service
+        self.skip_facets = skip_facets
         self.cera = CERAModule(llm_client, self.settings)
-        self.cgr = CGRModule(llm_client, self.settings)
+        self.cgr = CGRModule(llm_client, self.settings, skip_facets=skip_facets)
         self.cbte = CBTEModule(nli_service, llm_client, self.settings)
         self.shrr = SHRRModule(self.settings)
         self.aggregator = AggregatorModule()
@@ -163,9 +164,7 @@ class GradingPipeline:
         # CBTEModule grades one student at a time and cannot see this pattern.
         apply_cohort_absent_audit(self._cgr_results, self._cbte_results, self.cbte.config)
 
-        deferred = sum(
-            1 for r in self._cbte_results if r.decision == TrustDecision.DEFER
-        )
+        deferred = sum(1 for r in self._cbte_results if r.decision == TrustDecision.DEFER)
         status_label = "awaiting_review" if deferred else "graded"
         self.store.save_grading_results(
             question_id=question.question_id,
@@ -178,9 +177,7 @@ class GradingPipeline:
         # Hydrate corrections + review queue
         self.shrr.load_corrections(self.store.load_corrections())
         self._review_items = self._build_review_queue()
-        self._phase = (
-            PipelinePhase.AWAITING_REVIEW if deferred else PipelinePhase.COMPLETE
-        )
+        self._phase = PipelinePhase.AWAITING_REVIEW if deferred else PipelinePhase.COMPLETE
 
         # If nothing deferred, aggregate immediately
         if deferred == 0:
@@ -209,9 +206,7 @@ class GradingPipeline:
             status=status,
         )
 
-    async def _grade_one_student(
-        self, student: StudentAnswer, question: QuestionInput
-    ) -> None:
+    async def _grade_one_student(self, student: StudentAnswer, question: QuestionInput) -> None:
         cgr_results = await self.cgr.grade_all_concepts(
             student_id=student.student_id,
             student_answer=student.answer_text,
@@ -244,9 +239,7 @@ class GradingPipeline:
                             "data": {
                                 "student_id": student.student_id,
                                 "item_count": len(batch_items),
-                                "distinct_student_ids_in_batch": list(
-                                    {student.student_id}
-                                ),
+                                "distinct_student_ids_in_batch": list({student.student_id}),
                                 "concept_ids_in_batch": [c.concept_id for _, _, c in batch_items],
                             },
                             "timestamp": int(_dt.time() * 1000),
@@ -285,9 +278,7 @@ class GradingPipeline:
             cqa = cqa_map.get(cbte.concept_id)
             if cgr is None or cqa is None:
                 continue
-            deferred_rows.append(
-                (cbte, cgr, cqa, self._answer_text(cbte.student_id))
-            )
+            deferred_rows.append((cbte, cgr, cqa, self._answer_text(cbte.student_id)))
         qid = self._question.question_id if self._question else ""
         return self.shrr.build_review_items(deferred_rows, question_id=qid)
 
@@ -297,9 +288,7 @@ class GradingPipeline:
         return list(self._review_items)
 
     def get_review_progress(self) -> ReviewProgress:
-        return self.shrr.get_review_progress(
-            self.get_review_queue(), self.shrr.get_corrections()
-        )
+        return self.shrr.get_review_progress(self.get_review_queue(), self.shrr.get_corrections())
 
     def submit_correction(
         self,
@@ -312,11 +301,7 @@ class GradingPipeline:
     ) -> CorrectionResult:
         queue = self.get_review_queue()
         item = next(
-            (
-                i
-                for i in queue
-                if i.student_id == student_id and i.concept_id == concept_id
-            ),
+            (i for i in queue if i.student_id == student_id and i.concept_id == concept_id),
             None,
         )
         if item is None:
@@ -380,13 +365,11 @@ class GradingPipeline:
     # ─── Status ───────────────────────────────────────────────────────────
 
     def get_grading_status(self) -> PipelineStatus:
-        exam_id = self._exam.exam_id if self._exam else (
-            self.store.exam_id if self.store else "unknown"
+        exam_id = (
+            self._exam.exam_id if self._exam else (self.store.exam_id if self.store else "unknown")
         )
         queue = self._review_items or []
-        deferred = sum(
-            1 for r in self._cbte_results if r.decision == TrustDecision.DEFER
-        )
+        deferred = sum(1 for r in self._cbte_results if r.decision == TrustDecision.DEFER)
         progress = self.shrr.get_review_progress(queue, self.shrr.get_corrections())
         total_students = (
             len(self._question.student_answers) if self._question else len(self._graded_students)
@@ -426,9 +409,7 @@ class GradingPipeline:
         self.shrr.load_corrections(self.store.load_corrections())
         self._review_items = self._build_review_queue()
         self._final_results = self.store.load_final_results()
-        deferred = sum(
-            1 for r in self._cbte_results if r.decision == TrustDecision.DEFER
-        )
+        deferred = sum(1 for r in self._cbte_results if r.decision == TrustDecision.DEFER)
         if self._final_results:
             self._phase = PipelinePhase.COMPLETE
         elif deferred:
